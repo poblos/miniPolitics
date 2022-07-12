@@ -1,0 +1,45 @@
+{
+  "description": "Our colleague has accidentally expressed some of his controversial opinions in TV. What shall we do?",
+  "options": [
+    {
+      "description": "Why is he even allowed to show up in TV?",
+      "effects": [
+        {
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "And what?",
+      "effects": [
+        {
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Make those opinions our party's official agenda!",
+      "effects": [
+        {
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Thoughtless words"
+}

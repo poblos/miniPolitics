@@ -1,0 +1,33 @@
+{
+  "description": "Our party's Minister of Infrastructure has crashed his car into the tree. Police found out that he had at least 0.3% of alcohol in his blood at the time.",
+  "options": [
+    {
+      "description": "Publicly condemn his behaviour",
+      "effects": [
+        {
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "So what?",
+      "effects": [
+        {
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Condemn him behaviour publicly and start anti-drunken-drivers program",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Drunken accident"
+}

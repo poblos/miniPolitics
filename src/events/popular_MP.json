@@ -1,0 +1,33 @@
+{
+  "description": "Our party's young MP has started to become quite popular recently. It might be beneficial to promote him in our party's structure.",
+  "options": [
+    {
+      "description": "Make him one of our faces!",
+      "effects": [
+        {
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Nice!",
+      "effects": [
+        {
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "That's so dangerous man! Calm him down a bit.",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Popular MP"
+}

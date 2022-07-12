@@ -1,0 +1,49 @@
+{
+  "description": "The major newspaper revealed in today's article that one of our MP's had taken multiple bribes. What shall we do?",
+  "options": [
+    {
+      "description": "Fire him instantly!",
+      "effects": [
+        {
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "So what?",
+      "effects": [
+        {
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Suspend him and wait for the further news",
+      "effects": [
+        {
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Corrupted official"
+}
