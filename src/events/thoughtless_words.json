@@ -5,14 +5,17 @@
       "description": "Why is he even allowed to show up in TV?",
       "effects": [
         {
+          "type": "indicator_change",
           "change": 1,
           "indicator": "StateStability"
         },
         {
+          "type": "indicator_change",
           "change": -1,
           "indicator": "PartySupport"
         },
         {
+          "type": "indicator_change",
           "change": -1,
           "indicator": "PartyCohesion"
         }
@@ -22,6 +25,7 @@
       "description": "And what?",
       "effects": [
         {
+          "type": "indicator_change",
           "change": -2,
           "indicator": "PartySupport"
         }
@@ -31,10 +35,12 @@
       "description": "Make those opinions our party's official agenda!",
       "effects": [
         {
+          "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
         },
         {
+          "type": "indicator_change",
           "change": -2,
           "indicator": "StateStability"
         }

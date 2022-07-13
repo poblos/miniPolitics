@@ -5,8 +5,12 @@
       "description": "Make him one of our faces!",
       "effects": [
         {
+          "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "advisor_employment"
         }
       ]
     },
@@ -14,10 +18,12 @@
       "description": "Nice!",
       "effects": [
         {
+          "type": "indicator_change",
           "change": -1,
           "indicator": "PartyCohesion"
         },
         {
+          "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
         }

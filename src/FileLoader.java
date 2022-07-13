@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileLoader {
-    public static List<Path> listEventFiles(Path directory) throws IOException {
+    public static List<Path> listFiles(Path directory) throws IOException {
         List<Path> result = new ArrayList<>();
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory, "*.{json}")) {
             for (Path entry: stream) {
@@ -18,4 +18,5 @@ public class FileLoader {
         }
         return result;
     }
+
 }

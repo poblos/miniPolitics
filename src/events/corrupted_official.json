@@ -5,10 +5,12 @@
       "description": "Fire him instantly!",
       "effects": [
         {
+          "type": "indicator_change",
           "change": -2,
           "indicator": "PartyCohesion"
         },
         {
+          "type": "indicator_change",
           "change": 2,
           "indicator": "StateStability"
         }
@@ -18,14 +20,17 @@
       "description": "So what?",
       "effects": [
         {
+          "type": "indicator_change",
           "change": 2,
           "indicator": "PartyCohesion"
         },
         {
+          "type": "indicator_change",
           "change": -1,
           "indicator": "StateStability"
         },
         {
+          "type": "indicator_change",
           "change": -1,
           "indicator": "PartySupport"
         }
@@ -35,10 +40,12 @@
       "description": "Suspend him and wait for the further news",
       "effects": [
         {
+          "type": "indicator_change",
           "change": -1,
           "indicator": "PartyCohesion"
         },
         {
+          "type": "indicator_change",
           "change": 1,
           "indicator": "StateStability"
         }

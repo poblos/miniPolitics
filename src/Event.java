@@ -1,9 +1,9 @@
 import java.util.List;
 
 public class Event {
-    private String title;
-    private String description;
-    private List<Option> options;
+    private final String title;
+    private final String description;
+    private final List<Option> options;
 
     public Event(String title, String description, List<Option> options) {
         this.title = title;
