@@ -1,6 +1,11 @@
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory;
+import effects.AdvisorDismissal;
+import effects.AdvisorEmployment;
+import effects.Effect;
+import effects.IndicatorChange;
+import jobs.Person;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -12,7 +17,9 @@ public class Test {
         Moshi moshi = new Moshi.Builder()
                 .add(PolymorphicJsonAdapterFactory.of(Effect.class,"type")
                         .withSubtype(IndicatorChange.class, "indicator_change")
-                        .withSubtype(AdvisorEmployment.class, "advisor_employment"))
+                        .withSubtype(AdvisorEmployment.class, "advisor_employment")
+                        .withSubtype(AdvisorDismissal.class, "advisor_dismissal")
+                )
                 .build();
 
         //Adding default events collection

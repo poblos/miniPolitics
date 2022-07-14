@@ -1,5 +1,7 @@
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
+import jobs.Person;
+import jobs.Trait;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +11,7 @@ import java.util.ArrayList;
 
 public class WritingExample {
     public static void main(String[] args) throws IOException {
-        Trait trait = new Trait("Propaganda master");
+        Trait trait = Trait.PropagandaMaster;
         ArrayList<Trait> traits = new ArrayList<>();
         traits.add(trait);
         Moshi moshi = new Moshi.Builder().build();

@@ -1,3 +1,5 @@
+import effects.Effect;
+
 import java.util.List;
 
 public class Option {

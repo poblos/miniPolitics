@@ -1,8 +1,6 @@
 {
   "name": "James Mouton",
   "traits": [
-    {
-      "name": "Propaganda master"
-    }
+    "PropagandaMaster"
   ]
 }
