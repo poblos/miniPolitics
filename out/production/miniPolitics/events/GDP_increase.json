@@ -1,0 +1,26 @@
+{
+  "description": "Approximate GDP growth data has just been published by the National Bank and it's quite encouraging!",
+  "options": [
+    {
+      "description": "It's our credit!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Good, but don't be too optimistic.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "GDP increase"
+}

@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="squareup.moshi" level="project" />
     <orderEntry type="library" name="annotations-13.0" level="application" />
+    <orderEntry type="library" name="squareup.moshi.adapters" level="project" />
   </component>
 </module>
