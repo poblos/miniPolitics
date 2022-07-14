@@ -1,10 +1,13 @@
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory;
-import effects.AdvisorDismissal;
-import effects.AdvisorEmployment;
-import effects.Effect;
-import effects.IndicatorChange;
+import effects.*;
+import events_classes.Condition;
+import events_classes.Event;
+import events_classes.Modifier;
+import events_classes.ModifierCondition;
+import game.FileLoader;
+import game.Game;
 import jobs.Person;
 
 import java.io.IOException;
@@ -19,6 +22,10 @@ public class Test {
                         .withSubtype(IndicatorChange.class, "indicator_change")
                         .withSubtype(AdvisorEmployment.class, "advisor_employment")
                         .withSubtype(AdvisorDismissal.class, "advisor_dismissal")
+                        .withSubtype(ModifierInvocation.class, "modifier_invocation")
+                )
+                .add(PolymorphicJsonAdapterFactory.of(Condition.class,"type")
+                        .withSubtype(ModifierCondition.class, "modifier_condition")
                 )
                 .build();
 
@@ -41,8 +48,19 @@ public class Test {
             Person person = jsonAdapter2.indent("  ").fromJson(json);
             people.add(person);
         }
-        Gra gra = new Gra(events, people);
-        gra.symuluj(20);
+
+        //Adding default modifiers collection
+        ArrayList<Modifier> modifiers= new ArrayList<>();
+        JsonAdapter<Modifier> jsonAdapter3 = moshi.adapter(Modifier.class);
+        pathList = FileLoader.listFiles(Path.of("src/modifiers"));
+        for (Path path : pathList) {
+            String json = Files.readString(path);
+            Modifier modifier = jsonAdapter3.indent("  ").fromJson(json);
+            modifiers.add(modifier);
+        }
+
+        Game game = new Game(events, people, modifiers);
+        game.symuluj(20);
     }
 
 }
