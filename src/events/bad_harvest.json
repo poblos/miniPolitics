@@ -1,0 +1,31 @@
+{
+  "description": "A long drought resulted in this year's harvest being a lot worse than expected. The farmers demand that we help them financially.",
+  "options": [
+    {
+      "description": "They should have taken out an insurance.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "It may cost a bit to help them, but it seems justified.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Bad harvest"
+}
