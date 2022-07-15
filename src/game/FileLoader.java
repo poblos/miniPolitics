@@ -12,7 +12,7 @@ public class FileLoader {
     public static List<Path> listFiles(Path directory) throws IOException {
         List<Path> result = new ArrayList<>();
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory, "*.{json}")) {
-            for (Path entry: stream) {
+            for (Path entry : stream) {
                 result.add(entry);
             }
         } catch (DirectoryIteratorException ex) {

@@ -1,7 +1,5 @@
 package effects;
 
-import effects.Effect;
-
 public class AdvisorEmployment implements Effect {
     @Override
     public String toString() {

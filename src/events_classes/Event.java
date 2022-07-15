@@ -39,16 +39,16 @@ public class Event {
 
     @Override
     public String toString() {
-        return  title + '\n' + description + '\n' + options;
+        return title + '\n' + description + '\n' + options;
     }
 
     public Event adjust(Game game) {
-        ArrayList<Option> newOptions= new ArrayList<>();
-        for(Option option : options) {
+        ArrayList<Option> newOptions = new ArrayList<>();
+        for (Option option : options) {
             if (game.meetsConditions(option)) {
                 newOptions.add(option);
             }
         }
-        return new Event(title, description,newOptions);
+        return new Event(title, description, newOptions);
     }
 }

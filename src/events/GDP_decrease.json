@@ -44,7 +44,12 @@
         }
       ],
       "trigger": {
-        "yes": [],
+        "yes": [
+          {
+            "type": "advisor_condition",
+            "job": "Strategist"
+          }
+        ],
         "no": [
           {
             "type": "modifier_condition",

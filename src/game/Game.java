@@ -4,6 +4,8 @@ import effects.*;
 import events_classes.*;
 import indicators.Indicator;
 import jobs.*;
+import media_classes.Affiliation;
+import media_classes.MediaGroup;
 
 import java.util.*;
 
@@ -16,10 +18,11 @@ public class Game {
     List<Event> events;
     List<Person> people;
     List<Modifier> modifiers;
+    List<MediaGroup> mediaGroups;
     private final transient Random random;
     private final transient Scanner scanner;
 
-    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Modifier> modifiers) {
+    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups) {
         values = new HashMap<>();
         values.put(Indicator.PartyCohesion, 75F);
         values.put(Indicator.StateStability, 75F);
@@ -32,13 +35,15 @@ public class Game {
         this.events = events;
         this.people = people;
         this.modifiers = modifiers;
+        this.mediaGroups = mediaGroups;
     }
 
     public void symuluj(int numberOfRounds) {
         for (int i = 0; i < numberOfRounds; i++) {
-            System.out.println("\nCurrent stats:\n" + values.toString() + "\n");
+            System.out.println("\nCurrent stats:\n" + values.toString());
             System.out.println(employed.toString());
             System.out.println(activeModifiers.toString());
+            System.out.println(mediaGroups.toString()+ "\n");
             Event currentEvent = events.get(random.nextInt(events.size()));
             currentEvent = currentEvent.adjust(this);
             System.out.println(currentEvent.toString());
@@ -67,8 +72,21 @@ public class Game {
                 fireFromJob(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
                 addModifier(((ModifierInvocation) effect).getName());
+            } else if (effect.getClass() == MediaTakeover.class) {
+                takeOverMedia();
             }
+
         }
+    }
+
+    private void takeOverMedia() {
+        MediaGroup mediaGroup = mediaGroups.get(random.nextInt(mediaGroups.size()));
+        int i=0;
+        while (mediaGroup.getAffiliation() == Affiliation.Government && i<10) {
+            mediaGroup = mediaGroups.get(random.nextInt(mediaGroups.size()));
+            i++;
+        }
+        mediaGroup.setAffiliation(Affiliation.Government);
     }
 
     private float includeBonus(float change, Indicator indicator) {
@@ -149,6 +167,19 @@ public class Game {
     private boolean meetsCondition(Condition condition) {
         if (condition.getClass() == ModifierCondition.class) {
             return activeModifiers.containsKey(((ModifierCondition) condition).getName());
+        } else if (condition.getClass() == AdvisorCondition.class) {
+            return employed.containsKey(((AdvisorCondition) condition).getJob());
+        } else if (condition.getClass() == MediaCondition.class) {
+            return hasAffilliated(((MediaCondition) condition).getAffiliation());
+        }
+        return false;
+    }
+
+    private boolean hasAffilliated(Affiliation affiliation) {
+        for(MediaGroup mg : mediaGroups) {
+            if (mg.getAffiliation() == affiliation) {
+                return true;
+            }
         }
         return false;
     }

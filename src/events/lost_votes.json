@@ -1,0 +1,64 @@
+{
+  "description": "Unexpectedly, we've lost a couple of recent votes in the parliament because many of our MP's were absent. In turns out, that some of them don't have any good excuse for missing the session. Anyway, opposition have already used that to hit us with accusations of laziness.",
+  "options": [
+    {
+      "description": "Discipline them!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Fire our whip, that's his job.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Whip"
+        }
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "advisor_condition",
+            "job": "Whip"
+          }
+        ],
+        "no": []
+      }
+    },
+    {
+      "description": "Maybe it's time to introduce some new faces to the public and get rid of the decrepit elderly.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -5,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Lost votes"
+}

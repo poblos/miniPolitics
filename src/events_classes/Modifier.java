@@ -10,9 +10,6 @@ public class Modifier {
 
     @Override
     public String toString() {
-        return "events_classes.Modifier{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return description;
     }
 }
