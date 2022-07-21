@@ -6,6 +6,7 @@ import indicators.Indicator;
 import jobs.*;
 import media_classes.Affiliation;
 import media_classes.MediaGroup;
+import gui.*;
 
 import java.util.*;
 
@@ -22,6 +23,8 @@ public class Game {
     private final transient Random random;
     private final transient Scanner scanner;
 
+    GUI gui;
+
     public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups) {
         values = new HashMap<>();
         values.put(Indicator.PartyCohesion, 75F);
@@ -36,6 +39,7 @@ public class Game {
         this.people = people;
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
+        gui = new GUI(this);
     }
 
     public void symuluj(int numberOfRounds) {
@@ -54,6 +58,7 @@ public class Game {
                 chooseOption(currentEvent, 0);
             }
             round++;
+            gui.updateStats();
         }
     }
 
@@ -182,5 +187,9 @@ public class Game {
             }
         }
         return false;
+    }
+
+    public Float getIndicatorValue(Indicator name) {
+        return values.get(name);
     }
 }
