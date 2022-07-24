@@ -6,8 +6,6 @@ import java.io.File;
 import game.*;
 import indicators.Indicator;
 
-import java.io.FileNotFoundException;
-
 public class IndicatorDisplay extends JLabel{
 
     ImageIcon ikona;

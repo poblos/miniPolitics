@@ -24,6 +24,7 @@ public class Game {
     private final transient Scanner scanner;
 
     GUI gui;
+    EventDisplay okno;
 
     public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups) {
         values = new HashMap<>();
@@ -50,6 +51,7 @@ public class Game {
             System.out.println(mediaGroups.toString()+ "\n");
             Event currentEvent = events.get(random.nextInt(events.size()));
             currentEvent = currentEvent.adjust(this);
+            okno = new EventDisplay(currentEvent, gui);
             System.out.println(currentEvent.toString());
             int option = scanner.nextInt();
             try {
