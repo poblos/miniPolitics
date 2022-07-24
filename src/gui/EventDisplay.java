@@ -9,7 +9,7 @@ public class EventDisplay extends JPanel {
 
     Event wyd;
     String wrapped;
-    JLabel desc = new JLabel();
+    JTextArea desc = new JTextArea();
     JLabel title = new JLabel();
 
     public EventDisplay(Event event, GUI gui) {

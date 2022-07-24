@@ -52,7 +52,7 @@ public class Game {
             Event currentEvent = events.get(random.nextInt(events.size()));
             currentEvent = currentEvent.adjust(this);
             okno = new EventDisplay(currentEvent, gui);
-            System.out.println(currentEvent.toString());
+            System.out.println(currentEvent);
             int option = scanner.nextInt();
             try {
                 chooseOption(currentEvent, option);
