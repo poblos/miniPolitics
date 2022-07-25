@@ -44,6 +44,7 @@ public class Game {
     }
 
     public void symuluj(int numberOfRounds) {
+        gui.updateStats();
         for (int i = 0; i < numberOfRounds; i++) {
             System.out.println("\nCurrent stats:\n" + values.toString());
             System.out.println(employed.toString());
@@ -51,8 +52,9 @@ public class Game {
             System.out.println(mediaGroups.toString()+ "\n");
             Event currentEvent = events.get(random.nextInt(events.size()));
             currentEvent = currentEvent.adjust(this);
-            okno = new EventDisplay(currentEvent, gui);
             System.out.println(currentEvent);
+            gui.newEvent(currentEvent);
+
             int option = scanner.nextInt();
             try {
                 chooseOption(currentEvent, option);
