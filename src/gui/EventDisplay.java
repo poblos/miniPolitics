@@ -1,55 +1,45 @@
 package gui;
 
 import events_classes.Event;
+import events_classes.Option;
+import game.Game;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class EventDisplay extends JPanel {
 
-    Event wyd;
-    String wrapped;
-    JTextArea desc = new JTextArea();
-    JLabel title = new JLabel();
-
-    public EventDisplay(Event event, GUI gui) {
-        this.wyd = event;
-        wrapped = wrapText(event.getDescription());
-        this.setBounds(0, 360, 640, 360);
-        this.setAlignmentX(LEFT_ALIGNMENT);
-        this.setAlignmentY(BOTTOM_ALIGNMENT);
+    public EventDisplay(Event event, Game game) {
+        this.setBounds(320, 180, 640, 360);
+        this.setAlignmentX(CENTER_ALIGNMENT);
+        this.setAlignmentY(TOP_ALIGNMENT);
         this.setBackground(Color.BLUE);
 
+        // Title setup
+        JLabel title = new JLabel();
         title.setText(event.getTitle());
-        title.setAlignmentX(CENTER_ALIGNMENT);
-        title.setAlignmentY(TOP_ALIGNMENT);
+        title.setBounds(320,180,640,180);
         title.setFont(new Font("Serif", Font.BOLD, 28));
-
-        desc.setText(this.wrapped);
-        desc.setAlignmentX(LEFT_ALIGNMENT);
-        desc.setFont(new Font("Serif", Font.BOLD, 16));
-
         this.add(title);
+
+        // Desc setup
+        JTextArea desc = new JTextArea();
+        desc.setText(event.getDescription());
+        desc.setEditable(false);
+        desc.setLineWrap(true);
+        desc.setWrapStyleWord(true);
+        desc.setBounds(320,360,640,180);
+        desc.setFont(new Font("Serif", Font.BOLD, 16));
         this.add(desc);
 
-        gui.add(this);
-        this.setVisible(true);
+        //Jensons setup
+        for (Option option : event.getOptions()) {
+            JButton button = new JButton();
+            button.setText(option.getDescription());
+            button.setBounds(320,450,640,180);
+            button.addActionListener(game);
+            this.add(button);
+        }
     }
 
-    private String wrapText(String text) {
-        char[] litery;
-        int count = 0;
-        litery = text.toCharArray();
-        for(int i = 0; i < litery.length; i++) {
-            if(count >= 36) {
-                while(litery[i]!=' ') {
-                    i--;
-                }
-                count = 0;
-                litery[i] = '\n';
-            }
-            count++;
-        }
-        return String.valueOf(litery);
-    }
 }

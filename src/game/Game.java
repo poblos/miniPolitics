@@ -8,9 +8,11 @@ import media_classes.Affiliation;
 import media_classes.MediaGroup;
 import gui.*;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 
-public class Game {
+public class Game implements ActionListener {
     Map<Indicator, Float> values;
     Map<Job, Person> employed;
     Map<String, Modifier> activeModifiers;
@@ -44,6 +46,7 @@ public class Game {
     }
 
     public void symuluj(int numberOfRounds) {
+        gui.updateStats();
         for (int i = 0; i < numberOfRounds; i++) {
             System.out.println("\nCurrent stats:\n" + values.toString());
             System.out.println(employed.toString());
@@ -51,8 +54,9 @@ public class Game {
             System.out.println(mediaGroups.toString()+ "\n");
             Event currentEvent = events.get(random.nextInt(events.size()));
             currentEvent = currentEvent.adjust(this);
-            okno = new EventDisplay(currentEvent, gui);
             System.out.println(currentEvent);
+            gui.newEvent(currentEvent,this);
+
             int option = scanner.nextInt();
             try {
                 chooseOption(currentEvent, option);
@@ -193,5 +197,10 @@ public class Game {
 
     public Float getIndicatorValue(Indicator name) {
         return values.get(name);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("siema");
     }
 }
