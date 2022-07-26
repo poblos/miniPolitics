@@ -1,0 +1,40 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "War with corruption - another case"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "I have good information for you. The corrupted judge has been convicted and according to our internal investigation his accusations seems to be false.",
+  "options": [
+    {
+      "description": "Great!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "War with corruption - another case"
+        }
+      ]
+    }
+  ],
+  "title": "Court scandal - another case"
+}

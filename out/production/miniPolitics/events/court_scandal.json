@@ -4,6 +4,14 @@
       {
         "type": "modifier_condition",
         "name": "War with corruption - preparations"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "War with corruption - shots fired"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "War with corruption - another case"
       }
     ],
     "yes": [
