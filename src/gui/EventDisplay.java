@@ -33,12 +33,14 @@ public class EventDisplay extends JPanel {
         this.add(desc);
 
         //Jensons setup
+        int i = 0;
         for (Option option : event.getOptions()) {
-            JButton button = new JButton();
+            EventButton button = new EventButton(i);
             button.setText(option.getDescription());
             button.setBounds(320,450,640,180);
             button.addActionListener(game);
             this.add(button);
+            i++;
         }
     }
 

@@ -71,7 +71,7 @@ public class Test {
         }
 
         Game game = new Game(events, people, modifiers, medias);
-        game.symuluj(20);
+        game.windowSimulate(20);
     }
 
 }

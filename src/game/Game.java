@@ -18,6 +18,7 @@ public class Game implements ActionListener {
     Map<String, Modifier> activeModifiers;
 
     int round;
+    Event currentEvent;
     List<Event> events;
     List<Person> people;
     List<Modifier> modifiers;
@@ -42,20 +43,17 @@ public class Game implements ActionListener {
         this.people = people;
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
-        gui = new GUI(this);
     }
-
-    public void symuluj(int numberOfRounds) {
-        gui.updateStats();
+    public void textSimulate(int numberOfRounds) {
         for (int i = 0; i < numberOfRounds; i++) {
             System.out.println("\nCurrent stats:\n" + values.toString());
             System.out.println(employed.toString());
             System.out.println(activeModifiers.toString());
             System.out.println(mediaGroups.toString()+ "\n");
+
             Event currentEvent = events.get(random.nextInt(events.size()));
             currentEvent = currentEvent.adjust(this);
             System.out.println(currentEvent);
-            gui.newEvent(currentEvent,this);
 
             int option = scanner.nextInt();
             try {
@@ -64,8 +62,14 @@ public class Game implements ActionListener {
                 chooseOption(currentEvent, 0);
             }
             round++;
-            gui.updateStats();
         }
+    }
+    public void windowSimulate(int numberOfRounds) {
+        gui = new GUI(this);
+        gui.updateStats();
+        currentEvent = events.get(random.nextInt(events.size()));
+        currentEvent = currentEvent.adjust(this);
+        gui.newEvent(currentEvent,this);
     }
 
     private void chooseOption(Event currentEvent, int option) {
@@ -201,6 +205,14 @@ public class Game implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("siema");
+        if (e.getSource().getClass() == EventButton.class) {
+            chooseOption(currentEvent,((EventButton) e.getSource()).getId());
+        }
+        round++;
+        gui.updateStats();
+        currentEvent = events.get(random.nextInt(events.size()));
+        currentEvent = currentEvent.adjust(this);
+        gui.newEvent(currentEvent,this);
+
     }
 }
