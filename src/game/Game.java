@@ -72,7 +72,8 @@ public class Game implements ActionListener {
         gui.newEvent(currentEvent,this);
     }
 
-    private void chooseOption(Event currentEvent, int option) {
+    // Returns true if the additional gui menu is displayed
+    private boolean chooseOption(Event currentEvent, int option) {
         List<Effect> effects = currentEvent.getOptions().get(option).getEffects();
         for (Effect effect : effects) {
             if (effect.getClass() == IndicatorChange.class) {
@@ -82,7 +83,13 @@ public class Game implements ActionListener {
                 values.put(indicator, change + values.get(indicator));
             } else if (effect.getClass() == AdvisorEmployment.class) {
                 Person newPerson = people.get(random.nextInt(people.size()));
-                chooseJob(newPerson);
+                if (gui==null) {
+                    chooseJob(newPerson);
+                }
+                else {
+                    gui.jobWindow(newPerson);
+                    return true;
+                }
             } else if (effect.getClass() == AdvisorDismissal.class) {
                 fireFromJob(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
@@ -92,6 +99,7 @@ public class Game implements ActionListener {
             }
 
         }
+        return false;
     }
 
     private void takeOverMedia() {
@@ -205,8 +213,15 @@ public class Game implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        boolean displayNext;
         if (e.getSource().getClass() == EventButton.class) {
-            chooseOption(currentEvent,((EventButton) e.getSource()).getId());
+            displayNext = chooseOption(currentEvent,((EventButton) e.getSource()).getId());
+            if (displayNext) {
+                return;
+            }
+        }
+        else if (e.getSource().getClass() == JobButton.class) {
+            employed.put(Job.values()[((JobButton) e.getSource()).getId()],  ((JobButton) e.getSource()).getPerson());
         }
         round++;
         gui.updateStats();

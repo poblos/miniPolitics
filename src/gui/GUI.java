@@ -3,20 +3,21 @@ package gui;
 import events_classes.Event;
 import indicators.Indicator;
 import game.Game;
+import jobs.Person;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class GUI extends JFrame{
+public class GUI extends JFrame {
 
-    public EventDisplay eventDisplay;
+    public JPanel currentDisplay;
     IndicatorDisplay p_cohesion = new IndicatorDisplay(Indicator.PartyCohesion);
     IndicatorDisplay p_support = new IndicatorDisplay(Indicator.PartySupport);
     IndicatorDisplay s_stability = new IndicatorDisplay(Indicator.StateStability);
 
     private final Game game;
 
-    public GUI(Game gra){
+    public GUI(Game gra) {
 
         this.game = gra;
 
@@ -31,9 +32,8 @@ public class GUI extends JFrame{
         this.add(createIndicators());
         this.add(createBackground());
         try {
-            this.add(eventDisplay);
-        }
-        catch (Exception ignored) {
+            this.add(currentDisplay);
+        } catch (Exception ignored) {
 
         }
         this.setVisible(true);
@@ -48,12 +48,12 @@ public class GUI extends JFrame{
 
     private JPanel createBackground() {
         JPanel background = new JPanel();
-        background.setBounds(0,0,1280,720);
+        background.setBounds(0, 0, 1280, 720);
         background.setBackground(Color.red);
         background.setLayout(null);
 
         JLabel bgLabel = new JLabel();
-        bgLabel.setBounds(0,0,1280, 720);
+        bgLabel.setBounds(0, 0, 1280, 720);
         ImageIcon bgIcon = new ImageIcon("src/gui/background.png");
         bgLabel.setIcon(bgIcon);
         background.add(bgLabel);
@@ -76,13 +76,19 @@ public class GUI extends JFrame{
 
     public void newEvent(Event event, Game game) {
         try {
-            remove(eventDisplay);
-        }
-         catch (Exception ignored) {
+            remove(currentDisplay);
+        } catch (Exception ignored) {
 
-         }
-        this.eventDisplay = new EventDisplay(event,game);
-        add(eventDisplay);
+        }
+        this.currentDisplay = new EventDisplay(event, game);
+        add(currentDisplay);
+        setVisible(true);
+    }
+
+    public void jobWindow(Person person) {
+        remove(currentDisplay);
+        this.currentDisplay = new JobChoiceDisplay(person, game);
+        add(currentDisplay);
         setVisible(true);
     }
 }

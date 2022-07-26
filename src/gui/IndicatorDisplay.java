@@ -28,6 +28,6 @@ public class IndicatorDisplay extends JLabel{
     }
 
     public void update(Game game) {
-        this.setText(this.name + ": " + game.getIndicatorValue(ind));
+        this.setText(this.name + ": " + Math.floor(game.getIndicatorValue(ind)*100)/100);
     }
 }
