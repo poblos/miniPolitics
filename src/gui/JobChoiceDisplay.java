@@ -12,7 +12,6 @@ public class JobChoiceDisplay extends JPanel {
         this.setBounds(320, 180, 640, 360);
         this.setAlignmentX(CENTER_ALIGNMENT);
         this.setAlignmentY(TOP_ALIGNMENT);
-        this.setBackground(Color.BLUE);
 
         // Title setup
         JLabel title = new JLabel();

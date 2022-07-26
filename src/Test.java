@@ -21,6 +21,7 @@ public class Test {
                         .withSubtype(AdvisorEmployment.class, "advisor_employment")
                         .withSubtype(AdvisorDismissal.class, "advisor_dismissal")
                         .withSubtype(ModifierInvocation.class, "modifier_invocation")
+                        .withSubtype(ModifierRemoval.class, "modifier_removal")
                         .withSubtype(MediaTakeover.class, "media_takeover")
                 )
                 .add(PolymorphicJsonAdapterFactory.of(Condition.class, "type")

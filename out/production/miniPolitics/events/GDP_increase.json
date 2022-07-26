@@ -13,7 +13,18 @@
           "type": "modifier_invocation",
           "name": "Economic Growth Propaganda"
         }
-      ]
+      ],
+      "trigger": {
+        "yes": [
+
+        ],
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Economic Growth Propaganda"
+          }
+        ]
+      }
     },
     {
       "description": "Good, but don't be too optimistic.",
@@ -22,8 +33,37 @@
           "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Economic Growth Propaganda"
         }
       ]
+    },
+    {
+      "description": "Let the propaganda continue.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "Economic Growth Propaganda"
+          }
+        ],
+        "no": [
+        ]
+      }
     }
   ],
   "title": "GDP increase"

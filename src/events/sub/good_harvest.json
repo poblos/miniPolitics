@@ -23,6 +23,10 @@
           "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": ""
         }
       ]
     }

@@ -70,6 +70,10 @@
           "type": "indicator_change",
           "change": -1,
           "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Economic Growth Propaganda"
         }
       ],
       "trigger": {

@@ -2,6 +2,7 @@ package events_classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Trigger {
     List<Condition> yes;

@@ -1,4 +1,14 @@
 {
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "War with corruption - preparations"
+      }
+    ],
+    "yes": [
+    ]
+  },
   "description": "A recent court process has resulted in the judge acquitting a criminal. The press suspects said criminal was within close friends circle of the judge, as the case seemed to have been going in the prosecution's favor. Also, the judge has a history with our Party casting a shadow on our reputation.",
   "options": [
     {
@@ -29,6 +39,21 @@
           "change": -3,
           "indicator": "PartyCohesion"
         }
+      ]
+    },
+    {
+      "description": "This has to change! We need to investigate further and start preparing to crack down on corruption.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -5,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "War with corruption - preparations"
+        }
+
       ]
     }
   ],

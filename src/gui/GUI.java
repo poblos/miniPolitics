@@ -28,14 +28,15 @@ public class GUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
 
-        //Adding componenents
+        //Adding components
         this.add(createIndicators());
-        this.add(createBackground());
+
         try {
             this.add(currentDisplay);
         } catch (Exception ignored) {
 
         }
+        this.add(createBackground());
         this.setVisible(true);
         this.updateStats();
     }
@@ -49,7 +50,6 @@ public class GUI extends JFrame {
     private JPanel createBackground() {
         JPanel background = new JPanel();
         background.setBounds(0, 0, 1280, 720);
-        background.setBackground(Color.red);
         background.setLayout(null);
 
         JLabel bgLabel = new JLabel();
@@ -69,7 +69,6 @@ public class GUI extends JFrame {
         indicators.add(p_cohesion);
         indicators.add(p_support);
         indicators.add(s_stability);
-        indicators.setOpaque(true);
         return indicators;
     }
 

@@ -18,11 +18,11 @@ public class Event {
         this.trigger = new Trigger();
     }
 
-    public Event(String title, String description, List<Option> options, List<Condition> yesConditions, List<Condition> noConditions) {
+    public Event(String title, String description, List<Option> options, Trigger trigger) {
         this.title = title;
         this.description = description;
         this.options = options;
-        this.trigger = new Trigger(yesConditions, noConditions);
+        this.trigger = trigger;
     }
 
     public String getTitle() {
@@ -50,5 +50,22 @@ public class Event {
             }
         }
         return new Event(title, description, newOptions);
+    }
+
+    public boolean isEligible(Game game) {
+        if (trigger == null) {
+            return true;
+        }
+        for (Condition condition : trigger.getYes()) {
+            if (!game.meetsCondition(condition)) {
+                return false;
+            }
+        }
+        for (Condition condition : trigger.getNo()) {
+            if (game.meetsCondition(condition)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

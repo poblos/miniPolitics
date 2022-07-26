@@ -27,13 +27,12 @@ public class Game implements ActionListener {
     private final transient Scanner scanner;
 
     GUI gui;
-    EventDisplay okno;
 
     public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups) {
         values = new HashMap<>();
-        values.put(Indicator.PartyCohesion, 75F);
-        values.put(Indicator.StateStability, 75F);
-        values.put(Indicator.PartySupport, 75F);
+        values.put(Indicator.PartyCohesion, 70F);
+        values.put(Indicator.StateStability, 35F);
+        values.put(Indicator.PartySupport, 44F);
         this.round = 0;
         this.random = new Random();
         this.scanner = new Scanner(System.in);
@@ -67,9 +66,17 @@ public class Game implements ActionListener {
     public void windowSimulate(int numberOfRounds) {
         gui = new GUI(this);
         gui.updateStats();
-        currentEvent = events.get(random.nextInt(events.size()));
-        currentEvent = currentEvent.adjust(this);
+        currentEvent = chooseEvent();
         gui.newEvent(currentEvent,this);
+    }
+
+    private Event chooseEvent() {
+        currentEvent = events.get(random.nextInt(events.size()));
+        while(!currentEvent.isEligible(this)) {
+            currentEvent = events.get(random.nextInt(events.size()));
+        }
+
+        return(currentEvent.adjust(this));
     }
 
     // Returns true if the additional gui menu is displayed
@@ -94,6 +101,8 @@ public class Game implements ActionListener {
                 fireFromJob(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
                 addModifier(((ModifierInvocation) effect).getName());
+            } else if (effect.getClass() == ModifierRemoval.class) {
+                removeModifier(((ModifierRemoval) effect).getName());
             } else if (effect.getClass() == MediaTakeover.class) {
                 takeOverMedia();
             }
@@ -170,6 +179,14 @@ public class Game implements ActionListener {
         }
     }
 
+    private void removeModifier(String name) {
+        for (Modifier modifier : modifiers) {
+            if (Objects.equals(modifier.getName(), name)) {
+                activeModifiers.remove(name);
+            }
+        }
+    }
+
     public boolean meetsConditions(Option option) {
         if (option.getTrigger() == null) {
             return true;
@@ -187,7 +204,7 @@ public class Game implements ActionListener {
         return true;
     }
 
-    private boolean meetsCondition(Condition condition) {
+    public boolean meetsCondition(Condition condition) {
         if (condition.getClass() == ModifierCondition.class) {
             return activeModifiers.containsKey(((ModifierCondition) condition).getName());
         } else if (condition.getClass() == AdvisorCondition.class) {
@@ -225,8 +242,7 @@ public class Game implements ActionListener {
         }
         round++;
         gui.updateStats();
-        currentEvent = events.get(random.nextInt(events.size()));
-        currentEvent = currentEvent.adjust(this);
+        currentEvent = chooseEvent();
         gui.newEvent(currentEvent,this);
 
     }
