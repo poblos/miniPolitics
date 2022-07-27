@@ -79,7 +79,7 @@ public class Game implements ActionListener {
         return(currentEvent.adjust(this));
     }
 
-    // Returns true if the additional gui menu is displayed
+    // Returns true if the additional gui menu needs to be displayed
     private boolean chooseOption(Event currentEvent, int option) {
         List<Effect> effects = currentEvent.getOptions().get(option).getEffects();
         for (Effect effect : effects) {

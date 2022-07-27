@@ -1,0 +1,60 @@
+{
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Military cooperation with Foreberg"
+      }
+    ],
+    "yes": [
+    ]
+  },
+  "description": "Our old KF-15 fighters will no longer be useful in a few years. A pressure from military arise and we should consider options to replace them. Thankfully, there are a couple of options available, namely importing Matheuchelles' fighters which are a proven quality, a joint venture with Foreberg to design and produce our own new KF-17 or just producing more KF-16.",
+  "options": [
+    {
+      "description": "Development of our arms industry is the most important - let's design KF-17.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Military cooperation with Foreberg"
+        }
+      ]
+    },
+    {
+      "description": "Why should we waste time and money while we can get Matheuchelles' fighters?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Producing KF-16 will be the cheapest and most sensible option. Quantity is more important.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Military deal"
+}
