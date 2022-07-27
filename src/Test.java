@@ -28,6 +28,7 @@ public class Test {
                         .withSubtype(ModifierCondition.class, "modifier_condition")
                         .withSubtype(AdvisorCondition.class, "advisor_condition")
                         .withSubtype(MediaCondition.class, "media_condition")
+                        .withSubtype(AdvisorSkillCondition.class, "trait_condition")
                 )
                 .build();
 

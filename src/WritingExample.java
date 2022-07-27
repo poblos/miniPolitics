@@ -18,10 +18,10 @@ public class WritingExample {
         Person person = new Person("James Mouton",traits);
         JsonAdapter<Person> jsonAdapter = moshi.adapter(Person.class);
         String json = jsonAdapter.indent("  ").toJson(person);
-        FileWriter writer = new FileWriter("src/people/good_propagandist.json");
+        FileWriter writer = new FileWriter("src/people/good_propagandist2.json");
         writer.append(json);
         writer.close();
-        Path filePath = Path.of("src/people/good_propagandist.json");
+        Path filePath = Path.of("src/people/good_propagandist2.json");
         String json2 = Files.readString(filePath);
         Person person2 = jsonAdapter.indent("  ").fromJson(json2);
     }

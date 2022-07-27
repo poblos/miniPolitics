@@ -1,4 +1,15 @@
 {
+  "trigger": {
+    "yes": [
+    ],
+    "no": [
+      {
+        "type": "trait_condition",
+        "job": "Strategist",
+        "trait": "SkillfulEconomist"
+      }
+    ]
+  },
   "description": "Approximate GDP growth data has just been published by the National Bank and it's not as good as we expected it to be.",
   "options": [
     {

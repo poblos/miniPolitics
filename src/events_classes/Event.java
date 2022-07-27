@@ -10,6 +10,7 @@ public class Event {
     private final String description;
     private final List<Option> options;
     private final Trigger trigger;
+    private int probability;
 
     public Event(String title, String description, List<Option> options) {
         this.title = title;
@@ -25,6 +26,15 @@ public class Event {
         this.trigger = trigger;
     }
 
+
+    public Event(String title, String description, List<Option> options, Trigger trigger, int probability) {
+        this.title = title;
+        this.description = description;
+        this.options = options;
+        this.trigger = trigger;
+        this.probability = probability;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -37,9 +47,12 @@ public class Event {
         return options;
     }
 
-    @Override
-    public String toString() {
-        return title + '\n' + description + '\n' + options;
+    public int getProbability() {
+        return probability;
+    }
+
+    public void setProbability(int probability) {
+        this.probability = probability;
     }
 
     public Event adjust(Game game) {
@@ -67,5 +80,10 @@ public class Event {
             }
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return title + '\n' + description + '\n' + options;
     }
 }

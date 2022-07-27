@@ -19,6 +19,7 @@ public class Game implements ActionListener {
 
     int round;
     Event currentEvent;
+    int eventProbabilitySum;
     List<Event> events;
     List<Person> people;
     List<Modifier> modifiers;
@@ -42,6 +43,13 @@ public class Game implements ActionListener {
         this.people = people;
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
+        for (Event e : events) {
+            if(e.getProbability() == 0) {
+                e.setProbability(50);
+            }
+            this.eventProbabilitySum += e.getProbability();
+        }
+
     }
     public void textSimulate(int numberOfRounds) {
         for (int i = 0; i < numberOfRounds; i++) {
@@ -71,9 +79,26 @@ public class Game implements ActionListener {
     }
 
     private Event chooseEvent() {
-        currentEvent = events.get(random.nextInt(events.size()));
+        System.out.println(eventProbabilitySum);
+        int draw = random.nextInt(eventProbabilitySum);
+        int currentSum = 0;
+        for (Event e: events) {
+            currentSum+=e.getProbability();
+            if (currentSum > draw) {
+                currentEvent = e;
+                break;
+            }
+        }
         while(!currentEvent.isEligible(this)) {
-            currentEvent = events.get(random.nextInt(events.size()));
+            draw = random.nextInt(eventProbabilitySum);
+            currentSum = 0;
+            for (Event e: events) {
+                currentSum+=e.getProbability();
+                if (currentSum > draw) {
+                    currentEvent = e;
+                    break;
+                }
+            }
         }
 
         return(currentEvent.adjust(this));
@@ -211,6 +236,10 @@ public class Game implements ActionListener {
             return employed.containsKey(((AdvisorCondition) condition).getJob());
         } else if (condition.getClass() == MediaCondition.class) {
             return hasAffilliated(((MediaCondition) condition).getAffiliation());
+        } else if (condition.getClass() == AdvisorSkillCondition.class) {
+            Job job = ((AdvisorSkillCondition) condition).getJob();
+            Trait trait = ((AdvisorSkillCondition) condition).getTrait();
+            return employed.containsKey(job) && employed.get(job).getTraits().contains(trait);
         }
         return false;
     }
