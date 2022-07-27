@@ -79,7 +79,6 @@ public class Game implements ActionListener {
     }
 
     private Event chooseEvent() {
-        System.out.println(eventProbabilitySum);
         int draw = random.nextInt(eventProbabilitySum);
         int currentSum = 0;
         for (Event e: events) {
