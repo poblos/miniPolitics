@@ -27,7 +27,7 @@
         },
         {
           "type": "modifier_invocation",
-          "name": "Military cooperation with Foreberg"
+          "name": "Military cooperation with Foreberg - start"
         }
       ]
     },
@@ -36,8 +36,12 @@
       "effects": [
         {
           "type": "indicator_change",
-          "change": 3,
+          "change": 2,
           "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Matheuchelles' military import."
         }
       ]
     },

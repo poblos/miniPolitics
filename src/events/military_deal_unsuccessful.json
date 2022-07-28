@@ -1,0 +1,58 @@
+{
+  "probability": 30,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Military cooperation with Foreberg - start"
+      }
+    ]
+  },
+  "description": "Our joint venture with Foreberg is not too successful so far. Although the production in Ehr Steel Plant has started, the first fighters are really unreliable. Pilots that tested the machines say that they would rather fly the old KF-15.",
+  "options": [
+    {
+      "description": "Stop the project and order Matheuchelles' fighters.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Military cooperation with Foreberg - start"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Matheuchelles' military import."
+        }
+      ]
+    },
+    {
+      "description": "The first pancake is always spoiled. Give them some time.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Military cooperation with Foreberg - initial failure"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Military cooperation with Foreberg - start"
+        }
+      ]
+    }
+  ],
+  "title": "Military deal unsuccessful"
+}

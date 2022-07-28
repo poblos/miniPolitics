@@ -1,11 +1,12 @@
 {
+  "probability": 60,
   "trigger": {
     "no": [
     ],
     "yes": [
       {
         "type": "modifier_condition",
-        "name": "Military cooperation with Foreberg"
+        "name": "Military cooperation with Foreberg - start"
       }
     ]
   },
@@ -21,7 +22,7 @@
         },
         {
           "type": "indicator_change",
-          "change": 2,
+          "change": 3,
           "indicator": "StateStability"
         }
       ]

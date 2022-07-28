@@ -1,0 +1,36 @@
+{
+  "probability": 30,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Matheuchelles' military import."
+      }
+    ]
+  },
+  "description": "The first 10 of ordered fighters arrived on Ianai military airport. Our elite pilots are pleased with the fact that they can finally test fifth generation fighters. When the order will be completed, it will surely increase our defence capabilities.",
+  "options": [
+    {
+      "description": "That's a great news!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Matheuchelles' military import."
+        }
+      ]
+    }
+  ],
+  "title": "Matheushelles' fighters arrived"
+}
