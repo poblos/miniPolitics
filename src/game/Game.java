@@ -31,7 +31,7 @@ public class Game implements ActionListener {
 
     public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups) {
         values = new HashMap<>();
-        values.put(Indicator.PartyCohesion, 70F);
+        values.put(Indicator.PartyCohesion, 40F);
         values.put(Indicator.StateStability, 35F);
         values.put(Indicator.PartySupport, 44F);
         this.round = 0;
@@ -236,9 +236,19 @@ public class Game implements ActionListener {
         } else if (condition.getClass() == MediaCondition.class) {
             return hasAffilliated(((MediaCondition) condition).getAffiliation());
         } else if (condition.getClass() == AdvisorSkillCondition.class) {
-            Job job = ((AdvisorSkillCondition) condition).getJob();
-            Trait trait = ((AdvisorSkillCondition) condition).getTrait();
+            Job job = ((AdvisorSkillCondition) condition).job();
+            Trait trait = ((AdvisorSkillCondition) condition).trait();
             return employed.containsKey(job) && employed.get(job).getTraits().contains(trait);
+        } else if (condition.getClass() == IndicatorCondition.class) {
+            Indicator indicator = ((IndicatorCondition) condition).getIndicator();
+            IndicatorRelation relation = ((IndicatorCondition) condition).getRelation();
+            int value = ((IndicatorCondition) condition).getValue();
+            if (relation == IndicatorRelation.Higher) {
+                return this.getIndicatorValue(indicator) > value;
+            }
+            else {
+                return this.getIndicatorValue(indicator) < value;
+            }
         }
         return false;
     }

@@ -1,0 +1,17 @@
+{
+  "probability": 10,
+  "description": "It seems that it was a good choice not to forbid children to use those new roller blades. As they became even more popular, roller blades racing started and guess what? One of our young citizens became a world champion yesterday!",
+  "options": [
+    {
+      "description": "What a news!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Master of driving electric roller blades"
+}
