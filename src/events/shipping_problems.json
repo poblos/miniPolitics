@@ -1,0 +1,46 @@
+{
+  "probability": 30,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Graonian Relations Hampered"
+      }
+    ]
+  },
+  "description": "Our shipping companies in Graonia experience problems as more frequent inspections are conducted by customs officials. Our ambassador suggest that it is revenge for some unfriendly actions we have taken against Graonia. ",
+  "options": [
+    {
+      "description": "An eye for an eye. Their companies won't have easy life either.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "We can't afford that. Try to ease the tensions.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Graonian Relations Hampered"
+        }
+      ]
+    }
+  ],
+  "title": "Shipping problems in Graonia"
+}

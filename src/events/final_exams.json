@@ -7,7 +7,7 @@
       "effects": [
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -1,
           "indicator": "StateStability"
         },
         {
@@ -22,8 +22,13 @@
       "effects": [
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -3,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
         }
       ]
     }
