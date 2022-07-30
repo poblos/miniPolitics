@@ -1,0 +1,64 @@
+{
+  "probability": 40,
+  "description": "One of the professors at the University of Kachak is known for his sympathy towards opposition. We were aware of that, but he gave us the reason to suspend him as he criticised our economic policy during official lectures.",
+  "options": [
+    {
+      "description": "That's called freedom of speech.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "He can't demoralise our youth anymore.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Strategist",
+            "trait": "SkillfulEconomist"
+          },
+          {
+            "type": "trait_condition",
+            "job": "Strategist",
+            "trait": "AcademicHeritage"
+          },
+          {
+            "type": "media_condition",
+            "affiliation": "Neutral"
+          }
+        ]
+      },
+      "description": "We are lucky to have economist of academic heritage in our party too, let's setup a debate on the neutral ground.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Economic Debate"
+        }
+      ]
+    }
+  ],
+  "title": "Naughty professor"
+}

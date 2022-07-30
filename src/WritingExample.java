@@ -15,7 +15,7 @@ public class WritingExample {
         ArrayList<Trait> traits = new ArrayList<>();
         traits.add(trait);
         Moshi moshi = new Moshi.Builder().build();
-        Person person = new Person("James Mouton",traits);
+        Person person = new Person("James Mouton",traits, 1);
         JsonAdapter<Person> jsonAdapter = moshi.adapter(Person.class);
         String json = jsonAdapter.indent("  ").toJson(person);
         FileWriter writer = new FileWriter("src/people/good_propagandist2.json");

@@ -4,5 +4,8 @@ public enum Trait {
     PropagandaMaster,
     IronFist,
     Statesman,
-    SkillfulEconomist
+    SkillfulEconomist,
+    Recruiter,
+    MediaExpert,
+    AcademicHeritage
 }

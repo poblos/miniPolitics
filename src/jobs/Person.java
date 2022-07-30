@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Person {
+    private final int id;
     String name;
     List<Trait> traits;
 
@@ -17,14 +18,14 @@ public class Person {
         return traits;
     }
 
-    public Person(String name, List<Trait> traits) {
+    public Person(String name, List<Trait> traits, int id) {
         this.name = name;
         this.traits = traits;
+        this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return name + traits;
+    public int getId() {
+        return id;
     }
 
     public boolean hasTrait(Trait trait) {
@@ -35,4 +36,11 @@ public class Person {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return name + traits;
+    }
+
+
 }

@@ -18,7 +18,9 @@ public class Test {
         Moshi moshi = new Moshi.Builder()
                 .add(PolymorphicJsonAdapterFactory.of(Effect.class, "type")
                         .withSubtype(IndicatorChange.class, "indicator_change")
+                        .withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment")
                         .withSubtype(AdvisorEmployment.class, "advisor_employment")
+                        .withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal")
                         .withSubtype(AdvisorDismissal.class, "advisor_dismissal")
                         .withSubtype(ModifierInvocation.class, "modifier_invocation")
                         .withSubtype(ModifierRemoval.class, "modifier_removal")
@@ -30,6 +32,7 @@ public class Test {
                         .withSubtype(MediaCondition.class, "media_condition")
                         .withSubtype(AdvisorSkillCondition.class, "trait_condition")
                         .withSubtype(IndicatorCondition.class, "indicator_condition")
+                        .withSubtype(SomeAdvisorCondition.class, "some_advisor_condition")
                 )
                 .build();
 
@@ -42,6 +45,8 @@ public class Test {
             Event event = jsonAdapter.indent("  ").fromJson(json);
             events.add(event);
         }
+
+        System.out.println("Number of loaded events: " + events.size());
 
         //Adding default people collection
         ArrayList<Person> people = new ArrayList<>();

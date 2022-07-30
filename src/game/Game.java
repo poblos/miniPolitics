@@ -21,7 +21,7 @@ public class Game implements ActionListener {
     Event currentEvent;
     int eventProbabilitySum;
     List<Event> events;
-    List<Person> people;
+    Map<Integer, Person> people;
     List<Modifier> modifiers;
     List<MediaGroup> mediaGroups;
     private final transient Random random;
@@ -40,23 +40,27 @@ public class Game implements ActionListener {
         this.employed = new HashMap<>();
         this.activeModifiers = new HashMap<>();
         this.events = events;
-        this.people = people;
+        this.people = new HashMap<>();
+        for (Person p : people) {
+            this.people.put(p.getId(), p);
+        }
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
         for (Event e : events) {
-            if(e.getProbability() == 0) {
+            if (e.getProbability() == 0) {
                 e.setProbability(50);
             }
             this.eventProbabilitySum += e.getProbability();
         }
 
     }
+
     public void textSimulate(int numberOfRounds) {
         for (int i = 0; i < numberOfRounds; i++) {
             System.out.println("\nCurrent stats:\n" + values.toString());
             System.out.println(employed.toString());
             System.out.println(activeModifiers.toString());
-            System.out.println(mediaGroups.toString()+ "\n");
+            System.out.println(mediaGroups.toString() + "\n");
 
             Event currentEvent = events.get(random.nextInt(events.size()));
             currentEvent = currentEvent.adjust(this);
@@ -71,36 +75,39 @@ public class Game implements ActionListener {
             round++;
         }
     }
+
     public void windowSimulate(int numberOfRounds) {
         gui = new GUI(this);
         gui.updateStats();
         currentEvent = chooseEvent();
-        gui.newEvent(currentEvent,this);
+        gui.newEvent(currentEvent, this);
     }
 
     private Event chooseEvent() {
         int draw = random.nextInt(eventProbabilitySum);
         int currentSum = 0;
-        for (Event e: events) {
-            currentSum+=e.getProbability();
+        for (Event e : events) {
+            currentSum += e.getProbability();
             if (currentSum > draw) {
                 currentEvent = e;
                 break;
             }
         }
-        while(!currentEvent.isEligible(this)) {
+        while (!currentEvent.isEligible(this)) {
             draw = random.nextInt(eventProbabilitySum);
             currentSum = 0;
-            for (Event e: events) {
-                currentSum+=e.getProbability();
+            for (Event e : events) {
+                currentSum += e.getProbability();
                 if (currentSum > draw) {
                     currentEvent = e;
                     break;
                 }
             }
         }
-
-        return(currentEvent.adjust(this));
+        if (currentEvent.isUnique()) {
+            events.remove(currentEvent);
+        }
+        return (currentEvent.adjust(this));
     }
 
     // Returns true if the additional gui menu needs to be displayed
@@ -112,15 +119,29 @@ public class Game implements ActionListener {
                 Indicator indicator = ((IndicatorChange) effect).getIndicator();
                 change = includeBonus(change, indicator);
                 values.put(indicator, change + values.get(indicator));
-            } else if (effect.getClass() == AdvisorEmployment.class) {
-                Person newPerson = people.get(random.nextInt(people.size()));
-                if (gui==null) {
+            } else if (effect.getClass() == RandomAdvisorEmployment.class) {
+                Person newPerson = people.values().stream()
+                        .skip(random.nextInt(people.size()))
+                        .findFirst().get();
+                if (gui == null) {
                     chooseJob(newPerson);
-                }
-                else {
+                } else {
                     gui.jobWindow(newPerson);
                     return true;
                 }
+            } else if (effect.getClass() == AdvisorEmployment.class) {
+                Person newPerson = people.get(((AdvisorEmployment) effect).getId());
+                if (gui == null) {
+                    chooseJob(newPerson);
+                } else {
+                    gui.jobWindow(newPerson);
+                    return true;
+                }
+            } else if (effect.getClass() == RandomAdvisorDismissal.class) {
+                Job job = employed.keySet().stream()
+                        .skip(random.nextInt(employed.size()))
+                        .findFirst().get();
+                fireFromJob(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
                 fireFromJob(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
@@ -137,8 +158,8 @@ public class Game implements ActionListener {
 
     private void takeOverMedia() {
         MediaGroup mediaGroup = mediaGroups.get(random.nextInt(mediaGroups.size()));
-        int i=0;
-        while (mediaGroup.getAffiliation() == Affiliation.Government && i<10) {
+        int i = 0;
+        while (mediaGroup.getAffiliation() == Affiliation.Government && i < 10) {
             mediaGroup = mediaGroups.get(random.nextInt(mediaGroups.size()));
             i++;
         }
@@ -233,8 +254,10 @@ public class Game implements ActionListener {
             return activeModifiers.containsKey(((ModifierCondition) condition).getName());
         } else if (condition.getClass() == AdvisorCondition.class) {
             return employed.containsKey(((AdvisorCondition) condition).getJob());
+        } else if (condition.getClass() == SomeAdvisorCondition.class) {
+            return !employed.isEmpty();
         } else if (condition.getClass() == MediaCondition.class) {
-            return hasAffilliated(((MediaCondition) condition).getAffiliation());
+            return hasAffiliated(((MediaCondition) condition).getAffiliation());
         } else if (condition.getClass() == AdvisorSkillCondition.class) {
             Job job = ((AdvisorSkillCondition) condition).job();
             Trait trait = ((AdvisorSkillCondition) condition).trait();
@@ -245,16 +268,15 @@ public class Game implements ActionListener {
             int value = ((IndicatorCondition) condition).getValue();
             if (relation == IndicatorRelation.Higher) {
                 return this.getIndicatorValue(indicator) > value;
-            }
-            else {
+            } else {
                 return this.getIndicatorValue(indicator) < value;
             }
         }
         return false;
     }
 
-    private boolean hasAffilliated(Affiliation affiliation) {
-        for(MediaGroup mg : mediaGroups) {
+    private boolean hasAffiliated(Affiliation affiliation) {
+        for (MediaGroup mg : mediaGroups) {
             if (mg.getAffiliation() == affiliation) {
                 return true;
             }
@@ -270,18 +292,17 @@ public class Game implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         boolean displayNext;
         if (e.getSource().getClass() == EventButton.class) {
-            displayNext = chooseOption(currentEvent,((EventButton) e.getSource()).getId());
+            displayNext = chooseOption(currentEvent, ((EventButton) e.getSource()).getId());
             if (displayNext) {
                 return;
             }
-        }
-        else if (e.getSource().getClass() == JobButton.class) {
-            employed.put(Job.values()[((JobButton) e.getSource()).getId()],  ((JobButton) e.getSource()).getPerson());
+        } else if (e.getSource().getClass() == JobButton.class) {
+            employed.put(Job.values()[((JobButton) e.getSource()).getId()], ((JobButton) e.getSource()).getPerson());
         }
         round++;
         gui.updateStats();
         currentEvent = chooseEvent();
-        gui.newEvent(currentEvent,this);
+        gui.newEvent(currentEvent, this);
 
     }
 }

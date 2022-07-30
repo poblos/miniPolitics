@@ -10,6 +10,7 @@ public class Event {
     private final String description;
     private final List<Option> options;
     private final Trigger trigger;
+    private final boolean isUnique;
     private int probability;
 
     public Event(String title, String description, List<Option> options) {
@@ -17,6 +18,7 @@ public class Event {
         this.description = description;
         this.options = options;
         this.trigger = new Trigger();
+        this.isUnique = false;
     }
 
     public Event(String title, String description, List<Option> options, Trigger trigger) {
@@ -24,14 +26,16 @@ public class Event {
         this.description = description;
         this.options = options;
         this.trigger = trigger;
+        this.isUnique = false;
     }
 
 
-    public Event(String title, String description, List<Option> options, Trigger trigger, int probability) {
+    public Event(String title, String description, List<Option> options, Trigger trigger, boolean onlyOnce, int probability) {
         this.title = title;
         this.description = description;
         this.options = options;
         this.trigger = trigger;
+        this.isUnique = onlyOnce;
         this.probability = probability;
     }
 
@@ -85,5 +89,9 @@ public class Event {
     @Override
     public String toString() {
         return title + '\n' + description + '\n' + options;
+    }
+
+    public boolean isUnique() {
+        return isUnique;
     }
 }

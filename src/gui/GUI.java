@@ -63,7 +63,8 @@ public class GUI extends JFrame {
 
     private JPanel createIndicators() {
         JPanel indicators = new JPanel();
-        indicators.setBackground(Color.GRAY);
+        indicators.setBackground(Color.LIGHT_GRAY);
+
         indicators.setBounds(0, 0, 400, 160);
 
         indicators.add(p_cohesion);
