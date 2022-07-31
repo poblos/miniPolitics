@@ -1,0 +1,79 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 2
+      }
+    ]
+  },
+  "probability": 10,
+  "description": "A civic project that legalises cannabis has been submitted to the parliament, as the support for this idea is increasing in the society. What shall we do?",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Centrist"
+          }
+        ]
+      },
+      "description": "SMOKE WEED EVERYDAY",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "policy_change",
+          "id": 1,
+          "option": 3
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+        ],
+        "no": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Centrist"
+          }
+        ]
+      },
+      "description": "SMOKE WEED EVERYDAY",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "policy_change",
+          "id": 1,
+          "option": 3
+        }
+      ]
+    },
+    {
+      "description": "What a nonsense!",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Legalisation of cannabis"
+}

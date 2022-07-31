@@ -1,5 +1,9 @@
 package game;
 
+import com.squareup.moshi.JsonAdapter;
+import com.squareup.moshi.Moshi;
+import media_classes.MediaGroup;
+
 import java.io.IOException;
 import java.nio.file.DirectoryIteratorException;
 import java.nio.file.DirectoryStream;
@@ -19,6 +23,18 @@ public class FileLoader {
             throw ex.getCause();
         }
         return result;
+    }
+
+    public static <class_> ArrayList<class_> loadFiles(Class class_, String dir, Moshi moshi) throws IOException {
+        ArrayList<class_> list = new ArrayList<>();
+        JsonAdapter<MediaGroup> jsonAdapter4 = moshi.adapter(class_);
+        List<Path> pathList = FileLoader.listFiles(Path.of(dir));
+        for (Path path : pathList) {
+            String json = Files.readString(path);
+            class_ object = (class_) jsonAdapter4.indent("  ").fromJson(json);
+            list.add(object);
+        }
+        return(list);
     }
 
 }

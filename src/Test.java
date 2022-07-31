@@ -1,19 +1,22 @@
-import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory;
 import effects.*;
 import events_classes.*;
-import game.FileLoader;
 import game.Game;
 import jobs.Person;
 import media_classes.MediaGroup;
+import party.Ideology;
+import party.Party;
+import policy.Policy;
 
 import java.io.IOException;
-import java.nio.file.*;
 import java.util.ArrayList;
-import java.util.List;
+
+import static game.FileLoader.loadFiles;
+import static party.Ideology.*;
 
 public class Test {
+
     public static void main(String[] args) throws IOException {
         Moshi moshi = new Moshi.Builder()
                 .add(PolymorphicJsonAdapterFactory.of(Effect.class, "type")
@@ -25,6 +28,8 @@ public class Test {
                         .withSubtype(ModifierInvocation.class, "modifier_invocation")
                         .withSubtype(ModifierRemoval.class, "modifier_removal")
                         .withSubtype(MediaTakeover.class, "media_takeover")
+                        .withSubtype(IdeologyChange.class, "ideology_change")
+                        .withSubtype(PolicyChange.class, "policy_change")
                 )
                 .add(PolymorphicJsonAdapterFactory.of(Condition.class, "type")
                         .withSubtype(ModifierCondition.class, "modifier_condition")
@@ -33,53 +38,42 @@ public class Test {
                         .withSubtype(AdvisorSkillCondition.class, "trait_condition")
                         .withSubtype(IndicatorCondition.class, "indicator_condition")
                         .withSubtype(SomeAdvisorCondition.class, "some_advisor_condition")
+                        .withSubtype(IdeologyCondition.class, "ideology_condition")
+                        .withSubtype(PolicyCondition.class, "policy_condition")
                 )
                 .build();
 
         //Adding default events collection
-        ArrayList<Event> events = new ArrayList<>();
-        JsonAdapter<Event> jsonAdapter = moshi.adapter(Event.class);
-        List<Path> pathList = FileLoader.listFiles(Path.of("src/events"));
-        for (Path eventPath : pathList) {
-            String json = Files.readString(eventPath);
-            Event event = jsonAdapter.indent("  ").fromJson(json);
-            events.add(event);
-        }
-
+        ArrayList<Event> events = loadFiles(Event.class,"src/events", moshi);
         System.out.println("Number of loaded events: " + events.size());
 
         //Adding default people collection
-        ArrayList<Person> people = new ArrayList<>();
-        JsonAdapter<Person> jsonAdapter2 = moshi.adapter(Person.class);
-        pathList = FileLoader.listFiles(Path.of("src/people"));
-        for (Path path : pathList) {
-            String json = Files.readString(path);
-            Person person = jsonAdapter2.indent("  ").fromJson(json);
-            people.add(person);
-        }
+        ArrayList<Person> people = loadFiles(Person.class,"src/people", moshi);
 
         //Adding default modifiers collection
-        ArrayList<events_classes.Modifier> modifiers = new ArrayList<>();
-        JsonAdapter<events_classes.Modifier> jsonAdapter3 = moshi.adapter(events_classes.Modifier.class);
-        pathList = FileLoader.listFiles(Path.of("src/modifiers"));
-        for (Path path : pathList) {
-            String json = Files.readString(path);
-            events_classes.Modifier modifier = jsonAdapter3.indent("  ").fromJson(json);
-            modifiers.add(modifier);
-        }
+        ArrayList<Modifier> modifiers = loadFiles(Modifier.class,"src/modifiers", moshi);
 
         //Adding default media collection
-        ArrayList<MediaGroup> medias = new ArrayList<>();
-        JsonAdapter<MediaGroup> jsonAdapter4 = moshi.adapter(MediaGroup.class);
-        pathList = FileLoader.listFiles(Path.of("src/media"));
-        for (Path path : pathList) {
-            String json = Files.readString(path);
-            MediaGroup media = jsonAdapter4.indent("  ").fromJson(json);
-            medias.add(media);
-        }
+        ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class,"src/media", moshi);
 
-        Game game = new Game(events, people, modifiers, medias);
+        //Loading Policy
+        ArrayList<Policy> policies = loadFiles(Policy.class,"src/policies", moshi);
+
+        //Party
+        ArrayList<Ideology> ideologies = new ArrayList<>();
+        ideologies.add(BigTent);
+        ideologies.add(Capitalist);
+        ideologies.add(Centrist);
+
+        Party party = new Party("Democratic Party of Kachakonia",
+                "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " +
+                        "Currently in power for past 4 years, but under new leadership everything might happen.",
+                ideologies);
+
+        Game game = new Game(events, people, policies, modifiers, medias, party);
         game.windowSimulate(20);
     }
+
+
 
 }

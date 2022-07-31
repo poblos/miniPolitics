@@ -1,0 +1,29 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Marelland Elections Influenced"
+      }
+    ]
+  },
+  "probability": 10,
+  "description": "I've got excellent news! You colleague has won the presidential elections in Marelland. Now we can cooperate to secure regional stability.",
+  "options": [
+    {
+      "description": "Great news indeed",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Marelland Elections Influenced"
+        }
+      ]
+    }
+  ],
+  "title": "The New President"
+}

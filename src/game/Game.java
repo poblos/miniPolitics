@@ -7,6 +7,8 @@ import jobs.*;
 import media_classes.Affiliation;
 import media_classes.MediaGroup;
 import gui.*;
+import party.Party;
+import policy.Policy;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,16 +22,18 @@ public class Game implements ActionListener {
     int round;
     Event currentEvent;
     int eventProbabilitySum;
-    List<Event> events;
-    Map<Integer, Person> people;
-    List<Modifier> modifiers;
-    List<MediaGroup> mediaGroups;
+    private final Map<Integer, Policy> policies;
+    private final List<Event> events;
+    private final Map<Integer, Person> people;
+    private final List<Modifier> modifiers;
+    private final List<MediaGroup> mediaGroups;
+    private final Party party;
     private final transient Random random;
     private final transient Scanner scanner;
 
     GUI gui;
 
-    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups) {
+    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Party party) {
         values = new HashMap<>();
         values.put(Indicator.PartyCohesion, 40F);
         values.put(Indicator.StateStability, 35F);
@@ -38,11 +42,16 @@ public class Game implements ActionListener {
         this.random = new Random();
         this.scanner = new Scanner(System.in);
         this.employed = new HashMap<>();
+        this.policies = new HashMap<>();
         this.activeModifiers = new HashMap<>();
         this.events = events;
         this.people = new HashMap<>();
+        this.party = party;
         for (Person p : people) {
             this.people.put(p.getId(), p);
+        }
+        for (Policy p : policies) {
+            this.policies.put(p.getId(), p);
         }
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
@@ -127,7 +136,7 @@ public class Game implements ActionListener {
                     chooseJob(newPerson);
                 } else {
                     gui.jobWindow(newPerson);
-                    return true;    
+                    return true;
                 }
             } else if (effect.getClass() == AdvisorEmployment.class) {
                 Person newPerson = people.get(((AdvisorEmployment) effect).getId());
@@ -150,6 +159,11 @@ public class Game implements ActionListener {
                 removeModifier(((ModifierRemoval) effect).getName());
             } else if (effect.getClass() == MediaTakeover.class) {
                 takeOverMedia();
+            } else if (effect.getClass() == IdeologyChange.class) {
+                party.getIdeologies().remove(((IdeologyChange) effect).getRemoved());
+                party.getIdeologies().add(((IdeologyChange) effect).getAdded());
+            } else if (effect.getClass() == PolicyChange.class) {
+                policies.get(((PolicyChange) effect).getId()).setCurrentOption(((PolicyChange) effect).getOption());
             }
 
         }
@@ -271,6 +285,10 @@ public class Game implements ActionListener {
             } else {
                 return this.getIndicatorValue(indicator) < value;
             }
+        } else if (condition.getClass() == IdeologyCondition.class) {
+            return party.getIdeologies().contains(((IdeologyCondition) condition).getIdeology());
+        } else if (condition.getClass() == PolicyCondition.class) {
+            return policies.get(((PolicyCondition) condition).getId()).getCurrentOption() == ((PolicyCondition) condition).getOption();
         }
         return false;
     }
@@ -288,7 +306,9 @@ public class Game implements ActionListener {
         return values.get(name);
     }
 
-    public Person getEmployed(Job job) {return employed.get(job);}
+    public Person getEmployed(Job job) {
+        return employed.get(job);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

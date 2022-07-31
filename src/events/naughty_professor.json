@@ -43,7 +43,7 @@
           {
             "type": "trait_condition",
             "job": "Strategist",
-            "trait": "AcademicHeritage"
+            "trait": "AcademicOrigin"
           },
           {
             "type": "media_condition",
@@ -51,7 +51,7 @@
           }
         ]
       },
-      "description": "We are lucky to have economist of academic heritage in our party too, let's setup a debate on the neutral ground.",
+      "description": "We are lucky to have economist of academic origin in our party too, let's setup a debate on the neutral ground.",
       "effects": [
         {
           "type": "modifier_invocation",
