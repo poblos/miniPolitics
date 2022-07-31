@@ -8,12 +8,20 @@ import jobs.Person;
 import javax.swing.*;
 import java.awt.*;
 
+import static jobs.Job.*;
+
 public class GUI extends JFrame {
 
     public JPanel currentDisplay;
     IndicatorDisplay p_cohesion = new IndicatorDisplay(Indicator.PartyCohesion);
     IndicatorDisplay p_support = new IndicatorDisplay(Indicator.PartySupport);
     IndicatorDisplay s_stability = new IndicatorDisplay(Indicator.StateStability);
+
+    JobDisplay whip = new JobDisplay(Whip);
+
+    JobDisplay propagandist = new JobDisplay(Propagandist);
+
+    JobDisplay strategist = new JobDisplay(Strategist);
 
     private final Game game;
 
@@ -45,6 +53,9 @@ public class GUI extends JFrame {
         p_cohesion.update(this.game);
         p_support.update(this.game);
         s_stability.update(this.game);
+        whip.update(this.game);
+        propagandist.update(this.game);
+        strategist.update(this.game);
     }
 
     private JPanel createBackground() {
@@ -65,11 +76,14 @@ public class GUI extends JFrame {
         JPanel indicators = new JPanel();
         indicators.setBackground(Color.LIGHT_GRAY);
 
-        indicators.setBounds(0, 0, 400, 160);
+        indicators.setBounds(0, 0, 1280, 160);
 
         indicators.add(p_cohesion);
         indicators.add(p_support);
         indicators.add(s_stability);
+        indicators.add(whip);
+        indicators.add(propagandist);
+        indicators.add(strategist);
         return indicators;
     }
 

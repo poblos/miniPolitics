@@ -13,9 +13,9 @@ import java.awt.event.ActionListener;
 import java.util.*;
 
 public class Game implements ActionListener {
-    Map<Indicator, Float> values;
-    Map<Job, Person> employed;
-    Map<String, Modifier> activeModifiers;
+    private final Map<Indicator, Float> values;
+    private final Map<Job, Person> employed;
+    private final Map<String, Modifier> activeModifiers;
 
     int round;
     Event currentEvent;
@@ -127,7 +127,7 @@ public class Game implements ActionListener {
                     chooseJob(newPerson);
                 } else {
                     gui.jobWindow(newPerson);
-                    return true;
+                    return true;    
                 }
             } else if (effect.getClass() == AdvisorEmployment.class) {
                 Person newPerson = people.get(((AdvisorEmployment) effect).getId());
@@ -284,9 +284,11 @@ public class Game implements ActionListener {
         return false;
     }
 
-    public Float getIndicatorValue(Indicator name) {
+    public float getIndicatorValue(Indicator name) {
         return values.get(name);
     }
+
+    public Person getEmployed(Job job) {return employed.get(job);}
 
     @Override
     public void actionPerformed(ActionEvent e) {
