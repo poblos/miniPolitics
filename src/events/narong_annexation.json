@@ -1,0 +1,28 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Narong tensions - wait"
+      }
+    ]
+  },
+  "probability": 20,
+  "description": "The Highest Council of Narong has officially requested Karlenese Federation to join the federation in order to protect them from Forebergian aggression. This request has been quickly accepted and Karlenese army entered the territories of the Republic.",
+  "options": [
+    {
+      "description": "Foreberg won't be happy about that...",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Narong tensions - annexation"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Narong tensions - wait"
+        }
+      ]
+    }
+  ],
+  "title": "Annexation of Narong"
+}

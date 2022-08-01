@@ -1,0 +1,32 @@
+{
+  "name": "Gun-control laws",
+  "id": 4,
+  "currentOption": 5,
+  "options": [
+    {
+      "name": "Private armies legal"
+    },
+    {
+      "name": "All weaponry legal"
+    },
+    {
+      "name": "Limitations on type of weaponry legal without licence"
+    },
+    {
+      "name": "Guns legal, the rest only with licence"
+    },
+    {
+      "name": "Some guns legal, other only with licence"
+    },
+    {
+      "name": "Guns legal only with licence"
+    },
+    {
+      "name": "Guns entirely illegal"
+    },
+    {
+      "name": "Pacifist state"
+    }
+  ]
+
+}

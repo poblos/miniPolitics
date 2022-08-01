@@ -1,0 +1,310 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 3,
+        "option": 3
+      }
+    ]
+  },
+  "probability": 10,
+  "description": "Abortion law is currently a hot topic, as valid compromise satisfies neither pro-lifers nor pro-choicers. Two bills were submitted to parliament at the same time - one liberalising and the other tightening the law.",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Centrist"
+          }
+        ]
+      },
+      "description": "We shouldn't touch that matter.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Progressive"
+          }
+        ]
+      },
+      "description": "We shouldn't touch that matter.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ]
+      },
+      "description": "We shouldn't touch that matter.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Let's tighten the law.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 2
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Progressive"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Let's tighten the law.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 2
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Centrist"
+          }
+        ],
+        "no": [
+        ]
+      },
+    "description": "Let's tighten the law.",
+    "effects": [
+      {
+        "type": "indicator_change",
+        "change": -1,
+        "indicator": "PartySupport"
+      },
+      {
+        "type": "indicator_change",
+        "change": -2,
+        "indicator": "StateStability"
+      },
+      {
+        "type": "indicator_change",
+        "change": -2,
+        "indicator": "PartyCohesion"
+      },
+      {
+        "type": "policy_change",
+        "id": 3,
+        "option": 2
+      }
+    ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Centrist"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Let's liberalize the law.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 4
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Progressive"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Let's liberalize the law.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 4
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Let's liberalize the law.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 4
+        }
+      ]
+    }
+  ],
+  "title": "Abortion law change"
+}

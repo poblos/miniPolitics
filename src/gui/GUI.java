@@ -33,6 +33,8 @@ public class GUI extends JFrame {
         this.setLayout(null);
         this.setSize(1280, 720);
         this.setTitle("miniPolitics");
+        Image icon = Toolkit.getDefaultToolkit().getImage("src/gui/icon.png");
+        this.setIconImage(icon);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
 

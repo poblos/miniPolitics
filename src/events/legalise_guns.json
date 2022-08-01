@@ -1,0 +1,81 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 4,
+        "option": 5
+      }
+    ]
+  },
+  "probability": 10,
+  "description": "As the international tensions arise, some of our citizens demand to facilitate access to guns to be better prepared for potential defence.",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+        ],
+        "no": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Progressive"
+          }
+        ]
+      },
+      "description": "That's a reasonable move.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "policy_change",
+          "id": 4,
+          "option": 4
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Progressive"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "That's a reasonable move.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "policy_change",
+          "id": 4,
+          "option": 4
+        }
+      ]
+    },
+    {
+      "description": "They want to kill us or what?",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Facilitating access to guns "
+}
