@@ -1,7 +1,7 @@
 package gui;
 
-import events_classes.Event;
-import events_classes.Option;
+import events.Event;
+import events.Option;
 import game.Game;
 
 import javax.swing.*;

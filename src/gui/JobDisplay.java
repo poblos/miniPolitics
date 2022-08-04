@@ -1,12 +1,11 @@
 package gui;
 
 
+import game.Game;
+import jobs.Job;
+
 import javax.swing.*;
 import java.io.File;
-
-import game.*;
-import indicators.Indicator;
-import jobs.Job;
 
 public class JobDisplay extends JLabel {
     ImageIcon ikona;

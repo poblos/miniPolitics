@@ -1,10 +1,10 @@
 package gui;
 
+import game.Game;
+import indicators.Indicator;
+
 import javax.swing.*;
 import java.io.File;
-
-import game.*;
-import indicators.Indicator;
 
 public class IndicatorDisplay extends JLabel{
 

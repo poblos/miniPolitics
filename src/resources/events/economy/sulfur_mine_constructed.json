@@ -1,0 +1,41 @@
+{
+  "probability": 20,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Sulfur mine construction"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "Sulfur mine construction has been finished. Extraction runs smoothly and our industry can now be more independent from external suppliers.",
+  "options": [
+    {
+      "description": "Great!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Infrastructure",
+          "change": -200
+        },
+        {
+          "type": "budget_income",
+          "category": "IncomeTax",
+          "change": 40
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Sulfur mine construction"
+        }
+      ]
+    }
+  ],
+  "title": "Sulfur mine construction completed"
+}

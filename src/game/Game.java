@@ -1,14 +1,16 @@
 package game;
 
-import effects.*;
-import events_classes.*;
-import indicators.Indicator;
+import budget.*;
+import events.*;
+import gui.EventButton;
+import gui.GUI;
+import gui.JobButton;
+import indicators.*;
 import jobs.*;
-import media_classes.Affiliation;
-import media_classes.MediaGroup;
-import gui.*;
-import party.Party;
-import policy.Policy;
+import media.*;
+import modifiers.*;
+import party.*;
+import policy.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,12 +29,14 @@ public class Game implements ActionListener {
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
     private final Party party;
+    private final Budget budget;
     private final transient Random random;
     private final transient Scanner scanner;
 
     GUI gui;
 
-    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Party party) {
+    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Party party, Budget budget) {
+        this.budget = budget;
         values = new HashMap<>();
         values.put(Indicator.PartyCohesion, 40F);
         values.put(Indicator.StateStability, 35F);
@@ -190,6 +194,12 @@ public class Game implements ActionListener {
                 party.getIdeologies().add(((IdeologyChange) effect).getAdded());
             } else if (effect.getClass() == PolicyChange.class) {
                 policies.get(((PolicyChange) effect).getId()).setCurrentOption(((PolicyChange) effect).getOption());
+            } else if (effect.getClass() == BudgetIncome.class) {
+                IncomeCategory category = ((BudgetIncome) effect).category();
+                budget.getIncome().put(category,budget.getIncome().get(category)+((BudgetIncome) effect).change());
+            }  else if (effect.getClass() == BudgetExpense.class) {
+                ExpenseCategory category = ((BudgetExpense) effect).category();
+                budget.getExpenses().put(category,budget.getExpenses().get(category)+((BudgetExpense) effect).change());
             }
 
         }

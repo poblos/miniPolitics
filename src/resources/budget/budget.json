@@ -1,0 +1,27 @@
+{
+  "expenses": {
+    "PensionsAndRents": 350000,
+    "Health": 118000,
+    "SocialCare": 90000,
+    "Education": 90000,
+    "Infrastructure": 90000,
+    "Finances": 70000,
+    "LaborMarket": 50000,
+    "NationalDefence": 50000,
+    "SecurityAndJustice": 44000,
+    "Environment": 30000,
+    "ScienceAndHigherEducation": 23000,
+    "LocalGovernment": 17000,
+    "PoliticalInstitutions": 16000,
+    "CultureAndMedia": 16000,
+    "Agriculture": 15000,
+    "Economy": 15000,
+    "SportAndTourism": 8000
+  },
+  "income": {
+    "IncomeTax": 400000,
+    "ConsumptionTax": 300000,
+    "PropertyTax": 90000,
+    "OtherIncome": 90000
+  }
+}

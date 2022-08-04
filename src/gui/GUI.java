@@ -1,8 +1,8 @@
 package gui;
 
-import events_classes.Event;
-import indicators.Indicator;
+import events.Event;
 import game.Game;
+import indicators.Indicator;
 import jobs.Person;
 
 import javax.swing.*;

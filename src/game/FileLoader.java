@@ -2,7 +2,7 @@ package game;
 
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
-import media_classes.MediaGroup;
+import media.MediaGroup;
 
 import java.io.File;
 import java.io.IOException;

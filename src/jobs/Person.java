@@ -1,7 +1,5 @@
 package jobs;
 
-import jobs.Trait;
-
 import java.util.List;
 import java.util.Objects;
 
