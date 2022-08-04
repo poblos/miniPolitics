@@ -4,6 +4,7 @@ import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 import media_classes.MediaGroup;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.DirectoryIteratorException;
 import java.nio.file.DirectoryStream;
@@ -15,6 +16,16 @@ import java.util.List;
 public class FileLoader {
     public static List<Path> listFiles(Path directory) throws IOException {
         List<Path> result = new ArrayList<>();
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory, "*")) {
+            for (Path entry : stream) {
+                if ((new File(String.valueOf(entry))).isDirectory()) {
+                    result.addAll(listFiles(entry));
+                }
+            }
+        } catch (DirectoryIteratorException ex) {
+            throw ex.getCause();
+        }
+
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory, "*.{json}")) {
             for (Path entry : stream) {
                 result.add(entry);

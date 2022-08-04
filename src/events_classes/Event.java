@@ -13,30 +13,26 @@ public class Event {
     private final boolean isUnique;
     private int probability;
 
+    private final List<ProbabilityChanger> probabilityChangers;
+
     public Event(String title, String description, List<Option> options) {
         this.title = title;
         this.description = description;
         this.options = options;
         this.trigger = new Trigger();
         this.isUnique = false;
+        this.probability = 50;
+        this.probabilityChangers = new ArrayList<>();
     }
 
-    public Event(String title, String description, List<Option> options, Trigger trigger) {
-        this.title = title;
-        this.description = description;
-        this.options = options;
-        this.trigger = trigger;
-        this.isUnique = false;
-    }
-
-
-    public Event(String title, String description, List<Option> options, Trigger trigger, boolean onlyOnce, int probability) {
+    public Event(String title, String description, List<Option> options, Trigger trigger, boolean onlyOnce, int probability, List<ProbabilityChanger> probabilityChangers) {
         this.title = title;
         this.description = description;
         this.options = options;
         this.trigger = trigger;
         this.isUnique = onlyOnce;
         this.probability = probability;
+        this.probabilityChangers = probabilityChangers;
     }
 
     public String getTitle() {
@@ -53,6 +49,10 @@ public class Event {
 
     public int getProbability() {
         return probability;
+    }
+
+    public List<ProbabilityChanger> getProbabilityChangers() {
+        return probabilityChangers;
     }
 
     public void setProbability(int probability) {

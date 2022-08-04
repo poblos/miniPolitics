@@ -21,7 +21,6 @@ public class Game implements ActionListener {
 
     int round;
     Event currentEvent;
-    int eventProbabilitySum;
     private final Map<Integer, Policy> policies;
     private final List<Event> events;
     private final Map<Integer, Person> people;
@@ -55,12 +54,6 @@ public class Game implements ActionListener {
         }
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
-        for (Event e : events) {
-            if (e.getProbability() == 0) {
-                e.setProbability(50);
-            }
-            this.eventProbabilitySum += e.getProbability();
-        }
 
     }
 
@@ -92,8 +85,41 @@ public class Game implements ActionListener {
         gui.newEvent(currentEvent, this);
     }
 
+    private int eventProbability(Event event) {
+        if (event.getProbability() == 0) {
+            event.setProbability(50);
+            return (50);
+        } else if (event.getProbabilityChangers() == null) {
+            return (event.getProbability());
+        } else {
+            int acc = event.getProbability();
+            for (ProbabilityChanger changer : event.getProbabilityChangers()) {
+                boolean isAdded = true;
+                for (Condition condition: changer.conditions()) {
+                    if (!meetsCondition(condition)) {
+                        isAdded = false;
+                        break;
+                    }
+                }
+                if (isAdded) {
+                    acc+= changer.probChange();
+                }
+            }
+            return acc;
+        }
+    }
+
+    private int eventProbabilitySum() {
+        int acc = 0;
+        for (Event event : events) {
+            acc += eventProbability(event);
+        }
+        return acc;
+    }
+
     private Event chooseEvent() {
-        int draw = random.nextInt(eventProbabilitySum);
+        int probabilitySum = eventProbabilitySum();
+        int draw = random.nextInt(probabilitySum);
         int currentSum = 0;
         for (Event e : events) {
             currentSum += e.getProbability();
@@ -103,7 +129,7 @@ public class Game implements ActionListener {
             }
         }
         while (!currentEvent.isEligible(this)) {
-            draw = random.nextInt(eventProbabilitySum);
+            draw = random.nextInt(probabilitySum);
             currentSum = 0;
             for (Event e : events) {
                 currentSum += e.getProbability();

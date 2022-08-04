@@ -1,4 +1,16 @@
 {
+  "probability": 30,
+  "probabilityChanges": [
+    {
+      "probChange": -10,
+      "conditions": [
+        {
+          "type": "advisor_condition",
+          "job": "Whip"
+        }
+      ]
+    }
+  ],
   "description": "Unexpectedly, we've lost a couple of recent votes in the parliament because many of our MP's were absent. It turns out, that some of them don't have any good excuse for missing the session. Anyway, opposition have already used that to hit us with accusations of laziness.",
   "options": [
     {
