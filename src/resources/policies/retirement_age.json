@@ -1,0 +1,29 @@
+{
+  "name": "Retirement Age",
+  "id": 5,
+  "currentOption": 3,
+  "options": [
+    {
+      "name": "50"
+    },
+    {
+      "name": "55"
+    },
+    {
+      "name": "60"
+    },
+    {
+      "name": "65"
+    },
+    {
+      "name": "67"
+    },
+    {
+      "name": "70"
+    },
+    {
+      "name": "No retirement"
+    }
+  ]
+
+}

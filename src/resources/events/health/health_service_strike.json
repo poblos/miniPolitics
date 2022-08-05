@@ -1,0 +1,86 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Unhappy"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "National Health Service's nurses are frustrated that they didn't get raises they demanded. As a result, they announced the general strike starting next week. We haven't got a lot of time.",
+  "options": [
+    {
+      "description": "Fulfill their demands.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Unhappy"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nurses Happy"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Health",
+          "change": 1000
+        }
+      ]
+    },
+    {
+      "description": "Try to negotiate some kind of compromise.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Unhappy"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Health",
+          "change": 500
+        }
+      ]
+    },
+    {
+      "description": "They can't blackmail us!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nurses Strike"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Unhappy"
+        }
+      ]
+    }
+  ],
+  "title": "NHS announced the general strike"
+}

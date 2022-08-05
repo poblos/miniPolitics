@@ -1,0 +1,79 @@
+{
+  "probability": 30,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Strike"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "National Health Service's nurses general strike continue as we refused to negotiate with their representatives. Our voters become more and more upset with the situation as restrictions on places in hospitals hit them.",
+  "options": [
+    {
+      "description": "We have no other choice but to capitulate, I guess...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Strike"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nurses Happy"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Health",
+          "change": 1000
+        }
+      ]
+    },
+    {
+      "description": "Try to negotiate some kind of compromise.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Strike"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Health",
+          "change": 500
+        }
+      ]
+    },
+    {
+      "description": "We are patient.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "NHS nurses general strike continues."
+}

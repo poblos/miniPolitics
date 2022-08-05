@@ -1,0 +1,40 @@
+{
+  "probability": 10,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Strike"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "I've got a great news! NHS's nurses decided to end the strike for now as we remained unshakable.",
+  "options": [
+    {
+      "description": "I told you that we just need to be patient",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Strike"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nurses Strike Ended"
+        }
+      ]
+    }
+  ],
+  "title": "NHS nurses general strike ended"
+}

@@ -6,6 +6,14 @@
       {
         "type": "modifier_condition",
         "name": "Nurses Happy"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Strike"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Strike Ended"
       }
     ]
   },
@@ -46,9 +54,13 @@
         {
           "type": "modifier_invocation",
           "name": "Nurses Happy"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Unhappy"
         }
       ]
     }
   ],
-  "title": "Local railway station"
+  "title": "HNS' nurses demand raises"
 }
