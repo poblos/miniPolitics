@@ -1,0 +1,105 @@
+{
+  "probabilityChanges": [
+    {
+      "probChange": 30,
+      "conditions": [
+        {
+          "type": "modifier_condition",
+          "name": "Foreign company offered great conditions"
+        }
+      ]
+    },
+    {
+      "probChange": 15,
+      "conditions": [
+        {
+          "type": "modifier_condition",
+          "name": "Foreign company offered good conditions"
+        }
+      ]
+    }
+  ],
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Foreign company negotiations"
+      }
+    ]
+  },
+  "description": "Our Matheuchellian partner decided to invest in our country! That's a great scenario as the negotiations were the hot topic in the media.",
+  "options": [
+    {
+      "description": "Great job by our negotiators!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered good conditions"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company negotiations"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered great conditions"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "no": [
+        ],
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Propagandist",
+            "trait": "MediaExpert"
+          },
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ]
+      },
+      "description": "Our propagandist will surely turn this into a huge success in the public eye.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered good conditions"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company negotiations"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered great conditions"
+        }
+      ]
+    }
+  ],
+  "title": "Foreign investment obtained"
+}

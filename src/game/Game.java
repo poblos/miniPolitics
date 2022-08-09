@@ -82,7 +82,7 @@ public class Game implements ActionListener {
         }
     }
 
-    public void windowSimulate(int numberOfRounds) {
+    public void windowSimulate() {
         gui = new GUI(this);
         gui.updateStats();
         currentEvent = chooseEvent();
@@ -99,14 +99,14 @@ public class Game implements ActionListener {
             int acc = event.getProbability();
             for (ProbabilityChanger changer : event.getProbabilityChangers()) {
                 boolean isAdded = true;
-                for (Condition condition: changer.conditions()) {
+                for (Condition condition : changer.conditions()) {
                     if (!meetsCondition(condition)) {
                         isAdded = false;
                         break;
                     }
                 }
                 if (isAdded) {
-                    acc+= changer.probChange();
+                    acc += changer.probChange();
                 }
             }
             return acc;
@@ -154,14 +154,15 @@ public class Game implements ActionListener {
         List<Effect> effects = currentEvent.getOptions().get(option).getEffects();
         for (Effect effect : effects) {
             if (effect.getClass() == IndicatorChange.class) {
-                float change = ((IndicatorChange) effect).getChange();
-                Indicator indicator = ((IndicatorChange) effect).getIndicator();
+                float change = ((IndicatorChange) effect).change();
+                Indicator indicator = ((IndicatorChange) effect).indicator();
                 change = includeBonus(change, indicator);
                 values.put(indicator, change + values.get(indicator));
             } else if (effect.getClass() == RandomAdvisorEmployment.class) {
                 Person newPerson = people.values().stream()
                         .skip(random.nextInt(people.size()))
-                        .findFirst().get();
+                        .findFirst().orElse(null);
+
                 if (gui == null) {
                     chooseJob(newPerson);
                 } else {
@@ -179,7 +180,7 @@ public class Game implements ActionListener {
             } else if (effect.getClass() == RandomAdvisorDismissal.class) {
                 Job job = employed.keySet().stream()
                         .skip(random.nextInt(employed.size()))
-                        .findFirst().get();
+                        .findFirst().orElse(null);
                 fireFromJob(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
                 fireFromJob(((AdvisorDismissal) effect).getJob());
@@ -190,16 +191,16 @@ public class Game implements ActionListener {
             } else if (effect.getClass() == MediaTakeover.class) {
                 takeOverMedia();
             } else if (effect.getClass() == IdeologyChange.class) {
-                party.getIdeologies().remove(((IdeologyChange) effect).getRemoved());
-                party.getIdeologies().add(((IdeologyChange) effect).getAdded());
+                party.ideologies().remove(((IdeologyChange) effect).getRemoved());
+                party.ideologies().add(((IdeologyChange) effect).getAdded());
             } else if (effect.getClass() == PolicyChange.class) {
-                policies.get(((PolicyChange) effect).getId()).setCurrentOption(((PolicyChange) effect).getOption());
+                policies.get(((PolicyChange) effect).id()).setCurrentOption(((PolicyChange) effect).option());
             } else if (effect.getClass() == BudgetIncome.class) {
                 IncomeCategory category = ((BudgetIncome) effect).category();
-                budget.getIncome().put(category,budget.getIncome().get(category)+((BudgetIncome) effect).change());
-            }  else if (effect.getClass() == BudgetExpense.class) {
+                budget.getIncome().put(category, budget.getIncome().get(category) + ((BudgetIncome) effect).change());
+            } else if (effect.getClass() == BudgetExpense.class) {
                 ExpenseCategory category = ((BudgetExpense) effect).category();
-                budget.getExpenses().put(category,budget.getExpenses().get(category)+((BudgetExpense) effect).change());
+                budget.getExpenses().put(category, budget.getExpenses().get(category) + ((BudgetExpense) effect).change());
             }
 
         }
@@ -322,9 +323,11 @@ public class Game implements ActionListener {
                 return this.getIndicatorValue(indicator) < value;
             }
         } else if (condition.getClass() == IdeologyCondition.class) {
-            return party.getIdeologies().contains(((IdeologyCondition) condition).getIdeology());
+            return party.ideologies().contains(((IdeologyCondition) condition).getIdeology());
         } else if (condition.getClass() == PolicyCondition.class) {
-            return policies.get(((PolicyCondition) condition).getId()).getCurrentOption() == ((PolicyCondition) condition).getOption();
+            return policies.get(((PolicyCondition) condition).id()).getCurrentOption() == ((PolicyCondition) condition).option();
+        } else if (condition.getClass() == RoundCondition.class) {
+            return round > ((RoundCondition) condition).round();
         }
         return false;
     }
@@ -356,8 +359,10 @@ public class Game implements ActionListener {
             }
         } else if (e.getSource().getClass() == JobButton.class) {
             employed.put(Job.values()[((JobButton) e.getSource()).getId()], ((JobButton) e.getSource()).getPerson());
+            people.remove(((JobButton) e.getSource()).getPerson().getId());
         }
         round++;
+        System.out.println("Events played: " + round);
         gui.updateStats();
         currentEvent = chooseEvent();
         gui.newEvent(currentEvent, this);

@@ -7,6 +7,7 @@ import events.Condition;
 import events.Effect;
 import events.Event;
 import game.Game;
+import game.RoundCondition;
 import indicators.IndicatorChange;
 import indicators.IndicatorCondition;
 import jobs.*;
@@ -58,6 +59,7 @@ public class Test {
                         .withSubtype(SomeAdvisorCondition.class, "some_advisor_condition")
                         .withSubtype(IdeologyCondition.class, "ideology_condition")
                         .withSubtype(PolicyCondition.class, "policy_condition")
+                        .withSubtype(RoundCondition.class, "round_condition")
                 )
                 .build();
 
@@ -91,7 +93,7 @@ public class Test {
                 ideologies);
 
         Game game = new Game(events, people, policies, modifiers, medias, party, budgets.get(0));
-        game.windowSimulate(20);
+        game.windowSimulate();
     }
 
 

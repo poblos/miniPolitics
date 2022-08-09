@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Trigger {
-    List<Condition> yes;
-    List<Condition> no;
+    final List<Condition> yes;
+    final List<Condition> no;
 
     public Trigger(List<Condition> yes, List<Condition> no) {
         this.yes = yes;

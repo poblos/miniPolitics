@@ -1,0 +1,45 @@
+{
+  "probability": 55,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Military cooperation with Foreberg - initial failure"
+      }
+    ]
+  },
+  "description": "Our joint venture with Foreberg isn't too prolific yet. The latest sample designs produced in Ehr Steel Plant are still too unreliable and mass production won't be worth the money yet.",
+  "options": [
+    {
+      "description": "We can't wait for so long! Order Matheuchelles' fighters and stop this joke.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Military cooperation with Foreberg - initial failure"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Matheuchelles' military import."
+        }
+      ]
+    },
+    {
+      "description": "Give them more time. We really need this cooperation to click",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Military deal still not successful"
+}

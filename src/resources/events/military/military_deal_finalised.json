@@ -1,19 +1,19 @@
 {
-  "probability": 40,
+  "probability": 30,
   "trigger": {
     "no": [
     ],
     "yes": [
       {
         "type": "modifier_condition",
-        "name": "Military cooperation with Foreberg - start"
+        "name": "Military cooperation with Foreberg - initial failure"
       }
     ]
   },
-  "description": "Although the true success can only be seen during war, our joint venture with Foreberg seems to be successful. The production in Ehr Steel Plant has started and the first fighters have already been tested by elite pilots who say that they are the best machines they had a chance to fly with.",
+  "description": "Our joint venture with Foreberg seems to finally be on the right track. The latest sample design produced in Ehr Steel Plant seems to be more reliable and stable than it's predecessors.",
   "options": [
     {
-      "description": "That's a great news!",
+      "description": "After so many problems, it's truly a good news.",
       "effects": [
         {
           "type": "indicator_change",
@@ -22,12 +22,12 @@
         },
         {
           "type": "indicator_change",
-          "change": 3,
+          "change": 2,
           "indicator": "StateStability"
         },
         {
           "type": "modifier_removal",
-          "name": "Military cooperation with Foreberg - start"
+          "name": "Military cooperation with Foreberg - initial failure"
         },
         {
           "type": "modifier_invocation",
@@ -36,5 +36,5 @@
       ]
     }
   ],
-  "title": "Military deal successful"
+  "title": "Military deal finally successful"
 }

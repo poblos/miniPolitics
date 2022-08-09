@@ -1,0 +1,39 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "media_condition",
+        "Affiliation": "Opposition"
+      }
+    ]
+  },
+  "description": "People in of the eastern towns complain about the state of local roads in their neighbourhood. Media related to opposition made the topic viral and they accused us of giving substandard donations to the local government.",
+  "options": [
+    {
+      "description": "Let's repair those roads and end the topic.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Infrastructure",
+          "change": 50
+        }
+      ]
+    },
+    {
+      "description": "They will achieve nothing!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Local roads"
+}

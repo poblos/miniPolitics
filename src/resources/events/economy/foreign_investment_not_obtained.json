@@ -1,0 +1,100 @@
+{
+  "probabilityChanges": [
+    {
+      "probChange": -30,
+      "conditions": [
+        {
+          "type": "modifier_condition",
+          "name": "Foreign company offered great conditions"
+        }
+      ]
+    },
+    {
+      "probChange": -15,
+      "conditions": [
+        {
+          "type": "modifier_condition",
+          "name": "Foreign company offered good conditions"
+        }
+      ]
+    }
+  ],
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Foreign company negotiations"
+      }
+    ]
+  },
+  "description": "Our Matheuchellian partner decided against investing in our country. They chose Graonia as the preferred location as they offered them better conditions. Such a course of events will surely hamper our reputation as the negotiations were the hot topic in the media.",
+  "options": [
+    {
+      "description": "That's their bad choice!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered good conditions"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company negotiations"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered great conditions"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "no": [
+        ],
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Propagandist",
+            "trait": "MediaExpert"
+          },
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ]
+      },
+      "description": "We couldn't have offered them better conditions; maybe Graonians won't benefit from this deal after all. Try to explain it this way in our media.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered good conditions"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company negotiations"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Foreign company offered great conditions"
+        }
+      ]
+    }
+  ],
+  "title": "Foreign investment slipped away"
+}

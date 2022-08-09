@@ -1,0 +1,37 @@
+{
+  "isUnique": true,
+  "description": "A board game created by a Kachak designer is getting more and more popular around the world. In \"The Colonisers of Natac\" players take on the roles of colonisers attempting to build and develop cities to which the need to trade and acquire resources.",
+  "options": [
+    {
+      "description": "We should encourage students in elementary schools to play this game!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Let's present it as the great success of Kachak economy.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Our party members should try playing this!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Popular board game"
+}

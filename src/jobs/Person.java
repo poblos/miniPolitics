@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class Person {
     private final int id;
-    String name;
-    List<Trait> traits;
+    final String name;
+    final List<Trait> traits;
 
     public String getName() {
         return name;

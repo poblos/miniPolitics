@@ -1,0 +1,46 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "media_condition",
+        "affiliation": "Government"
+      }
+    ],
+    "no": []
+  },
+  "probability": 10,
+  "description": "One of our affiliated media's brightest stars is willing to continue his career in big politics as his current position isn't satisfying enough for him. We may consider appointing him as our chief propagandist.",
+  "options": [
+    {
+      "description": "We don't have place for him.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "It sounds like a sensible idea.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_employment",
+          "id": 12
+        }
+      ]
+
+    }
+  ],
+  "title": "Journalist's ambitions"
+}

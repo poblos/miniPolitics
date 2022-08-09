@@ -1,0 +1,76 @@
+{
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "advisor_condition",
+        "job": "Propagandist"
+      },
+      {
+        "type": "advisor_condition",
+        "job": "Strategist"
+      }
+    ]
+  },
+  "description": "Our strategist and propagandist haven't got on well since the beginning, but in the recent weeks their dispute has intensified. Our strategist argues that the current propaganda doesn't fit our strategic goals and we should change the agenda. On the other hand, our propagandist say that our strategy can't be explained well to the voters. If we want to maintain our party's internal unity and cohesive narration, we should considering dismissing one of them. ",
+  "options": [
+    {
+      "description": "They may not love each other, but we need them both.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "If the propagandist can't explain our strategy, then we should search for the better propagandist.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Propagandist"
+        }
+      ]
+    },
+    {
+      "description": "Perhaps it would be better to change our strategy. Strategist should go.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Strategist"
+        }
+      ]
+    },
+    {
+      "description": "I've got enough of unnecessary arguments! Fire them both!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Strategist"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Propagandist"
+        }
+      ]
+    }
+  ],
+  "title": "Advisors dispute"
+}
