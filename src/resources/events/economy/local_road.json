@@ -3,7 +3,7 @@
     "yes": [
       {
         "type": "media_condition",
-        "Affiliation": "Opposition"
+        "affiliation": "Opposition"
       }
     ]
   },

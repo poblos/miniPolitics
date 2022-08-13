@@ -1,0 +1,46 @@
+{
+  "description": "After a huge earthquake in Źelia a few years ago, our old embassy's building has been destroyed. Źelian government offered us a free of charge property, but the Ministry of Foreign Affairs declined that proposition and proceeded to buy another building. It turns out that this building is not appropriate for an embassy and public money have been wasted. Luckily, this situation hasn't come out in the media yet, so we've got time to react.",
+  "options": [
+    {
+      "description": "Let's build our embassy from scratch and treat this building as a temporary one. Hopefully media won't notice anything.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "PoliticalInstitutions",
+          "change": 20
+        }
+      ]
+    },
+    {
+      "description": "Why should we care?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Dismiss our Minister of Foreign Affairs and make this public before someone else does it.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Embassy Property Purchase Scandal"
+}

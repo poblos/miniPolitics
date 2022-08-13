@@ -1,0 +1,42 @@
+{
+  "probability": 20,
+  "description": "Źelian Airlines airliner has disappeared from the radars a couple of hours ago about 15 squares north of our northern coastline. It is believed to have fallen into the ocean and Źelian government asked as for help with the rescue action. However, a huge storm means that conditions are very tough and we may risk rescuers lives by offering the help.",
+  "options": [
+    {
+      "description": "It's our duty to help them.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "We can't risk life in such conditions, but we will help them when the storm ends.",
+      "effects": [
+      ]
+    },
+    {
+      "description": "It's not in our interest.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "The plane catastrophe"
+}

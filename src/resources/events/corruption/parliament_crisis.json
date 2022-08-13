@@ -1,0 +1,72 @@
+{
+  "probabilityChanges": [
+    {
+      "probChange": -30,
+      "conditions": [
+        {
+          "type": "modifier_condition",
+          "name": "New speaker"
+        }
+      ]
+    }
+  ],
+  "description": "Impertinence of one of opposition's MP's lead to him being excluded from this session of the parliament. During his speech he said that our speaker's father, who was also a politician, but has died tragically twenty year ago, wouldn't be proud of what he does now. Opposition accused as of censorship and is to organise protest in \"the defence of free speech\".",
+  "options": [
+    {
+      "description": "I would be furious too; our voters shouldn't be too upset if we present the whole situation in the media.",
+      "trigger": {
+        "yes": [
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ],
+        "no": [
+
+        ]
+      },
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "If he can't control his temper, it would be better to change the speaker.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "New speaker"
+        }
+      ]
+    },
+    {
+      "description": "This MP deserves what he got!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Parliamentary crisis"
+}

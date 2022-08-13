@@ -3,7 +3,7 @@
     "yes": [
       {
         "type": "media_condition",
-        "Affiliation": "Neutral"
+        "affiliation": "Neutral"
       }
     ],
     "no": [

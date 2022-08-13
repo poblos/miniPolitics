@@ -1,0 +1,26 @@
+{
+  "description": "The blaze forced the evacuation of about 8000 people and destroyed at least 16 houses on the island of Guiper. Hundreds of our firefighters are trying to stop the wildfire, but we might need to get international help to take control of the situation.",
+  "options": [
+    {
+      "description": "Proud Kachakonya doesn't need any help!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Our friends from Marelland will surely help us.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Forest fire"
+}
