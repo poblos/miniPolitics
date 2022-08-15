@@ -1,0 +1,40 @@
+{
+  "probability": 30,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Military cooperation with Foreberg - initial failure"
+      }
+    ]
+  },
+  "description": "Our joint venture with Foreberg seems to finally be on the right track. The latest sample design produced in Ehr Steel Plant seems to be more reliable and stable than it's predecessors.",
+  "options": [
+    {
+      "description": "After so many problems, it's truly a good news.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Military cooperation with Foreberg - initial failure"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Military cooperation with Foreberg successful"
+        }
+      ]
+    }
+  ],
+  "title": "Military deal finally successful"
+}

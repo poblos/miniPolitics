@@ -1,0 +1,26 @@
+{
+  "name": "Marriage",
+  "id": 2,
+  "currentOption": 2,
+  "options": [
+    {
+      "name": "No civic marriages"
+    },
+    {
+      "name": "Heterosexual marriages legal"
+    },
+    {
+      "name": "Civic-partnerships for all legal"
+    },
+    {
+      "name": "Same-sex marriages legal"
+    },
+    {
+      "name": "Polyamorous and same-sex marriages legal"
+    },
+    {
+      "name": "Communes, polyamorous and same-sex marriages legal"
+    }
+  ]
+
+}

@@ -1,0 +1,47 @@
+{
+  "isUnique": true,
+  "probability": 1000,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 5
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Phone call with the Hegemon"
+      }
+    ]
+  },
+  "description": "After a greeting, Matheuchellian leader started to speak. \"First, congratulations on becoming the Prime Minister of Kachakonya. Relations between our countries were fruitful in the recent years and I hope this state of things will continue under your rule. Although we live in the age of peace, things once certain are not so much now. Tough times are coming and only the tough guys will handle them. You'd better be one of them.\" \n You didn't know what to say, so you just thanked him and the phone call ended.",
+  "options": [
+    {
+      "description": "A strange guy, this president.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Phone call with the Hegemon"
+        }
+      ]
+    },
+    {
+      "description": "He is the hegemon and politician after all, he surely is just trying to make us feel unconfident.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Phone call with the Hegemon"
+        }
+      ]
+    },
+    {
+      "description": "I don't know what he really meant, but we should probably listen to him.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Phone call with the Hegemon"
+        }
+      ]
+    }
+  ],
+  "title": "Phone call from the hegemon - it's the time"
+}

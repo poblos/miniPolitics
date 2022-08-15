@@ -1,0 +1,79 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 2,
+        "option": 2
+      }
+    ]
+  },
+  "probability": 10,
+  "description": "Some our MP's prepared a project that legalises same-sex marriages. Currently civic partnerships are legal for everyone, but changing marriage law may increase our support among people with leftist views.",
+  "options": [
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ]
+      },
+      "description": "Be gay do crime!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "policy_change",
+          "id": 2,
+          "option": 3
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Be gay do crime!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "policy_change",
+          "id": 2,
+          "option": 3
+        }
+      ]
+    },
+    {
+      "description": "What a nonsense!",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Legalisation of same-sex marriages"
+}

@@ -1,0 +1,66 @@
+{
+  "trigger": {
+    "yes": [
+    ],
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Happy"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Strike"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Nurses Strike Ended"
+      }
+    ]
+  },
+  "description": "National Health Service's nurses demand raises. They argue that their salaries are not competitive on the labour market and that average age of nurse surpassed age of 50.",
+  "options": [
+    {
+      "description": "We can't afford that",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nurses Unhappy"
+        }
+      ]
+    },
+    {
+      "description": "We can't overthrow their argumentation. Give them a raise.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Health",
+          "change": 1000
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nurses Happy"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Nurses Unhappy"
+        }
+      ]
+    }
+  ],
+  "title": "HNS' nurses demand raises"
+}

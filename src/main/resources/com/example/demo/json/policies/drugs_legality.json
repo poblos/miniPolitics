@@ -1,0 +1,26 @@
+{
+  "name": "Legality of drugs",
+  "id": 1,
+  "currentOption": 2,
+  "options": [
+    {
+      "name": "Full prohibition"
+    },
+    {
+      "name": "Nicotine legal"
+    },
+    {
+      "name": "Alcohol and nicotine legal"
+    },
+    {
+      "name": "Cannabis legal"
+    },
+    {
+      "name": "Light drugs legal"
+    },
+    {
+      "name": "All drugs legal"
+    }
+  ]
+
+}

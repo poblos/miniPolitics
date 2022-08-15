@@ -1,0 +1,72 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Economic Debate"
+      }
+    ]
+  },
+  "probability": 20,
+  "description": "In the public eye, a debate between economists has ended in our victory. The older professor spoke unconvincingly and stuttered, while our expert was the total opposite. Such a humiliation will surely keep him quiet for a long time. ",
+  "options": [
+    {
+      "description": "Great job!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Economic Debate"
+        }
+      ]
+    },
+    {
+      "description": "We should organise such debates more often.",
+      "trigger": {
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Propagandist",
+            "trait": "MediaExpert"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Economic Debate"
+        }
+      ]
+    }
+  ],
+  "title": "Naughty professor defeated"
+}

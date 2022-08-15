@@ -1,0 +1,41 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 5,
+        "option": 3
+      }
+    ]
+  },
+  "probability": 10,
+  "description": "Our economic analytics argue that we should increase the minimum retirement age as our society is getting older and older.",
+  "options": [
+    {
+      "description": "It may hamper our party's support, but we need to do this.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -5,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "policy_change",
+          "id": 5,
+          "option": 4
+        }
+      ]
+    },
+    {
+      "description": "We can't risk losing our support.",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Retirement age needs an increase"
+}

@@ -1,0 +1,53 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "War with corruption - shots fired"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "A court case of corrupted judge is pending. As a revenge, in the internet interview the judge accused one of our politicians of influencing the verdicts in other courts.",
+  "options": [
+    {
+      "description": "Interesting. Let us try to trace the contacts of this politician.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "War with corruption - shots fired"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "War with corruption - another case"
+        }
+      ]
+    },
+    {
+      "description": "Who would believe him?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "War with corruption - shots fired"
+        }
+      ]
+    }
+  ],
+  "title": "Court scandal - revenge"
+}

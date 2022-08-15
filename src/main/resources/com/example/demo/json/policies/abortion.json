@@ -1,0 +1,32 @@
+{
+  "name": "Abortion law",
+  "id": 3,
+  "currentOption": 3,
+  "options": [
+    {
+      "name": "Abortion fully illegal"
+    },
+    {
+      "name": "Abortion legal only in case of rape or danger for mother's life"
+    },
+    {
+      "name": "Abortion legal only in case of rape, danger for mother's life or irreversible deformities of fetus"
+    },
+    {
+      "name": "Abortion legal in every case till 12 week"
+    },
+    {
+      "name": "Abortion legal in every case"
+    },
+    {
+      "name": "Abortion legal in every case and post-birth in case of irreversible deformities of fetus"
+    },
+    {
+      "name": "Abortion legal in every case during pregnancy and post-birth"
+    },
+    {
+      "name": "Infanticide legal"
+    }
+  ]
+
+}

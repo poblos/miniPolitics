@@ -1,0 +1,49 @@
+{
+  "probability": 60,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "indicator_condition",
+        "value": "30",
+        "relation": "Lower",
+        "indicator": "StateStability"
+      }
+    ]
+  },
+  "description": "Our country's stability is shrinking. Corruption, nepotism, bureaucracy, populism - all of those eat our country from inside. We should probably make some firm moves to put the end to them.",
+  "options": [
+    {
+      "description": "There is nothing we can do.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Let's begin the efforts to simplify the law.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Low stability"
+}

@@ -1,0 +1,96 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong war"
+      }
+    ]
+  },
+  "probability": 60,
+  "description": "After a week, it seems certain that the war won't end decisively as quickly as both sides would have hoped to. Although initial Forebergian landing on the Narong island was successful, their siege of the island's capital isn't going so smoothly as Karlen still controls sea supply route that leads to the island. It seems probable that international aid will be the decisive factor in determining outcome of the war. Which side shall we support?",
+  "options": [
+    {
+      "description": "Let us not interfere in their affairs",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Narong War - neutral"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Military cooperation with Foreberg successful"
+          }
+        ]
+      },
+      "description": "Economic connections with Karlenese are to important for us to let them lose.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "The Narong War - Karlenese side"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "Military cooperation with Foreberg successful"
+          }
+        ]
+      },
+      "description": "Our military cooperation with Foreberg makes helping them pretty simple choice.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "The Narong War - Forebergian side"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Military cooperation with Foreberg successful"
+          }
+        ]
+      },
+      "description": "Let's offer our support to our Forebergian friends.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "The Narong War - Forebergian side"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "The Narong War - continuation"
+}

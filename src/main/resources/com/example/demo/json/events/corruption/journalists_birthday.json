@@ -1,0 +1,59 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "media_condition",
+        "affiliation": "Neutral"
+      }
+    ],
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Politicians forbidden to show up on parties"
+      }
+    ]
+  },
+  "description": "One of the popular journalists, who is known for hard interviews both with government's and opposition's politicians has organised a birthday party. He invited prominent members of parties from around the political spectrum. Photos from the event became viral in the internet and some of our voters consider partying with the opposition as a betrayal.",
+  "options": [
+    {
+      "description": "Publicly condemn their behaviour",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "It's normal to have private relations with the people of the same profession!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We should forbid our party members to attend such events.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Politicians forbidden to show up on parties"
+        }
+      ]
+    }
+  ],
+  "title": "Journalist's birthday"
+}

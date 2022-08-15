@@ -1,0 +1,48 @@
+{
+  "description": "A new Graonian budget had not been passed in a constitutional time as various fractions in the Graonian government couldn't agree on details regarding the distribution of expenses. The Arch-Patriarch had therefore no other choice but to resign. When it comes to the choice of a new one - it's probably a matter of weeks if not months.",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ]
+      },
+      "description": "Those Graonians are ridiculous! Let's make fun of them in our media!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Let's ask them if they need some help to stabilize situation",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Graonian Relations Hampered"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "How many times their government collapsed this year?",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Government collapse"
+}

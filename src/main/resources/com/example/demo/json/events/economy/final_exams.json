@@ -1,0 +1,37 @@
+{
+  "probability": 30,
+  "description": "Ministry of Education prepared a project that changes a format of final school exams. Exams in the new format are thought to be harder to pass, which may result in a bad public reception.",
+  "options": [
+    {
+      "description": "Don't fix what isn't broken.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "So students will have to start studying, I guess",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Final exams"
+}

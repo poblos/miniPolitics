@@ -1,0 +1,58 @@
+{
+  "description": "After recent changes in Graonian's government, a new Arch-Patriarch has been chosen. It turns out that as the place for his first international visit he has chosen our country. ",
+  "options": [
+    {
+      "description": "Relations with Graonia are important for our country.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "I don't think we should allow him to spread his heresies in our country.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Graonian Relations Hampered"
+        }
+      ]
+    },
+    {
+      "description": "Relations with Graonia are important for our country. Make this a topic of a month in our media.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Graonian Relations Propaganda"
+        }
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ],
+        "no": []
+      }
+    }
+  ],
+  "title": "Diplomatic success?"
+}

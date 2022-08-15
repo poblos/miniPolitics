@@ -1,0 +1,38 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Narong tensions - annexation"
+      }
+    ]
+  },
+  "probability": 150,
+  "description": "Forebergian president Mahegaard announced this night that they must protect the freedom of Forebergian people on Narong and thus Forebergian Armed Forces (FAF) will secure control of the island. Minutes later, missiles and airstrikes hit across the Karlenese Federation and a sea landing on Narong was launched. The war has started. ",
+  "options": [
+    {
+      "description": "Could see that coming...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Narong tensions - annexation"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Narong War"
+        }
+      ]
+    }
+  ],
+  "title": "The Narong War"
+}

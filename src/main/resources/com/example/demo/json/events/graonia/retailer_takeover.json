@@ -1,0 +1,51 @@
+{
+  "isUnique": true,
+  "probability": 40,
+  "description": "One of the big companies in the food industry in Kachakonya has been put on sale. International holding based in Graubinden (Graonia) has already expressed interest in taking over the company. However, such a big transaction requires an approval of the antimonopoly office.",
+  "options": [
+    {
+      "description": "Graonians?! We can't allow that.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Graonian Relations Propaganda"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Graonian Relations Hampered"
+        }
+      ]
+    },
+    {
+      "description": "It makes no difference at all.",
+      "effects": [
+      ]
+    },
+    {
+      "description": "Company of that size should be owned by state.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Takeover of a food retailer"
+}

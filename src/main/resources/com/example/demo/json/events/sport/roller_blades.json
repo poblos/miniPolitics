@@ -1,0 +1,48 @@
+{
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Roller blades illegal for children"
+      }
+    ]
+  },
+  "description": "Electric-powered roller blades are becoming increasingly popular around the world. A bill was submitted to the parliament to forbid children under specific age to use them as we observe increasing number of road accident involving underage roller-blade users.",
+  "options": [
+    {
+      "description": "Leave it as it is.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Good point.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Roller blades illegal for children"
+        }
+      ]
+    }
+  ],
+  "title": "Electric roller blades"
+}

@@ -1,0 +1,69 @@
+{
+  "probability": 60,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "indicator_condition",
+        "value": "30",
+        "relation": "Lower",
+        "indicator": "PartyCohesion"
+      }
+    ]
+  },
+  "description": "Our party's cohesion is not at the satisfying level. In the recent days rumours arose that some of our MP's prepare to break out from the party and create one of their own. We have played down these rumors, but today 5 of them announced their departure. We still have the majority in the parliament, but it's dangerous precedent.",
+  "options": [
+    {
+      "description": "It's not an airport, you don't have to announce your departure!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Maybe some promotions would convince them...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Traitors! Let's slander them in our media",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Small rebellion in the party"
+}

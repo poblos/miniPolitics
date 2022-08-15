@@ -1,0 +1,43 @@
+{
+  "isUnique": true,
+  "probability": 1000,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 5
+      }
+    ]
+  },
+  "description": "The Matheuchelles' Federation, one of the greatest empires in the world's history that currently holds the Hegemony... we are lucky to be on good terms with them. Anyway, the President of Matheuchelles himself is willing to talk with you in the coming days.",
+  "options": [
+    {
+      "description": "Should I be worried?",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Phone call with the Hegemon"
+        }
+      ]
+    },
+    {
+      "description": "It would be an interesting experience, I guess...",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Phone call with the Hegemon"
+        }
+      ]
+    },
+    {
+      "description": "I hope he isn't too talkative.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Phone call with the Hegemon"
+        }
+      ]
+    }
+  ],
+  "title": "The first phone call"
+}

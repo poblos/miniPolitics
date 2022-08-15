@@ -1,0 +1,73 @@
+{
+  "probability": 60,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "indicator_condition",
+        "value": "30",
+        "relation": "Lower",
+        "indicator": "PartySupport"
+      }
+    ]
+  },
+  "description": "Our party's support is not at the satisfying level. In the recent polls we have even been overtaken by the main opposition party. People start to organise manifestations against our rule and they demand earlier elections.",
+  "options": [
+    {
+      "description": "There is nothing we can do.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Let's promise them some new benefits.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          },
+          {
+            "type": "modifier_condition",
+            "name": "Graonian Relations Propaganda"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "description": "Remind them about our international successes in our media!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Unfavorable polls"
+}

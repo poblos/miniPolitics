@@ -1,0 +1,72 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "advisor_condition",
+        "job": "Whip"
+      },
+      {
+        "type": "media_condition",
+        "affiliation": "Opposition"
+      }
+    ],
+    "no": []
+  },
+  "description": "Although our whip does a great job maintaining discipline in the party, he recently became an object of slandering campaign in opposition's media. The campaign achieved a partial success and it might be better to dismiss him now.",
+  "options": [
+    {
+      "description": "We can't bend under pressure!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "We don't need him that much.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Whip"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ],
+        "no": []
+      },
+      "description": "Defend him in our media!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Whip controversy"
+}

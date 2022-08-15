@@ -1,0 +1,59 @@
+{
+  "description": "After recent changes in Graonian's government, a new Arch-Patriarch has been chosen. During his first speech he accused us of meddling in the affairs of Graonia and being the reason for bad economic and political situation in the country. ",
+  "options": [
+    {
+      "description": "What an idiot!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ],
+      "trigger": {
+        "yes": [
+        ],
+        "no": [
+          {
+            "type": "modifier_condition",
+            "affiliation": "Graonian Relations Propaganda"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Maybe it wasn't the best idea to make propaganda around Graonian relations...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Graonian Relations Propaganda"
+        }
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "affiliation": "Graonian Relations Propaganda"
+          }
+        ],
+        "no": []
+      }
+    }
+  ],
+  "title": "Diplomatic failure?"
+}

@@ -1,0 +1,37 @@
+{
+  "isUnique": true,
+  "probability": 20,
+  "description": "We've got a chance to hire a talented economist. Although he is of Kachak heritage, he was born in Matheuchelles' capital and studied at prestigious Madu School of Economics. He might be a valuable asset for our party, but our older party members won't be happy about that.",
+  "options": [
+    {
+      "description": "We've got a job for him.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_employment",
+          "id": 1
+        }
+      ]
+    },
+    {
+      "description": "We can't risk annoying the old guard.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Talented economist"
+}

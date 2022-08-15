@@ -1,0 +1,104 @@
+{
+  "probability": 70,
+  "trigger": {
+    "yes": [
+    ],
+    "no": [
+      {
+        "type": "trait_condition",
+        "job": "Strategist",
+        "trait": "SkillfulEconomist"
+      }
+    ]
+  },
+  "description": "Approximate GDP growth data has just been published by the National Bank and it's not as good as we expected it to be.",
+  "options": [
+    {
+      "description": "It's not our fault!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ],
+      "trigger": {
+        "yes": [],
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Economic Growth Propaganda"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Fire our strategist, it's because of him.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Strategist"
+        }
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "advisor_condition",
+            "job": "Strategist"
+          }
+        ],
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Economic Growth Propaganda"
+          }
+        ]
+      }
+    },
+    {
+      "description": "We should have been more careful with what have we taken credit for, I guess...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Economic Growth Propaganda"
+        }
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "Economic Growth Propaganda"
+          }
+        ],
+        "no": [
+        ]
+      }
+    }
+  ],
+  "title": "GDP decrease"
+}

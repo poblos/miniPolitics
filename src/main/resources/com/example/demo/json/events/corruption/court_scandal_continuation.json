@@ -1,0 +1,63 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "War with corruption - preparations"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "Do you remember the court nepotism scandal? It turns out that it wasn't the only suspicious verdict of the judge. We have enough evidence to prosecute him, but you must remember that he has close relations with our party.",
+  "options": [
+    {
+      "description": "No corruption nor nepotism will be tolerated!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "War with corruption - preparations"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "War with corruption - shots fired"
+        }
+      ]
+    },
+    {
+      "description": "Some time has passed... Why shall we remind people about the scandal.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "War with corruption - preparations"
+        }
+      ]
+    }
+  ],
+  "title": "Court scandal - continuation"
+}

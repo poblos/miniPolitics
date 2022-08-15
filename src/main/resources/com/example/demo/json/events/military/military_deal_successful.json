@@ -1,0 +1,40 @@
+{
+  "probability": 40,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Military cooperation with Foreberg - start"
+      }
+    ]
+  },
+  "description": "Although the true success can only be seen during war, our joint venture with Foreberg seems to be successful. The production in Ehr Steel Plant has started and the first fighters have already been tested by elite pilots who say that they are the best machines they had a chance to fly with.",
+  "options": [
+    {
+      "description": "That's a great news!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Military cooperation with Foreberg - start"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Military cooperation with Foreberg successful"
+        }
+      ]
+    }
+  ],
+  "title": "Military deal successful"
+}

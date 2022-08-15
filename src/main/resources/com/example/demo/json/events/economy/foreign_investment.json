@@ -1,0 +1,52 @@
+{
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Foreign company negotiations"
+      }
+    ],
+    "yes": [
+
+    ]
+  },
+  "description": "One of the biggest companies in Matheuchelles' is searching for a place for their new factory in our region. They consider a certain place in Kachakonya as one of their main options, but they want to ensure preferential treatment first, such as tax exemptions, before they make a final decision.",
+  "options": [
+    {
+      "description": "It would be unfair to our own companies if we give them special treatment.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Foreign company negotiations"
+        }
+      ]
+    },
+    {
+      "description": "Let's negotiate with them, but not at all costs.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Foreign company offered good conditions"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Foreign company negotiations"
+        }
+      ]
+    },
+    {
+      "description": "Offer them the best possible conditions.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Foreign company offered great conditions"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Foreign company negotiations"
+        }
+      ]
+    }
+  ],
+  "title": "Foreign investment"
+}

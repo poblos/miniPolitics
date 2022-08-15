@@ -1,0 +1,78 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "ideology_condition",
+        "ideology": "Centrist"
+      }
+    ]
+  },
+  "probability": 5,
+  "description": "Our party's younger members are pushing for a change in party's rhetoric. They argue that younger voters are becoming more and more progressive and we want to be still in power in a couple of years, we should adjust our rhetoric to their beliefs now to be credible. However, our electorate and older party members might not be happy about that right now.",
+  "options": [
+    {
+      "description": "They are still young and would surely be more centrist in a few years.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "They are right. Let's prepare for a change.",
+      "effects": [
+        {
+          "type": "ideology_change",
+          "removed": "Centrist",
+          "added": "Progressive"
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "They are right... but we need to be careful about that. Let's order our propagandist to prepare a campaign in our media",
+      "trigger": {
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Propagandist",
+            "trait": "MediaExpert"
+          },
+          {
+            "type": "media_condition",
+            "affiliation": "Government"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "ideology_change",
+          "removed": "Centrist",
+          "added": "Progressive"
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Younger generation"
+}

@@ -1,0 +1,37 @@
+{
+  "isUnique": true,
+  "description": "Our current gas import deal with Graonia expires soon. It will be perhaps the cheapest option to negotiate a new deal with them, but knowing our rocky relationship with Graonia there is a strong support among our voters to sign a new contract with different suppliers. ",
+  "options": [
+    {
+      "description": "If it's the cheapest option, we have to take it.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We can't be dependant on Graonians anymore!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Economy",
+          "change": 1000
+        }
+      ]
+    }
+  ],
+  "title": "Gas import"
+}

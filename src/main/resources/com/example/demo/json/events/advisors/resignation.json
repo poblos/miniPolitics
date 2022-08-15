@@ -1,0 +1,29 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "some_advisor_condition"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "probability": 5,
+  "description": "One of our party's leaders decided to retire from active politics. It's a shame, but we can't do much to change his decision.",
+  "options": [
+    {
+      "description": "He'll be better off outside this swamp...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "random_advisor_dismissal"
+        }
+      ]
+    }
+  ],
+  "title": "The resignation"
+}

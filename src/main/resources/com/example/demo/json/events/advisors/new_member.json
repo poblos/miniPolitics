@@ -1,0 +1,48 @@
+{
+  "probability": 30,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "trait_condition",
+        "job": "Whip",
+        "trait": "Recruiter"
+      }
+    ]
+  },
+  "description": "Our recruiter managed to establish the contact with one of the opposition's MP's. He is willing to join our party if we guarantee him a good place on our electoral list.",
+  "options": [
+    {
+      "description": "He's welcome.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Pathetic.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "New member"
+}
