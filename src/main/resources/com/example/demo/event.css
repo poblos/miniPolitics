@@ -1,3 +1,28 @@
-.event-box {
-    -fx-background-color:blue;
+.root {
+    -fx-background-color:light-grey;
+    -fx-border-color:black;
+    -fx-border-radius:40;
+    -fx-border-insets:10;
+    -fx-border-width:10;
+    -fx-grid-lines-visible:false;
+
+}
+
+#indicatorBox {
+    -fx-font-size:15;
+}
+
+#jobBox {
+    -fx-font-size:15;
+}
+.text-area {
+    -fx-font-size:20;
+}
+
+.button {
+    -fx-font-size:20;
+}
+
+.v-box {
+    -fx-spacing-size:100;
 }

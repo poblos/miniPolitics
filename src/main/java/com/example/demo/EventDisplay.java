@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 public class EventDisplay extends VBox {
     public EventDisplay(Event event, HelloController controller) {
@@ -20,6 +21,7 @@ public class EventDisplay extends VBox {
         // Desc setup
         TextArea desc = new TextArea();
         desc.setText(event.getDescription());
+        desc.setWrapText(true);
         desc.setEditable(false);
         desc.setFont(new Font("Serif", 16));
         this.getChildren().add(desc);
