@@ -14,7 +14,9 @@ import com.example.demo.game.RoundCondition;
 import com.example.demo.indicators.IndicatorChange;
 import com.example.demo.indicators.IndicatorCondition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import com.example.demo.jobs.*;
 import com.example.demo.media.MediaCondition;
@@ -34,10 +36,23 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-import static com.example.demo.JsonLoader.loadFiles;
+import static com.example.demo.utils.JsonLoader.loadFiles;
 import static com.example.demo.party.Ideology.*;
 
-public class HelloController {
+public class MainController {
+    @FXML
+    private PartyController partyController;
+
+    @FXML
+    private BudgetController budgetController;
+
+    @FXML
+    private MediaController mediaController;
+    @FXML
+    private VBox infoBar;
+
+    @FXML
+    private VBox infoBox;
     @FXML
     private HBox startBox;
     @FXML
@@ -46,7 +61,17 @@ public class HelloController {
     private HBox indicatorBox;
     @FXML
     private VBox eventBox;
-    Game game;
+    private Game game;
+
+    public Game getGame() {
+        return game;
+    }
+
+    @FXML
+    private void initialize() {
+
+        System.out.println("xd");
+    }
 
     @FXML
     protected void onStartButtonClick() throws URISyntaxException, IOException {
@@ -76,7 +101,7 @@ public class HelloController {
         ideologies.add(BigTent);
         ideologies.add(Capitalist);
         ideologies.add(Centrist);
-        Party party = new Party("Democratic Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "Currently in power for past 4 years, but under new leadership everything might happen.", ideologies);
+        Party party = new Party("Democratic Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "Currently in power for past 4 years, but under new leadership suffer from internal turmoil.", ideologies);
 
         game = new Game(events, people, policies, modifiers, medias, party, budgets.get(0));
         indicatorBox.getChildren().add(new IndicatorDisplay("PartyCohesion"));
@@ -123,5 +148,44 @@ public class HelloController {
         game.chooseEvent();
         eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
 
+    }
+    private void setInfoBox(String fxmlPath, InfoBoxController controller) {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxmlPath));
+        AnchorPane anchor;
+        try {
+            anchor = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
+        infoBox.getChildren().clear();
+        infoBox.getChildren().add(anchor);
+        switch (controller) {
+            case Party -> partyController = loader.getController();
+            case Budget -> budgetController = loader.getController();
+            case Media -> mediaController = loader.getController();
+        }
+
+
+    }
+    @FXML
+    public void onPartyButtonClick() {
+        setInfoBox("party-view.fxml", InfoBoxController.Party);
+        partyController.setMainController(this);
+        partyController.update();
+    }
+
+    @FXML
+    public void onMediaButtonClick() {
+        setInfoBox("media-view.fxml", InfoBoxController.Media);
+        mediaController.setMainController(this);
+        mediaController.update();
+    }
+
+    @FXML
+    public void onBudgetButtonClick() {
+        setInfoBox("budget-view.fxml", InfoBoxController.Budget);
+        budgetController.setMainController(this);
+        budgetController.update();
     }
 }

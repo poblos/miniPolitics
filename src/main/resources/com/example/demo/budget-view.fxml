@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BudgetController">
+    <VBox fx:id="budgetBox" alignment="TOP_RIGHT" layoutY="59.0" prefHeight="391.0" prefWidth="330.0" />
+    <TextField alignment="CENTER" editable="false" prefHeight="50.0" prefWidth="330.0" text="BUDGET" style="-fx-font-size: 28;"/>
+</AnchorPane>

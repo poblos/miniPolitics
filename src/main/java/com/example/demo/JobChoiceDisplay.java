@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.HelloController;
-import com.example.demo.JobButton;
 import com.example.demo.jobs.Job;
 import com.example.demo.jobs.Person;
 import javafx.scene.control.Label;
@@ -10,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class JobChoiceDisplay extends VBox {
-    public JobChoiceDisplay(Person person, HelloController controller) {
+    public JobChoiceDisplay(Person person, MainController controller) {
         // Title setup
         Label title = new Label();
         title.setText("Choose job");

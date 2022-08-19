@@ -2,24 +2,32 @@ package com.example.demo;
 
 import com.example.demo.game.Game;
 import com.example.demo.jobs.Job;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
-public class JobDisplay extends Label {
+public class JobDisplay extends VBox {
+    Label text;
+    Label graphic;
     Image image;
-    String name;
-    private Job job;
+    private final Job job;
 
     public JobDisplay(Job job) {
         this.job = job;
-        this.setText(this.job + ": None");
+        this.text = new Label();
+        this.setAlignment(Pos.CENTER);
+        this.graphic = new Label();
+        this.text.setText(this.job + ": None");
         try {
             image = new Image("/ModelNotFound.png");
-            setGraphic(new ImageView(image));
+            this.graphic.setGraphic(new ImageView(image));
         } catch (Exception e) {
             System.out.println("problem");
         }
+        this.getChildren().add(graphic);
+        this.getChildren().add(text);
     }
 
     public Job getJob() {
@@ -27,10 +35,10 @@ public class JobDisplay extends Label {
     }
 
     public void add(Game game) {
-        this.setText(this.job + ": " + game.getCurrentPerson().getName());
+        this.text.setText(this.job + ": " + game.getCurrentPerson().getName());
         try {
             image = new Image("/" + game.getCurrentPerson().getName() + ".png");
-            setGraphic(new ImageView(image));
+            this.graphic.setGraphic(new ImageView(image));
         } catch (Exception e) {
             System.out.println("problem");
         }
@@ -38,9 +46,9 @@ public class JobDisplay extends Label {
 
     public void update(Game game) {
         if (game.getEmployed(this.job) == null) {
-            this.setText(this.job + ": None");
+            this.text.setText(this.job + ": None");
             image = new Image("/ModelNotFound.png");
-            setGraphic(new ImageView(image));
+            this.graphic.setGraphic(new ImageView(image));
         }
     }
 

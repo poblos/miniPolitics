@@ -9,6 +9,14 @@ public class MediaGroup {
         return affiliation;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public MediaType getType() {
+        return type;
+    }
+
     public void setAffiliation(Affiliation affiliation) {
         this.affiliation = affiliation;
     }

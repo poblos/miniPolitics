@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.demo.utils;
 
-import com.example.demo.event.Event;
+import com.example.demo.Main;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
@@ -19,7 +19,7 @@ public class JsonLoader {
         ArrayList<class_> list = new ArrayList<>();
         JsonAdapter<class_> jsonAdapter = moshi.adapter(class_);
 
-        URL dir = HelloApplication.class.getResource(path);
+        URL dir = Main.class.getResource(path);
         List<File> collect = Files.walk(Paths.get(dir.toURI()))
                 .filter(Files::isRegularFile)
                 .map(Path::toFile).toList();

@@ -71,13 +71,22 @@ public class Game {
     public Event getCurrentEvent() {
         return currentEvent;
     }
-
     public boolean displayNext() {
         return displayNext;
     }
-
     public Person getCurrentPerson() {
         return currentPerson;
+    }
+    public List<MediaGroup> getMediaGroups() {
+        return mediaGroups;
+    }
+
+    public Party getParty() {
+        return party;
+    }
+
+    public Budget getBudget() {
+        return budget;
     }
 
     private int eventProbability(Event event) {
@@ -151,18 +160,14 @@ public class Game {
                 values.put(indicator, change + values.get(indicator));
             } else if (effect.getClass() == RandomAdvisorEmployment.class) {
 
-                currentPerson = people.values().stream()
-                        .skip(random.nextInt(people.size()))
-                        .findFirst().orElse(null);
+                currentPerson = people.values().stream().skip(random.nextInt(people.size())).findFirst().orElse(null);
                 return false;
             } else if (effect.getClass() == AdvisorEmployment.class) {
                 Person newPerson = people.get(((AdvisorEmployment) effect).getId());
                 currentPerson = newPerson;
                 return false;
             } else if (effect.getClass() == RandomAdvisorDismissal.class) {
-                Job job = employed.keySet().stream()
-                        .skip(random.nextInt(employed.size()))
-                        .findFirst().orElse(null);
+                Job job = employed.keySet().stream().skip(random.nextInt(employed.size())).findFirst().orElse(null);
                 fireFromJob(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
                 fireFromJob(((AdvisorDismissal) effect).getJob());
