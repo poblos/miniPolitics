@@ -1,0 +1,183 @@
+{
+  "probability": 120,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Groundbreaking Reforms - Phase Three"
+      }
+    ]
+  },
+  "isUnique": true,
+  "description": "We have done what had to be done. The dilemmas concerning the constituency, the conclave and the governing system have been solved at least for now. Since the time before the elections is short, our ideologists need to know which ideals shall be the ones signature not only to our party, but also to Graonia as a nation.",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "policy_condition",
+            "id": 1,
+            "option": 3
+          },
+          {
+            "type": "policy_condition",
+            "id": 1,
+            "option": 4
+          }
+        ],
+        "description": "Only the words of the Great Grey One and his apostles of the Sivian Church can guide our nation to greatness!",
+        "effects": [
+          {
+            "type": "modifier_removal",
+            "name": "Groundbreaking Reforms - Phase Three"
+          },
+          {
+            "type": "policy_change",
+            "id": 4,
+            "option": 3
+          },
+          {
+            "type": "indicator_change",
+            "change": 1,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": 2,
+            "indicator": "PartySupport"
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "policy_condition",
+            "id": 5,
+            "option": 4
+          }
+        ],
+        "description": "Freedom, equality and progress are the signs of the times!",
+        "effects": [
+          {
+            "type": "modifier_removal",
+            "name": "Groundbreaking Reforms - Phase Three"
+          },
+          {
+            "type": "policy_change",
+            "id": 4,
+            "option": 0
+          },
+          {
+            "type": "indicator_change",
+            "change": -2,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": -1,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "indicator_change",
+            "change": 5,
+            "indicator": "PartySupport"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Order and tradition - as they have always been.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Groundbreaking Reforms - Phase Three"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Community and welfare among the families.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Groundbreaking Reforms - Phase Three"
+        },
+        {
+          "type": "policy_change",
+          "id": 4,
+          "option": 1
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "policy_condition",
+            "id": 5,
+            "option": 2
+          },
+          {
+            "type": "policy_condition",
+            "id": 2,
+            "option": 3
+          }
+        ],
+        "description": "National pride and obedience to the Arch-Patriarch will make Graonia great again!",
+        "effects": [
+          {
+            "type": "modifier_removal",
+            "name": "Groundbreaking Reforms - Phase Three"
+          },
+          {
+            "type": "policy_change",
+            "id": 4,
+            "option": 4
+          },
+          {
+            "type": "indicator_change",
+            "change": -5,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": 3,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "indicator_change",
+            "change": 1,
+            "indicator": "PartySupport"
+          }
+        ]
+      }
+    }
+  ],
+  "title": "Ideology for the future"
+}

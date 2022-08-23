@@ -1,0 +1,22 @@
+{
+  "name": "Political Ideology",
+  "id": 4,
+  "currentOption": 2,
+  "options" : [
+    {
+      "name": "Progressivism"
+    },
+    {
+      "name": "Sivian Democracy"
+    },
+    {
+      "name": "Conservatism"
+    },
+    {
+      "name": "Fundamentalism"
+    },
+    {
+      "name": "Fascism"
+    }
+  ]
+}

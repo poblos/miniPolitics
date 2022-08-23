@@ -1,0 +1,22 @@
+{
+  "name": "Sivian Church Power",
+  "id": 1,
+  "currentOption": 2,
+  "options" : [
+    {
+      "name": "Nonexistent"
+    },
+    {
+      "name": "Limited"
+    },
+    {
+      "name": "Moderate"
+    },
+    {
+      "name": "Strengthened"
+    },
+    {
+      "name": "Total"
+    }
+  ]
+}

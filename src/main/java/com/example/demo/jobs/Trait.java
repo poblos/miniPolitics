@@ -7,5 +7,6 @@ public enum Trait {
     SkillfulEconomist,
     Recruiter,
     MediaExpert,
-    AcademicOrigin
+    AcademicOrigin,
+    Admiral
 }

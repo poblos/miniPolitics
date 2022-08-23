@@ -34,3 +34,7 @@
 .text-field{
     -fx-background-color: linear-gradient(from 25px 1px to 100px 100px,#00A2E8, #F9F9F9);
 }
+
+#roundLabel {
+    -fx-font-size:20;
+}

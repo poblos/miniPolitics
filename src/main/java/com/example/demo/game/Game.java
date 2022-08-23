@@ -89,6 +89,10 @@ public class Game {
         return budget;
     }
 
+    public int getRound() {
+        return round;
+    }
+
     private int eventProbability(Event event) {
         if (event.getProbability() == 0) {
             event.setProbability(50);
@@ -311,7 +315,7 @@ public class Game {
         } else if (condition.getClass() == PolicyCondition.class) {
             return policies.get(((PolicyCondition) condition).id()).getCurrentOption() == ((PolicyCondition) condition).option();
         } else if (condition.getClass() == RoundCondition.class) {
-            return round > ((RoundCondition) condition).round();
+            return round >= ((RoundCondition) condition).round();
         }
         return false;
     }

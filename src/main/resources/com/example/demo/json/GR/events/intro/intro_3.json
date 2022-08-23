@@ -1,0 +1,20 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 2
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 9999,
+  "description": "On Searth those who control the most critical maritime trade routes control the world. And to control those routes a country needs a fleet like Mateuschellian. Ever since their ascendance to global hegemony, the illusory safety of Mateuschellian controlled trade routes deprived Graonia of their most valuable craft - the craft of worldwide ventures. Whatever we choose to trade, someone has it better. Electronics? - Mateuschelles; Alloys? - Foreberg; et cetera. What an irony it is being a country rich in minerals and gas with virtually no one to export our resources to!... No one to invest in our industry or services!... Due to the shortcomings of every recent government Graonia had no long term development strategy, which resulted in our backwardness in almost every field. Even our youth dresses up like old people did 20 years ago in more developed countries.",
+  "options": [
+    {
+      "description": "If the world trots forward, we have to gallop.",
+      "effects": []
+    }
+  ],
+  "title": "Socio-economic backwardness"
+}

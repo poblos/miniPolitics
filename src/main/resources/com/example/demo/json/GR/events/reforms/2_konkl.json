@@ -1,0 +1,164 @@
+{
+  "probability": 120,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Groundbreaking Reforms - Phase One"
+      }
+    ],
+    "no": [
+      {
+        "type": "indicator_condition",
+        "value": 35,
+        "relation": "Lower",
+        "indicator": "StateStability"
+      }
+    ]
+  },
+  "isUnique": true,
+  "description": "The upper house of the Graonian parliament, commonly known as The Conclave of Patriarchs has always held a key position in Graonian politics. Its main purpose is to to ammend every act the lower house passes in accordance to the Sivian teachings. However the fact the seat in the conclave is permanent and only members of the conclave can compete to become the head of State, which effectively exculdes anyone but the clergy in the highest eschelons of power. Reforming the conclave and the prequisites to become head of state will have many consequences, some of which we can't predict.",
+  "options": [
+    {
+      "description": "We need to reform the conclave slowly by introducing term mebers alongside permanent ones and by allowing secular candidates to join the upper house!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Groundbreaking Reforms - Phase Two"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Groundbreaking Reforms - Phase One"
+        },
+        {
+          "type": "policy_change",
+          "id": 2,
+          "option": 2
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "policy_condition",
+            "id": 1,
+            "option": 1
+          }
+        ],
+        "description": "Let's disband the conclave altogether!",
+        "effects": [
+          {
+            "type": "modifier_invocation",
+            "name": "Groundbreaking Reforms - Phase Two"
+          },
+          {
+            "type": "modifier_removal",
+            "name": "Groundbreaking Reforms - Phase One"
+          },
+          {
+            "type": "policy_change",
+            "id": 2,
+            "option": 3
+          },
+          {
+            "type": "indicator_change",
+            "change": -4,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": 2,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "indicator_change",
+            "change": 1,
+            "indicator": "PartySupport"
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "policy_condition",
+            "id": 1,
+            "option": 1
+          }
+        ],
+        "description": "The conclave needs to expand its influence by forming the house of considerations to speed up the legislative process. Also let them have a decisive vote in any changes in the constitution!",
+        "effects": [
+          {
+            "type": "modifier_invocation",
+            "name": "Groundbreaking Reforms - Phase Two"
+          },
+          {
+            "type": "modifier_removal",
+            "name": "Groundbreaking Reforms - Phase One"
+          },
+          {
+            "type": "policy_change",
+            "id": 2,
+            "option": 0
+          },
+          {
+            "type": "policy_change",
+            "id": 1,
+            "option": 3
+          },
+          {
+            "type": "indicator_change",
+            "change": 2,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": -1,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "indicator_change",
+            "change": -3,
+            "indicator": "PartySupport"
+          }
+        ]
+      }
+    },
+    {
+      "description": "I am not confident enough to make such consequential reforms.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Groundbreaking Reforms - Phase Two"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Groundbreaking Reforms - Phase One"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "State of the conclave"
+}

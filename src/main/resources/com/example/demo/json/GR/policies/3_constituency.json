@@ -1,0 +1,19 @@
+{
+  "name": "Constituency",
+  "id": 3,
+  "currentOption": 1,
+  "options" : [
+    {
+      "name": "Nonexistent"
+    },
+    {
+      "name": "Religious"
+    },
+    {
+      "name": "Secular"
+    },
+    {
+      "name": "Reformed"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "probability": 120,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Groundbreaking Reforms - Phase Two"
+      }
+    ],
+    "no": [
+      {
+        "type": "indicator_condition",
+        "value": 40,
+        "relation": "Lower",
+        "indicator": "StateStability"
+      }
+    ]
+  },
+  "isUnique": true,
+  "description": "Graonian system of governance is a theocratic presidential republic, however recent political changes may have influenced the internal balance of power. We should reconsider how the relations between the executive and legislative powers should look like in this new environment.",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "policy_condition",
+            "id": 1,
+            "option": 3
+          }
+        ],
+        "description": "We should merge the houses of the parliament and the resorts into one entity with the conclave being its head alongside the Arch-Patriarch!",
+        "effects": [
+          {
+            "type": "modifier_invocation",
+            "name": "Groundbreaking Reforms - Phase Three"
+          },
+          {
+            "type": "modifier_removal",
+            "name": "Groundbreaking Reforms - Phase Two"
+          },
+          {
+            "type": "policy_change",
+            "id": 1,
+            "option": 4
+          },
+          {
+            "type": "policy_change",
+            "id": 5,
+            "option": 1
+          },
+          {
+            "type": "indicator_change",
+            "change": 1,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": -1,
+            "indicator": "PartyCohesion"
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "policy_condition",
+            "id": 1,
+            "option": 1
+          }
+        ],
+        "description": "It is high time for the Arch-Patriarch to give up his powers to the resorts. Elect a prime minister and make him the head of government!",
+        "effects": [
+          {
+            "type": "modifier_invocation",
+            "name": "Groundbreaking Reforms - Phase Three"
+          },
+          {
+            "type": "modifier_removal",
+            "name": "Groundbreaking Reforms - Phase Two"
+          },
+          {
+            "type": "policy_change",
+            "id": 5,
+            "option": 4
+          },
+          {
+            "type": "indicator_change",
+            "change": -2,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": -2,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "indicator_change",
+            "change": 4,
+            "indicator": "PartySupport"
+          }
+        ]
+      }
+    },
+    {
+      "description": "The situation works best as it is.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Groundbreaking Reforms - Phase Three"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Groundbreaking Reforms - Phase Two"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "We need to expand the autonomy of the resorts by electing a prime minister and creating the ministeries but keeping them accountable to the Arch-Patriarch.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Groundbreaking Reforms - Phase Three"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Groundbreaking Reforms - Phase Two"
+        },
+        {
+          "type": "policy_change",
+          "id": 5,
+          "option": 3
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Government system reform?"
+}

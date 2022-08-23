@@ -1,0 +1,19 @@
+{
+  "name": "Patriarch Conclave",
+  "id": 2,
+  "currentOption": 1,
+  "options" : [
+    {
+      "name": "Strengthened"
+    },
+    {
+      "name": "Traditional"
+    },
+    {
+      "name": "Reformed"
+    },
+    {
+      "name": "Disbanded"
+    }
+  ]
+}

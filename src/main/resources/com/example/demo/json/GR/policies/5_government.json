@@ -1,0 +1,22 @@
+{
+  "name": "Government System",
+  "id": 5,
+  "currentOption": 2,
+  "options" : [ 
+    {
+      "name": "Dictatorial"
+    },
+    {
+      "name": "Oligarchic"
+    },
+    {
+      "name": "Presidential"
+    },
+    {
+      "name": "Semi-Presidential"
+    },
+    {
+      "name": "Parliamentary"
+    }
+  ]
+}

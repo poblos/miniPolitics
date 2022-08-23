@@ -1,0 +1,91 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 0
+      }
+    ],
+    "no": [
+      {
+        "type": "indicator_condition",
+        "value": 40,
+        "relation": "Lower",
+        "indicator": "PartyCohesion"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 9999,
+  "description": "One evening you sit with your closest party colleagues in your penthouse on the top of the Waaserstaat district in Grauinbid. Recent changes on the international stage worry you since the future of Graonia is uncertain in such turbulent times. The country needs reforms - not another failed government. You come up with an idea that a slight but significat change in the structure of the constituency may help your supporters get elected into the parliament, which would create a stable government for another five years. The time is short however, as changes in election law can be implemented no later than 6 months before the elections begin. What changes to the constituency shall we propose?",
+  "options": [
+    {
+      "description": "We need to appoint secular clerks in charge of the constituencies to reduce the clergy's interference!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Groundbreaking Reforms - Phase One"
+        },
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 2
+        },
+        {
+          "type": "policy_change",
+          "id": 1,
+          "option": 1
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Let us redraw the borders of the constituencies so it favours our candidates!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Groundbreaking Reforms - Phase One"
+        },
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 3
+        },
+        {
+          "type": "policy_change",
+          "id": 1,
+          "option": 1
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "I would propose to someone but I'm afraid I'm celibate.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Groundbreaking Reforms - Phase One"
+        }
+      ]
+    }
+  ],
+  "title": "Groundbreaking Reforms"
+}

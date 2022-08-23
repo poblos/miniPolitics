@@ -1,0 +1,77 @@
+{
+  "probability_changes": [
+    {
+      "probChange": 50,
+      "conditions": {
+        "type": "round_condition",
+        "round": 50
+      }
+    }
+  ],
+  "trigger": {
+    "yes": [
+      {
+        "type": "trait_condition",
+        "job": "Strategist",
+        "trait": "Admiral"
+      }
+    ]
+  },
+  "isUnique": true,
+  "description": "Our Head Admiral recently invited multiple high ranking fleet officers as well as strategists and naval engineers on a conference to discuss the future of Graonian naval doctrine. While their debate is not over yet, three main alternatives crystalised among the participants. The first group claims that the depth of Graonian territorial waters can be fully exploited by promoting submarine warfare. These vessels could also be used to disturb international trade in case of any future war. The second group disagrees, claiming that the firepower of submarines will have no use against ground targets; therefore a focus on capital ships and shore bombardment of strategic locations will give our forces a greater edge. Lastly there are those who emphasise aircraft carriers and their sheer range of operation as well as the value air support holds in contemporary warfare.",
+  "options": [
+    {
+      "description": "Submarines seem to be the most sensible option.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Submarine Focus"
+        },
+        {
+          "type": "budget_expense",
+          "category": "NationalDefence",
+          "change": 500
+        }
+      ]
+    },
+    {
+      "description": "Capital ship firepower is too tempting not to be considered.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Capital Ship Focus"
+        },
+        {
+          "type": "budget_expense",
+          "category": "NationalDefence",
+          "change": 800
+        }
+      ]
+    },
+    {
+      "description": "Carriers are the future of naval combat and we have to get them.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Carrier Focus"
+        },
+        {
+          "type": "budget_expense",
+          "category": "NationalDefence",
+          "change": 1200
+        }
+      ]
+    },
+    {
+      "description": "Who needs a naval reform anyway?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "category": "StateStability",
+          "change": 2
+        }
+      ]
+    }
+  ],
+  "title": "A change in naval doctrine?"
+}

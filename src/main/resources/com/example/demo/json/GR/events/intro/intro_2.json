@@ -1,0 +1,20 @@
+{
+  "isUnique": true,
+  "probability": 9999,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 1
+      }
+    ]
+  },
+  "description": "Despite our God's blessings, our nation has experienced a steady decline since its golden era under Arch-Patriarch Yegoros I Yendrolos. Once a regional power, Graonia has become merely a minor player on the global stage after years and years of lost wars and opportunities. The institutions which facilitated devotion among the faithful and rallied them to the holy cause of Mother Graonia now only benefit the personal interests of the clergy - corrupt and decadent. Since the areas of constituency and parishes are linked, it is not unlikely for patriarchs to influence parliamentary election results and the MPs are rarely able to create a stable majority in the parliament. The inability to pass the budget act led to the government being disbanded more than a dozen times in the last 50 years and even the Arch-Patriarchs whose governments managed to survive often got impeached after 2 years.",
+  "options": [
+    {
+      "description": "We need to stop this vicious cycle!",
+      "effects": []
+    }
+  ],
+  "title": "The political scene"
+}
