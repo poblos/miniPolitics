@@ -1,0 +1,99 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 5,
+        "option": 0
+      }
+    ],
+    "no": [
+      {
+        "type": "indicator_condition",
+        "value": 50,
+        "relation": "Lower",
+        "indicator": "StateStability"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 20,
+  "description": "The  faith of the Grey One was the one factor that held our nation firm when the times were rough. However with recent developments, the populace seem to have a new deity in the form of the State itself. The patriarchs' power had never been so limited. It may be high time to exclude this caste from political life.",
+  "options": [
+    {
+      "description": "We should go further and disband this relic-of-the-past church altogether!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Sivian Church Disbanded"
+        },
+        {
+          "type": "policy_change",
+          "id": 1,
+          "option": 0
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 6,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "It would be sensible to ban the clergy from holding any political and administrative positions.",
+      "effects": [
+        {
+          "type": "policy_change",
+          "id": 1,
+          "option": 0
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We should not meddle with the clergy anymore.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The question of the Sivian Church"
+}

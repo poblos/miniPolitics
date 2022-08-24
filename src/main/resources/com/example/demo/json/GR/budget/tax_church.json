@@ -1,0 +1,60 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 1
+      }
+    ]
+  },
+  "isUnique": true,
+  "description": "The Sivian Church is probably the greatest property owner in all Graonia. Many people in the past gave their houses and personal riches to the Church as an act of their last will. The legislature has always been lenient in terms of taxes paid by the clergy. Some patriarchs merely pay any taxes since their main source of income is renting Church  property and any revenue generated on Church property is tax-free. The power of the Sivian Church has decreased as a result of our government's recent actions and it wouldn't be too difficult to tax the Church while it's in a weakened state.",
+  "options": [
+    {
+      "description": "Let us remove tax exemptions from Church property.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Taxing The Church"
+        },
+        {
+          "type": "budget_income",
+          "category": "PropertyTax",
+          "change": 10000
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Does it mean MY property will be taxed as well?! NEVER!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The Church and the taxes"
+}

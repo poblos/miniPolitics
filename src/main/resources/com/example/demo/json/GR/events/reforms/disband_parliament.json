@@ -1,0 +1,70 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 5,
+        "option": 0
+      }
+    ],
+    "no": [
+      {
+        "type": "indicator_condition",
+        "value": 50,
+        "relation": "Lower",
+        "indicator": "StateStability"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 20,
+  "description": "Since the emergence of the supreme leader of Graonia, the parliament was reduced to serve advisory and administrative purposes with most of the legislative power being held by the resorts. The system seems to be working surprisingly fine with new acts being created and passed through the procedures with lightning speed. The parliament seems redundant in this scenario.",
+  "options": [
+    {
+      "description": "Maintaining the parliament is a waste of money and my mental energy. We should disband it!",
+      "effects": [
+        {
+          "type": "policy_change",
+          "id": 3,
+          "option": 0
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 5,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Despite the setbacks we should keep the parliament to fool the people into thinking they have power to change anything!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The question of the parliament"
+}

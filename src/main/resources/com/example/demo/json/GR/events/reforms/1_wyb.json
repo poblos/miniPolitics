@@ -3,7 +3,7 @@
     "yes": [
       {
         "type": "round_condition",
-        "round": 0
+        "round": 90
       }
     ],
     "no": [
@@ -17,7 +17,7 @@
   },
   "isUnique": true,
   "probability": 9999,
-  "description": "One evening you sit with your closest party colleagues in your penthouse on the top of the Waaserstaat district in Grauinbid. Recent changes on the international stage worry you since the future of Graonia is uncertain in such turbulent times. The country needs reforms - not another failed government. You come up with an idea that a slight but significat change in the structure of the constituency may help your supporters get elected into the parliament, which would create a stable government for another five years. The time is short however, as changes in election law can be implemented no later than 6 months before the elections begin. What changes to the constituency shall we propose?",
+  "description": "One evening you sit with your closest party colleagues in your penthouse on the top of the Waaserstaat district in Grauinbid. Recent changes on the international stage worry you since the future of Graonia is uncertain in such turbulent times. The country needs reforms - not another failed government. You come up with an idea that a slight but significant change in the structure of the constituency may help your supporters get elected into the parliament, which would create a stable government for another five years. The time is short however, as changes in election law can be implemented no later than 6 months before the elections begin. What changes to the constituency shall we propose?",
   "options": [
     {
       "description": "We need to appoint secular clerks in charge of the constituencies to reduce the clergy's interference!",

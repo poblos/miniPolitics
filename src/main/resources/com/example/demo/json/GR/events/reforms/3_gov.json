@@ -122,7 +122,7 @@
       ]
     },
     {
-      "description": "We need to expand the autonomy of the resorts by electing a prime minister and creating the ministeries but keeping them accountable to the Arch-Patriarch.",
+      "description": "We need to expand the autonomy of the resorts by electing a prime minister and creating the ministries but keeping them accountable to the Arch-Patriarch.",
       "effects": [
         {
           "type": "modifier_invocation",

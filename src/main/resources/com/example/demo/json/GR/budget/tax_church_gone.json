@@ -1,0 +1,189 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Sivian Church Disbanded"
+      }
+    ]
+  },
+  "probability": 9999,
+  "isUnique": true,
+  "description": "Since the Sivian Church has been disbanded by our recent decision, it is formally illegal for it to be a property owner. The amount of land the Church possessed would make a great addition to the state assets.",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "Taxing The Church"
+          }
+        ],
+        "description": "The property of the church will be owned by respective ex-patriarchs personally.",
+        "effects": [
+          {
+            "type": "indicator_change",
+            "change": 2,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "modifier_removal",
+            "name": "Taxing The Church"
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Taxing The Church"
+          }
+        ],
+        "description": "The property of the church will be owned by respective ex-patriarchs personally, as long as they pay taxes like regular property owners.",
+        "effects": [
+          {
+            "type": "indicator_change",
+            "change": 1,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "budget_income",
+            "category": "PropertyTax",
+            "change": 10000
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "Taxing The Church"
+          }
+        ],
+        "description": "The state will make good use of this property.",
+        "effects": [
+          {
+            "type": "indicator_change",
+            "change": -2,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": 2,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "modifier_removal",
+            "name": "Taxing The Church"
+          },
+          {
+            "type": "budget_income",
+            "category": "PropertyTax",
+            "change": -10000
+          },
+          {
+            "type": "modifier_invocation",
+            "name": "Ex-Church Property Ownership"
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Taxing The Church"
+          }
+        ],
+        "description": "The state will make good use of this property.",
+        "effects": [
+          {
+            "type": "indicator_change",
+            "change": -2,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": 2,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "modifier_invocation",
+            "name": "Ex-Church Property Ownership"
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "Taxing The Church"
+          }
+        ],
+        "description": "Sell the property to industrial conglomerates for maximum revenue!",
+        "effects": [
+          {
+            "type": "indicator_change",
+            "change": -1,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": -1,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "modifier_removal",
+            "name": "Taxing The Church"
+          },
+          {
+            "type": "budget_income",
+            "category": "OtherIncome",
+            "change": 20000
+          }
+        ]
+      }
+    },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Taxing The Church"
+          }
+        ],
+        "description": "Sell the property to industrial conglomerates for maximum revenue!",
+        "effects": [
+          {
+            "type": "indicator_change",
+            "change": -1,
+            "indicator": "StateStability"
+          },
+          {
+            "type": "indicator_change",
+            "change": -1,
+            "indicator": "PartyCohesion"
+          },
+          {
+            "type": "budget_income",
+            "category": "PropertyTax",
+            "change": 10000
+          },
+          {
+            "type": "budget_income",
+            "category": "OtherIncome",
+            "change": 20000
+          }
+        ]
+      }
+    }
+  ],
+  "title": "Dealing with Church property"
+}

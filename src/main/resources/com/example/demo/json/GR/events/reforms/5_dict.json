@@ -1,0 +1,76 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 4,
+        "option": 4
+      },
+      {
+        "type": "indicator_condition",
+        "value": 50,
+        "relation": "Higher",
+        "indicator": "PartySupport"
+      }
+    ],
+    "no": [
+      {
+        "type": "indicator_condition",
+        "value": 40,
+        "relation": "Lower",
+        "indicator": "PartyCohesion"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 40,
+  "description": "The national spirit of Graonia burns in the hearts of our citizens. With our rhetoric of nationalism and the promise of rebuilding Graonian power, the party experienced a roaring boost in its popularity. They want you - our glorious leader to lead our country to greatness!",
+  "options": [
+    {
+      "description": "The time is now! Revise the constitution and allow the head of state to rule by decree. Reduce the parliament to serve advisory and administrative goals!",
+      "effects": [
+        {
+          "type": "policy_change",
+          "id": 5,
+          "option": 0
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -6,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Nice!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The spirit of Graonia"
+}

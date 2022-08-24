@@ -1,0 +1,52 @@
+{
+  "isUnique": true,
+  "probability": 25,
+  "probability_changes": [
+    {
+      "probChange": 25,
+      "conditions":
+      {
+        "type": "round_condition",
+        "round": 25
+      }
+    }
+  ],
+  "description": "Among numerous members of naval command there is one man whose progress in the military ranks is beyond comparison. This young and talented officer who graduated naval school just under a decade ago and is on a good way on becoming an admiral at Cantori fleet.",
+  "options":
+  [
+    {
+      "description": "This man deserves better. - Hire him to the cabinet!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_employment",
+          "id": 1
+        }
+      ]
+    },
+    {
+      "description": "We should congratulate him on his promotion.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Cantori Fleet Command"
+        }
+      ]
+    }
+  ],
+  "title": "A career officer"
+}

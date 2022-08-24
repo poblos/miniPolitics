@@ -1,0 +1,95 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Ex-Church Property Ownership"
+      }
+    ]
+  },
+  "description": "The State owns a large amount of Ex-Church property, which is currently mostly vacant. It is time to decide what purpose should it serve.",
+  "options": [
+    {
+      "description": "Rent the property.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Ex-Church Property Ownership"
+        },
+        {
+          "type": "budget_income",
+          "category": "OtherIncome",
+          "change": 5000
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Transform the largest buildings into factories and use the smaller ones for communal housing for workers.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Ex-Church Property Ownership"
+        },
+        {
+          "type": "budget_expenses",
+          "change": 10000,
+          "category": "Infrastructure"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "The military and police forces will benefit from this property.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Ex-Church Property Ownership"
+        },
+        {
+          "type": "budget_expenses",
+          "change": 5000,
+          "category": "NationalDefence"
+        },
+        {
+          "type": "indicator_change",
+          "change": 5,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "It's not time to decide yet.",
+      "effects": []
+    }
+  ],
+  "title": "Managing Ex-Church property"
+}

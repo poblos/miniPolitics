@@ -17,10 +17,10 @@
     ]
   },
   "isUnique": true,
-  "description": "The upper house of the Graonian parliament, commonly known as The Conclave of Patriarchs has always held a key position in Graonian politics. Its main purpose is to to ammend every act the lower house passes in accordance to the Sivian teachings. However the fact the seat in the conclave is permanent and only members of the conclave can compete to become the head of State, which effectively exculdes anyone but the clergy in the highest eschelons of power. Reforming the conclave and the prequisites to become head of state will have many consequences, some of which we can't predict.",
+  "description": "The upper house of the Graonian parliament, commonly known as The Conclave of Patriarchs has always held a key position in Graonian politics. Its main purpose is to to amend every act the lower house passes in accordance to the Sivian teachings. However the fact the seat in the conclave is permanent and only members of the conclave can compete to become the head of State, which effectively excludes anyone but the clergy in the highest echelons of power. Reforming the conclave and the requisites to become head of state will have many consequences, some of which we can't predict.",
   "options": [
     {
-      "description": "We need to reform the conclave slowly by introducing term mebers alongside permanent ones and by allowing secular candidates to join the upper house!",
+      "description": "We need to reform the conclave slowly by introducing term members alongside permanent ones and by allowing secular candidates to join the upper house!",
       "effects": [
         {
           "type": "modifier_invocation",
