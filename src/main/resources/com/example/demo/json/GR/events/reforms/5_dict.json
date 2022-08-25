@@ -27,7 +27,7 @@
   "description": "The national spirit of Graonia burns in the hearts of our citizens. With our rhetoric of nationalism and the promise of rebuilding Graonian power, the party experienced a roaring boost in its popularity. They want you - our glorious leader to lead our country to greatness!",
   "options": [
     {
-      "description": "The time is now! Revise the constitution and allow the head of state to rule by decree. Reduce the parliament to serve advisory and administrative goals!",
+      "description": "The time is now! Revise the constitution and allow the head of state to rule by decree!",
       "effects": [
         {
           "type": "policy_change",

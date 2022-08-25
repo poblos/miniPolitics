@@ -1,0 +1,77 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "The Case Unfolds"
+      }
+    ]
+  },
+  "probability": 80,
+  "description": "The journalist who accused a patriarch of sexual harassment is gaining more media attention. His recent appearance on the Lucky6s' 'Rhyme of the Dinnertime' means almost everyone is now familiar with the case. And everyone is waiting for it to conclude.",
+  "options": [
+    {
+      "description": "We should put the patriarch on trial!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Patriarch On Trial"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolds"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "This is ridiculous, we should not let him speak so much!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolds"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "So are we!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "The Case Unfolds More"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolds"
+        }
+      ]
+    }
+  ],
+  "title": "The pedophile scandal grows"
+}

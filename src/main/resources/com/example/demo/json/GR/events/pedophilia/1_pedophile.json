@@ -1,0 +1,104 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "no":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "Sivian Church Disbanded"
+      }
+    ]
+  },
+  "probability": 40,
+  "probability_changes": [
+    {
+      "probChange": -15,
+      "conditions":
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 3
+      }
+    },
+    {
+      "probChange": -30,
+      "conditions":
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 4
+      }
+    },
+    {
+      "probChange": 10,
+      "conditions":
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 1
+      }
+    }
+  ],
+  "description": "One of the patriarchs of Grauinbid always maintained a flawless reputation until his sexual abuse of young choirboys got revealed by one a journalist, who is coincidentally one of his ex-pupils. He claims that the actions of the patriarch were successfully covered by the Sivian Church hierarchs... until now.",
+  "options": [
+    {
+      "description": "Ready the prosecutors. We will see this patriarch in criminal court!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Patriarch On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Relocate the patriarch to another parish. Preferably somewhere in the jungles of Cantor.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Let us watch how the situation unfolds.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "The Case Unfolds"
+        }
+      ]
+    },
+    {
+      "description": "Silence the journalist!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Patriarch sexual scandal"
+}

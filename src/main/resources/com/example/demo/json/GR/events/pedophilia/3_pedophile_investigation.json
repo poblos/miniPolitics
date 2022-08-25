@@ -1,0 +1,96 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "Investigating Patriarch Pedophilia"
+      }
+    ]
+  },
+  "probability": 80,
+  "description": "The chief prosecutor conducted the investigation and what he found was shocking to say the least... It seems that the accusations of the journalist were correct, as agents managed to secure communication logs between several patriarchies who covered the wrongdoings of patriarchs against children. With such evidence the prosecution can make a case not only against the first patriarch, but also against the Sivian Church.",
+  "options": [
+    {
+      "description": "Let's put everyone involved on trial!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Investigating Patriarch Pedophilia"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Sivian Church On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Putting the first patriarch on trial will do.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Investigating Patriarch Pedophilia"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Patriarch On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "There is no need for any trials!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Investigating Patriarch Pedophilia"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Case Unfolded"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "The prosecutor's confession"
+}

@@ -1,0 +1,71 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "The Case Unfolds More"
+      }
+    ]
+  },
+  "probability": 80,
+  "description": "Dire news! Seems like the patriarch responsible for the harassment of our favorite journalist is not the only one! Many people across the country start to speak about what they experienced as children. While some are considered 'attention grabs', many of them are of biggest concerns since the testimonies seem to match...",
+  "options": [
+    {
+      "description": "Only the prosecution can evaluate the validity of these claims. Investigate the case!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Investigating Patriarch Pedophilia"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolds More"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We should put the first patriarch on trial and hope they won't dig deeper.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolds More"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Patriarch On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We should let the media do their job.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolds More"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Case Unfolded"
+        }
+      ]
+    }
+  ],
+  "title": "Testimonies from all across the country"
+}

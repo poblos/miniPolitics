@@ -1,0 +1,55 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "The Case Unfolded"
+      }
+    ]
+  },
+  "probability": 80,
+  "description": "We have received information that the patriarch Tomyros Ritz was found dead in his parish. The death was not natural as the militiamen found signs of struggle and choke marks on the patriarch's neck.",
+  "options": [
+    {
+      "description": "We will find the culprits and make them face justice!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolded"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Oh well...",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "The Case Unfolded"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "A pedophile no more"
+}

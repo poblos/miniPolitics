@@ -1,5 +1,5 @@
 {
-  "probability": 120,
+  "probability": 50,
   "trigger": {
     "yes": [
       {
@@ -27,8 +27,9 @@
             "id": 1,
             "option": 3
           }
-        ],
-        "description": "We should merge the houses of the parliament and the resorts into one entity with the conclave being its head alongside the Arch-Patriarch!",
+        ]
+      },
+        "description": "We should merge the parliament and the resorts into one entity with the conclave being its head!",
         "effects": [
           {
             "type": "modifier_invocation",
@@ -59,8 +60,7 @@
             "indicator": "PartyCohesion"
           }
         ]
-      }
-    },
+      },
     {
       "trigger": {
         "yes": [
@@ -69,7 +69,8 @@
             "id": 1,
             "option": 1
           }
-        ],
+        ]
+      },
         "description": "It is high time for the Arch-Patriarch to give up his powers to the resorts. Elect a prime minister and make him the head of government!",
         "effects": [
           {
@@ -101,8 +102,7 @@
             "indicator": "PartySupport"
           }
         ]
-      }
-    },
+      },
     {
       "description": "The situation works best as it is.",
       "effects": [
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "description": "We need to expand the autonomy of the resorts by electing a prime minister and creating the ministries but keeping them accountable to the Arch-Patriarch.",
+      "description": "Elect a prime minister and create the ministries but keep them accountable to the Arch-Patriarch.",
       "effects": [
         {
           "type": "modifier_invocation",

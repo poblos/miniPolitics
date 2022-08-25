@@ -1,5 +1,5 @@
 {
-  "probability": 120,
+  "probability": 50,
   "trigger": {
     "yes": [
       {
@@ -24,7 +24,8 @@
             "id": 1,
             "option": 4
           }
-        ],
+        ]
+      },
         "description": "Only the words of the Great Grey One and his apostles of the Sivian Church can guide our nation to greatness!",
         "effects": [
           {
@@ -47,8 +48,7 @@
             "indicator": "PartySupport"
           }
         ]
-      }
-    },
+      },
     {
       "trigger": {
         "yes": [
@@ -57,7 +57,8 @@
             "id": 5,
             "option": 4
           }
-        ],
+        ]
+      },
         "description": "Freedom, equality and progress are the signs of the times!",
         "effects": [
           {
@@ -85,8 +86,7 @@
             "indicator": "PartySupport"
           }
         ]
-      }
-    },
+      },
     {
       "description": "Order and tradition - as they have always been.",
       "effects": [
@@ -148,7 +148,8 @@
             "id": 2,
             "option": 3
           }
-        ],
+        ]
+      },
         "description": "National pride and obedience to the Arch-Patriarch will make Graonia great again!",
         "effects": [
           {
@@ -177,7 +178,6 @@
           }
         ]
       }
-    }
   ],
   "title": "Ideology for the future"
 }

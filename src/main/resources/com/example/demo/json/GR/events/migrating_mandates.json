@@ -1,0 +1,46 @@
+{
+  "trigger": {
+    "no":
+    [
+      {
+        "type": "policy_condition",
+        "id": 3,
+        "option": 0
+      }
+    ]
+  },
+  "description": "Every island under Graonian control has a slightly different population dynamic with migrations and natural growth influencing the number of citizens... and potential voters. One of the opposition's constituencies has experienced disproportional growth in the recent years reducing their vote strength.",
+  "options": [
+    {
+      "description": "Splendid!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We should adjust the mandate count in the constituencies to make the elections fair.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Migrating mandates"
+}

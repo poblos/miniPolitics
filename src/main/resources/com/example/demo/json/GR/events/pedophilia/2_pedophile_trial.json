@@ -1,0 +1,64 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "Patriarch On Trial"
+      }
+    ]
+  },
+  "probability": 80,
+  "description": "After gathering the witnesses' testimonies and other evidence, the prosecution presented it to the court. The defence attempted questioning the credibility of the witnesses claiming 'they were too young to remember everything correctly'. When everything had been said, the judge moved to another room with the jurors to discuss the verdict. A long time had passed until they finally arrived back at the courtroom. 'In accordance to the Sacred Laws of Graonia and taking into consideration the evidence presented in the court I find the patriarch Tomyros Ritz GUILTY of acts of pedophilia and sentence him to 8 years in state prison'.",
+  "options": [
+    {
+      "description": "Let there be justice!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Patriarch On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "The Arch-Patriarch's grace will save him from prison.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Patriarch On Trial"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Case Unfolded"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The trial of Tomyros Ritz"
+}

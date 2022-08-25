@@ -1,0 +1,66 @@
+{
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "policy_condition",
+        "id": 3,
+        "option": 1
+      }
+    ]
+  },
+  "description": "One of the Fjoerdian patriarchs seems to be agitating the local populace against voting for our party's candidates in the upcoming parliamentary elections. If this should continue, we are likely to lose mandates in this constituency.",
+  "options": [
+    {
+      "description": "Remove the patriarch from his post!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Relocate the patriarch to another parish.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Let him speak.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "A political patriarch"
+}

@@ -1,0 +1,71 @@
+{
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "policy_condition",
+        "id": 3,
+        "option": 1
+      }
+    ]
+  },
+  "description": "We have received an offer from a patriarch, in which he proposes political and monetary support in exchange for state investing into the development of his parish infrastructure.",
+  "options": [
+    {
+      "description": "An offer too good to turn down!",
+      "effects": [
+        {
+        "type": "indicator_change",
+        "change": 1,
+        "indicator": "PartyCohesion"
+      },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Infrastructure",
+          "change": 200
+        }
+      ]
+    },
+    {
+      "description": "We should gently decline his offer.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "He should be put on trial for attempted act of corruption!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "An attempted bribe?"
+}

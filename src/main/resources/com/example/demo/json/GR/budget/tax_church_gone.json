@@ -18,7 +18,8 @@
             "type": "modifier_condition",
             "name": "Taxing The Church"
           }
-        ],
+        ]
+      },
         "description": "The property of the church will be owned by respective ex-patriarchs personally.",
         "effects": [
           {
@@ -31,8 +32,7 @@
             "name": "Taxing The Church"
           }
         ]
-      }
-    },
+      },
     {
       "trigger": {
         "no": [
@@ -40,7 +40,8 @@
             "type": "modifier_condition",
             "name": "Taxing The Church"
           }
-        ],
+        ]
+      },
         "description": "The property of the church will be owned by respective ex-patriarchs personally, as long as they pay taxes like regular property owners.",
         "effects": [
           {
@@ -54,8 +55,7 @@
             "change": 10000
           }
         ]
-      }
-    },
+      },
     {
       "trigger": {
         "yes": [
@@ -63,7 +63,8 @@
             "type": "modifier_condition",
             "name": "Taxing The Church"
           }
-        ],
+        ]
+      },
         "description": "The state will make good use of this property.",
         "effects": [
           {
@@ -90,8 +91,7 @@
             "name": "Ex-Church Property Ownership"
           }
         ]
-      }
-    },
+      },
     {
       "trigger": {
         "no": [
@@ -99,7 +99,8 @@
             "type": "modifier_condition",
             "name": "Taxing The Church"
           }
-        ],
+        ]
+      },
         "description": "The state will make good use of this property.",
         "effects": [
           {
@@ -117,8 +118,7 @@
             "name": "Ex-Church Property Ownership"
           }
         ]
-      }
-    },
+      },
     {
       "trigger": {
         "yes": [
@@ -126,7 +126,8 @@
             "type": "modifier_condition",
             "name": "Taxing The Church"
           }
-        ],
+        ]
+      },
         "description": "Sell the property to industrial conglomerates for maximum revenue!",
         "effects": [
           {
@@ -149,8 +150,7 @@
             "change": 20000
           }
         ]
-      }
-    },
+      },
     {
       "trigger": {
         "no": [
@@ -158,7 +158,8 @@
             "type": "modifier_condition",
             "name": "Taxing The Church"
           }
-        ],
+        ]
+      },
         "description": "Sell the property to industrial conglomerates for maximum revenue!",
         "effects": [
           {
@@ -183,7 +184,6 @@
           }
         ]
       }
-    }
   ],
   "title": "Dealing with Church property"
 }
