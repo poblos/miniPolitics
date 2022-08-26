@@ -37,4 +37,5 @@
 
 #roundLabel {
     -fx-font-size:20;
+    -fx-background-color: linear-gradient(#00A2E8, #F9F9F9);
 }

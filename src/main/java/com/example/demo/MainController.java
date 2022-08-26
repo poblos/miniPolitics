@@ -154,20 +154,23 @@ public class MainController {
         startBox.getChildren().clear();
         Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
 
-        //Adding default events collection
+        //Adding default and Kachakonyan events collection
         ArrayList<Event> events = loadFiles(Event.class, "json/KA/events/", moshi);
+        events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
 
         //Adding default com.example.demo.resources.people collection
         ArrayList<Person> people = loadFiles(Person.class, "json/KA/people/", moshi);
 
-        //Adding default com.example.demo.resources.com.example.demo.modifiers collection
+        //Adding default and Kachakonyan modifiers collection
         ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/KA/modifiers/", moshi);
+        modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
 
         //Adding default com.example.demo.resources.com.example.demo.media collection
         ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/KA/media/", moshi);
 
         //Loading Policy
         ArrayList<Policy> policies = loadFiles(Policy.class, "json/KA/policies/", moshi);
+        policies.addAll(loadFiles(Policy.class, "json/DT/policies/", moshi));
 
         //Loading com.example.demo.budget
         ArrayList<Budget> budgets = loadFiles(Budget.class, "json/KA/budget/", moshi);
@@ -195,24 +198,27 @@ public class MainController {
         eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
     }
 
-    public void onGraoniaButtonClick(ActionEvent actionEvent) throws URISyntaxException, IOException  {
+    public void onGraoniaButtonClick() throws URISyntaxException, IOException  {
         startBox.getChildren().clear();
         Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
 
-        //Adding default events collection
+        //Adding graonian and default events collection
         ArrayList<Event> events = loadFiles(Event.class, "json/GR/events/", moshi);
+        events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
 
         //Adding default com.example.demo.resources.people collection
         ArrayList<Person> people = loadFiles(Person.class, "json/GR/people/", moshi);
 
-        //Adding default com.example.demo.resources.com.example.demo.modifiers collection
+        //Adding default modifiers collection
         ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/GR/modifiers/", moshi);
+        modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
 
         //Adding default com.example.demo.resources.com.example.demo.media collection
         ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/GR/media/", moshi);
 
         //Loading Policy
         ArrayList<Policy> policies = loadFiles(Policy.class, "json/GR/policies/", moshi);
+        policies.addAll(loadFiles(Policy.class, "json/DT/policies/", moshi));
 
         //Loading com.example.demo.budget
         ArrayList<Budget> budgets = loadFiles(Budget.class, "json/GR/budget/", moshi);

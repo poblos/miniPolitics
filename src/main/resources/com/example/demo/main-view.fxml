@@ -12,7 +12,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Label?>
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0"
           xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.MainController">
@@ -91,7 +90,6 @@
     </VBox>
             <VBox fx:id="infoBox" prefHeight="131.0" prefWidth="126.0"  GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="3">
     </VBox>
-    <Label fx:id="roundLabel" GridPane.columnIndex="0" GridPane.rowIndex="3">
-
+    <Label fx:id="roundLabel" GridPane.columnIndex="0" GridPane.rowIndex="0">
     </Label>
 </GridPane>
