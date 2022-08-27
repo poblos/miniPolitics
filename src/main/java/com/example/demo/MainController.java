@@ -90,9 +90,15 @@ public class MainController {
         for (Node display : jobBox.getChildren()) {
             ((JobDisplay) display).update(game);
         }
-        partyController.update();
-        mediaController.update();
-        budgetController.update();
+        if (partyController != null) {
+            partyController.update();
+        }
+        if (partyController != null) {
+            mediaController.update();
+        }
+        if (partyController != null) {
+            budgetController.update();
+        }
         if (game.displayNext()) {
             eventBox.getChildren().clear();
             game.chooseEvent();
