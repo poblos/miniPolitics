@@ -18,6 +18,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import com.example.demo.jobs.*;
@@ -42,6 +44,9 @@ import static com.example.demo.utils.JsonLoader.loadFiles;
 import static com.example.demo.party.Ideology.*;
 
 public class MainController {
+    private ToggleButton lastSelected;
+    @FXML
+    private ToggleGroup leftBar;
     @FXML
     private Label roundLabel;
     @FXML
@@ -85,6 +90,9 @@ public class MainController {
         for (Node display : jobBox.getChildren()) {
             ((JobDisplay) display).update(game);
         }
+        partyController.update();
+        mediaController.update();
+        budgetController.update();
         if (game.displayNext()) {
             eventBox.getChildren().clear();
             game.chooseEvent();
@@ -130,24 +138,42 @@ public class MainController {
     }
 
     @FXML
-    public void onPartyButtonClick() {
+    public void onPartyButtonClick(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == lastSelected) {
+            infoBox.getChildren().clear();
+            infoBox.getChildren().add(new AnchorPane());
+            return;
+        }
         setInfoBox("party-view.fxml", InfoBoxController.Party);
         partyController.setMainController(this);
         partyController.update();
+        lastSelected = (ToggleButton) actionEvent.getSource();
     }
 
     @FXML
-    public void onMediaButtonClick() {
+    public void onMediaButtonClick(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == lastSelected) {
+            infoBox.getChildren().clear();
+            infoBox.getChildren().add(new AnchorPane());
+            return;
+        }
         setInfoBox("media-view.fxml", InfoBoxController.Media);
         mediaController.setMainController(this);
         mediaController.update();
+        lastSelected = (ToggleButton) actionEvent.getSource();
     }
 
     @FXML
-    public void onBudgetButtonClick() {
+    public void onBudgetButtonClick(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == lastSelected) {
+            infoBox.getChildren().clear();
+            infoBox.getChildren().add(new AnchorPane());
+            return;
+        }
         setInfoBox("budget-view.fxml", InfoBoxController.Budget);
         budgetController.setMainController(this);
         budgetController.update();
+        lastSelected = (ToggleButton) actionEvent.getSource();
     }
 
     public void onKachakonyaButtonClick() throws URISyntaxException, IOException {
@@ -198,7 +224,7 @@ public class MainController {
         eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
     }
 
-    public void onGraoniaButtonClick() throws URISyntaxException, IOException  {
+    public void onGraoniaButtonClick() throws URISyntaxException, IOException {
         startBox.getChildren().clear();
         Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
 
