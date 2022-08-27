@@ -142,6 +142,7 @@ public class MainController {
         if (actionEvent.getSource() == lastSelected) {
             infoBox.getChildren().clear();
             infoBox.getChildren().add(new AnchorPane());
+            lastSelected = null;
             return;
         }
         setInfoBox("party-view.fxml", InfoBoxController.Party);
@@ -155,6 +156,7 @@ public class MainController {
         if (actionEvent.getSource() == lastSelected) {
             infoBox.getChildren().clear();
             infoBox.getChildren().add(new AnchorPane());
+            lastSelected = null;
             return;
         }
         setInfoBox("media-view.fxml", InfoBoxController.Media);
@@ -168,6 +170,7 @@ public class MainController {
         if (actionEvent.getSource() == lastSelected) {
             infoBox.getChildren().clear();
             infoBox.getChildren().add(new AnchorPane());
+            lastSelected = null;
             return;
         }
         setInfoBox("budget-view.fxml", InfoBoxController.Budget);
