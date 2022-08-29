@@ -1,95 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MainController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="232.0" prefWidth="1247.0">
+            <HBox fx:id="indicatorBox" alignment="BASELINE_LEFT" prefHeight="401.0" prefWidth="20.0" spacing="20.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+            </HBox>
+            <Label fx:id="roundLabel" alignment="BASELINE_CENTER" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font>
+               <Font name="Century" size="24.0" />
+            </font></Label>
+            <HBox fx:id="jobBox" alignment="BASELINE_RIGHT" spacing="20.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+            </HBox>
 
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.Label?>
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0"
-          xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.MainController">
-    <columnConstraints>
-        <ColumnConstraints percentWidth="50" />
-        <ColumnConstraints percentWidth="25" />
-        <ColumnConstraints percentWidth="20" />
-        <ColumnConstraints percentWidth="10" />
+        </HBox>
+    </top>
+    <right>
+        <HBox prefHeight="515.0" prefWidth="388.0">
+            <VBox fx:id="infoBox" alignment="TOP_RIGHT" prefHeight="515.0" prefWidth="0.0">
+            </VBox>
+            <VBox fx:id="infoBar" alignment="TOP_RIGHT" prefHeight="515.0" prefWidth="705.0" spacing="20.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <ToggleButton onAction="#onPartyButtonClick">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@menu_icons/PartyIcon.png" />
+                        </ImageView>
+                    </graphic>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="leftBar" />
+                    </toggleGroup>
+                </ToggleButton>
+                <ToggleButton onAction="#onBudgetButtonClick">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@menu_icons/BudgetIcon.png" />
+                        </ImageView>
+                    </graphic>
+                    <toggleGroup>
+                        <fx:reference source="leftBar" />
+                    </toggleGroup>
+                </ToggleButton>
+                <ToggleButton onAction="#onMediaButtonClick">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@menu_icons/MediaIcon.png" />
+                        </ImageView>
+                    </graphic>
+                    <toggleGroup>
+                        <fx:reference source="leftBar" />
+                    </toggleGroup>
+                </ToggleButton>
+            </VBox>
 
-    </columnConstraints>
-    <HBox fx:id="startBox"  alignment="CENTER" spacing="20.0" GridPane.columnIndex="0" GridPane.rowIndex="0"
-          GridPane.columnSpan="1">
-        <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-        </padding>
-
-        <Button text="Start the game as Kachakonya" onAction="#onKachakonyaButtonClick"/>
-        <Button text="Start the game as Graonia" onAction="#onGraoniaButtonClick"/>
-    </HBox>
-    <HBox fx:id="indicatorBox" alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="0" GridPane.rowIndex="1"
-          GridPane.columnSpan="1">
-        <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-        </padding>
-    </HBox>
-    <VBox fx:id="eventBox" alignment="CENTER" spacing="20.0" GridPane.columnIndex="0" GridPane.rowIndex="2"
-          GridPane.columnSpan="2">
-        <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-        </padding>
-    </VBox>
-    <HBox fx:id="jobBox" alignment="CENTER_RIGHT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1"
-          GridPane.columnSpan="1">
-        <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-        </padding>
-    </HBox>
-    <VBox fx:id="infoBar" alignment="CENTER" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="1"
-    GridPane.rowSpan="1">
-        <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-        </padding>
-        <fx:define>
-            <ToggleGroup fx:id="leftBar" />
-        </fx:define>
-        <ToggleButton onAction="#onPartyButtonClick" >
-            <graphic>
-                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@menu_icons/PartyIcon.png"/>
-                </ImageView>
-            </graphic>
-            <toggleGroup>
-                <fx:reference source="leftBar"/>
-            </toggleGroup>
-        </ToggleButton>
-        <ToggleButton onAction="#onBudgetButtonClick">
-            <graphic>
-                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@menu_icons/BudgetIcon.png"/>
-                </ImageView>
-            </graphic>
-        <toggleGroup>
-            <fx:reference source="leftBar"/>
-        </toggleGroup>
-        </ToggleButton>
-        <ToggleButton onAction="#onMediaButtonClick">
-            <graphic>
-                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@menu_icons/MediaIcon.png"/>
-                </ImageView>
-            </graphic>
-            <toggleGroup>
-                <fx:reference source="leftBar"/>
-            </toggleGroup>
-        </ToggleButton>
-    </VBox>
-            <VBox fx:id="infoBox" prefHeight="131.0" prefWidth="126.0"  GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="3">
-    </VBox>
-    <Label fx:id="roundLabel" GridPane.columnIndex="0" GridPane.rowIndex="0">
-    </Label>
-</GridPane>
+        </HBox>
+    </right>
+    <center>
+        <VBox fx:id="eventBox" maxHeight="545.0" maxWidth="1000" prefHeight="515.0" prefWidth="859.0" spacing="20.0">
+        </VBox>
+    </center>
+</BorderPane>

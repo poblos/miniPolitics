@@ -63,8 +63,6 @@ public class MainController {
     @FXML
     private VBox infoBox;
     @FXML
-    private HBox startBox;
-    @FXML
     private HBox jobBox;
     @FXML
     private HBox indicatorBox;
@@ -76,10 +74,20 @@ public class MainController {
         return game;
     }
 
-    @FXML
-    private void initialize() {
+    public void setGame(Game game) {
+        this.game = game;
+        indicatorBox.getChildren().add(new IndicatorDisplay("PartyCohesion"));
+        indicatorBox.getChildren().add(new IndicatorDisplay("StateStability"));
+        indicatorBox.getChildren().add(new IndicatorDisplay("PartySupport"));
 
-        System.out.println("xd");
+        jobBox.getChildren().add(new JobDisplay(Job.Whip));
+        jobBox.getChildren().add(new JobDisplay(Job.Propagandist));
+        jobBox.getChildren().add(new JobDisplay(Job.Strategist));
+        for (Node display : indicatorBox.getChildren()) {
+            ((IndicatorDisplay) display).update(game);
+        }
+        game.chooseEvent();
+        eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
     }
 
     public void handleEvent(int click) {
@@ -185,99 +193,4 @@ public class MainController {
         lastSelected = (ToggleButton) actionEvent.getSource();
     }
 
-    public void onKachakonyaButtonClick() throws URISyntaxException, IOException {
-        startBox.getChildren().clear();
-        Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
-
-        //Adding default and Kachakonyan events collection
-        ArrayList<Event> events = loadFiles(Event.class, "json/KA/events/", moshi);
-        events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
-
-        //Adding default com.example.demo.resources.people collection
-        ArrayList<Person> people = loadFiles(Person.class, "json/KA/people/", moshi);
-
-        //Adding default and Kachakonyan modifiers collection
-        ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/KA/modifiers/", moshi);
-        modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
-
-        //Adding default com.example.demo.resources.com.example.demo.media collection
-        ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/KA/media/", moshi);
-
-        //Loading Policy
-        ArrayList<Policy> policies = loadFiles(Policy.class, "json/KA/policies/", moshi);
-        policies.addAll(loadFiles(Policy.class, "json/DT/policies/", moshi));
-
-        //Loading com.example.demo.budget
-        ArrayList<Budget> budgets = loadFiles(Budget.class, "json/KA/budget/", moshi);
-
-        //Party
-        ArrayList<Ideology> ideologies = new ArrayList<>();
-        ideologies.add(BigTent);
-        ideologies.add(Capitalist);
-        ideologies.add(Centrist);
-        Party party = new Party("Democratic Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "Currently in power for past 4 years, but under new leadership suffer from internal turmoil.", ideologies);
-
-        game = new Game(events, people, policies, modifiers, medias, party, budgets.get(0));
-        indicatorBox.getChildren().add(new IndicatorDisplay("PartyCohesion"));
-        indicatorBox.getChildren().add(new IndicatorDisplay("StateStability"));
-        indicatorBox.getChildren().add(new IndicatorDisplay("PartySupport"));
-
-        jobBox.getChildren().add(new JobDisplay(Job.Whip));
-        jobBox.getChildren().add(new JobDisplay(Job.Propagandist));
-        jobBox.getChildren().add(new JobDisplay(Job.Strategist));
-
-        for (Node display : indicatorBox.getChildren()) {
-            ((IndicatorDisplay) display).update(game);
-        }
-        game.chooseEvent();
-        eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
-    }
-
-    public void onGraoniaButtonClick() throws URISyntaxException, IOException {
-        startBox.getChildren().clear();
-        Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
-
-        //Adding graonian and default events collection
-        ArrayList<Event> events = loadFiles(Event.class, "json/GR/events/", moshi);
-        events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
-
-        //Adding default com.example.demo.resources.people collection
-        ArrayList<Person> people = loadFiles(Person.class, "json/GR/people/", moshi);
-
-        //Adding default modifiers collection
-        ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/GR/modifiers/", moshi);
-        modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
-
-        //Adding default com.example.demo.resources.com.example.demo.media collection
-        ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/GR/media/", moshi);
-
-        //Loading Policy
-        ArrayList<Policy> policies = loadFiles(Policy.class, "json/GR/policies/", moshi);
-        policies.addAll(loadFiles(Policy.class, "json/DT/policies/", moshi));
-
-        //Loading com.example.demo.budget
-        ArrayList<Budget> budgets = loadFiles(Budget.class, "json/GR/budget/", moshi);
-
-        //Party
-        ArrayList<Ideology> ideologies = new ArrayList<>();
-        ideologies.add(BigTent);
-        ideologies.add(Capitalist);
-        ideologies.add(Centrist);
-        Party party = new Party("Democratic Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "Currently in power for past 4 years, but under new leadership suffer from internal turmoil.", ideologies);
-
-        game = new Game(events, people, policies, modifiers, medias, party, budgets.get(0));
-        indicatorBox.getChildren().add(new IndicatorDisplay("PartyCohesion"));
-        indicatorBox.getChildren().add(new IndicatorDisplay("StateStability"));
-        indicatorBox.getChildren().add(new IndicatorDisplay("PartySupport"));
-
-        jobBox.getChildren().add(new JobDisplay(Job.Whip));
-        jobBox.getChildren().add(new JobDisplay(Job.Propagandist));
-        jobBox.getChildren().add(new JobDisplay(Job.Strategist));
-
-        for (Node display : indicatorBox.getChildren()) {
-            ((IndicatorDisplay) display).update(game);
-        }
-        game.chooseEvent();
-        eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
-    }
 }

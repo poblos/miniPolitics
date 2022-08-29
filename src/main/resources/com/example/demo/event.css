@@ -3,7 +3,6 @@
     -fx-border-radius:40;
     -fx-border-insets:10;
     -fx-border-width:10;
-    -fx-grid-lines-visible:false;
 
 }
 
@@ -37,5 +36,8 @@
 
 #roundLabel {
     -fx-font-size:20;
-    -fx-background-color: linear-gradient(#00A2E8, #F9F9F9);
+    -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);
+    -fx-border-radius:40;
+    -fx-border-insets:10;
+    -fx-border-width:10;
 }
