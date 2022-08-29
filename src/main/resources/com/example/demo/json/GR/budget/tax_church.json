@@ -1,4 +1,5 @@
 {
+  "probability": 200,
   "trigger": {
     "yes": [
       {

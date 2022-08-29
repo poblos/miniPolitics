@@ -67,7 +67,7 @@
       "effects": [
         {
           "type": "indicator_change",
-          "category": "StateStability",
+          "indicator": "StateStability",
           "change": 2
         }
       ]
