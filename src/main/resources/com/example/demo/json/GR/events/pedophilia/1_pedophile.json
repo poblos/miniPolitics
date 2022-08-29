@@ -9,10 +9,10 @@
       }
     ]
   },
-  "probability": 40,
+  "probability": 10,
   "probability_changes": [
     {
-      "probChange": -15,
+      "probChange": -3,
       "conditions":
       {
         "type": "policy_condition",
@@ -21,7 +21,7 @@
       }
     },
     {
-      "probChange": -30,
+      "probChange": -6,
       "conditions":
       {
         "type": "policy_condition",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "probChange": 10,
+      "probChange": 2,
       "conditions":
       {
         "type": "policy_condition",

@@ -1,0 +1,94 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "Sivian Church On Trial"
+      }
+    ]
+  },
+  "probability": 80,
+  "description": "For too many years has the Sivian Church covered patriarch pedophile cases in Graonia! Many hierarchs were put on trials with most of them proven guilty of various crimes including sexual harassment of minors, blackmail and conspiracy. However alongside patriarchs who opposed our government some loyal patriarchs were sentenced as well.",
+  "options": [
+    {
+      "description": "Justice has prevailed!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Sivian Church On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "We should probably acquit our supporters.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Sivian Church On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": 6,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes":
+        [
+          {
+            "type": "policy_condition",
+            "id": 5,
+            "option": 0
+          }
+        ]
+      },
+      "description": "Execute the traitors!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Sivian Church On Trial"
+        },
+        {
+          "type": "indicator_change",
+          "change": 8,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 6,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Sivian Church on trial"
+}
