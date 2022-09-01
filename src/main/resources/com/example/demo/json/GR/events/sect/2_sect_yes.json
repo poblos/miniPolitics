@@ -1,0 +1,60 @@
+{
+  "isUnique": true,
+  "probability": 30,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "A Strange Paper"
+      }
+    ]
+  },
+  "description": "After you return home from the ceremony you look around to see if anybody is watching. Nobody is. You rush to your office and lock the door. You hastily unfold the paper only to realise it is written in some sort of a cypher with signs you do not recognise. It would take a lot of time to figure out what is written on the paper.",
+  "options": [
+    {
+      "description": "I have to decipher it... personally.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "A Strange Paper"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Deciphering The Paper"
+        }
+      ]
+    },
+    {
+      "description": "I might need some help to decipher the paper.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "A Strange Paper"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "A Helping Hand"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Deciphering The Paper"
+        }
+      ]
+    },
+    {
+      "description": "I don't have time for that!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "A Paper Of No Use"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "A Strange Paper"
+        }
+      ]
+    }
+  ],
+  "title": "Deciphering the paper"
+}

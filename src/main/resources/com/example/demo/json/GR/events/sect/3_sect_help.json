@@ -1,0 +1,46 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "A Helping Hand"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Deciphering The Paper Incorrectly"
+      }
+    ]
+  },
+  "description": "A friend of yours suggests an explanation to the recently deciphered paper. It seems to be an invitation to certain coordinates on the day of The Pilgrims.",
+  "options": [
+    {
+      "description": "Thank you for helping me, my friend!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper Correctly"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper Incorrectly"
+        }
+      ]
+    },
+    {
+      "description": "Bullshit!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper Incorrectly"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "A Paper Of No Use"
+        }
+      ]
+    }
+  ],
+  "title": "A different interpretation"
+}

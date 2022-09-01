@@ -1,0 +1,64 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "no":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "Sivian Church Disbanded"
+      }
+    ]
+  },
+  "probability": 2,
+  "probability_changes": [
+    {
+      "probChange": 2,
+      "conditions":
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 3
+      }
+    },
+    {
+      "probChange": 4,
+      "conditions":
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 4
+      }
+    },
+    {
+      "probChange": -1,
+      "conditions":
+      {
+        "type": "policy_condition",
+        "id": 1,
+        "option": 1
+      }
+    }
+  ],
+  "description": "During your attendance of a religious ceremony a strange figure approaches you. A tall shadow-person covered in grey robes with their head hidden underneath a cowl. 'The time is due and short is the Grey One's return.' - they say - 'Follow his words and you shall achieve salvation. Denounce him and you shall be condemned'. Afterwards you feel a piece of paper slid into your hand. Before you realise the grey person is nowhere to be seen.",
+  "options": [
+    {
+      "description": "What on earth just happened?!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "A Strange Paper"
+        }
+      ]
+    },
+    {
+      "description": "Burn the paper! Pretend nothing happened!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "A Paper Of No Use"
+        }
+      ]
+    }
+  ],
+  "title": "Robes of grey"
+}

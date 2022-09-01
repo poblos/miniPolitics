@@ -1,0 +1,83 @@
+{
+  "isUnique": true,
+  "probability": 20,
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "Deciphering The Paper Correctly"
+      }
+    ]
+  },
+  "description": "There is little time left before the day of The Pilgrims. Your mind is uneasy as there is no information about who is the author of the invitation. Nevertheless you experience an eerie feeling something is about to change no matter what you decide.",
+  "options": [
+    {
+      "description": "I will accept the invitation.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper Correctly"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Invitation Accepted"
+        }
+      ]
+    },
+    {
+      "trigger":
+      {
+        "yes":
+        [
+          {
+            "type": "modifier_condition",
+            "name": "A Helping Hand"
+          }
+        ]
+      },
+      "description": "I shall bring my closest friends just in case",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper Correctly"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Invitation Accepted"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Friends' Backup"
+        }
+      ]
+    },
+    {
+      "description": "No matter who sent this invitation as the patriarch guardsmen will go there instead of me.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper Correctly"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Patriarch Guard Raid"
+        }
+      ]
+    },
+    {
+      "description": "I will not go.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper Correctly"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "A Paper Of No Use"
+        }
+      ]
+    }
+  ],
+  "title": "Considering the invitation"
+}

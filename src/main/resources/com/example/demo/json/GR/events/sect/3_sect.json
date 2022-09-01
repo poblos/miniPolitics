@@ -1,0 +1,53 @@
+{
+  "isUnique": true,
+  "probability": 5,
+  "probability_changes": [
+    {
+      "probChange": 5,
+      "conditions":
+      {
+        "type": "modifier_condition",
+        "name": "A Helping Hand"
+      }
+    }
+  ],
+  "trigger": {
+    "yes":
+    [
+      {
+        "type": "modifier_condition",
+        "name": "Deciphering The Paper"
+      }
+    ]
+  },
+  "description": "Your personal workroom has changed beyond recognition. Books now pile oll over the floor as well as on your desk. With the recently acquired knowledge of world writing systems you manage to decipher the paper. As it turned out it was written in ancient Transbezcan alphabet, mirrored and turned upside down. The message on the paper contains the words of a prayer recited only during Graonia's most important holiday - the day of The Pilgrims. Underneath there are two eight digit numbers and the words:'Arch-Patriarch. Alone.' What is the meaning of this?",
+  "options": [
+    {
+      "description": "I don't know!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Deciphering The Paper Incorrectly"
+        }
+      ]
+    },
+    {
+      "description": "The paper is an invitation! The date - the day of The Pilgrims; and these numbers are the coordinates of the place!",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Deciphering The Paper"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Deciphering The Paper Correctly"
+        }
+      ]
+    }
+  ],
+  "title": "Deciphering the paper"
+}
