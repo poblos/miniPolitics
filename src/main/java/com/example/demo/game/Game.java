@@ -21,6 +21,7 @@ import com.example.demo.party.Party;
 import com.example.demo.policy.Policy;
 import com.example.demo.policy.PolicyChange;
 import com.example.demo.policy.PolicyCondition;
+import javafx.collections.ObservableList;
 
 import java.util.*;
 
@@ -91,6 +92,10 @@ public class Game {
 
     public int getRound() {
         return round;
+    }
+
+    public Map<Integer, Policy> getPolicies() {
+        return policies;
     }
 
     private int eventProbability(Event event) {

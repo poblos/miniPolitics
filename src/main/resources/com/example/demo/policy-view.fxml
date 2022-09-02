@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.PolicyController">
+    <ListView fx:id="policyList" layoutY="57.0" prefHeight="393.0" prefWidth="330.0" />
+    <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0"  text="POLICIES" style="-fx-font-size: 28;"/>
+</AnchorPane>

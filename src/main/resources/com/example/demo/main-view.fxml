@@ -64,6 +64,16 @@
                         <fx:reference source="leftBar" />
                     </toggleGroup>
                 </ToggleButton>
+                <ToggleButton onAction="#onPolicyButtonClick">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@menu_icons/PolicyIcon.png" />
+                        </ImageView>
+                    </graphic>
+                    <toggleGroup>
+                        <fx:reference source="leftBar" />
+                    </toggleGroup>
+                </ToggleButton>
             </VBox>
 
         </HBox>

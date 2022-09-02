@@ -58,6 +58,8 @@ public class MainController {
     @FXML
     private MediaController mediaController;
     @FXML
+    private PolicyController policyController;
+    @FXML
     private VBox infoBar;
 
     @FXML
@@ -69,6 +71,7 @@ public class MainController {
     @FXML
     private VBox eventBox;
     private Game game;
+
 
     public Game getGame() {
         return game;
@@ -101,11 +104,15 @@ public class MainController {
         if (partyController != null) {
             partyController.update();
         }
-        if (partyController != null) {
+        if (mediaController != null) {
             mediaController.update();
         }
-        if (partyController != null) {
+        if (budgetController != null) {
             budgetController.update();
+        }
+
+        if (mediaController != null) {
+            mediaController.update();
         }
         if (game.displayNext()) {
             eventBox.getChildren().clear();
@@ -146,6 +153,7 @@ public class MainController {
             case Party -> partyController = loader.getController();
             case Budget -> budgetController = loader.getController();
             case Media -> mediaController = loader.getController();
+            case Policy -> policyController = loader.getController();
         }
 
 
@@ -193,4 +201,17 @@ public class MainController {
         lastSelected = (ToggleButton) actionEvent.getSource();
     }
 
+    @FXML
+    public void onPolicyButtonClick(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == lastSelected) {
+            infoBox.getChildren().clear();
+            infoBox.getChildren().add(new AnchorPane());
+            lastSelected = null;
+            return;
+        }
+        setInfoBox("policy-view.fxml", InfoBoxController.Policy);
+        policyController.setMainController(this);
+        policyController.update();
+        lastSelected = (ToggleButton) actionEvent.getSource();
+    }
 }
