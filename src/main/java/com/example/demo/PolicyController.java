@@ -1,18 +1,84 @@
 package com.example.demo;
 
 import com.example.demo.policy.Policy;
+import com.example.demo.policy.PolicyOption;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
+import javafx.util.Callback;
+
+import java.awt.*;
+import java.util.Arrays;
+
+class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> {
+
+    @Override
+    public ListCell<Policy> call(ListView<Policy> param) {
+        return new ListCell<>(){
+            @Override
+            public void updateItem(Policy policy, boolean empty) {
+                super.updateItem(policy, empty);
+                if (empty) {
+                    setText(null);
+                    setGraphic(null);
+                } else if (policy != null) {
+                    setText(null);
+                    setGraphic(new Label(policy.getName()));
+                } else {
+                    setText("null");
+                    setGraphic(null);
+                }
+            }
+        };
+    }
+
+}
+
+class OptionCellFactory implements Callback<ListView<PolicyOption>, ListCell<PolicyOption>> {
+
+    @Override
+    public ListCell<PolicyOption> call(ListView<PolicyOption> param) {
+        return new ListCell<>(){
+            @Override
+            public void updateItem(PolicyOption option, boolean empty) {
+                super.updateItem(option, empty);
+                if (empty) {
+                    setText(null);
+                    setGraphic(null);
+                } else if (option != null) {
+                    setText(null);
+                    if (!option.isSelected()) {
+                        setGraphic(new Label(option.getName()));
+                    } else {
+                        setGraphic((new SelectPolicyLabel(option.getName())));
+                    }
+                } else {
+                    setText("null");
+                    setGraphic(null);
+                }
+            }
+        };
+    }
+
+}
 
 public class PolicyController {
-    public final ObservableList<String> names =
+    public final ObservableList<Policy> policyNames =
             FXCollections.observableArrayList();
-    @FXML private ListView<String> policyList;
+
+    public final ObservableList<PolicyOption> optionNames =
+            FXCollections.observableArrayList();
+    @FXML
+    private ListView<PolicyOption> optionList;
+    @FXML
+    private ListView<Policy> policyList;
     private MainController mainController;
+    private Policy displayedPolicy;
 
     public void setMainController(MainController mainController) {
         this.mainController = mainController;
@@ -20,9 +86,37 @@ public class PolicyController {
 
 
     public void update() {
-        for (Policy policy : mainController.getGame().getPolicies().values()) {
-            names.add(policy.getName());
+        policyNames.clear();
+        policyNames.addAll(mainController.getGame().getPolicies().values());
+        policyList.setItems(policyNames);
+        policyList.setItems(policyNames);
+        if (displayedPolicy != null) {
+            optionNames.clear();
+            int i = 0;
+            for (PolicyOption option : displayedPolicy.getOptions()) {
+                option.setSelected(i == displayedPolicy.getCurrentOption());
+                i++;
+            }
+
+            optionNames.addAll(Arrays.asList(displayedPolicy.getOptions()));
+            optionList.setItems(optionNames);
         }
-        policyList.setItems(names);
+    }
+
+    public void initialize() {
+        policyList.setCellFactory(new PolicyCellFactory());
+        optionList.setCellFactory(new OptionCellFactory());
+        policyList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, current) -> {
+            optionNames.clear();
+            int i = 0;
+            for (PolicyOption option : current.getOptions()) {
+                option.setSelected(i == current.getCurrentOption());
+                i++;
+            }
+
+            optionNames.addAll(Arrays.asList(current.getOptions()));
+            optionList.setItems(optionNames);
+            displayedPolicy = current;
+        });
     }
 }

@@ -1,5 +1,7 @@
 package com.example.demo.policy;
 
+import java.util.Arrays;
+
 public class Policy {
     private final int id;
     private int currentOption;
@@ -30,5 +32,15 @@ public class Policy {
 
     public void setCurrentOption(int currentOption) {
         this.currentOption = currentOption;
+    }
+
+    @Override
+    public String toString() {
+        return "Policy{" +
+                "id=" + id +
+                ", currentOption=" + currentOption +
+                ", name='" + name + '\'' +
+                ", options=" + Arrays.toString(options) +
+                '}';
     }
 }

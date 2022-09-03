@@ -110,9 +110,8 @@ public class MainController {
         if (budgetController != null) {
             budgetController.update();
         }
-
-        if (mediaController != null) {
-            mediaController.update();
+        if (policyController != null) {
+            policyController.update();
         }
         if (game.displayNext()) {
             eventBox.getChildren().clear();
