@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BudgetController">
-    <VBox fx:id="budgetBox" alignment="TOP_RIGHT" layoutY="59.0" prefHeight="391.0" prefWidth="330.0" />
-    <TextField alignment="CENTER" editable="false" prefHeight="50.0" prefWidth="330.0" text="BUDGET" style="-fx-font-size: 28;"/>
+<AnchorPane prefHeight="728.0" prefWidth="548.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BudgetController">
+    <VBox fx:id="budgetBox" alignment="TOP_RIGHT" layoutX="110.0" layoutY="58.0" prefHeight="670.0" prefWidth="591.0">
+        <PieChart fx:id="chart" labelsVisible="false" prefHeight="670.0" prefWidth="425.0" />
+    </VBox>
+    <TextField alignment="CENTER" editable="false" layoutX="107.0" prefHeight="58.0" prefWidth="602.0" style="-fx-font-size: 28;" text="BUDGET" />
 </AnchorPane>

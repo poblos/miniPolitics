@@ -1,11 +1,16 @@
 package com.example.demo;
 
 import com.example.demo.budget.ExpenseCategory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.chart.PieChart;
 import javafx.scene.layout.VBox;
 
 public class BudgetController {
+    @FXML
+    private PieChart chart;
     @FXML
     private VBox budgetBox;
     private MainController mainController;
@@ -15,12 +20,12 @@ public class BudgetController {
     }
 
     public void update() {
-        budgetBox.getChildren().clear();
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList();
         for (ExpenseCategory category: ExpenseCategory.values()) {
-            budgetBox.getChildren().add(new ExpenseDisplay(category));
+            pieChartData.add(new PieChart.Data(category.toString(),mainController.getGame().getBudget().getExpenses().get(category)));
         }
-        for (Node node : budgetBox.getChildren()) {
-            ((ExpenseDisplay) node).setText(((ExpenseDisplay) node).getExpenseCategory() + ": " + mainController.getGame().getBudget().getExpenses().get(((ExpenseDisplay) node).getExpenseCategory()));
-        }
+        chart.setData(pieChartData);
+        chart.setTitle("Expenses");
     }
 }

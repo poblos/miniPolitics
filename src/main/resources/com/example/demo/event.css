@@ -41,3 +41,9 @@
     -fx-border-insets:10;
     -fx-border-width:10;
 }
+
+#chart {
+    -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);
+    -fx-border-radius:10;
+    -fx-border-width:4;
+}
