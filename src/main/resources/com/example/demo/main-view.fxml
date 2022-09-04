@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -81,9 +82,15 @@
     <left>
         <VBox fx:id="eventBox" maxHeight="545.0" maxWidth="1000" prefHeight="515.0" prefWidth="859.0" spacing="20.0">
             <padding>
-                <Insets left="50.0"/>
+                <Insets left="50.0" />
             </padding>
+         <effect>
+            <DropShadow />
+         </effect>
         </VBox>
 
     </left>
+   <effect>
+      <DropShadow />
+   </effect>
 </BorderPane>

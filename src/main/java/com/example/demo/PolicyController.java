@@ -19,7 +19,7 @@ class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> 
 
     @Override
     public ListCell<Policy> call(ListView<Policy> param) {
-        return new ListCell<>(){
+        return new ListCell<>() {
             @Override
             public void updateItem(Policy policy, boolean empty) {
                 super.updateItem(policy, empty);
@@ -43,7 +43,7 @@ class OptionCellFactory implements Callback<ListView<PolicyOption>, ListCell<Pol
 
     @Override
     public ListCell<PolicyOption> call(ListView<PolicyOption> param) {
-        return new ListCell<>(){
+        return new ListCell<>() {
             @Override
             public void updateItem(PolicyOption option, boolean empty) {
                 super.updateItem(option, empty);
@@ -108,15 +108,17 @@ public class PolicyController {
         optionList.setCellFactory(new OptionCellFactory());
         policyList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, current) -> {
             optionNames.clear();
-            int i = 0;
-            for (PolicyOption option : current.getOptions()) {
-                option.setSelected(i == current.getCurrentOption());
-                i++;
-            }
 
-            optionNames.addAll(Arrays.asList(current.getOptions()));
-            optionList.setItems(optionNames);
-            displayedPolicy = current;
+            if (current != null) {
+                int i = 0;
+                for (PolicyOption option : current.getOptions()) {
+                    option.setSelected(i == current.getCurrentOption());
+                    i++;
+                }
+                optionNames.addAll(Arrays.asList(current.getOptions()));
+                optionList.setItems(optionNames);
+                displayedPolicy = current;
+            }
         });
     }
 }

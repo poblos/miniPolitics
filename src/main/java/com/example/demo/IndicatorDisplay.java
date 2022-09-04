@@ -5,6 +5,7 @@ import com.example.demo.indicators.Indicator;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -31,11 +32,12 @@ public class IndicatorDisplay extends VBox {
         this.getChildren().add(graphic);
         this.getChildren().add(text);
         this.getChildren().add(bar);
+        this.setEffect(new DropShadow());
 
     }
 
     public void update(Game game) {
-        this.bar.setProgress(Math.floor(game.getIndicatorValue(Indicator.valueOf(name))*100)/10000);
+        this.bar.setProgress(Math.floor(game.getIndicatorValue(Indicator.valueOf(name)) * 100) / 10000);
     }
 
 }

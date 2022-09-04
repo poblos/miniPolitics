@@ -4,6 +4,7 @@ import com.example.demo.game.Game;
 import com.example.demo.jobs.Job;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -28,6 +29,7 @@ public class JobDisplay extends VBox {
         }
         this.getChildren().add(graphic);
         this.getChildren().add(text);
+        this.setEffect(new DropShadow());
     }
 
     public Job getJob() {

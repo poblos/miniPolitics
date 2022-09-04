@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.PartyController">
+<AnchorPane prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.PartyController">
     <VBox alignment="TOP_RIGHT" prefHeight="638.0" prefWidth="330.0">
-        <children>
-            <TextField alignment="CENTER" editable="false" text="PARTY" style="-fx-font-size: 28;"/>
-            <TextArea fx:id="name" editable="false" prefHeight="103.0" prefWidth="293.0" text="Name:" wrapText="true" />
-            <TextArea fx:id="history" editable="false" prefHeight="394.0" prefWidth="293.0" text="History:" wrapText="true" />
-            <TextArea fx:id="ideologies" editable="false" prefHeight="118.0" prefWidth="293.0" text="Ideologies" wrapText="true" />
-        </children>
+
+        <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" text="PARTY"/>
+        <TextArea fx:id="name" editable="false" prefHeight="103.0" prefWidth="293.0" text="Name:" wrapText="true"/>
+        <TextArea fx:id="history" editable="false" prefHeight="394.0" prefWidth="293.0" text="History:"
+                  wrapText="true"/>
+        <TextArea fx:id="ideologies" editable="false" prefHeight="118.0" prefWidth="293.0" text="Ideologies"
+                  wrapText="true"/>
     </VBox>
+    <effect>
+        <DropShadow/>
+    </effect>
 </AnchorPane>

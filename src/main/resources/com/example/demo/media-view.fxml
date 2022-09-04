@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="450.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MediaController">
     <VBox fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="393.0" prefWidth="330.0" />
-    <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0"  text="MEDIA" style="-fx-font-size: 28;"/>
+    <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0" style="-fx-font-size: 28;" text="MEDIA" />
+   <effect>
+      <DropShadow />
+   </effect>
 </AnchorPane>

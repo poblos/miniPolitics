@@ -2,27 +2,27 @@
 
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="728.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.demo.BudgetController">
+<AnchorPane prefHeight="728.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BudgetController">
     <VBox alignment="TOP_RIGHT" layoutX="136.0" layoutY="-2.0" prefHeight="796.0" prefWidth="576.0">
-        <TextField alignment="CENTER" editable="false" prefHeight="62.0" prefWidth="529.0" style="-fx-font-size: 28;"
-                   text="BUDGET"/>
+        <TextField alignment="CENTER" editable="false" prefHeight="62.0" prefWidth="529.0" style="-fx-font-size: 28;" text="BUDGET" />
         <HBox prefHeight="49.0" prefWidth="576.0">
-            <RadioButton fx:id="incomeButton" onAction="#onIncomeButtonClick" mnemonicParsing="false" prefHeight="49.0"
-                         prefWidth="313.0" text="Income">
+            <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="49.0" prefWidth="313.0" text="Income">
                 <toggleGroup>
-                    <ToggleGroup fx:id="incomeOrExpenses"/>
+                    <ToggleGroup fx:id="incomeOrExpenses" />
                 </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="expensesButton" selected="true" onAction="#onExpenseButtonClick" mnemonicParsing="false"
-                         prefHeight="49.0" prefWidth="273.0" text="Expenses">
+            <RadioButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="49.0" prefWidth="273.0" selected="true" text="Expenses">
                 <toggleGroup>
-                    <fx:reference source="incomeOrExpenses"/>
+                    <fx:reference source="incomeOrExpenses" />
                 </toggleGroup>
             </RadioButton>
         </HBox>
-        <PieChart fx:id="chart" labelsVisible="false" prefHeight="611.0" prefWidth="576.0"/>
+        <PieChart fx:id="chart" labelsVisible="false" prefHeight="611.0" prefWidth="576.0" />
     </VBox>
+   <effect>
+      <DropShadow />
+   </effect>
 </AnchorPane>
