@@ -4,9 +4,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="728.0" prefWidth="548.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BudgetController">
-    <VBox fx:id="budgetBox" alignment="TOP_RIGHT" layoutX="110.0" layoutY="58.0" prefHeight="670.0" prefWidth="591.0">
-        <PieChart fx:id="chart" labelsVisible="false" prefHeight="670.0" prefWidth="425.0" />
+<AnchorPane prefHeight="728.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.BudgetController">
+    <VBox alignment="TOP_RIGHT" layoutX="136.0" layoutY="-2.0" prefHeight="796.0" prefWidth="576.0">
+        <TextField alignment="CENTER" editable="false" prefHeight="62.0" prefWidth="529.0" style="-fx-font-size: 28;"
+                   text="BUDGET"/>
+        <HBox prefHeight="49.0" prefWidth="576.0">
+            <RadioButton fx:id="incomeButton" onAction="#onIncomeButtonClick" mnemonicParsing="false" prefHeight="49.0"
+                         prefWidth="313.0" text="Income">
+                <toggleGroup>
+                    <ToggleGroup fx:id="incomeOrExpenses"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="expensesButton" selected="true" onAction="#onExpenseButtonClick" mnemonicParsing="false"
+                         prefHeight="49.0" prefWidth="273.0" text="Expenses">
+                <toggleGroup>
+                    <fx:reference source="incomeOrExpenses"/>
+                </toggleGroup>
+            </RadioButton>
+        </HBox>
+        <PieChart fx:id="chart" labelsVisible="false" prefHeight="611.0" prefWidth="576.0"/>
     </VBox>
-    <TextField alignment="CENTER" editable="false" layoutX="107.0" prefHeight="58.0" prefWidth="602.0" style="-fx-font-size: 28;" text="BUDGET" />
 </AnchorPane>
