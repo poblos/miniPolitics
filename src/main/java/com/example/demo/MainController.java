@@ -1,66 +1,25 @@
 package com.example.demo;
 
-import com.example.demo.budget.Budget;
-import com.example.demo.budget.BudgetExpense;
-import com.example.demo.budget.BudgetIncome;
-import com.example.demo.policy.*;
-import com.squareup.moshi.Moshi;
-import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory;
-import com.example.demo.event.Condition;
-import com.example.demo.event.Effect;
-import com.example.demo.event.Event;
 import com.example.demo.game.Game;
-import com.example.demo.game.RoundCondition;
-import com.example.demo.indicators.IndicatorChange;
-import com.example.demo.indicators.IndicatorCondition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import com.example.demo.jobs.*;
-import com.example.demo.media.MediaCondition;
-import com.example.demo.media.MediaGroup;
-import com.example.demo.media.MediaTakeover;
-import com.example.demo.modifiers.Modifier;
-import com.example.demo.modifiers.ModifierCondition;
-import com.example.demo.modifiers.ModifierInvocation;
-import com.example.demo.modifiers.ModifierRemoval;
-import com.example.demo.party.Ideology;
-import com.example.demo.party.IdeologyChange;
-import com.example.demo.party.IdeologyCondition;
-import com.example.demo.party.Party;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-
-import static com.example.demo.utils.JsonLoader.loadFiles;
-import static com.example.demo.party.Ideology.*;
 
 public class MainController {
     private ToggleButton lastSelected;
     @FXML
-    private ToggleGroup leftBar;
-    @FXML
     private Label roundLabel;
     @FXML
-    private PartyController partyController;
-
-    @FXML
-    private BudgetController budgetController;
-
-    @FXML
-    private MediaController mediaController;
-    @FXML
-    private PolicyController policyController;
-    @FXML
-    private VBox infoBar;
+    private BarController barController;
 
     @FXML
     private VBox infoBox;
@@ -101,18 +60,8 @@ public class MainController {
         for (Node display : jobBox.getChildren()) {
             ((JobDisplay) display).update(game);
         }
-        if (partyController != null) {
-            partyController.update();
-        }
-        if (mediaController != null) {
-            mediaController.update();
-        }
-        if (budgetController != null) {
-            budgetController.update();
-        }
-        if (policyController != null) {
-            policyController.update();
-        }
+        barController.update();
+
         if (game.displayNext()) {
             eventBox.getChildren().clear();
             game.chooseEvent();
@@ -137,80 +86,54 @@ public class MainController {
 
     }
 
-    private void setInfoBox(String fxmlPath, InfoBoxController controller) {
+    private void setInfoBox(String fxmlPath) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxmlPath));
         AnchorPane anchor;
         try {
             anchor = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
-
         }
         infoBox.getChildren().clear();
         infoBox.getChildren().add(anchor);
-        switch (controller) {
-            case Party -> partyController = loader.getController();
-            case Budget -> budgetController = loader.getController();
-            case Media -> mediaController = loader.getController();
-            case Policy -> policyController = loader.getController();
-        }
-
-
+        barController = loader.getController();
+        barController.setMainController(this);
+        barController.update();
     }
 
     @FXML
     public void onPartyButtonClick(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == lastSelected) {
-            infoBox.getChildren().clear();
-            infoBox.getChildren().add(new AnchorPane());
-            lastSelected = null;
-            return;
-        }
-        setInfoBox("party-view.fxml", InfoBoxController.Party);
-        partyController.setMainController(this);
-        partyController.update();
-        lastSelected = (ToggleButton) actionEvent.getSource();
+        if(ifRequiresCleaning(actionEvent)) {return;}
+        setInfoBox("party-view.fxml");
     }
 
     @FXML
     public void onMediaButtonClick(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == lastSelected) {
-            infoBox.getChildren().clear();
-            infoBox.getChildren().add(new AnchorPane());
-            lastSelected = null;
-            return;
-        }
-        setInfoBox("media-view.fxml", InfoBoxController.Media);
-        mediaController.setMainController(this);
-        mediaController.update();
-        lastSelected = (ToggleButton) actionEvent.getSource();
+        if(ifRequiresCleaning(actionEvent)) {return;}
+        setInfoBox("media-view.fxml");
     }
 
     @FXML
     public void onBudgetButtonClick(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == lastSelected) {
-            infoBox.getChildren().clear();
-            infoBox.getChildren().add(new AnchorPane());
-            lastSelected = null;
-            return;
-        }
-        setInfoBox("budget-view.fxml", InfoBoxController.Budget);
-        budgetController.setMainController(this);
-        budgetController.update();
-        lastSelected = (ToggleButton) actionEvent.getSource();
+        if(ifRequiresCleaning(actionEvent)) {return;}
+        setInfoBox("budget-view.fxml");
     }
 
     @FXML
     public void onPolicyButtonClick(ActionEvent actionEvent) {
+        if(ifRequiresCleaning(actionEvent)) {return;}
+        setInfoBox("policy-view.fxml");
+
+    }
+
+    private boolean ifRequiresCleaning(ActionEvent actionEvent) {
         if (actionEvent.getSource() == lastSelected) {
             infoBox.getChildren().clear();
             infoBox.getChildren().add(new AnchorPane());
             lastSelected = null;
-            return;
+            return true;
         }
-        setInfoBox("policy-view.fxml", InfoBoxController.Policy);
-        policyController.setMainController(this);
-        policyController.update();
         lastSelected = (ToggleButton) actionEvent.getSource();
+        return false;
     }
 }

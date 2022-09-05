@@ -13,19 +13,13 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 
-public class BudgetController {
+public class BudgetController extends BarController{
     @FXML
     private ToggleGroup incomeOrExpenses;
     @FXML private RadioButton incomeButton;
     @FXML private RadioButton expensesButton;
     @FXML
     private PieChart chart;
-
-    private MainController mainController;
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
 
     public void update() {
         if (incomeOrExpenses.getSelectedToggle() == expensesButton) {

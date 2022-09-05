@@ -6,15 +6,9 @@ import javafx.scene.Node;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 
-public class MediaController {
-    private MainController mainController;
-
+public class MediaController extends BarController{
     @FXML
     private VBox mediaBox;
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
 
     public void update() {
         mediaBox.getChildren().clear();

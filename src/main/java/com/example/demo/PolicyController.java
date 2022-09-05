@@ -8,8 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Color;
 import javafx.util.Callback;
 
 import java.awt.*;
@@ -67,7 +65,7 @@ class OptionCellFactory implements Callback<ListView<PolicyOption>, ListCell<Pol
 
 }
 
-public class PolicyController {
+public class PolicyController extends BarController {
     public final ObservableList<Policy> policyNames =
             FXCollections.observableArrayList();
 
@@ -77,13 +75,7 @@ public class PolicyController {
     private ListView<PolicyOption> optionList;
     @FXML
     private ListView<Policy> policyList;
-    private MainController mainController;
     private Policy displayedPolicy;
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
-    }
-
 
     public void update() {
         policyNames.clear();
