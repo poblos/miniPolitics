@@ -13,8 +13,8 @@ public class EventDisplay extends VBox {
         Label title = new Label();
         title.setText(event.getTitle());
         title.setFont(new Font("Serif", 28));
-
         this.getChildren().add(title);
+
         // Desc setup
         TextArea desc = new TextArea();
         desc.setText(event.getDescription());
@@ -24,7 +24,6 @@ public class EventDisplay extends VBox {
         this.getChildren().add(desc);
 
         //Jensons setup
-
         int i = 0;
         for (Option option : event.getOptions()) {
             EventButton button = new EventButton(i);
@@ -34,5 +33,9 @@ public class EventDisplay extends VBox {
             i++;
         }
 
+        this.setStyle("        -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);" +
+                "        -fx-border-radius:10;" +
+                "        -fx-border-width:4;" +
+                "-fx-background-color: linear-gradient(from 25px 1px to 100px 100px,#00A2E8, #F9F9F9)");
     }
 }

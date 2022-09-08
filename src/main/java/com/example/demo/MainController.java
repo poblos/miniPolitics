@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import com.example.demo.jobs.*;
@@ -15,6 +16,8 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class MainController {
+    @FXML
+    private ToggleGroup leftBar;
     private ToggleButton lastSelected;
     @FXML
     private Label roundLabel;
@@ -49,6 +52,8 @@ public class MainController {
             ((IndicatorDisplay) display).update(game);
         }
         game.chooseEvent();
+        DraggableMaker maker = new DraggableMaker();
+        maker.makeDraggable(eventBox);
         eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
     }
 
@@ -60,7 +65,10 @@ public class MainController {
         for (Node display : jobBox.getChildren()) {
             ((JobDisplay) display).update(game);
         }
-        barController.update();
+
+        if (barController != null) {
+            barController.update();
+        }
 
         if (game.displayNext()) {
             eventBox.getChildren().clear();
@@ -103,25 +111,33 @@ public class MainController {
 
     @FXML
     public void onPartyButtonClick(ActionEvent actionEvent) {
-        if(ifRequiresCleaning(actionEvent)) {return;}
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
         setInfoBox("party-view.fxml");
     }
 
     @FXML
     public void onMediaButtonClick(ActionEvent actionEvent) {
-        if(ifRequiresCleaning(actionEvent)) {return;}
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
         setInfoBox("media-view.fxml");
     }
 
     @FXML
     public void onBudgetButtonClick(ActionEvent actionEvent) {
-        if(ifRequiresCleaning(actionEvent)) {return;}
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
         setInfoBox("budget-view.fxml");
     }
 
     @FXML
     public void onPolicyButtonClick(ActionEvent actionEvent) {
-        if(ifRequiresCleaning(actionEvent)) {return;}
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
         setInfoBox("policy-view.fxml");
 
     }

@@ -5,8 +5,8 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="728.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BudgetController">
-    <VBox alignment="TOP_RIGHT" layoutX="136.0" layoutY="-2.0" prefHeight="796.0" prefWidth="576.0">
+<AnchorPane prefHeight="794.0" prefWidth="573.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BudgetController">
+    <VBox alignment="TOP_RIGHT" prefHeight="796.0" prefWidth="580.0">
         <TextField alignment="CENTER" editable="false" prefHeight="62.0" prefWidth="529.0" style="-fx-font-size: 28;" text="BUDGET" />
         <HBox prefHeight="49.0" prefWidth="576.0">
             <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="49.0" prefWidth="313.0" text="Income">

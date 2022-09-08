@@ -7,90 +7,93 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.MainController">
     <top>
-        <HBox alignment="CENTER" prefHeight="232.0" prefWidth="1247.0">
+        <HBox alignment="CENTER" prefHeight="183.0" prefWidth="1247.0">
             <HBox fx:id="indicatorBox" alignment="BASELINE_LEFT" prefHeight="401.0" prefWidth="20.0" spacing="20.0">
                 <padding>
-                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
                 </padding>
             </HBox>
-            <Label fx:id="roundLabel" alignment="BASELINE_CENTER" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
-            <font>
-               <Font name="Century" size="24.0" />
-            </font></Label>
+            <Label fx:id="roundLabel" alignment="BASELINE_CENTER" textAlignment="CENTER" GridPane.columnIndex="0"
+                   GridPane.rowIndex="0">
+                <font>
+                    <Font name="Century" size="24.0"/>
+                </font>
+            </Label>
             <HBox fx:id="jobBox" alignment="BASELINE_RIGHT" spacing="20.0">
                 <padding>
-                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
                 </padding>
             </HBox>
-
         </HBox>
     </top>
-    <right>
-        <HBox prefHeight="515.0" prefWidth="388.0">
-            <VBox fx:id="infoBox" alignment="TOP_RIGHT" prefHeight="515.0" prefWidth="0.0">
-            </VBox>
-            <VBox fx:id="infoBar" alignment="TOP_RIGHT" prefHeight="515.0" prefWidth="705.0" spacing="20.0">
-                <padding>
-                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                </padding>
-                <ToggleButton onAction="#onPartyButtonClick">
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@menu_icons/PartyIcon.png" />
-                        </ImageView>
-                    </graphic>
-                    <toggleGroup>
-                        <ToggleGroup fx:id="leftBar" />
-                    </toggleGroup>
-                </ToggleButton>
-                <ToggleButton onAction="#onBudgetButtonClick">
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@menu_icons/BudgetIcon.png" />
-                        </ImageView>
-                    </graphic>
-                    <toggleGroup>
-                        <fx:reference source="leftBar" />
-                    </toggleGroup>
-                </ToggleButton>
-                <ToggleButton onAction="#onMediaButtonClick">
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@menu_icons/MediaIcon.png" />
-                        </ImageView>
-                    </graphic>
-                    <toggleGroup>
-                        <fx:reference source="leftBar" />
-                    </toggleGroup>
-                </ToggleButton>
-                <ToggleButton onAction="#onPolicyButtonClick">
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@menu_icons/PolicyIcon.png" />
-                        </ImageView>
-                    </graphic>
-                    <toggleGroup>
-                        <fx:reference source="leftBar" />
-                    </toggleGroup>
-                </ToggleButton>
-            </VBox>
-
-        </HBox>
-    </right>
     <left>
-        <VBox fx:id="eventBox" maxHeight="545.0" maxWidth="1000" prefHeight="515.0" prefWidth="859.0" spacing="20.0">
+        <VBox alignment="TOP_RIGHT" prefHeight="476.0" prefWidth="106.0" spacing="20.0"
+              BorderPane.alignment="CENTER">
             <padding>
-                <Insets left="50.0" />
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
             </padding>
-         <effect>
-            <DropShadow />
-         </effect>
+            <ToggleButton onAction="#onPartyButtonClick">
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@menu_icons/PartyIcon.png"/>
+                    </ImageView>
+                </graphic>
+                <toggleGroup>
+                    <ToggleGroup fx:id="leftBar"/>
+                </toggleGroup>
+            </ToggleButton>
+            <ToggleButton onAction="#onBudgetButtonClick">
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@menu_icons/BudgetIcon.png"/>
+                    </ImageView>
+                </graphic>
+                <toggleGroup>
+                    <fx:reference source="leftBar"/>
+                </toggleGroup>
+            </ToggleButton>
+            <ToggleButton onAction="#onMediaButtonClick">
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@menu_icons/MediaIcon.png"/>
+                    </ImageView>
+                </graphic>
+                <toggleGroup>
+                    <fx:reference source="leftBar"/>
+                </toggleGroup>
+            </ToggleButton>
+            <ToggleButton onAction="#onPolicyButtonClick">
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@menu_icons/PolicyIcon.png"/>
+                    </ImageView>
+                </graphic>
+                <toggleGroup>
+                    <fx:reference source="leftBar"/>
+                </toggleGroup>
+            </ToggleButton>
         </VBox>
-
     </left>
-   <effect>
-      <DropShadow />
-   </effect>
+    <center>
+        <AnchorPane>
+            <VBox fx:id="eventBox" prefHeight="450.0" prefWidth="800.0">
+                <padding>
+                    <Insets left="50.0"/>
+                </padding>
+                <effect>
+                    <DropShadow/>
+                </effect>
+            </VBox>
+            <VBox fx:id="infoBox" alignment="CENTER_RIGHT" prefHeight="515.0" prefWidth="0.0">
+            </VBox>
+        </AnchorPane>
+    </center>
+    <effect>
+        <DropShadow/>
+    </effect>
+
 </BorderPane>
