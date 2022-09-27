@@ -37,7 +37,15 @@ public class IndicatorDisplay extends VBox {
     }
 
     public void update(Game game) {
-        this.bar.setProgress(Math.floor(game.getIndicatorValue(Indicator.valueOf(name)) * 100) / 10000);
+        double newValue = Math.floor(game.getIndicatorValue(Indicator.valueOf(name)) * 100) / 10000;
+        this.bar.setProgress(newValue);
+        if (newValue < 0.15) {
+            bar.setStyle("-fx-accent: red");
+        } else if (newValue < 0.3) {
+            bar.setStyle("-fx-accent: yellow");
+        } else {
+            bar.setStyle("-fx-accent: #00A2E8");
+        }
     }
 
 }
