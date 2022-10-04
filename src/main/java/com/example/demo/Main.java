@@ -19,7 +19,7 @@ public class Main extends Application {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("event.css")).toExternalForm());
         stage.setTitle("miniPolitics");
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNIFIED);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setFullScreen(true);
         stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("icon.png"))));
         stage.show();
