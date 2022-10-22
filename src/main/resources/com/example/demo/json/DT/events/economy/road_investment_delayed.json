@@ -1,0 +1,47 @@
+{
+  "title": "Infrastructure investment delayed",
+  "description": "Although we made a significant progress, it seems like like the construction still is too slow.",
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "State Infrastructure Investment"
+      }
+    ],
+    "no": [
+      {
+        "type": "advisor_condition",
+        "job": "Strategist"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Infrastructure Investment ahead of time"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Infrastructure Investment Delayed"
+      }
+    ]
+  },
+  "options": [
+    {
+      "description": "Shame.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "indicator": "StateStability",
+          "change": -1
+        },
+        {
+          "type": "indicator_change",
+          "indicator": "PartySupport",
+          "change": -1
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Infrastructure Investment Delayed"
+        }
+      ]
+    }
+  ]
+}

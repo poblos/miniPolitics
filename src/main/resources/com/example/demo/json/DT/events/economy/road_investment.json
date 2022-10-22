@@ -1,0 +1,64 @@
+{
+  "title": "Investment opportunity",
+  "description": "A significant city reported reported major issues within regional infrastructure. The Mayor proposed changes that aim to fix them and to improve the general state of our country's road system. However, the city lacks proper funds and asks us for help.",
+  "isUnique": true,
+  "options": [
+    {
+      "description": "Maybe, maybe",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Infrastructure",
+          "change": 550
+        },
+        {
+          "type": "indicator_change",
+          "indicator": "PartySupport",
+          "change": 2
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "State Infrastructure Investment"
+        }
+      ]
+    },
+    {
+      "description": "Our state roads are fine, let's focus on the city's issues",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "indicator": "StateStability",
+          "change": -2
+        },
+        {
+          "type": "budget_expense",
+          "category": "Infrastructure",
+          "change": 50
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Local Infrastructure Investment"
+        }
+      ]
+    },
+    {
+      "description": "nah",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "indicator": "PartySupport",
+          "change": -2
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Neglected Infrastructure"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "description": "The Mayor who asked us for help made a call to thank us and inform us that the changes have made a significant profit",
+  "title": "Local infrastructure renewal project finished",
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Local Infrastructure Investment"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "options": [
+    {
+      "description": "Good for him",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Local Infrastructure Investment"
+        },
+        {
+          "type" : "indicator_change",
+          "indicator": "StateStability",
+          "change": 3
+        },
+        {
+          "type": "indicator_change",
+          "indicator": "PartySupport",
+          "change": 2
+        }
+      ]
+    },
+    {
+      "description": "Maybe we should take a look at our own roads?",
+      "trigger": {
+        "yes" : [
+          {
+            "type": "advisor_condition",
+            "job": "Strategist"
+          }
+        ],
+        "no": [
+        ]
+      },
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Local Infrastructure Investment"
+        },
+        {
+          "type": "indicator_change",
+          "indicator": "StateStability",
+          "change": 2
+        }
+      ]
+    }
+  ]
+}

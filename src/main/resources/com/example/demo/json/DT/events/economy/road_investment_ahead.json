@@ -1,0 +1,52 @@
+{
+  "title": "Infrastructure investment ahead of time",
+  "description": "Construction went as planned, and some parts of the project are ready for opening to public use",
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "State Infrastructure Investment"
+      },
+      {
+        "type": "advisor_condition",
+        "job": "Strategist"
+      }
+    ],
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Infrastructure Investment Delayed"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Infrastructure Investment ahead of time"
+      }
+    ]
+  },
+  "options": [
+    {
+      "description": "Excellent!",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Infrastructure Investment ahead of time"
+        },
+        {
+          "type": "indicator_change",
+          "indicator": "StateStability",
+          "change": 1
+        },
+        {
+          "type": "indicator_change",
+          "indicator": "PartySupport",
+          "change": 1
+        },
+        {
+          "type": "budget_expense",
+          "category": "Infrastructure",
+          "change": -30
+        }
+      ]
+    }
+  ]
+}
