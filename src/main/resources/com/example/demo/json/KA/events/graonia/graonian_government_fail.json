@@ -22,6 +22,10 @@
           {
             "type": "modifier_condition",
             "affiliation": "Graonian Relations Propaganda"
+          },
+          {
+            "type": "modifier_condition",
+            "name": "Graonian Resurgence"
           }
         ]
       }

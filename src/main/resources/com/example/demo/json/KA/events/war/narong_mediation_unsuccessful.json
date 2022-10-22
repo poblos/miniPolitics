@@ -1,0 +1,47 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Narong mediation"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 300,
+  "description": "Forebergians decided to leave the city of Ear as no further progress has been made during the past hour. It certainly didn't help our popular support.",
+  "options": [
+    {
+      "description": "At least we tried - now we can only wait for the further events.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Narong mediation - supervision offer"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Narong mediation - split offer"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Narong mediation"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Narong tensions - wait"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "The Ear Mediation failed"
+}

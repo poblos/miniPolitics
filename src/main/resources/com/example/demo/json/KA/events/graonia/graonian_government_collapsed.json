@@ -8,6 +8,12 @@
             "type": "media_condition",
             "affiliation": "Government"
           }
+        ],
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Graonian Resurgence"
+          }
         ]
       },
       "description": "Those Graonians are ridiculous! Let's make fun of them in our media!",

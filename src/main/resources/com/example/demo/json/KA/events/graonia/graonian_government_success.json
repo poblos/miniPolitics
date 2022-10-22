@@ -1,4 +1,12 @@
 {
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Graonian Resurgence"
+      }
+    ]
+  },
   "description": "After recent changes in Graonian's government, a new Arch-Patriarch has been chosen. It turns out that as the place for his first international visit he has chosen our country. ",
   "options": [
     {
