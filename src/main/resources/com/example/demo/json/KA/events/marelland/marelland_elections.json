@@ -1,4 +1,13 @@
 {
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 25
+      }
+    ]
+  },
+  "probability": 400,
   "isUnique": true,
   "description": "Marelland presidential elections are to be held next year. This former Kachakonian colony is utterly important for us as it controls our southern trade routs. Your colleague from the university is willing to run for the office, as he was born in Marelland. It would be costly, but we might help him with the campaign.",
   "options": [
@@ -18,6 +27,10 @@
         {
           "type": "modifier_invocation",
           "name": "Marelland Elections Influenced"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Marelland Elections"
         }
       ]
     },
@@ -28,6 +41,10 @@
           "type": "indicator_change",
           "change": 1,
           "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Marelland Elections"
         }
         ]
     }

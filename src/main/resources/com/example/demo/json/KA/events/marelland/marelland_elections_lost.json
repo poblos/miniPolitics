@@ -1,7 +1,7 @@
 {
   "probabilityChanges": [
     {
-      "probChange": 100,
+      "probChange": -100,
       "conditions": [
         {
           "type": "modifier_condition",
@@ -18,24 +18,20 @@
       }
     ]
   },
-  "probability": 60,
-  "description": "I've got excellent news! You colleague has won the presidential elections in Marelland. Now we can cooperate to secure regional stability.",
+  "probability": 160,
+  "description": "Unfortunately, your colleague has lost the presidential elections in Marelland. The new president is suspicious of us as our connections with his contr-candidate were pretty well-known.",
   "options": [
     {
-      "description": "Great news indeed",
+      "description": "If we act friendly, he will change his mind.",
       "effects": [
         {
           "type": "indicator_change",
-          "change": 4,
+          "change": -1,
           "indicator": "StateStability"
         },
         {
           "type": "modifier_removal",
           "name": "Marelland Elections Influenced"
-        },
-        {
-          "type": "modifier_invocation",
-          "name": "Marelland relations secured"
         }
       ]
     }
