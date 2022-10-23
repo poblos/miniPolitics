@@ -1,0 +1,41 @@
+{
+  "description": "Deep in the forest, an unusual building is under construction. Resembling medieval castle, a yellow information board says it is to become a 5-star hotel one day. But there is a single, tiny problem - the area it's situated in is under a strict supervision as it is in the heart of the National Park. Obviously, opposition used this topic to accuse us of neglecting the matter.",
+  "options": [
+    {
+      "description": "Heads must be chopped. Stop the investment!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Someone should pay for it, but don't stop the investment.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "A great idea, this construction. Don't do anything!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Suspicious Investment"
+}

@@ -92,6 +92,8 @@ public class StartView {
         Stage window = (Stage) kaButton.getScene().getWindow();
         window.setScene(new Scene(root, 1280, 720));
         window.setFullScreen(true);
+
+        printNumberOfEvents(events.size());
     }
 
     public void onGraoniaButtonClick() throws URISyntaxException, IOException {
@@ -136,6 +138,11 @@ public class StartView {
         window.setScene(new Scene(root, 1280, 720));
         window.setFullScreen(true);
 
+        printNumberOfEvents(events.size());
+    }
+
+    private void printNumberOfEvents(int number) {
+        System.out.println("Number of loaded events: " + number);
     }
 
 }
