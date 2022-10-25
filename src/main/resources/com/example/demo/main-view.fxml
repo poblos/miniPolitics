@@ -15,11 +15,21 @@
                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                 </padding>
             </HBox>
-            <Label fx:id="roundLabel" alignment="BASELINE_CENTER" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                <font>
-                    <Font name="Century" size="24.0" />
-                </font>
-            </Label>
+            <StackPane>
+                <Label alignment="BASELINE_CENTER">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
+                            <Image url="@menu_icons/roundLabel.png" />
+                        </ImageView>
+                    </graphic>
+                </Label>
+                <Label fx:id="roundLabel" textAlignment="CENTER" alignment="BASELINE_CENTER">
+                    <font>
+                        <Font name="Century" size="24.0" />
+                    </font>
+                </Label>
+            </StackPane>
+
             <HBox fx:id="jobBox" alignment="BASELINE_RIGHT" spacing="20.0">
                 <padding>
                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
