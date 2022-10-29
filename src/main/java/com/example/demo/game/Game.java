@@ -40,11 +40,11 @@ public class Game {
     private final Map<Integer, Person> people;
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
-    private final Party party;
+    private Party party;
     private final Budget budget;
     private final transient Random random;
 
-    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Party party, Budget budget) {
+    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Budget budget) {
         this.budget = budget;
         values = new HashMap<>();
         values.put(Indicator.PartyCohesion, 40F);
@@ -57,7 +57,6 @@ public class Game {
         this.activeModifiers = new HashMap<>();
         this.events = events;
         this.people = new HashMap<>();
-        this.party = party;
         for (Person p : people) {
             this.people.put(p.getId(), p);
         }
@@ -96,6 +95,10 @@ public class Game {
 
     public Map<Integer, Policy> getPolicies() {
         return policies;
+    }
+
+    public void setParty(Party party) {
+        this.party = party;
     }
 
     private int eventProbability(Event event) {

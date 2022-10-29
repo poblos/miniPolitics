@@ -43,82 +43,90 @@ import static com.example.demo.party.Ideology.*;
 import static com.example.demo.utils.JsonLoader.loadFiles;
 
 public class StartView {
-    private Game game;
-
     @FXML
     private Button kaButton, grButton;
 
     @FXML
     private MainController mainController;
 
-    public void onKachakonyaButtonClick() throws URISyntaxException, IOException {
-        Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
+    private Game constructGame(String nationTag) throws URISyntaxException, IOException {
+        Moshi moshi = new Moshi.Builder()
+                .add(PolymorphicJsonAdapterFactory.of(Effect.class, "type")
+                        .withSubtype(IndicatorChange.class, "indicator_change")
+                        .withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment")
+                        .withSubtype(AdvisorEmployment.class, "advisor_employment")
+                        .withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal")
+                        .withSubtype(AdvisorDismissal.class, "advisor_dismissal")
+                        .withSubtype(ModifierInvocation.class, "modifier_invocation")
+                        .withSubtype(ModifierRemoval.class, "modifier_removal")
+                        .withSubtype(MediaTakeover.class, "media_takeover")
+                        .withSubtype(IdeologyChange.class, "ideology_change")
+                        .withSubtype(PolicyChange.class, "policy_change")
+                        .withSubtype(BudgetExpense.class, "budget_expense")
+                        .withSubtype(BudgetIncome.class, "budget_income"))
+                .add(PolymorphicJsonAdapterFactory.of(Condition.class, "type")
+                        .withSubtype(ModifierCondition.class, "modifier_condition")
+                        .withSubtype(AdvisorCondition.class, "advisor_condition")
+                        .withSubtype(MediaCondition.class, "media_condition")
+                        .withSubtype(AdvisorSkillCondition.class, "trait_condition")
+                        .withSubtype(IndicatorCondition.class, "indicator_condition")
+                        .withSubtype(SomeAdvisorCondition.class, "some_advisor_condition")
+                        .withSubtype(IdeologyCondition.class, "ideology_condition")
+                        .withSubtype(PolicyCondition.class, "policy_condition")
+                        .withSubtype(RoundCondition.class, "round_condition"))
+                .build();
 
         //Adding default and Kachakonyan events collection
-        ArrayList<Event> events = loadFiles(Event.class, "json/KA/events/", moshi);
+        ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
 
         //Adding default com.example.demo.resources.people collection
-        ArrayList<Person> people = loadFiles(Person.class, "json/KA/people/", moshi);
+        ArrayList<Person> people = loadFiles(Person.class, "json/" + nationTag + "/people/", moshi);
 
         //Adding default and Kachakonyan modifiers collection
-        ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/KA/modifiers/", moshi);
+        ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/" + nationTag + "/modifiers/", moshi);
         modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
 
         //Adding default com.example.demo.resources.com.example.demo.media collection
-        ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/KA/media/", moshi);
+        ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/" + nationTag + "/media/", moshi);
 
         //Loading Policy
-        ArrayList<Policy> policies = loadFiles(Policy.class, "json/KA/policies/", moshi);
+        ArrayList<Policy> policies = loadFiles(Policy.class, "json/" + nationTag + "/policies/", moshi);
         policies.addAll(loadFiles(Policy.class, "json/DT/policies/", moshi));
 
         //Loading com.example.demo.budget
-        ArrayList<Budget> budgets = loadFiles(Budget.class, "json/KA/budget/", moshi);
+        ArrayList<Budget> budgets = loadFiles(Budget.class, "json/" + nationTag + "/budget/", moshi);
 
+        printNumberOfEvents(events.size());
+        return new Game(events, people, policies, modifiers, medias, budgets.get(0));
+    }
+
+    private void startGame(Game game) throws IOException {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("main-view.fxml"));
+        Parent root = loader.load();
+        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("event.css")).toExternalForm());
+        mainController = loader.getController();
+        mainController.setGame(game);
+        Stage window = (Stage) kaButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1280, 720));
+        window.setFullScreen(true);
+    }
+
+    public void onKachakonyaButtonClick() throws URISyntaxException, IOException {
+        Game game = constructGame("KA");
         //Party
         ArrayList<Ideology> ideologies = new ArrayList<>();
         ideologies.add(BigTent);
         ideologies.add(Capitalist);
         ideologies.add(Centrist);
         Party party = new Party("Democratic Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "Currently in power for past 4 years, but under new leadership suffer from internal turmoil.", ideologies);
+        game.setParty(party);
 
-        game = new Game(events, people, policies, modifiers, medias, party, budgets.get(0));
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("main-view.fxml"));
-        Parent root = loader.load();
-        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("event.css")).toExternalForm());
-
-        mainController = loader.getController();
-        mainController.setGame(game);
-        Stage window = (Stage) kaButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1280, 720));
-        window.setFullScreen(true);
-
-        printNumberOfEvents(events.size());
+        startGame(game);
     }
 
     public void onGraoniaButtonClick() throws URISyntaxException, IOException {
-        Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
-
-        //Adding graonian and default events collection
-        ArrayList<Event> events = loadFiles(Event.class, "json/GR/events/", moshi);
-        events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
-
-        //Adding default com.example.demo.resources.people collection
-        ArrayList<Person> people = loadFiles(Person.class, "json/GR/people/", moshi);
-
-        //Adding default modifiers collection
-        ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/GR/modifiers/", moshi);
-        modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
-
-        //Adding default com.example.demo.resources.com.example.demo.media collection
-        ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/GR/media/", moshi);
-
-        //Loading Policy
-        ArrayList<Policy> policies = loadFiles(Policy.class, "json/GR/policies/", moshi);
-        policies.addAll(loadFiles(Policy.class, "json/DT/policies/", moshi));
-
-        //Loading com.example.demo.budget
-        ArrayList<Budget> budgets = loadFiles(Budget.class, "json/GR/budget/", moshi);
+        Game game = constructGame("GR");
 
         //Party
         ArrayList<Ideology> ideologies = new ArrayList<>();
@@ -126,19 +134,9 @@ public class StartView {
         ideologies.add(Capitalist);
         ideologies.add(Centrist);
         Party party = new Party("Democratic Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "Currently in power for past 4 years, but under new leadership suffer from internal turmoil.", ideologies);
+        game.setParty(party);
 
-        game = new Game(events, people, policies, modifiers, medias, party, budgets.get(0));
-
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("main-view.fxml"));
-        Parent root = loader.load();
-        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("event.css")).toExternalForm());
-        mainController = loader.getController();
-        mainController.setGame(game);
-        Stage window = (Stage) kaButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1280, 720));
-        window.setFullScreen(true);
-
-        printNumberOfEvents(events.size());
+        startGame(game);
     }
 
     private void printNumberOfEvents(int number) {
