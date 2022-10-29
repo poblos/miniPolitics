@@ -5,13 +5,12 @@ import com.example.demo.event.Option;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class EventDisplay extends VBox {
     public EventDisplay(Event event, MainController controller) {
-        this.setFillWidth(true);
-
         // Title setup
         Label title = new Label();
         title.setText(event.getTitle());
@@ -24,6 +23,7 @@ public class EventDisplay extends VBox {
         desc.setWrapText(true);
         desc.setEditable(false);
         desc.setFont(new Font("Serif", 16));
+        desc.setPrefHeight(200);
         this.getChildren().add(desc);
 
         //Jensons setup
@@ -32,7 +32,10 @@ public class EventDisplay extends VBox {
             EventButton button = new EventButton(i);
             button.setText(option.getDescription());
             button.setOnAction(actionEvent-> controller.handleEvent(button.getClick()));
-            button.setMaxWidth(1000);
+            button.setPrefWidth(800);
+            button.setMaxHeight(100);
+            button.setWrapText(true);
+            setVgrow(button, Priority.ALWAYS);
             this.getChildren().add(button);
             i++;
         }
