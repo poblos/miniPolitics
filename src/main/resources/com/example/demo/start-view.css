@@ -17,7 +17,7 @@
 }
 
 .button {
-    -fx-border-color: gray;
+    -fx-border-color: black;
     -fx-border-width: 2;
     -fx-font-size: 20;
     -fx-text-fill: lemonchiffon;
@@ -26,6 +26,6 @@
 
 #title {
     -fx-font-size: 130;
-    -fx-font-family: Jokerman;
+    -fx-font-family: Impact;
     -fx-text-fill: linear-gradient(from 50px 0px to 50px 100px, reflect, purple, black);
 }
