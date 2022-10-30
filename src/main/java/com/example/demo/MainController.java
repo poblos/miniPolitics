@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.game.Game;
+import com.example.demo.utils.DraggableMaker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

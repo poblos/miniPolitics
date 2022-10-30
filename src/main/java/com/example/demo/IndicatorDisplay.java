@@ -10,6 +10,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
+import java.util.Objects;
+
 
 public class IndicatorDisplay extends VBox {
     Label text;
@@ -23,7 +25,8 @@ public class IndicatorDisplay extends VBox {
         this.text = new Label(this.name);
         this.bar = new ProgressBar();
         try {
-            Image image = new Image("/" + name + ".png");
+
+            Image image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/" + name + ".png")).toExternalForm());
             this.graphic = new Label();
             graphic.setGraphic(new ImageView(image));
         } catch (Exception e) {

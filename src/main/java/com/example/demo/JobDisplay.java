@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
+import java.util.Objects;
+
 public class JobDisplay extends VBox {
     Label text;
     Label graphic;
@@ -22,7 +24,7 @@ public class JobDisplay extends VBox {
         this.graphic = new Label();
         this.text.setText(this.job + ": None");
         try {
-            image = new Image("/ModelNotFound.png");
+            image = new Image("/com/example/demo/menu_icons/people/ModelNotFound.png");
             this.graphic.setGraphic(new ImageView(image));
         } catch (Exception e) {
             System.out.println("problem");
@@ -39,7 +41,8 @@ public class JobDisplay extends VBox {
     public void add(Game game) {
         this.text.setText(this.job + ": " + game.getCurrentPerson().getName());
         try {
-            image = new Image("/" + game.getCurrentPerson().getName() + ".png");
+            image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/people/" +
+                    game.getCurrentPerson().getName() + ".png")).toExternalForm());
             this.graphic.setGraphic(new ImageView(image));
         } catch (Exception e) {
             System.out.println("problem");
@@ -49,7 +52,7 @@ public class JobDisplay extends VBox {
     public void update(Game game) {
         if (game.getEmployed(this.job) == null) {
             this.text.setText(this.job + ": None");
-            image = new Image("/ModelNotFound.png");
+            image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/people/ModelNotFound.png")).toExternalForm());
             this.graphic.setGraphic(new ImageView(image));
         }
     }

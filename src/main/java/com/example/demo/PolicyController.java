@@ -38,6 +38,12 @@ class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> 
 }
 
 class OptionCellFactory implements Callback<ListView<PolicyOption>, ListCell<PolicyOption>> {
+    private static class SelectPolicyLabel extends Label {
+        public SelectPolicyLabel(String name) {
+            super(name);
+            this.setStyle("-fx-background-color: linear-gradient(from 25px 1px to 100px 100px,#00A230, #F9F9F9)");
+        }
+    }
 
     @Override
     public ListCell<PolicyOption> call(ListView<PolicyOption> param) {

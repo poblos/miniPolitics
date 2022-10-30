@@ -76,25 +76,19 @@ public class StartView {
                         .withSubtype(RoundCondition.class, "round_condition"))
                 .build();
 
-        //Adding default and Kachakonyan events collection
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
 
-        //Adding default com.example.demo.resources.people collection
         ArrayList<Person> people = loadFiles(Person.class, "json/" + nationTag + "/people/", moshi);
 
-        //Adding default and Kachakonyan modifiers collection
         ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/" + nationTag + "/modifiers/", moshi);
         modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
 
-        //Adding default com.example.demo.resources.com.example.demo.media collection
         ArrayList<MediaGroup> medias = loadFiles(MediaGroup.class, "json/" + nationTag + "/media/", moshi);
 
-        //Loading Policy
         ArrayList<Policy> policies = loadFiles(Policy.class, "json/" + nationTag + "/policies/", moshi);
         policies.addAll(loadFiles(Policy.class, "json/DT/policies/", moshi));
 
-        //Loading com.example.demo.budget
         ArrayList<Budget> budgets = loadFiles(Budget.class, "json/" + nationTag + "/budget/", moshi);
 
         printNumberOfEvents(events.size());
