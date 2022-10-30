@@ -24,7 +24,7 @@ public class JobDisplay extends VBox {
         this.graphic = new Label();
         this.text.setText(this.job + ": None");
         try {
-            image = new Image("/com/example/demo/menu_icons/people/ModelNotFound.png");
+            image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/people/ModelNotFound.png")).toExternalForm());
             this.graphic.setGraphic(new ImageView(image));
         } catch (Exception e) {
             System.out.println("problem");
