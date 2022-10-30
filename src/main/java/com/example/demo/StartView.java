@@ -98,7 +98,7 @@ public class StartView {
     private void startGame(Game game) throws IOException {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("main-view.fxml"));
         Parent root = loader.load();
-        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("event.css")).toExternalForm());
+        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("main_view.css")).toExternalForm());
         mainController = loader.getController();
         mainController.setGame(game);
         Stage window = (Stage) kaButton.getScene().getWindow();

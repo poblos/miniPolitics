@@ -153,4 +153,7 @@ public class MainController {
         lastSelected = (ToggleButton) actionEvent.getSource();
         return false;
     }
+
+    public void onStoryButtonClick(ActionEvent actionEvent) {
+    }
 }
