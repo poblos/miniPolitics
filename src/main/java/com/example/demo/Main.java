@@ -21,7 +21,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setFullScreen(true);
-        stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("icon.png"))));
+        stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/com/example/demo/menu_icons/planet.png"))));
         stage.show();
 
     }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="450.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MediaController">
-    <VBox fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="393.0" prefWidth="330.0" />
+    <TilePane fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="393.0" prefWidth="330.0" />
     <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0" style="-fx-font-size: 28;" text="MEDIA" />
    <effect>
       <DropShadow />
