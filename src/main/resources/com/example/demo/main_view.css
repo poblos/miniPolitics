@@ -26,6 +26,15 @@
     -fx-font-size:20;
 }
 
+.highlightedText {
+    -fx-fill: deepskyblue;
+    -fx-font: bold 15pt "Sherif";
+}
+
+.normalText {
+    -fx-fill: black;
+}
+
 #indicatorBox {
     -fx-font-size:15;
 }

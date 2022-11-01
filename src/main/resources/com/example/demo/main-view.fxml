@@ -96,7 +96,7 @@
                     <DropShadow/>
                 </effect>
             </VBox>
-            <VBox fx:id="infoBox" alignment="CENTER_RIGHT" prefHeight="515.0" prefWidth="0.0">
+            <VBox fx:id="infoBox" alignment="TOP_CENTER" prefHeight="515.0" prefWidth="264.0">
             </VBox>
         </AnchorPane>
     </center>

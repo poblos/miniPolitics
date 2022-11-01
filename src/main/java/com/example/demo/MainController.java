@@ -97,14 +97,14 @@ public class MainController {
 
     private void setInfoBox(String fxmlPath) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxmlPath));
-        AnchorPane anchor;
+        Node node;
         try {
-            anchor = loader.load();
+            node = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         infoBox.getChildren().clear();
-        infoBox.getChildren().add(anchor);
+        infoBox.getChildren().add(node);
         barController = loader.getController();
         barController.setMainController(this);
         barController.update();
