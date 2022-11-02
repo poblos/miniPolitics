@@ -3,17 +3,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefWidth="200.0" xmlns="http://javafx.com/javafx/16" style="-fx-background-color: #EEEEEE;"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.demo.PartyController">
-    <VBox alignment="TOP_RIGHT" prefHeight="638.0" prefWidth="330.0">
-
+    <VBox alignment="TOP_RIGHT" prefWidth="330.0">
         <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" text="PARTY"/>
-        <TextArea fx:id="name" editable="false" prefHeight="103.0" prefWidth="293.0" text="Name:" wrapText="true"/>
-        <TextArea fx:id="history" editable="false" prefHeight="394.0" prefWidth="293.0" text="History:"
-                  wrapText="true"/>
-        <TextArea fx:id="ideologies" editable="false" prefHeight="118.0" prefWidth="293.0" text="Ideologies"
-                  wrapText="true"/>
+        <TextFlow fx:id="textBox" prefHeight="103.0" prefWidth="293.0"/>
     </VBox>
     <effect>
         <DropShadow/>

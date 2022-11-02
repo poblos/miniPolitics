@@ -2,19 +2,36 @@ package com.example.demo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 public class PartyController extends BarController{
-
     @FXML
-    public TextArea name;
-    @FXML
-    public TextArea history;
-    @FXML
-    public TextArea ideologies;
+    private TextFlow textBox;
 
     public void update() {
-        name.setText("name: " + mainController.getGame().getParty().name());
-        history.setText("history: " + mainController.getGame().getParty().description());
-        ideologies.setText("ideologies: " + mainController.getGame().getParty().ideologies());
+        Text text = new Text("Name: ");
+        text.getStyleClass().add("highlightedText");
+        textBox.getChildren().add(text);
+
+        text = new Text(mainController.getGame().getParty().name() + "\n");
+        text.getStyleClass().add("normalText");
+        textBox.getChildren().add(text);
+
+        text = new Text("Description: ");
+        text.getStyleClass().add("highlightedText");
+        textBox.getChildren().add(text);
+
+        text = new Text(mainController.getGame().getParty().description() + "\n");
+        text.getStyleClass().add("normalText");
+        textBox.getChildren().add(text);
+
+        text = new Text("Ideologies: ");
+        text.getStyleClass().add("highlightedText");
+        textBox.getChildren().add(text);
+
+        text = new Text(mainController.getGame().getParty().ideologies().toString());
+        text.getStyleClass().add("normalText");
+        textBox.getChildren().add(text);
     }
 }
