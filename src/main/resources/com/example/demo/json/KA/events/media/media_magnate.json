@@ -1,0 +1,38 @@
+{
+  "probability": 50,
+  "isUnique": true,
+  "description": "The owner of Daily News, the most popular newspaper in Kachakonya and one of the richest citizens appears to have made some kind of a deal with the opposition. He recently changed some of the directors in his media company to a people known for their support for the opposition",
+  "options": [
+    {
+      "description": "I don't care; Daily News didn't support us anyway.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "media_takeover",
+          "id": "1",
+          "affiliation": "Opposition"
+        }
+      ]
+    },
+    {
+      "description": "Maybe we should take closer look at his business...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "media_takeover",
+          "id": "1",
+          "affiliation": "Opposition"
+        }
+      ]
+    }
+  ],
+  "title": "Media magnate"
+}

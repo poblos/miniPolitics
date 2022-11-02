@@ -7,10 +7,7 @@ import com.example.demo.indicators.IndicatorChange;
 import com.example.demo.indicators.IndicatorCondition;
 import com.example.demo.indicators.IndicatorRelation;
 import com.example.demo.jobs.*;
-import com.example.demo.media.Affiliation;
-import com.example.demo.media.MediaCondition;
-import com.example.demo.media.MediaGroup;
-import com.example.demo.media.MediaTakeover;
+import com.example.demo.media.*;
 import com.example.demo.modifiers.Modifier;
 import com.example.demo.modifiers.ModifierCondition;
 import com.example.demo.modifiers.ModifierInvocation;
@@ -21,7 +18,6 @@ import com.example.demo.party.Party;
 import com.example.demo.policy.Policy;
 import com.example.demo.policy.PolicyChange;
 import com.example.demo.policy.PolicyCondition;
-import javafx.collections.ObservableList;
 
 import java.util.*;
 
@@ -71,12 +67,15 @@ public class Game {
     public Event getCurrentEvent() {
         return currentEvent;
     }
+
     public boolean displayNext() {
         return displayNext;
     }
+
     public Person getCurrentPerson() {
         return currentPerson;
     }
+
     public List<MediaGroup> getMediaGroups() {
         return mediaGroups;
     }
@@ -171,12 +170,10 @@ public class Game {
                 change = includeBonus(change, indicator);
                 values.put(indicator, change + values.get(indicator));
             } else if (effect.getClass() == RandomAdvisorEmployment.class) {
-
                 currentPerson = people.values().stream().skip(random.nextInt(people.size())).findFirst().orElse(null);
                 return false;
             } else if (effect.getClass() == AdvisorEmployment.class) {
-                Person newPerson = people.get(((AdvisorEmployment) effect).getId());
-                currentPerson = newPerson;
+                currentPerson = people.get(((AdvisorEmployment) effect).getId());
                 return false;
             } else if (effect.getClass() == RandomAdvisorDismissal.class) {
                 Job job = employed.keySet().stream().skip(random.nextInt(employed.size())).findFirst().orElse(null);
@@ -188,7 +185,7 @@ public class Game {
             } else if (effect.getClass() == ModifierRemoval.class) {
                 removeModifier(((ModifierRemoval) effect).getName());
             } else if (effect.getClass() == MediaTakeover.class) {
-                takeOverMedia();
+                takeOverMedia(effect);
             } else if (effect.getClass() == IdeologyChange.class) {
                 party.ideologies().remove(((IdeologyChange) effect).getRemoved());
                 party.ideologies().add(((IdeologyChange) effect).getAdded());
@@ -206,14 +203,12 @@ public class Game {
         return true;
     }
 
-    private void takeOverMedia() {
-        MediaGroup mediaGroup = mediaGroups.get(random.nextInt(mediaGroups.size()));
-        int i = 0;
-        while (mediaGroup.getAffiliation() == Affiliation.Government && i < 10) {
-            mediaGroup = mediaGroups.get(random.nextInt(mediaGroups.size()));
-            i++;
+    private void takeOverMedia(Effect effect) {
+        for (MediaGroup group : mediaGroups) {
+            if (group.getId() == ((MediaTakeover) effect).getId()) {
+                group.setAffiliation(((MediaTakeover) effect).getAffiliation());
+            }
         }
-        mediaGroup.setAffiliation(Affiliation.Government);
     }
 
     private float includeBonus(float change, Indicator indicator) {
@@ -305,6 +300,13 @@ public class Game {
             return !employed.isEmpty();
         } else if (condition.getClass() == MediaCondition.class) {
             return hasAffiliated(((MediaCondition) condition).getAffiliation());
+        } else if (condition.getClass() == MediaIdCondition.class) {
+            for (MediaGroup group : mediaGroups) {
+                if (group.getId() == ((MediaIdCondition) condition).getId()) {
+                    return group.getAffiliation() == ((MediaIdCondition) condition).getAffiliation();
+                }
+            }
+            return hasAffiliated(((MediaIdCondition) condition).getAffiliation());
         } else if (condition.getClass() == AdvisorSkillCondition.class) {
             Job job = ((AdvisorSkillCondition) condition).job();
             Trait trait = ((AdvisorSkillCondition) condition).trait();

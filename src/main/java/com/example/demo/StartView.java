@@ -13,6 +13,7 @@ import com.example.demo.indicators.IndicatorCondition;
 import com.example.demo.jobs.*;
 import com.example.demo.media.MediaCondition;
 import com.example.demo.media.MediaGroup;
+import com.example.demo.media.MediaIdCondition;
 import com.example.demo.media.MediaTakeover;
 import com.example.demo.modifiers.Modifier;
 import com.example.demo.modifiers.ModifierCondition;
@@ -68,6 +69,7 @@ public class StartView {
                         .withSubtype(ModifierCondition.class, "modifier_condition")
                         .withSubtype(AdvisorCondition.class, "advisor_condition")
                         .withSubtype(MediaCondition.class, "media_condition")
+                        .withSubtype(MediaIdCondition.class, "media_id_condition")
                         .withSubtype(AdvisorSkillCondition.class, "trait_condition")
                         .withSubtype(IndicatorCondition.class, "indicator_condition")
                         .withSubtype(SomeAdvisorCondition.class, "some_advisor_condition")

@@ -1,6 +1,7 @@
 package com.example.demo.media;
 
 public class MediaGroup {
+    int id;
     String name;
     MediaType type;
     Affiliation affiliation;
@@ -15,6 +16,10 @@ public class MediaGroup {
 
     public MediaType getType() {
         return type;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setAffiliation(Affiliation affiliation) {

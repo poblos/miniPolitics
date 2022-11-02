@@ -28,7 +28,7 @@ public class JobChoiceDisplay extends VBox {
             JobButton button = new JobButton(job);
             button.setText(String.valueOf(job));
             button.setOnAction(actionEvent -> controller.handleJobChoice(button.getJob()));
-            button.setPrefWidth(800);
+            button.setPrefWidth(900);
             this.getChildren().add(button);
         }
 

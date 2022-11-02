@@ -26,14 +26,17 @@
           "indicator": "PartyCohesion"
         },
         {
-          "type": "media_takeover"
+          "type": "media_takeover",
+          "id": 5,
+          "affiliation": "Government"
         }
       ],
       "trigger": {
         "yes": [
           {
-            "type": "media_condition",
-            "affiliation": "Opposition"
+            "type": "media_id_condition",
+            "affiliation": "Neutral",
+            "id": 5
           }
         ],
         "no": []

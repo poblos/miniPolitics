@@ -24,6 +24,7 @@ public class EventDisplay extends VBox {
         desc.setEditable(false);
         desc.setFont(new Font("Serif", 16));
         desc.setPrefHeight(200);
+        desc.setPrefWidth(700);
         this.getChildren().add(desc);
 
         //Jensons setup
@@ -32,7 +33,7 @@ public class EventDisplay extends VBox {
             EventButton button = new EventButton(i);
             button.setText(option.getDescription());
             button.setOnAction(actionEvent-> controller.handleEvent(button.getClick()));
-            button.setPrefWidth(800);
+            button.setPrefWidth(900);
             button.setMaxHeight(100);
             button.setWrapText(true);
             setVgrow(button, Priority.ALWAYS);
