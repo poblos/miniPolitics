@@ -1,0 +1,20 @@
+{
+  "isUnique": true,
+  "isCertain": true,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 2
+      }
+    ]
+  },
+  "description": "Kachakonyan neighbours weren't particularly friendly historically, to say the least. Endless wars with Westenland and Graonia were hampering our economy and meant that we never really spread our wings. Thankfully, we bet on a good horse during the last War of Hegemony and we still possess close relations with the current hegemon empire, Matheuchelles. Our main rivals have their problems: Graonia doesn't seem to be a serious threat anymore, as their socio-economic backwardness is the basis of jokes in the whole Western Archipelago and Westenland is engaged in the long fight to maintain their overseas territories. We can sleep easy... at least for now.",
+  "options": [
+    {
+      "description": "Peace at last!",
+      "effects": []
+    }
+  ],
+  "title": "Geopolitics"
+}

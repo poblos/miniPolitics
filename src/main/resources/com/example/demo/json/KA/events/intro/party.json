@@ -1,0 +1,20 @@
+{
+  "isUnique": true,
+  "isCertain": true,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 1
+      }
+    ]
+  },
+  "description": "As the aftermath of the civil war, the old institutions were abolished and a parliamentarian democratic system was established. Almost a hundred years on, political scene remains stable as a few large parties dominated elections. After years in power, the old leader of the Republican Party of Kachakonya has retired a month ago. Before he left this world, he had managed to anoint you as his successor. Not everyone in the party is happy with his decision and we may expect some internal turmoils in the coming months.",
+  "options": [
+    {
+      "description": "I have every right to rule!",
+      "effects": []
+    }
+  ],
+  "title": "The political scene"
+}

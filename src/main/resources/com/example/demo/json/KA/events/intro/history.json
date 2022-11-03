@@ -1,0 +1,12 @@
+{
+  "isUnique": true,
+  "isCertain": true,
+  "description": "For those who know Kachaks it will be little surprise that the ancient history of Kachakonya is shrouded in legends and myths. The most popular one claims that the nation was founded by the legendary sailor Kach, who together with his people and younger brother Westen sailed westwards to find a better place to live some time around two thousand years ago. When they crossed the Eastern Strait, they stuck to the coast and realised that they found a closed sea surrounded by the archipelago. Kach chose the small bay in the northern part of it as perfect place to setup a permanent settlement and, as you may have guessed, it's where the Kachakonyan capital currently lies. But his brother insisted on going further west, which resulted in a split. People that chose to sail with Westen founded the Westenland, Kachakonyan biggest historic enemy. Since then, internal conflicts in Kachakonya were not an uncommon occurrence. Years of political divisions after the death of the last Emperor, Kachakonyan civil war, Eastern rebellions... but in the time of the greatest need Kachaks always managed to stay united and dauntless. Thus, the most celebrated event in the Kachak history is the win in the Defence of Ehr, the last free regional capital, in which Kachaks managed to hold off Westenlander, Matheuchelles' and Graonian arms to protect their independence.",
+  "options": [
+    {
+      "description": "Glory to the heroes!",
+      "effects": []
+    }
+  ],
+  "title": "The land of the rebellious"
+}
