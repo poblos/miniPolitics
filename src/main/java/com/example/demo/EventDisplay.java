@@ -22,8 +22,8 @@ public class EventDisplay extends VBox {
         desc.setText(event.getDescription());
         desc.setWrapText(true);
         desc.setEditable(false);
-        desc.setFont(new Font("Serif", 16));
-        desc.setPrefHeight(200);
+        desc.setFont(new Font("Serif", 14));
+        desc.setPrefRowCount(7);
         desc.setPrefWidth(700);
         this.getChildren().add(desc);
 

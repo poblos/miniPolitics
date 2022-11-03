@@ -1,0 +1,41 @@
+{
+  "probability": 50000,
+  "description": "An increase of minimal wage has been proposed by the Ministry of Finances. They project that it will increase our budget's income, but will also result in a flattening of salaries, especially in the budgetary sphere, although many people will benefit from the change.",
+  "options": [
+    {
+      "description": "That's a sensible idea.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_income",
+          "category": "IncomeTax",
+          "change": 1000
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Minimal wage increased"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "It's bad for the economy. Delay it for now.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Minimal wage"
+}

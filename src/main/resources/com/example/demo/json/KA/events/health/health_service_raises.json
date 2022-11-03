@@ -1,4 +1,15 @@
 {
+  "probabilityChanges": [
+    {
+      "probChange": 30,
+      "conditions": [
+        {
+          "type": "modifier_condition",
+          "name": "Minimal wage increased"
+        }
+      ]
+    }
+  ],
   "trigger": {
     "yes": [
     ],
