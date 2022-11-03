@@ -133,19 +133,19 @@ public class Game {
     }
 
     public void chooseEvent() {
-        int probabilitySum = eventProbabilitySum();
-        int draw = random.nextInt(probabilitySum);
-        int currentSum = 0;
+        boolean certainFound = false;
         for (Event e : events) {
-            currentSum += e.getProbability();
-            if (currentSum > draw) {
+            if (e.isCertain() && e.isEligible(this)) {
                 currentEvent = e;
+                certainFound = true;
                 break;
             }
         }
-        while (!currentEvent.isEligible(this)) {
-            draw = random.nextInt(probabilitySum);
-            currentSum = 0;
+
+        if (!certainFound) {
+            int probabilitySum = eventProbabilitySum();
+            int draw = random.nextInt(probabilitySum);
+            int currentSum = 0;
             for (Event e : events) {
                 currentSum += e.getProbability();
                 if (currentSum > draw) {
@@ -153,7 +153,19 @@ public class Game {
                     break;
                 }
             }
+            while (!currentEvent.isEligible(this)) {
+                draw = random.nextInt(probabilitySum);
+                currentSum = 0;
+                for (Event e : events) {
+                    currentSum += e.getProbability();
+                    if (currentSum > draw) {
+                        currentEvent = e;
+                        break;
+                    }
+                }
+            }
         }
+
         if (currentEvent.isUnique()) {
             events.remove(currentEvent);
         }

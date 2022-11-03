@@ -1,6 +1,6 @@
 {
   "isUnique": true,
-  "probability": 1000,
+  "isCertain": true,
   "trigger": {
     "yes": [
       {

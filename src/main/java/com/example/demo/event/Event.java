@@ -11,6 +11,7 @@ public class Event {
     private final List<Option> options;
     private final Trigger trigger;
     private final boolean isUnique;
+    private final boolean isCertain;
     private int probability;
 
     private final List<ProbabilityChanger> probabilityChangers;
@@ -21,16 +22,18 @@ public class Event {
         this.options = options;
         this.trigger = new Trigger();
         this.isUnique = false;
+        this.isCertain = false;
         this.probability = 50;
         this.probabilityChangers = new ArrayList<>();
     }
 
-    public Event(String title, String description, List<Option> options, Trigger trigger, boolean onlyOnce, int probability, List<ProbabilityChanger> probabilityChangers) {
+    public Event(String title, String description, List<Option> options, Trigger trigger, boolean onlyOnce, boolean isCertain, int probability, List<ProbabilityChanger> probabilityChangers) {
         this.title = title;
         this.description = description;
         this.options = options;
         this.trigger = trigger;
         this.isUnique = onlyOnce;
+        this.isCertain = isCertain;
         this.probability = probability;
         this.probabilityChangers = probabilityChangers;
     }
@@ -51,12 +54,20 @@ public class Event {
         return probability;
     }
 
+    public void setProbability(int probability) {
+        this.probability = probability;
+    }
+
     public List<ProbabilityChanger> getProbabilityChangers() {
         return probabilityChangers;
     }
 
-    public void setProbability(int probability) {
-        this.probability = probability;
+    public boolean isUnique() {
+        return isUnique;
+    }
+
+    public boolean isCertain() {
+        return isCertain;
     }
 
     public Event adjust(Game game) {
@@ -89,9 +100,5 @@ public class Event {
     @Override
     public String toString() {
         return title + '\n' + description + '\n' + options;
-    }
-
-    public boolean isUnique() {
-        return isUnique;
     }
 }

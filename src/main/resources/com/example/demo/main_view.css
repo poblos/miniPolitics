@@ -24,15 +24,17 @@
 
 .button {
     -fx-font-size:20;
+    -fx-font: oblique 15pt "Droid Serif";
 }
 
 .highlightedText {
     -fx-fill: deepskyblue;
-    -fx-font: bold 15pt "Sherif";
+    -fx-font: bold 15pt "Droid Serif";
 }
 
 .normalText {
     -fx-fill: black;
+    -fx-font: 15pt "Droid Serif";
 }
 
 #indicatorBox {
