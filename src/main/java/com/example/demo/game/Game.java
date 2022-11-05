@@ -96,6 +96,10 @@ public class Game {
         return policies;
     }
 
+    public Map<Integer, Person> getPeople() {
+        return people;
+    }
+
     public void setParty(Party party) {
         this.party = party;
     }

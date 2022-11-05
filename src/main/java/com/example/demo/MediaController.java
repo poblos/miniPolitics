@@ -2,14 +2,10 @@ package com.example.demo;
 
 import com.example.demo.media.Affiliation;
 import com.example.demo.media.MediaGroup;
-import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;

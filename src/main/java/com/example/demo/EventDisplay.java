@@ -2,7 +2,6 @@ package com.example.demo;
 
 import com.example.demo.event.Event;
 import com.example.demo.event.Option;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Priority;
@@ -22,7 +21,6 @@ public class EventDisplay extends VBox {
         desc.setText(event.getDescription());
         desc.setWrapText(true);
         desc.setEditable(false);
-        desc.setFont(new Font("Serif", 14));
         desc.setPrefRowCount(7);
         desc.setPrefWidth(700);
         this.getChildren().add(desc);
@@ -40,10 +38,6 @@ public class EventDisplay extends VBox {
             this.getChildren().add(button);
             i++;
         }
-
-        this.setStyle("" +
-                "        -fx-border-radius:10;" +
-                "        -fx-border-width:4;" +
-                "-fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, deepskyblue)");
+        this.getStyleClass().add("event");
     }
 }

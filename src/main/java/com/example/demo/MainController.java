@@ -18,6 +18,8 @@ import java.io.IOException;
 
 public class MainController {
     @FXML
+    private VBox peopleBox;
+    @FXML
     private ToggleGroup leftBar;
     private ToggleButton lastSelected;
     @FXML
@@ -34,6 +36,7 @@ public class MainController {
     @FXML
     private VBox eventBox;
     private Game game;
+    private boolean peopleListShowed = false;
 
 
     public Game getGame() {
@@ -46,9 +49,9 @@ public class MainController {
         indicatorBox.getChildren().add(new IndicatorDisplay("StateStability"));
         indicatorBox.getChildren().add(new IndicatorDisplay("PartySupport"));
 
-        jobBox.getChildren().add(new JobDisplay(Job.Whip));
-        jobBox.getChildren().add(new JobDisplay(Job.Propagandist));
-        jobBox.getChildren().add(new JobDisplay(Job.Strategist));
+        jobBox.getChildren().add(new JobDisplay(Job.Whip, this));
+        jobBox.getChildren().add(new JobDisplay(Job.Propagandist, this));
+        jobBox.getChildren().add(new JobDisplay(Job.Strategist, this));
         for (Node display : indicatorBox.getChildren()) {
             ((IndicatorDisplay) display).update(game);
         }
@@ -155,5 +158,31 @@ public class MainController {
     }
 
     public void onStoryButtonClick(ActionEvent actionEvent) {
+    }
+
+    private void setPeopleBox(String fxmlPath) {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxmlPath));
+        Node node;
+        try {
+            node = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        peopleBox.getChildren().clear();
+        peopleBox.getChildren().add(node);
+        PeopleController peopleBoxController = loader.getController();
+        peopleBoxController.setMainController(this);
+        peopleBoxController.update();
+    }
+
+    public void showPeopleList() {
+        if (peopleListShowed) {
+            peopleBox.getChildren().clear();
+            peopleListShowed = false;
+        } else {
+            setPeopleBox("people-view.fxml");
+            peopleListShowed = true;
+        }
+
     }
 }

@@ -1,11 +1,10 @@
 package com.example.demo;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
-public class PartyController extends BarController{
+public class PartyController extends BarController {
     @FXML
     private TextFlow textBox;
 

@@ -20,7 +20,7 @@ public class JobChoiceDisplay extends VBox {
         desc.setText("Choose job for:" + person);
         desc.setEditable(false);
         desc.setFont(new Font("Serif", 16));
-        desc.setMaxHeight(300);
+        desc.setPrefRowCount(2);
         this.getChildren().add(desc);
 
         //Jensons setup
@@ -32,10 +32,6 @@ public class JobChoiceDisplay extends VBox {
             this.getChildren().add(button);
         }
 
-        this.setStyle("" +
-                "        -fx-border-radius:10;" +
-                "        -fx-border-width:4;" +
-                "-fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, deepskyblue)");
-
+        this.getStyleClass().add("event");
     }
 }

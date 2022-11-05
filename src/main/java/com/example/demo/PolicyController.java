@@ -10,7 +10,6 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
-import java.awt.*;
 import java.util.Arrays;
 
 class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> {

@@ -4,14 +4,10 @@ import com.example.demo.budget.ExpenseCategory;
 import com.example.demo.budget.IncomeCategory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.VBox;
 
 public class BudgetController extends BarController{
     @FXML

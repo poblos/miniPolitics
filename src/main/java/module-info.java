@@ -15,7 +15,7 @@ module com.example.demo {
     opens com.example.demo.policy to moshi;
     opens com.example.demo.game to moshi;
     opens com.example.demo to javafx.fxml, moshi;
-    exports com.example.demo.utils;
+    opens com.example.demo.modelFx to javafx.base;
     exports com.example.demo.game;
     exports com.example.demo.jobs;
     exports com.example.demo.policy;
