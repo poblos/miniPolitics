@@ -24,7 +24,7 @@ public class PeopleController {
     final ObservableList<PersonModel> data = FXCollections.observableArrayList();
 
     public void update() {
-        for (Person person : mainController.getGame().getPeople().values()) {
+        for (Person person : mainController.getGame().getActivePeople().values()) {
             data.add(new PersonModel(person.getName(), person.getId()));
         }
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));

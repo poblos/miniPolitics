@@ -81,7 +81,9 @@ public class StartView {
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
 
-        ArrayList<Person> people = loadFiles(Person.class, "json/" + nationTag + "/people/", moshi);
+        ArrayList<Person> people = loadFiles(Person.class, "json/" + nationTag + "/people/inactive", moshi);
+
+        ArrayList<Person> activePeople = loadFiles(Person.class, "json/" + nationTag + "/people/active/", moshi);
 
         ArrayList<Modifier> modifiers = loadFiles(Modifier.class, "json/" + nationTag + "/modifiers/", moshi);
         modifiers.addAll(loadFiles(Modifier.class, "json/DT/modifiers/", moshi));
@@ -94,7 +96,7 @@ public class StartView {
         ArrayList<Budget> budgets = loadFiles(Budget.class, "json/" + nationTag + "/budget/", moshi);
 
         printNumberOfEvents(events.size());
-        return new Game(events, people, policies, modifiers, medias, budgets.get(0));
+        return new Game(events, people, activePeople, policies, modifiers, medias, budgets.get(0));
     }
 
     private void startGame(Game game) throws IOException {

@@ -55,6 +55,9 @@ public class MainController {
         for (Node display : indicatorBox.getChildren()) {
             ((IndicatorDisplay) display).update(game);
         }
+        for (Node display : jobBox.getChildren()) {
+            ((JobDisplay) display).update(game);
+        }
         game.chooseEvent();
         DraggableMaker maker = new DraggableMaker();
         maker.makeDraggable(eventBox);
@@ -89,7 +92,7 @@ public class MainController {
         game.chooseJob(job);
         for (Node display : jobBox.getChildren()) {
             if (job == ((JobDisplay) display).getJob()) {
-                ((JobDisplay) display).add(game);
+                ((JobDisplay) display).update(game);
             }
         }
         eventBox.getChildren().clear();

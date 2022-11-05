@@ -24,6 +24,7 @@ import java.util.*;
 public class Game {
     private final Map<Indicator, Float> values;
     private final Map<Job, Person> employed;
+
     private final Map<String, Modifier> activeModifiers;
 
     int round;
@@ -34,13 +35,14 @@ public class Game {
     private final Map<Integer, Policy> policies;
     private final List<Event> events;
     private final Map<Integer, Person> people;
+    private final Map<Integer, Person> activePeople;
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
     private Party party;
     private final Budget budget;
     private final transient Random random;
 
-    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Budget budget) {
+    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Person> activePeople, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Budget budget) {
         this.budget = budget;
         values = new HashMap<>();
         values.put(Indicator.PartyCohesion, 40F);
@@ -55,6 +57,13 @@ public class Game {
         this.people = new HashMap<>();
         for (Person p : people) {
             this.people.put(p.getId(), p);
+        }
+        this.activePeople = new HashMap<>();
+        for (Person p : activePeople) {
+            this.activePeople.put(p.getId(), p);
+            if (p.getStartingJob() != null) {
+                employed.put(p.getStartingJob(), p);
+            }
         }
         for (Policy p : policies) {
             this.policies.put(p.getId(), p);
@@ -98,6 +107,18 @@ public class Game {
 
     public Map<Integer, Person> getPeople() {
         return people;
+    }
+
+    public Map<Integer, Person> getActivePeople() {
+        return activePeople;
+    }
+
+    public float getIndicatorValue(Indicator name) {
+        return values.get(name);
+    }
+
+    public Person getEmployed(Job job) {
+        return employed.get(job);
     }
 
     public void setParty(Party party) {
@@ -187,15 +208,18 @@ public class Game {
                 values.put(indicator, change + values.get(indicator));
             } else if (effect.getClass() == RandomAdvisorEmployment.class) {
                 currentPerson = people.values().stream().skip(random.nextInt(people.size())).findFirst().orElse(null);
+                assert currentPerson != null;
+                activePeople.put(currentPerson.getId(), currentPerson);
                 return false;
             } else if (effect.getClass() == AdvisorEmployment.class) {
                 currentPerson = people.get(((AdvisorEmployment) effect).getId());
+                activePeople.put(currentPerson.getId(), currentPerson);
                 return false;
             } else if (effect.getClass() == RandomAdvisorDismissal.class) {
                 Job job = employed.keySet().stream().skip(random.nextInt(employed.size())).findFirst().orElse(null);
-                fireFromJob(job);
+                employed.remove(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
-                fireFromJob(((AdvisorDismissal) effect).getJob());
+                employed.remove(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
                 addModifier(((ModifierInvocation) effect).getName());
             } else if (effect.getClass() == ModifierRemoval.class) {
@@ -268,10 +292,6 @@ public class Game {
         } catch (Exception e) {
             employed.put(Job.values()[0], currentPerson);
         }
-    }
-
-    private void fireFromJob(Job job) {
-        employed.remove(job);
     }
 
     private void addModifier(String name) {
@@ -354,15 +374,6 @@ public class Game {
         }
         return false;
     }
-
-    public float getIndicatorValue(Indicator name) {
-        return values.get(name);
-    }
-
-    public Person getEmployed(Job job) {
-        return employed.get(job);
-    }
-
 
     public void handleEvent(int click) {
         displayNext = chooseOption(currentEvent, click);

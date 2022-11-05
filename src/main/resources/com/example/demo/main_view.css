@@ -30,6 +30,7 @@
 .highlightedText {
     -fx-fill: deepskyblue;
     -fx-font: bold 15pt "Droid Serif";
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, deepskyblue);
 }
 
 .normalText {

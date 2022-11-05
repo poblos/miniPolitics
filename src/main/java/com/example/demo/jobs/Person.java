@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Person {
+    private final Job startingJob;
     private final int id;
     final String name;
     final List<Trait> traits;
@@ -16,14 +17,19 @@ public class Person {
         return traits;
     }
 
-    public Person(String name, List<Trait> traits, int id) {
+    public Person(String name, List<Trait> traits, int id, Job startingJob) {
         this.name = name;
         this.traits = traits;
         this.id = id;
+        this.startingJob = startingJob;
     }
 
     public int getId() {
         return id;
+    }
+
+    public Job getStartingJob() {
+        return startingJob;
     }
 
     public boolean hasTrait(Trait trait) {

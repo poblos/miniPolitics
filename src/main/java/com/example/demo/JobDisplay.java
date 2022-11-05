@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.game.Game;
 import com.example.demo.jobs.Job;
+import com.example.demo.jobs.Person;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -41,22 +42,21 @@ public class JobDisplay extends VBox {
         return job;
     }
 
-    public void add(Game game) {
-        this.text.setText(this.job + ": " + game.getCurrentPerson().getName());
-        try {
-            image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/people/" +
-                    game.getCurrentPerson().getName() + ".png")).toExternalForm());
-            this.button.setGraphic(new ImageView(image));
-        } catch (Exception e) {
-            System.out.println("problem");
-        }
-    }
-
     public void update(Game game) {
-        if (game.getEmployed(this.job) == null) {
+        Person p = game.getEmployed(this.job);
+        if (p == null) {
             this.text.setText(this.job + ": None");
             image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/people/ModelNotFound.png")).toExternalForm());
             this.button.setGraphic(new ImageView(image));
+        } else {
+            this.text.setText(this.job + ": " + p.getName());
+            try {
+                image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/people/" +
+                        p.getName() + ".png")).toExternalForm());
+                this.button.setGraphic(new ImageView(image));
+            } catch (Exception e) {
+                System.out.println("problem with loading a person's image");
+            }
         }
     }
 
