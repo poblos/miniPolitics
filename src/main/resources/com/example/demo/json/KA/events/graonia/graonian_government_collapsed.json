@@ -1,4 +1,12 @@
 {
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Graonian Resurgence"
+      }
+    ]
+  },
   "description": "A new Graonian budget had not been passed in a constitutional time as various fractions in the Graonian government couldn't agree on details regarding the distribution of expenses. The Arch-Patriarch had therefore no other choice but to resign. When it comes to the choice of a new one - it's probably a matter of weeks if not months.",
   "options": [
     {
@@ -7,12 +15,6 @@
           {
             "type": "media_condition",
             "affiliation": "Government"
-          }
-        ],
-        "no": [
-          {
-            "type": "modifier_condition",
-            "name": "Graonian Resurgence"
           }
         ]
       },

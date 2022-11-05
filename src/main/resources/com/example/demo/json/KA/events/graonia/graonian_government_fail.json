@@ -1,4 +1,12 @@
 {
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Graonian Resurgence"
+      }
+    ]
+  },
   "description": "After recent changes in Graonian's government, a new Arch-Patriarch has been chosen. During his first speech he accused us of meddling in the affairs of Graonia and being the reason for bad economic and political situation in the country. ",
   "options": [
     {
@@ -22,10 +30,6 @@
           {
             "type": "modifier_condition",
             "affiliation": "Graonian Relations Propaganda"
-          },
-          {
-            "type": "modifier_condition",
-            "name": "Graonian Resurgence"
           }
         ]
       }

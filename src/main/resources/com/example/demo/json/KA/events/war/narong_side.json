@@ -4,7 +4,7 @@
     "yes": [
       {
         "type": "modifier_condition",
-        "name": "The Narong war"
+        "name": "The Narong War"
       }
     ]
   },
@@ -34,7 +34,7 @@
           }
         ]
       },
-      "description": "Economic connections with Karlenese are to important for us to let them lose.",
+      "description": "Economic connections with Karlenese are too important for us to let them lose.",
       "effects": [
         {
           "type": "modifier_invocation",
