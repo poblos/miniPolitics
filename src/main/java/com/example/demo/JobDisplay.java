@@ -25,7 +25,7 @@ public class JobDisplay extends VBox {
         this.setAlignment(Pos.CENTER);
         this.button = new Button();
         button.getStyleClass().add("indicatorButton");
-        button.setOnAction(actionEvent -> controller.showPeopleList());
+        button.setOnAction(actionEvent -> controller.showPeopleList(job));
         this.text.setText(this.job + ": None");
         try {
             image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/people/ModelNotFound.png")).toExternalForm());

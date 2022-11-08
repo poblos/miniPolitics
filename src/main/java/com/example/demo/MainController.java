@@ -52,12 +52,8 @@ public class MainController {
         jobBox.getChildren().add(new JobDisplay(Job.Whip, this));
         jobBox.getChildren().add(new JobDisplay(Job.Propagandist, this));
         jobBox.getChildren().add(new JobDisplay(Job.Strategist, this));
-        for (Node display : indicatorBox.getChildren()) {
-            ((IndicatorDisplay) display).update(game);
-        }
-        for (Node display : jobBox.getChildren()) {
-            ((JobDisplay) display).update(game);
-        }
+
+        updateUpperBar();
         game.chooseEvent();
         DraggableMaker maker = new DraggableMaker();
         maker.makeDraggable(eventBox);
@@ -66,13 +62,7 @@ public class MainController {
 
     public void handleEvent(int click) {
         game.handleEvent(click);
-        for (Node display : indicatorBox.getChildren()) {
-            ((IndicatorDisplay) display).update(game);
-        }
-        for (Node display : jobBox.getChildren()) {
-            ((JobDisplay) display).update(game);
-        }
-
+        updateUpperBar();
         if (barController != null) {
             barController.update();
         }
@@ -88,8 +78,17 @@ public class MainController {
         roundLabel.setText(String.valueOf(game.getRound()));
     }
 
+    public void updateUpperBar() {
+        for (Node display : indicatorBox.getChildren()) {
+            ((IndicatorDisplay) display).update(game);
+        }
+        for (Node display : jobBox.getChildren()) {
+            ((JobDisplay) display).update(game);
+        }
+    }
+
     public void handleJobChoice(Job job) {
-        game.chooseJob(job);
+        game.employ(job);
         for (Node display : jobBox.getChildren()) {
             if (job == ((JobDisplay) display).getJob()) {
                 ((JobDisplay) display).update(game);
@@ -163,7 +162,7 @@ public class MainController {
     public void onStoryButtonClick(ActionEvent actionEvent) {
     }
 
-    private void setPeopleBox(String fxmlPath) {
+    private void setPeopleBox(String fxmlPath, Job job) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxmlPath));
         Node node;
         try {
@@ -175,15 +174,16 @@ public class MainController {
         peopleBox.getChildren().add(node);
         PeopleController peopleBoxController = loader.getController();
         peopleBoxController.setMainController(this);
+        peopleBoxController.setJob(job);
         peopleBoxController.update();
     }
 
-    public void showPeopleList() {
+    public void showPeopleList(Job job) {
         if (peopleListShowed) {
             peopleBox.getChildren().clear();
             peopleListShowed = false;
         } else {
-            setPeopleBox("people-view.fxml");
+            setPeopleBox("people-view.fxml", job);
             peopleListShowed = true;
         }
 

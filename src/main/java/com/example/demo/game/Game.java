@@ -286,11 +286,19 @@ public class Game {
         return change;
     }
 
-    public void chooseJob(Job job) {
+    public void employ(Job job) {
         try {
             employed.put(job, currentPerson);
         } catch (Exception e) {
             employed.put(Job.values()[0], currentPerson);
+        }
+    }
+
+    public void employ(Job job, int id) {
+        try {
+            employed.put(job, activePeople.get(id));
+        } catch (Exception e) {
+            employed.put(Job.values()[0], activePeople.get(id));
         }
     }
 

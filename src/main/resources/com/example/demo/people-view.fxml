@@ -10,6 +10,7 @@
           <TableColumn fx:id="idCol" prefWidth="25.0" text="ID" />
           <TableColumn fx:id="photoCol" prefWidth="60.0" text="Photo" />
           <TableColumn fx:id="nameCol" prefWidth="100.0" text="Name" />
+          <TableColumn fx:id="employCol" prefWidth="60" text="Employ" />
       </columns>
     </TableView>
 </AnchorPane>
