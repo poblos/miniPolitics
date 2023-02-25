@@ -1,5 +1,6 @@
 {
   "probability": 30,
+  "graphic": "f16v3",
   "trigger": {
     "no": [
     ],

@@ -85,7 +85,7 @@
     </left>
     <center>
         <AnchorPane>
-            <VBox fx:id="eventBox" prefHeight="600.0" prefWidth="900.0">
+            <VBox fx:id="eventBox" prefHeight="600.0" prefWidth="600.0">
                 <padding>
                     <Insets left="50.0" />
                 </padding>

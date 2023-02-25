@@ -1,6 +1,7 @@
 {
   "isUnique": true,
   "probability": 100,
+  "graphic": "f16v3",
   "description": "Our old KF-15 fighters will no longer be useful in a few years. A pressure from military arise and we should consider options to replace them. Thankfully, there are a couple of alternatives available, namely importing Matheuchelles' fighters which are a proven quality, a joint venture with Foreberg to design and produce our own new KF-17 or just producing more KF-16.",
   "options": [
     {

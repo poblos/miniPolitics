@@ -9,6 +9,7 @@ public class Event {
     private final String title;
     private final String description;
     private final List<Option> options;
+    private final String graphic;
     private final Trigger trigger;
     private final boolean isUnique;
     private final boolean isCertain;
@@ -16,7 +17,7 @@ public class Event {
 
     private final List<ProbabilityChanger> probabilityChangers;
 
-    public Event(String title, String description, List<Option> options) {
+    public Event(String title, String description, List<Option> options, String graphic) {
         this.title = title;
         this.description = description;
         this.options = options;
@@ -25,12 +26,14 @@ public class Event {
         this.isCertain = false;
         this.probability = 50;
         this.probabilityChangers = new ArrayList<>();
+        this.graphic = graphic;
     }
 
-    public Event(String title, String description, List<Option> options, Trigger trigger, boolean onlyOnce, boolean isCertain, int probability, List<ProbabilityChanger> probabilityChangers) {
+    public Event(String title, String description, List<Option> options, String graphic, Trigger trigger, boolean onlyOnce, boolean isCertain, int probability, List<ProbabilityChanger> probabilityChangers) {
         this.title = title;
         this.description = description;
         this.options = options;
+        this.graphic = graphic;
         this.trigger = trigger;
         this.isUnique = onlyOnce;
         this.isCertain = isCertain;
@@ -52,6 +55,10 @@ public class Event {
 
     public int getProbability() {
         return probability;
+    }
+
+    public String getGraphic() {
+        return graphic;
     }
 
     public void setProbability(int probability) {
@@ -77,7 +84,7 @@ public class Event {
                 newOptions.add(option);
             }
         }
-        return new Event(title, description, newOptions);
+        return new Event(title, description, newOptions, graphic);
     }
 
     public boolean isEligible(Game game) {
