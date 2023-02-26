@@ -1,7 +1,9 @@
 package com.example.demo;
 
+import com.example.demo.jobs.AdvisorDismissal;
 import com.example.demo.jobs.Job;
 import com.example.demo.jobs.Person;
+import com.example.demo.jobs.Trait;
 import com.example.demo.modelFx.PersonModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +17,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.Objects;
+
+import static com.example.demo.game.Game.ADVISOR_COOLDOWN;
 
 public class PeopleController {
     private Job job;
@@ -52,10 +56,15 @@ public class PeopleController {
                     setGraphic(button);
 
                     int id = getTableView().getItems().get(getIndex()).getId();
-                    button.setOnAction(event -> {
-                        mainController.getGame().employ(job, id);
-                        mainController.updateUpperBar();
-                    });
+                    if (!mainController.getGame().isEmployed(id) && !mainController.getGame().getCooldown().containsKey(id)) {
+                        button.setOnAction(event -> {
+                            mainController.getGame().employ(job, id);
+                            mainController.updateUpperBar();
+                        });
+                    } else {
+                        button.setDisable(true);
+                    }
+
                 }
             }
         });

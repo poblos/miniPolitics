@@ -1,0 +1,40 @@
+{
+  "isUnique": true,
+  "probability": 250,
+  "round_condition": 20,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "trait_condition",
+        "job": "Whip",
+        "trait": "OldFart"
+      }
+    ]
+  },
+  "description": "A scandal around our whip's grandson arouse, as a video from his birthday celebrations went public showing him sniffing suspicious white powder. This will surely hamper his reputation and maybe its the time to finally get rid of him.",
+  "options": [
+    {
+      "description": "It was worth it to wait a bit. Dismiss him.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -8,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_dismissal",
+          "job": "Whip"
+        }
+      ]
+    },
+    {
+      "description": "It still too dangerous.",
+      "effects": [
+
+      ]
+    }
+  ],
+  "title": "A good riddance"
+}

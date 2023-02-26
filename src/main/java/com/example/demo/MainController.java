@@ -94,6 +94,7 @@ public class MainController {
                 ((JobDisplay) display).update(game);
             }
         }
+        updateUpperBar();
         eventBox.getChildren().clear();
         game.chooseEvent();
         eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));

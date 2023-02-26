@@ -10,7 +10,13 @@
         "affiliation": "Opposition"
       }
     ],
-    "no": []
+    "no": [
+      {
+        "type": "trait_condition",
+        "job": "Whip",
+        "trait": "OldFart"
+      }
+    ]
   },
   "description": "Although our whip does a great job maintaining discipline in the party, he recently became an object of slandering campaign in opposition's media. The campaign achieved a partial success and it might be better to dismiss him now.",
   "options": [

@@ -51,32 +51,7 @@ public class StartView {
     private MainController mainController;
 
     private Game constructGame(String nationTag) throws URISyntaxException, IOException {
-        Moshi moshi = new Moshi.Builder()
-                .add(PolymorphicJsonAdapterFactory.of(Effect.class, "type")
-                        .withSubtype(IndicatorChange.class, "indicator_change")
-                        .withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment")
-                        .withSubtype(AdvisorEmployment.class, "advisor_employment")
-                        .withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal")
-                        .withSubtype(AdvisorDismissal.class, "advisor_dismissal")
-                        .withSubtype(ModifierInvocation.class, "modifier_invocation")
-                        .withSubtype(ModifierRemoval.class, "modifier_removal")
-                        .withSubtype(MediaTakeover.class, "media_takeover")
-                        .withSubtype(IdeologyChange.class, "ideology_change")
-                        .withSubtype(PolicyChange.class, "policy_change")
-                        .withSubtype(BudgetExpense.class, "budget_expense")
-                        .withSubtype(BudgetIncome.class, "budget_income"))
-                .add(PolymorphicJsonAdapterFactory.of(Condition.class, "type")
-                        .withSubtype(ModifierCondition.class, "modifier_condition")
-                        .withSubtype(AdvisorCondition.class, "advisor_condition")
-                        .withSubtype(MediaCondition.class, "media_condition")
-                        .withSubtype(MediaIdCondition.class, "media_id_condition")
-                        .withSubtype(AdvisorSkillCondition.class, "trait_condition")
-                        .withSubtype(IndicatorCondition.class, "indicator_condition")
-                        .withSubtype(SomeAdvisorCondition.class, "some_advisor_condition")
-                        .withSubtype(IdeologyCondition.class, "ideology_condition")
-                        .withSubtype(PolicyCondition.class, "policy_condition")
-                        .withSubtype(RoundCondition.class, "round_condition"))
-                .build();
+        Moshi moshi = new Moshi.Builder().add(PolymorphicJsonAdapterFactory.of(Effect.class, "type").withSubtype(IndicatorChange.class, "indicator_change").withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment").withSubtype(AdvisorEmployment.class, "advisor_employment").withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal").withSubtype(AdvisorDismissal.class, "advisor_dismissal").withSubtype(ModifierInvocation.class, "modifier_invocation").withSubtype(ModifierRemoval.class, "modifier_removal").withSubtype(MediaTakeover.class, "media_takeover").withSubtype(IdeologyChange.class, "ideology_change").withSubtype(PolicyChange.class, "policy_change").withSubtype(BudgetExpense.class, "budget_expense").withSubtype(BudgetIncome.class, "budget_income")).add(PolymorphicJsonAdapterFactory.of(Condition.class, "type").withSubtype(ModifierCondition.class, "modifier_condition").withSubtype(AdvisorCondition.class, "advisor_condition").withSubtype(MediaCondition.class, "media_condition").withSubtype(MediaIdCondition.class, "media_id_condition").withSubtype(AdvisorSkillCondition.class, "trait_condition").withSubtype(IndicatorCondition.class, "indicator_condition").withSubtype(SomeAdvisorCondition.class, "some_advisor_condition").withSubtype(IdeologyCondition.class, "ideology_condition").withSubtype(PolicyCondition.class, "policy_condition").withSubtype(RoundCondition.class, "round_condition")).build();
 
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));

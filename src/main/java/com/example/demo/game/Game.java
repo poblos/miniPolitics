@@ -28,6 +28,8 @@ public class Game {
     private final Map<String, Modifier> activeModifiers;
 
     int round;
+
+    public static final int ADVISOR_COOLDOWN = 20;
     private boolean displayNext;
     Event currentEvent;
 
@@ -36,6 +38,8 @@ public class Game {
     private final List<Event> events;
     private final Map<Integer, Person> people;
     private final Map<Integer, Person> activePeople;
+
+    private final Map<Integer, Integer> cooldown;
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
     private Party party;
@@ -53,6 +57,7 @@ public class Game {
         this.employed = new HashMap<>();
         this.policies = new HashMap<>();
         this.activeModifiers = new HashMap<>();
+        this.cooldown = new HashMap<>();
         this.events = events;
         this.people = new HashMap<>();
         for (Person p : people) {
@@ -71,58 +76,6 @@ public class Game {
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
 
-    }
-
-    public Event getCurrentEvent() {
-        return currentEvent;
-    }
-
-    public boolean displayNext() {
-        return displayNext;
-    }
-
-    public Person getCurrentPerson() {
-        return currentPerson;
-    }
-
-    public List<MediaGroup> getMediaGroups() {
-        return mediaGroups;
-    }
-
-    public Party getParty() {
-        return party;
-    }
-
-    public Budget getBudget() {
-        return budget;
-    }
-
-    public int getRound() {
-        return round;
-    }
-
-    public Map<Integer, Policy> getPolicies() {
-        return policies;
-    }
-
-    public Map<Integer, Person> getPeople() {
-        return people;
-    }
-
-    public Map<Integer, Person> getActivePeople() {
-        return activePeople;
-    }
-
-    public float getIndicatorValue(Indicator name) {
-        return values.get(name);
-    }
-
-    public Person getEmployed(Job job) {
-        return employed.get(job);
-    }
-
-    public void setParty(Party party) {
-        this.party = party;
     }
 
     private int eventProbability(Event event) {
@@ -219,6 +172,7 @@ public class Game {
                 Job job = employed.keySet().stream().skip(random.nextInt(employed.size())).findFirst().orElse(null);
                 employed.remove(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
+                cooldown.put(employed.get(((AdvisorDismissal) effect).getJob()).getId(),ADVISOR_COOLDOWN);
                 employed.remove(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
                 addModifier(((ModifierInvocation) effect).getName());
@@ -267,6 +221,9 @@ public class Game {
             if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait(Trait.IronFist)) {
                 bonus += 0.2;
             }
+            else if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait(Trait.OldFart)) {
+                bonus -= 0.2;
+            }
             if (change > 0) {
                 change *= bonus;
             } else {
@@ -288,6 +245,12 @@ public class Game {
 
     public void employ(Job job) {
         try {
+            if(getEmployed(job) != null) {
+                getCooldown().put(getEmployed(job).getId(),ADVISOR_COOLDOWN);
+                if(getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
+                    values.put(Indicator.PartyCohesion,values.get(Indicator.PartyCohesion)-20);
+                }
+            }
             employed.put(job, currentPerson);
         } catch (Exception e) {
             employed.put(Job.values()[0], currentPerson);
@@ -296,6 +259,12 @@ public class Game {
 
     public void employ(Job job, int id) {
         try {
+            if(getEmployed(job) != null) {
+                getCooldown().put(getEmployed(job).getId(),ADVISOR_COOLDOWN);
+                if(getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
+                    values.put(Indicator.PartyCohesion,values.get(Indicator.PartyCohesion)-20);
+                }
+            }
             employed.put(job, activePeople.get(id));
         } catch (Exception e) {
             employed.put(Job.values()[0], activePeople.get(id));
@@ -386,6 +355,79 @@ public class Game {
     public void handleEvent(int click) {
         displayNext = chooseOption(currentEvent, click);
         round++;
+        for(Integer id: cooldown.keySet()) {
+            if(cooldown.get(id) == 1) {
+                cooldown.remove(id);
+            } else {
+                cooldown.put(id, cooldown.get(id) - 1);
+            }
+        }
         System.out.println("Events played: " + round);
+    }
+
+    public boolean isEmployed(int id) {
+        for(Job job : employed.keySet()) {
+            if (employed.get(job).getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public Event getCurrentEvent() {
+        return currentEvent;
+    }
+
+    public boolean displayNext() {
+        return displayNext;
+    }
+
+    public Person getCurrentPerson() {
+        return currentPerson;
+    }
+
+    public List<MediaGroup> getMediaGroups() {
+        return mediaGroups;
+    }
+
+    public Party getParty() {
+        return party;
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public int getRound() {
+        return round;
+    }
+
+    public Map<Integer, Policy> getPolicies() {
+        return policies;
+    }
+
+    public Map<Integer, Person> getPeople() {
+        return people;
+    }
+
+    public Map<Integer, Person> getActivePeople() {
+        return activePeople;
+    }
+
+    public float getIndicatorValue(Indicator name) {
+        return values.get(name);
+    }
+
+    public Person getEmployed(Job job) {
+        return employed.get(job);
+    }
+
+    public void setParty(Party party) {
+        this.party = party;
+    }
+
+    public Map<Integer, Integer> getCooldown() {
+        return cooldown;
     }
 }
