@@ -31,7 +31,10 @@
     {
       "description": "We will find a way to get him...",
       "effects": [
-
+        {
+          "type": "modifier_invocation",
+          "name": "Old fart still in power"
+        }
       ]
     }
   ],

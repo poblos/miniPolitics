@@ -7,6 +7,10 @@
     ],
     "yes": [
       {
+        "type": "modifier_condition",
+        "name": "Old fart still in power"
+      },
+      {
         "type": "trait_condition",
         "job": "Whip",
         "trait": "OldFart"
@@ -20,19 +24,22 @@
       "effects": [
         {
           "type": "indicator_change",
-          "change": -8,
+          "change": 12,
           "indicator": "PartyCohesion"
         },
         {
           "type": "advisor_dismissal",
           "job": "Whip"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Old fart still in power"
         }
       ]
     },
     {
-      "description": "It still too dangerous.",
+      "description": "It's still too dangerous.",
       "effects": [
-
       ]
     }
   ],

@@ -173,6 +173,9 @@ public class Game {
                 employed.remove(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
                 cooldown.put(employed.get(((AdvisorDismissal) effect).getJob()).getId(),ADVISOR_COOLDOWN);
+                if(employed.get(((AdvisorDismissal) effect).getJob()).hasTrait(Trait.InfluentialInTheParty)) {
+                    values.put(Indicator.PartyCohesion,values.get(Indicator.PartyCohesion)-20);
+                }
                 employed.remove(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
                 addModifier(((ModifierInvocation) effect).getName());
