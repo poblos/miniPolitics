@@ -1,0 +1,58 @@
+{
+  "probability": 200,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Additional funding for softball"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Softball championship won"
+      }
+    ],
+    "no": [
+    ]
+  },
+  "description": "When we increased softball funding under the pressure from softball federation officials, we promised a bonus for the National Team if they manage to achieve semifinals in the World Cup. The time has come to fulfill this promise, but the conflict arouse between the players and the stuff regarding the distribution of the prize. The whole situation is broadly discussed in the media and people seem to believe that above all we shouldn't have promised such a prize to people who already earn a lot.",
+  "options": [
+    {
+      "description": "What a nonsense! Let's split the money fairly.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Softball championship won"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "If they can't agree, it's their loss. No bonus shall be paid.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Softball championship won"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Additional funding for softball"
+        }
+      ]
+    }
+  ],
+  "title": "Bonus for the Softball National Team"
+}

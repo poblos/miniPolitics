@@ -19,6 +19,10 @@
           "type": "indicator_change",
           "change": 2,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Softball championship won"
         }
       ]
     },
@@ -29,7 +33,12 @@
           "type": "indicator_change",
           "change": 4,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Softball championship won"
         }
+
       ],
       "trigger": {
         "yes": [
