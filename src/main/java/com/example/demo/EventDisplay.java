@@ -19,9 +19,9 @@ public class EventDisplay extends VBox {
         title.setText(event.getTitle());
         title.getStyleClass().add("eventTitle");
         this.getChildren().add(title);
-        System.out.println(event.getGraphic()+"\n");
-        if (!Objects.equals(event.getGraphic(), null)) {
 
+        // Image setup
+        if (!Objects.equals(event.getGraphic(), null)) {
             Image image = new Image(Objects.requireNonNull(getClass().getResource("/com/example/demo/menu_icons/event_background/" + event.getGraphic() + ".png")).toExternalForm());
             this.getChildren().add(new ImageView(image));
         }
