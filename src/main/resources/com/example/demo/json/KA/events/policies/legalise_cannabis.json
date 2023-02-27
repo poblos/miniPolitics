@@ -8,7 +8,8 @@
       }
     ]
   },
-  "probability": 10,
+  "probability": 1000,
+  "graphic": "weed",
   "description": "A civic project that legalises cannabis has been submitted to the parliament, as the support for this idea is increasing in the society. What shall we do?",
   "options": [
     {
