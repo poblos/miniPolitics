@@ -1,7 +1,7 @@
 {
   "probabilityChanges": [
     {
-      "probChange": 100,
+      "probChange": 200,
       "conditions": [
         {
           "type": "modifier_condition",
@@ -31,7 +31,7 @@
         },
         {
           "type": "modifier_removal",
-          "name": "Marelland Elections Influenced"
+          "name": "Marelland Elections"
         },
         {
           "type": "modifier_invocation",

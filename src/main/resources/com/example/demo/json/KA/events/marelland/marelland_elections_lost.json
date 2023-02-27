@@ -1,7 +1,7 @@
 {
   "probabilityChanges": [
     {
-      "probChange": -100,
+      "probChange": -200,
       "conditions": [
         {
           "type": "modifier_condition",
@@ -18,8 +18,8 @@
       }
     ]
   },
-  "probability": 160,
-  "description": "Unfortunately, your colleague has lost the presidential elections in Marelland. The new president is suspicious of us as our connections with his contr-candidate were pretty well-known.",
+  "probability": 260,
+  "description": "Unfortunately, your colleague has lost the presidential elections in Marelland. The new president is suspicious of us as our connections with his opponent were pretty well-known.",
   "options": [
     {
       "description": "If we act friendly, he will change his mind.",
@@ -31,7 +31,7 @@
         },
         {
           "type": "modifier_removal",
-          "name": "Marelland Elections Influenced"
+          "name": "Marelland Elections"
         }
       ]
     }
