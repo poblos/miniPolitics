@@ -1,0 +1,83 @@
+{
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "indicator_condition",
+        "value": "-1",
+        "relation": "Higher",
+        "indicator": "InfrastructureCorruption"
+      }
+    ]
+  },
+  "description": "Recently, our law enforcement agencies managed to arrest two gangsters connected to the so called Havene group, specialised in human trafficking. They agreed to cooperate and although their testimonies are inconsistent, they mentioned our party's Deputy Minister of Infrastracture here and there. Allegedly, in exchange for protection and using his contacts, he has taken multiple bribes both in money and expensive watches from the Havane group.",
+  "options": [
+    {
+      "description": "We can't trust them!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "InfrastructureCorruption"
+        }
+      ]
+    },
+    {
+      "description": "Force the minister to abandon his office... for private matters, of course.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "InfrastructureCorruption"
+        }
+      ]
+    },
+    {
+      "description": "Such evidence is insufficient. Let's suspend him for the time being.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "InfrastructureCorruption"
+        }
+      ]
+    },
+    {
+      "description": "We cannot turn a blind eye to corruption. Fire him now!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "InfrastructureCorruption"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "The interesting testimony"
+}

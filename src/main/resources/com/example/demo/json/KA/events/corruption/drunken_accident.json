@@ -1,4 +1,16 @@
 {
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "indicator_condition",
+        "value": "-1",
+        "relation": "Higher",
+        "indicator": "InfrastructureCorruption"
+      }
+    ]
+  },
   "description": "Our party's Minister of Infrastructure has crashed his car into the tree. Police found out that he had at least 0.3% of alcohol in his blood at the time.",
   "options": [
     {
@@ -13,6 +25,11 @@
           "type": "indicator_change",
           "change": -1,
           "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "InfrastructureCorruption"
         }
       ]
     },
@@ -23,12 +40,22 @@
           "type": "indicator_change",
           "change": -2,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "InfrastructureCorruption"
         }
       ]
     },
     {
       "description": "Condemn him behaviour publicly and start anti-drunken-drivers program",
       "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "InfrastructureCorruption"
+        }
       ]
     }
   ],

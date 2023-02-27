@@ -1,0 +1,48 @@
+{
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "indicator_condition",
+        "value": "-1",
+        "relation": "Higher",
+        "indicator": "InfrastructureCorruption"
+      }
+    ]
+  },
+  "description": "A niche political weekly magazine have made headlines after publishing the results of their investigation into plots along the route of the railway line that is currently under construction. It turns out, that few years ago family of one of high-ranking Ministry of Infrastructure officials have bought a dozen of those. It was way before the route of this railway line was finally approved, so the initial price wasn't even quarter as high as a compensation after expropriation when the investment started. There is an obvious suspicion that the official has used his influence to make the line go where it needed to go. However, he is a longtime loyal party member, so kicking him out wouldn't be well received in the party",
+  "options": [
+    {
+      "description": "Who would not support the family...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "InfrastructureCorruption"
+        }
+      ]
+    },
+    {
+      "description": "There is no place for such behaviour in our party.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "The valuable plots"
+}

@@ -1,0 +1,74 @@
+{
+  "probability": 100,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "indicator_condition",
+        "value": "3",
+        "relation": "Higher",
+        "indicator": "InfrastructureCorruption"
+      }
+    ]
+  },
+  "description": "All of the recent scandals surrounding the Ministry of Infrastructure combined have lead to a big public backlash. A name of a minister became a synonym to being greedy and is a viral meme on the internet. Recent polls show that the whole matter can even change the outcome of the elections. We should really considered making some kind of a new opening.",
+  "options": [
+    {
+      "description": "There is nothing we can do.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -10,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "Let's sacrifice a few people in the ministry and blame everything on them.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "It's time to stop this lawlessness! Let's do a complete purge of this ministry.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -7,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -10,
+          "indicator": "InfrastructureCorruption"
+        }
+      ]
+    }
+  ],
+  "title": "The Ministry of Corruption"
+}

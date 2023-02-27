@@ -23,6 +23,11 @@
           "type": "indicator_change",
           "change": -1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "InfrastructureCorruption"
         }
       ]
     },
@@ -33,6 +38,11 @@
           "type": "indicator_change",
           "change": -2,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "InfrastructureCorruption"
         }
       ]
     }

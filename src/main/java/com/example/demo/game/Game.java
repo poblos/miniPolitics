@@ -38,7 +38,6 @@ public class Game {
     private final List<Event> events;
     private final Map<Integer, Person> people;
     private final Map<Integer, Person> activePeople;
-
     private final Map<Integer, Integer> cooldown;
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
@@ -52,6 +51,7 @@ public class Game {
         values.put(Indicator.PartyCohesion, 40F);
         values.put(Indicator.StateStability, 35F);
         values.put(Indicator.PartySupport, 44F);
+        values.put(Indicator.InfrastructureCorruption, 0F);
         this.round = 0;
         this.random = new Random();
         this.employed = new HashMap<>();
@@ -170,6 +170,7 @@ public class Game {
                 return false;
             } else if (effect.getClass() == RandomAdvisorDismissal.class) {
                 Job job = employed.keySet().stream().skip(random.nextInt(employed.size())).findFirst().orElse(null);
+                activePeople.remove(employed.get(job).getId());
                 employed.remove(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
                 cooldown.put(employed.get(((AdvisorDismissal) effect).getJob()).getId(),ADVISOR_COOLDOWN);
