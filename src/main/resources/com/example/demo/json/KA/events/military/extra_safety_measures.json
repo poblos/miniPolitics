@@ -1,0 +1,36 @@
+{
+  "description": "Recently, our counterintelligence agency conducted an analysis of government information sharing procedures. The audit showed, that many of the officials pass on classified information in a way that is easy to intercept. The new procedures have been proposed, but they will be cumbersome in daily work, so it might be difficult to convince people of them.",
+  "options": [
+    {
+      "description": "Don't change anything, we don't need another headache.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "We've got to believe it's necessary.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Extra safety measures"
+}

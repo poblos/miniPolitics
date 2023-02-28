@@ -1,0 +1,36 @@
+{
+  "description": "The Ministry of Internal Affairs prepared a project that grants additional powers for the special forces. Many people fear that new law will limit their personal freedom, but Ministry argues that such a change is necessary to maintain law and order.",
+  "options": [
+    {
+      "description": "There is no need for a change.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "The ends justify the means.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Additional powers for the Special Forces"
+}
