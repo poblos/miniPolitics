@@ -32,6 +32,10 @@
         {
           "type": "modifier_removal",
           "name": "Marelland Elections"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Marelland Elections Lost"
         }
       ]
     }

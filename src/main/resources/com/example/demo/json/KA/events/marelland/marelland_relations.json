@@ -1,0 +1,39 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Marelland Elections Lost"
+      }
+    ]
+  },
+  "probability": 100,
+  "description": "As you know, the elections in Marelland haven't gone to our liking. Our diplomats suggest that you should personally pay a visit to an island to make the new president's team trust us more.",
+  "options": [
+    {
+      "description": "I won't go anywhere, this guy is the one who should show initiative.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "It sounds like a sensible idea.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "Marelland Visit"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Marelland Elections Lost"
+        }
+      ]
+    }
+
+  ],
+  "title": "Relations with Marelland"
+}

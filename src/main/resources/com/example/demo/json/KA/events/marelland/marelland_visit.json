@@ -1,0 +1,47 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Marelland Visit"
+      }
+    ]
+  },
+  "probability": 150,
+  "description": "The visit to Marelland is proceeding as planned. The new president seems to trust us more, but he suggested we should lift restrictions on Marelland transport companies in Kachakonya in return for their backing in the global affairs. As this matter was discussed before by diplomats, it's just your final decision left to be made. To solidify our relations, it might be advisable to agree on that one.",
+  "options": [
+    {
+      "description": "Those restrictions are well justified, we can't do that.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Marelland Visit"
+        }
+      ]
+    },
+    {
+      "description": "We really need their support, let's fulfill this demand.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Marelland Visit"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Marelland relations secured"
+        }
+      ]
+    }
+  ],
+  "title": "A visit to Marelland"
+}
