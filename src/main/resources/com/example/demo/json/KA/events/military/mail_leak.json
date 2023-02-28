@@ -1,0 +1,36 @@
+{
+  "probability": 150,
+  "isUnique": true,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Safety Ignored"
+      }
+    ]
+  },
+  "description": "We're getting signals that editors of many national media have come into possession of e-mail correspondence belonging to the one of the most important officials in the country. He used his unsafe, private email address so it wasn't really a tough nut to crack for hackers. We might be in a serious trouble if this information gets in the hands of foreign country's special forces not mentioning internal turmoil.",
+  "options": [
+    {
+      "description": "We should have listened to our counterintelligence agency...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Safety Ignored"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Email leak"
+        }
+      ]
+    }
+  ],
+  "title": "Email leak"
+}
