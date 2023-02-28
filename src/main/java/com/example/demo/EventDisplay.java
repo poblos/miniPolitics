@@ -2,8 +2,10 @@ package com.example.demo;
 
 import com.example.demo.event.Event;
 import com.example.demo.event.Option;
+import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
@@ -28,6 +30,10 @@ public class EventDisplay extends VBox {
 
         // Desc setup
         TextArea desc = new TextArea();
+        desc.setTextFormatter(new TextFormatter<String>(change -> {
+            change.setAnchor(change.getCaretPosition());
+            return change;
+        }));
         desc.setText(event.getDescription());
         desc.setWrapText(true);
         desc.setEditable(false);
@@ -41,7 +47,7 @@ public class EventDisplay extends VBox {
         for (Option option : event.getOptions()) {
             EventButton button = new EventButton(i);
             button.setText(option.getDescription());
-            button.setOnAction(actionEvent-> controller.handleEvent(button.getClick()));
+            button.setOnAction(actionEvent -> controller.handleEvent(button.getClick()));
             button.setPrefWidth(600);
             button.setMaxHeight(100);
             button.setWrapText(true);

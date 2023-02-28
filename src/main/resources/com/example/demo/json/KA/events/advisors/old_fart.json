@@ -12,16 +12,11 @@
       }
     ]
   },
-  "description": "Your rule over party is still shaky. Some of the older politicians question your rule behind the scenes. One of them, and pretty influential one, is our whip. This old fart always doubted your abilities and embraced his own grandson instead. Getting rid of him will be an important signal for all your opponents, but will seriously harm our party's integrity, so you should do it at the right time.",
+  "description": "Your rule over party is still shaky. Some of the older politicians question your leadership behind the scenes. One of them, and pretty influential one, is our whip. This old fart always doubted your abilities and embraced his own grandson instead. Getting rid of him will be an important signal for all your opponents, but will seriously harm our party's integrity, so you should do it at the right time.",
   "options": [
     {
       "description": "Dismiss him NOW.",
       "effects": [
-        {
-          "type": "indicator_change",
-          "change": -20,
-          "indicator": "PartyCohesion"
-        },
         {
           "type": "advisor_dismissal",
           "job": "Whip"
