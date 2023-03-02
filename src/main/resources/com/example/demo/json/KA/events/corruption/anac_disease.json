@@ -1,0 +1,36 @@
+{
+  "description": "One of our ministers have been visibly unwell during a conference in Portmat. He couldn't walk straight so his Matheuchelles' counterpart had to hold his arm. The most talked about part of the visit is a video showing him trying to get back into the car through the trunk. His assistant commented that the disease that he caught during a visit to Anac was to blame, but evidence suggests otherwise.",
+  "options": [
+    {
+      "description": "Anac Disease? I got the feeling it would be a popular phrase in a few years...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "In the end, he was sent to make friends... he didn't drink alone, did he?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "I hope he gets well soon!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The Anac Disease"
+}
