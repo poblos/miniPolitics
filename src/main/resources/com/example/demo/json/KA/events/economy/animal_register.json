@@ -1,0 +1,51 @@
+{
+  "isUnique": true,
+  "description": "Ministry of Economy prepared a project that requires every farm animal to be registered in effort to improve government's control over meat market to prevent the spread of meat that does not meet quality standards. It isn't a popular project, but Ministry officials claim it's very much a needed one.",
+  "options": [
+    {
+      "description": "Why would we anger the farmers?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Limit the obligation to big farmers only to avoid unnecessary bureaucracy.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Who am I to argue with the experts?.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Strict Animal Registration"
+        }
+      ]
+    }
+  ],
+  "title": "The animal register"
+}

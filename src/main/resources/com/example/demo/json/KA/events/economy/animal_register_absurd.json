@@ -1,0 +1,55 @@
+{
+  "isUnique": true,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Strict Animal Registration"
+      }
+    ]
+  },
+  "description": "A new directive regarding animal registration hasn't been welcomed warmly. Media point out that according to the law even if you have one chick in a garden, you've got to register it and if you eat it - deregister. And it's not the only absurd related to the new law.",
+  "options": [
+    {
+      "description": "Let's withdraw the directive.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Strict Animal Registration"
+        }
+      ]
+    },
+    {
+      "description": "Let's amend the law by exempting breeding for personal use from the obligation.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Strict Animal Registration"
+        }
+      ]
+    },
+    {
+      "description": "And that's what it was about. There's no need to change anything",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The animal register absurd"
+}
