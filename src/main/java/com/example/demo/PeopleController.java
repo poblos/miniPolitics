@@ -1,9 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.jobs.AdvisorDismissal;
 import com.example.demo.jobs.Job;
 import com.example.demo.jobs.Person;
-import com.example.demo.jobs.Trait;
 import com.example.demo.modelFx.PersonModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,8 +15,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.Objects;
-
-import static com.example.demo.game.Game.ADVISOR_COOLDOWN;
 
 public class PeopleController {
     private Job job;

@@ -2,7 +2,6 @@ package com.example.demo;
 
 import com.example.demo.event.Event;
 import com.example.demo.event.Option;
-import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextFormatter;
@@ -10,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 
 import java.util.Objects;
 

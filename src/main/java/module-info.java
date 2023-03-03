@@ -20,5 +20,10 @@ module com.example.demo {
     exports com.example.demo.jobs;
     exports com.example.demo.policy;
     exports com.example.demo.event;
+    exports com.example.demo.media;
+    exports com.example.demo.party;
+    exports com.example.demo.budget;
+    exports com.example.demo.indicators;
+    exports com.example.demo.modifiers;
     opens com.example.demo.utils to javafx.fxml, moshi;
 }

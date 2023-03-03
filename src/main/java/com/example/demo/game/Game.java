@@ -149,9 +149,9 @@ public class Game {
                 activePeople.remove(employed.get(job).getId());
                 employed.remove(job);
             } else if (effect.getClass() == AdvisorDismissal.class) {
-                cooldown.put(employed.get(((AdvisorDismissal) effect).getJob()).getId(),ADVISOR_COOLDOWN);
-                if(employed.get(((AdvisorDismissal) effect).getJob()).hasTrait(Trait.InfluentialInTheParty)) {
-                    values.put(Indicator.PartyCohesion,values.get(Indicator.PartyCohesion)-20);
+                cooldown.put(employed.get(((AdvisorDismissal) effect).getJob()).getId(), ADVISOR_COOLDOWN);
+                if (employed.get(((AdvisorDismissal) effect).getJob()).hasTrait(Trait.InfluentialInTheParty)) {
+                    values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
                 }
                 employed.remove(((AdvisorDismissal) effect).getJob());
             } else if (effect.getClass() == ModifierInvocation.class) {
@@ -200,8 +200,7 @@ public class Game {
             float bonus = 1;
             if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait(Trait.IronFist)) {
                 bonus += 0.2;
-            }
-            else if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait(Trait.OldFart)) {
+            } else if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait(Trait.OldFart)) {
                 bonus -= 0.2;
             }
             if (change > 0) {
@@ -225,10 +224,10 @@ public class Game {
 
     public void employ(Job job) {
         try {
-            if(getEmployed(job) != null) {
-                getCooldown().put(getEmployed(job).getId(),ADVISOR_COOLDOWN);
-                if(getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
-                    values.put(Indicator.PartyCohesion,values.get(Indicator.PartyCohesion)-20);
+            if (getEmployed(job) != null) {
+                getCooldown().put(getEmployed(job).getId(), ADVISOR_COOLDOWN);
+                if (getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
+                    values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
                 }
             }
             employed.put(job, currentPerson);
@@ -239,10 +238,10 @@ public class Game {
 
     public void employ(Job job, int id) {
         try {
-            if(getEmployed(job) != null) {
-                getCooldown().put(getEmployed(job).getId(),ADVISOR_COOLDOWN);
-                if(getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
-                    values.put(Indicator.PartyCohesion,values.get(Indicator.PartyCohesion)-20);
+            if (getEmployed(job) != null) {
+                getCooldown().put(getEmployed(job).getId(), ADVISOR_COOLDOWN);
+                if (getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
+                    values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
                 }
             }
             employed.put(job, activePeople.get(id));
@@ -335,8 +334,8 @@ public class Game {
     public void handleEvent(int click) {
         displayNext = chooseOption(currentEvent, click);
         round++;
-        for(Integer id: cooldown.keySet()) {
-            if(cooldown.get(id) == 1) {
+        for (Integer id : cooldown.keySet()) {
+            if (cooldown.get(id) == 1) {
                 cooldown.remove(id);
             } else {
                 cooldown.put(id, cooldown.get(id) - 1);
@@ -346,7 +345,7 @@ public class Game {
     }
 
     public boolean isEmployed(int id) {
-        for(Job job : employed.keySet()) {
+        for (Job job : employed.keySet()) {
             if (employed.get(job).getId() == id) {
                 return true;
             }
