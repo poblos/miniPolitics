@@ -5,6 +5,8 @@ import com.example.demo.game.Game;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.max;
+
 public class Event {
     private final String title;
     private final String description;
@@ -15,7 +17,7 @@ public class Event {
     private final boolean isCertain;
     private int probability;
 
-    private final List<ProbabilityChanger> probabilityChangers;
+    private final List<ProbabilityChanger> probabilityChanges;
 
     public Event(String title, String description, List<Option> options, String graphic) {
         this.title = title;
@@ -25,7 +27,7 @@ public class Event {
         this.isUnique = false;
         this.isCertain = false;
         this.probability = 50;
-        this.probabilityChangers = new ArrayList<>();
+        this.probabilityChanges = new ArrayList<>();
         this.graphic = graphic;
     }
 
@@ -38,7 +40,7 @@ public class Event {
         this.isUnique = onlyOnce;
         this.isCertain = isCertain;
         this.probability = probability;
-        this.probabilityChangers = probabilityChangers;
+        this.probabilityChanges = probabilityChangers;
     }
 
     public String getTitle() {
@@ -53,8 +55,27 @@ public class Event {
         return options;
     }
 
-    public int getProbability() {
-        return probability;
+    public int getProbability(Game game) {
+        int sum = probability;
+        if (probability == 0) {
+            sum = 50;
+        }
+
+        if (probabilityChanges != null) {
+            for(ProbabilityChanger changer : probabilityChanges) {
+                boolean breaker = true;
+                for(Condition condition : changer.conditions()) {
+                    if (!game.meetsCondition(condition)) {
+                        breaker = false;
+                        break;
+                    }
+                }
+                if (breaker) {
+                    sum+= changer.probChange();
+                }
+            }
+        }
+        return max(0,sum);
     }
 
     public String getGraphic() {
@@ -63,10 +84,6 @@ public class Event {
 
     public void setProbability(int probability) {
         this.probability = probability;
-    }
-
-    public List<ProbabilityChanger> getProbabilityChangers() {
-        return probabilityChangers;
     }
 
     public boolean isUnique() {

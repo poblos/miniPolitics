@@ -78,34 +78,10 @@ public class Game {
 
     }
 
-    private int eventProbability(Event event) {
-        if (event.getProbability() == 0) {
-            event.setProbability(50);
-            return (50);
-        } else if (event.getProbabilityChangers() == null) {
-            return (event.getProbability());
-        } else {
-            int acc = event.getProbability();
-            for (ProbabilityChanger changer : event.getProbabilityChangers()) {
-                boolean isAdded = true;
-                for (Condition condition : changer.conditions()) {
-                    if (!meetsCondition(condition)) {
-                        isAdded = false;
-                        break;
-                    }
-                }
-                if (isAdded) {
-                    acc += changer.probChange();
-                }
-            }
-            return acc;
-        }
-    }
-
     private int eventProbabilitySum() {
         int acc = 0;
         for (Event event : events) {
-            acc += eventProbability(event);
+            acc += event.getProbability(this);
         }
         return acc;
     }
@@ -125,7 +101,7 @@ public class Game {
             int draw = random.nextInt(probabilitySum);
             int currentSum = 0;
             for (Event e : events) {
-                currentSum += e.getProbability();
+                currentSum += e.getProbability(this);
                 if (currentSum > draw) {
                     currentEvent = e;
                     break;
@@ -135,7 +111,7 @@ public class Game {
                 draw = random.nextInt(probabilitySum);
                 currentSum = 0;
                 for (Event e : events) {
-                    currentSum += e.getProbability();
+                    currentSum += e.getProbability(this);
                     if (currentSum > draw) {
                         currentEvent = e;
                         break;
