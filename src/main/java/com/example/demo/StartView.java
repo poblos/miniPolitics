@@ -81,7 +81,10 @@ public class StartView {
         mainController = loader.getController();
         mainController.setGame(game);
         Stage window = (Stage) kaButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1280, 720));
+        Scene scene = new Scene(root, 1280, 720);
+        scene.getRoot().requestFocus();
+        window.setScene(scene);
+        
         window.setFullScreen(true);
     }
 

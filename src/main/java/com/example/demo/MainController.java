@@ -63,6 +63,9 @@ public class MainController {
     public void handleEvent(int click) {
         game.handleEvent(click);
         updateUpperBar();
+
+        eventBox.requestFocus();
+
         if (barController != null) {
             barController.update();
         }
