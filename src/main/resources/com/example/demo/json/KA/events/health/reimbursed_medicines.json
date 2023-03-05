@@ -1,0 +1,44 @@
+{
+  "description": "The opposition hit us with the case of a genetically ill boy whose parents could not afford an experimental drug recently invented in Matheuchelles, which, if taken regularly, would eliminate the effects of the illness. They argue that a drug should have been on a list of reimbursed medicines and we are responsible for the death of a boy.",
+  "options": [
+    {
+      "description": "A state is not a charity organisation.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We cannot finance medicines that are not fully tested. Besides, the opposition itself could have proposed adding the drug earlier.",
+      "effects": [
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Propagandist",
+            "trait": "PropagandaMaster"
+          },
+          {
+            "type": "media_condition",
+            "affiliation": "Neutral"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Let's add this medicine to the list.",
+      "effects": [
+        {
+          "type": "budget_expense",
+          "category": "Health",
+          "change": 100
+        }
+      ]
+    }
+  ],
+  "title": "Reimbursed medicines"
+}
