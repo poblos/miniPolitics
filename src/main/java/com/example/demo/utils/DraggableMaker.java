@@ -15,10 +15,10 @@ public class DraggableMaker {
         node.setOnMouseDragged(mouseEvent -> {
             double newX = mouseEvent.getSceneX() - mouseX - node.getParent().getLayoutX();
             double newY = mouseEvent.getSceneY() - mouseY - node.getParent().getLayoutY();
-            if (newX < node.getScene().getWidth() - 1200 && newX > 0) {
+            if (newX < node.getScene().getWidth() - 870 && newX > 0) {
                 node.setLayoutX(newX);
             }
-            if (newY < node.getScene().getHeight() - 650 && newY > 0) {
+            if (newY < node.getScene().getHeight() - 550 && newY > 0) {
                 node.setLayoutY(newY);
             }
         });
