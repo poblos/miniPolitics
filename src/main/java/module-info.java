@@ -1,29 +1,28 @@
-module com.example.demo {
+module com.infernal_crew.mini_politics {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
     requires moshi;
-
-    exports com.example.demo;
-    opens com.example.demo.event to moshi;
-    opens com.example.demo.budget to moshi;
-    opens com.example.demo.indicators to moshi;
-    opens com.example.demo.jobs to moshi;
-    opens com.example.demo.modifiers to moshi;
-    opens com.example.demo.media to moshi;
-    opens com.example.demo.party to moshi;
-    opens com.example.demo.policy to moshi;
-    opens com.example.demo.game to moshi;
-    opens com.example.demo to javafx.fxml, moshi;
-    opens com.example.demo.modelFx to javafx.base;
-    exports com.example.demo.game;
-    exports com.example.demo.jobs;
-    exports com.example.demo.policy;
-    exports com.example.demo.event;
-    exports com.example.demo.media;
-    exports com.example.demo.party;
-    exports com.example.demo.budget;
-    exports com.example.demo.indicators;
-    exports com.example.demo.modifiers;
-    opens com.example.demo.utils to javafx.fxml, moshi;
+    opens com.infernal_crew.mini_politics.event to moshi;
+    opens com.infernal_crew.mini_politics.budget to moshi;
+    opens com.infernal_crew.mini_politics.indicators to moshi;
+    opens com.infernal_crew.mini_politics.jobs to moshi;
+    opens com.infernal_crew.mini_politics.modifiers to moshi;
+    opens com.infernal_crew.mini_politics.media to moshi;
+    opens com.infernal_crew.mini_politics.party to moshi;
+    opens com.infernal_crew.mini_politics.policy to moshi;
+    opens com.infernal_crew.mini_politics.game to moshi;
+    opens com.infernal_crew.mini_politics to javafx.fxml, moshi;
+    opens com.infernal_crew.mini_politics.modelFx to javafx.base;
+    exports com.infernal_crew.mini_politics.game;
+    exports com.infernal_crew.mini_politics.jobs;
+    exports com.infernal_crew.mini_politics.policy;
+    exports com.infernal_crew.mini_politics.event;
+    exports com.infernal_crew.mini_politics.media;
+    exports com.infernal_crew.mini_politics.party;
+    exports com.infernal_crew.mini_politics.budget;
+    exports com.infernal_crew.mini_politics.indicators;
+    exports com.infernal_crew.mini_politics.modifiers;
+    exports com.infernal_crew.mini_politics to javafx.graphics;
+    opens com.infernal_crew.mini_politics.utils to javafx.fxml, moshi;
 }

@@ -1,0 +1,43 @@
+{
+  "probability": 80,
+  "graphic": "darkside",
+  "description": "Endless territory covered with snow and ice hidden in the shadows, a Dark Side for much of the history was unattainable because of extremely low temperatures. Everything has changed with the technological progress and depletion of strategic resources deposits. Although only mad men voluntarily leave the rays of our star, potential profits have pushed many countries to establish permanent bases on the verge of the unknown. Although for now nothing meaningful has been achieved, representatives of our dark-side mission regularly demand a raise in their funding, citing it's main reason why their efforts have been lackluster so far.",
+  "options": [
+    {
+      "description": "Out of the question. No results - no money.",
+      "effects": [
+      ]
+    },
+    {
+      "description": "And we are financing this absurd! Cut the expenses on that one.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "ScienceAndHigherEducation",
+          "change": -2000
+        }
+      ]
+    },
+    {
+      "description": "It's a long term investment, give them what they want.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "ScienceAndHigherEducation",
+          "change": 2000
+        }
+      ]
+    }
+  ],
+  "title": "Funding of the Dark Side exploration"
+}

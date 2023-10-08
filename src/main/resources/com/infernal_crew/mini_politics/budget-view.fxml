@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="458.0" prefWidth="354.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.BudgetController">
+    <VBox alignment="TOP_RIGHT" prefHeight="458.0">
+        <TextField alignment="CENTER" editable="false" prefHeight="55.0" style="-fx-font-size: 28;" text="BUDGET" />
+        <HBox prefHeight="50.0" prefWidth="354.0">
+            <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="49.0" prefWidth="313.0" text="Income">
+                <toggleGroup>
+                    <ToggleGroup fx:id="incomeOrExpenses" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="49.0" prefWidth="273.0" selected="true" text="Expenses">
+                <toggleGroup>
+                    <fx:reference source="incomeOrExpenses" />
+                </toggleGroup>
+            </RadioButton>
+        </HBox>
+        <ScrollPane prefHeight="400.0" prefWidth="200.0">
+            <PieChart fx:id="chart" labelsVisible="false" prefHeight="966.0" prefWidth="328.0" />
+        </ScrollPane>
+    </VBox>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>
