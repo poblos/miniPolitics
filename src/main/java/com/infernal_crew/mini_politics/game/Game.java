@@ -133,55 +133,14 @@ public class Game {
     // Returns true if the next Event should be displayed
     private boolean chooseOption(Event currentEvent, int option) {
         List<Effect> effects = currentEvent.getOptions().get(option).getEffects();
+        boolean displayNext = true;
         for (Effect effect : effects) {
-            if (effect.getClass() == IndicatorChange.class) {
-                float change = ((IndicatorChange) effect).change();
-                Indicator indicator = ((IndicatorChange) effect).indicator();
-                change = includeBonus(change, indicator);
-                values.put(indicator, change + values.get(indicator));
-            } else if (effect.getClass() == RandomAdvisorEmployment.class) {
-                currentPerson = people.values().stream().skip(random.nextInt(people.size())).findFirst().orElse(null);
-                assert currentPerson != null;
-                activePeople.put(currentPerson.getId(), currentPerson);
-                return false;
-            } else if (effect.getClass() == AdvisorEmployment.class) {
-                currentPerson = people.get(((AdvisorEmployment) effect).getId());
-                activePeople.put(currentPerson.getId(), currentPerson);
-                return false;
-            } else if (effect.getClass() == RandomAdvisorDismissal.class) {
-                Job job = employed.keySet().stream().skip(random.nextInt(employed.size())).findFirst().orElse(null);
-                activePeople.remove(employed.get(job).getId());
-                employed.remove(job);
-            } else if (effect.getClass() == AdvisorDismissal.class) {
-                cooldown.put(employed.get(((AdvisorDismissal) effect).getJob()).getId(), ADVISOR_COOLDOWN);
-                if (employed.get(((AdvisorDismissal) effect).getJob()).hasTrait(Trait.InfluentialInTheParty)) {
-                    values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
-                }
-                employed.remove(((AdvisorDismissal) effect).getJob());
-            } else if (effect.getClass() == ModifierInvocation.class) {
-                addModifier(((ModifierInvocation) effect).getName());
-            } else if (effect.getClass() == ModifierRemoval.class) {
-                removeModifier(((ModifierRemoval) effect).getName());
-            } else if (effect.getClass() == MediaTakeover.class) {
-                takeOverMedia(effect);
-            } else if (effect.getClass() == IdeologyChange.class) {
-                party.ideologies().remove(((IdeologyChange) effect).getRemoved());
-                party.ideologies().add(((IdeologyChange) effect).getAdded());
-            } else if (effect.getClass() == PolicyChange.class) {
-                policies.get(((PolicyChange) effect).id()).setCurrentOption(((PolicyChange) effect).option());
-            } else if (effect.getClass() == BudgetIncome.class) {
-                IncomeCategory category = ((BudgetIncome) effect).category();
-                budget.getIncome().put(category, budget.getIncome().get(category) + ((BudgetIncome) effect).change());
-            } else if (effect.getClass() == BudgetExpense.class) {
-                ExpenseCategory category = ((BudgetExpense) effect).category();
-                budget.getExpenses().put(category, budget.getExpenses().get(category) + ((BudgetExpense) effect).change());
-            }
-
+             displayNext = displayNext && effect.handle(this);
         }
-        return true;
+        return displayNext;
     }
 
-    private void takeOverMedia(Effect effect) {
+    public void takeOverMedia(Effect effect) {
         for (MediaGroup group : mediaGroups) {
             if (group.getId() == ((MediaTakeover) effect).getId()) {
                 group.setAffiliation(((MediaTakeover) effect).getAffiliation());
@@ -189,7 +148,7 @@ public class Game {
         }
     }
 
-    private float includeBonus(float change, Indicator indicator) {
+    public float includeBonus(float change, Indicator indicator) {
         if (indicator == Indicator.PartySupport) {
             float bonus = 1;
             if (employed.get(Job.Propagandist) != null && employed.get(Job.Propagandist).hasTrait(Trait.PropagandaMaster)) {
@@ -254,7 +213,7 @@ public class Game {
         }
     }
 
-    private void addModifier(String name) {
+    public void addModifier(String name) {
         for (Modifier modifier : modifiers) {
             if (Objects.equals(modifier.getName(), name)) {
                 activeModifiers.put(name, modifier);
@@ -262,7 +221,7 @@ public class Game {
         }
     }
 
-    private void removeModifier(String name) {
+    public void removeModifier(String name) {
         for (Modifier modifier : modifiers) {
             if (Objects.equals(modifier.getName(), name)) {
                 activeModifiers.remove(name);
@@ -357,6 +316,9 @@ public class Game {
         return false;
     }
 
+    public void updateIndicator(float change, Indicator indicator) {
+        values.put(indicator, change + values.get(indicator));
+    }
 
     public Event getCurrentEvent() {
         return currentEvent;
@@ -386,8 +348,14 @@ public class Game {
         return round;
     }
 
+    public Random getRandom() { return random; }
+
     public Map<Integer, Policy> getPolicies() {
         return policies;
+    }
+
+    public Map<Job, Person> getAllEmployed() {
+        return employed;
     }
 
     public Map<Integer, Person> getPeople() {
@@ -413,4 +381,10 @@ public class Game {
     public Map<Integer, Integer> getCooldown() {
         return cooldown;
     }
+
+    public void setCurrentPerson(Person person) {
+        currentPerson = person;
+    }
+
+
 }

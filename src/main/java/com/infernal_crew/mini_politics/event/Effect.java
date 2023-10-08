@@ -1,6 +1,8 @@
 package com.infernal_crew.mini_politics.event;
 
-public interface Effect {
+import com.infernal_crew.mini_politics.game.Game;
 
+public interface Effect {
+    boolean handle(Game game);
 }
 
