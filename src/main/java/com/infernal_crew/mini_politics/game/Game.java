@@ -2,18 +2,13 @@ package com.infernal_crew.mini_politics.game;
 
 
 import com.infernal_crew.mini_politics.indicators.Indicator;
-import com.infernal_crew.mini_politics.indicators.IndicatorChange;
 import com.infernal_crew.mini_politics.indicators.IndicatorCondition;
 import com.infernal_crew.mini_politics.indicators.IndicatorRelation;
 import com.infernal_crew.mini_politics.modifiers.Modifier;
 import com.infernal_crew.mini_politics.modifiers.ModifierCondition;
-import com.infernal_crew.mini_politics.modifiers.ModifierInvocation;
-import com.infernal_crew.mini_politics.modifiers.ModifierRemoval;
-import com.infernal_crew.mini_politics.party.IdeologyChange;
 import com.infernal_crew.mini_politics.party.IdeologyCondition;
 import com.infernal_crew.mini_politics.party.Party;
 import com.infernal_crew.mini_politics.policy.Policy;
-import com.infernal_crew.mini_politics.policy.PolicyChange;
 import com.infernal_crew.mini_politics.policy.PolicyCondition;
 import com.infernal_crew.mini_politics.budget.*;
 import com.infernal_crew.mini_politics.event.Condition;
