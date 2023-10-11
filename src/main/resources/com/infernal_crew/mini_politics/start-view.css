@@ -26,6 +26,14 @@
     -fx-background-color: linear-gradient(from 50px 0px to 50px 100px, reflect, purple, black);
 }
 
+.button:hover {
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 100px, reflect, darkmagenta, black);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 100px, reflect, #5B0358, black);
+}
+
 #title {
     -fx-font-size: 130;
     -fx-font-family: Impact;
