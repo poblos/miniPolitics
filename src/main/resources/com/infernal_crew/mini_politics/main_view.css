@@ -40,20 +40,52 @@
 .event {
     -fx-border-radius:10;
     -fx-border-width:4;
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, deepskyblue)
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
 }
 
-.eventButton {
-    -fx-font: oblique 10pt "Droid Serif";
+.eventButton
+{
+    -fx-font: bold 1.1em "Droid Serif";
+    -fx-text-fill: #e1edec;
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0,0 0 6 0,0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%,#266d8c 0%,#1563b0 100%),
+             #1246a1,
+             #337dcc,
+            radial-gradient(center 50% 50%, radius 100%,#3aa9d9,#2c6ec5);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
+}
+
+.eventButton:hover
+{
+
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%,#266d8c 0%,#125596 100),
+            #1246a1,
+            #337dcc,
+            radial-gradient(center 50% 50%,radius 100%,#349dc9,#2a6bbf);
+}
+
+.eventButton:pressed
+{
+     -fx-padding: 10 15 13 15;
+     -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
 }
 
 .eventDesc {
     -fx-font-size:15;
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, deepskyblue);
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, darkgrey);
+}
+
+.eventDesc .content {
+        -fx-background-color: linear-gradient(from 20% 20% to 80% 80%, #bacfd9, #b2d9eb);
 }
 
 .eventTitle {
-    -fx-font: 20pt Serif
+    -fx-font: bold 18pt "Droid Serif";
+    -fx-text-fill: #e1edec;
 }
 
 .indicatorButton {
