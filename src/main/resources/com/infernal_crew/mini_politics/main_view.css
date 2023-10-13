@@ -151,5 +151,9 @@
 }
 
 .flagPane {
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),10,0,0,1);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),6,0,0,1);
+    -fx-border-color:
+        radial-gradient(center 50% 50%,radius 100%,#284bbf,#3aa9d9);
+    -fx-border-radius:2;
+    -fx-border-width:6;
 }
