@@ -149,3 +149,7 @@
 .leftBarField {
     -fx-background-color: linear-gradient(from 20% 20% to 80% 80%, #bacfd9, #b2d9eb);
 }
+
+.flagPane {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),10,0,0,1);
+}
