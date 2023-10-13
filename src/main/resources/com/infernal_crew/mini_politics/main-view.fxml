@@ -14,7 +14,7 @@
                 <Label styleClass="flagPane">
                 <graphic>
                 <ImageView>
-                    <Image url="@menu_icons/kachakonya.png" requestedHeight="150" requestedWidth="150"/>
+                    <Image url="@menu_icons/kachakonya.png" requestedHeight="150" requestedWidth="250"/>
                 </ImageView>
                 </graphic>
                 </Label>
