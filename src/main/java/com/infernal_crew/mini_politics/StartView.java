@@ -94,7 +94,7 @@ public class StartView {
         ideologies.add(Ideology.BigTent);
         ideologies.add(Ideology.Capitalist);
         ideologies.add(Ideology.Centrist);
-        Party party = new Party("Republican Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "In power for last 4 years, under new leadership suffers from internal turmoil.", ideologies);
+        Party party = new Party("Republican Party of Kachakonya", "One of the oldest active political parties in Kachakonya, traditionally associated with the bourgeoisie. " + "In power for last 4 years, under new leadership suffers from internal turmoil.", ideologies);
         game.setParty(party);
 
         startGame(game);
