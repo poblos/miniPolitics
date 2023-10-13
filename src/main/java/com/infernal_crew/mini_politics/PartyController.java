@@ -9,27 +9,22 @@ public class PartyController extends BarController {
     private TextFlow textBox;
 
     public void update() {
-        Text text = new Text("Name: ");
-        text.getStyleClass().add("highlightedText");
-        textBox.getChildren().add(text);
+        textBox.getChildren().clear();
 
-        text = new Text(mainController.getGame().getParty().name() + "\n");
-        text.getStyleClass().add("normalText");
-        textBox.getChildren().add(text);
-
-        text = new Text("Description: ");
-        text.getStyleClass().add("highlightedText");
+        Text text = new Text(mainController.getGame().getParty().name() + "\n");
+        text.getStyleClass().add("partyNameText");
         textBox.getChildren().add(text);
 
         text = new Text(mainController.getGame().getParty().description() + "\n");
         text.getStyleClass().add("normalText");
         textBox.getChildren().add(text);
 
-        text = new Text("Ideologies: ");
-        text.getStyleClass().add("highlightedText");
+        text = new Text("Ideologies: \n");
+        text.getStyleClass().add("partyNameText");
         textBox.getChildren().add(text);
 
-        text = new Text(mainController.getGame().getParty().ideologies().toString());
+        String ideologies = mainController.getGame().getParty().ideologies().toString();
+        text = new Text(ideologies.substring(1,ideologies.length() - 1));
         text.getStyleClass().add("normalText");
         textBox.getChildren().add(text);
     }

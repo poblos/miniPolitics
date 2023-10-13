@@ -19,6 +19,10 @@
     -fx-font: bold 15pt "Droid Serif";
 }
 
+.text-field .text {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
+}
+
 .v-box {
     -fx-spacing-size:100;
 }
@@ -36,7 +40,7 @@
 
 .normalText {
     -fx-fill: black;
-    -fx-font: 15pt "Droid Serif";
+    -fx-font: 13pt "Droid Serif";
 }
 
 .event {
@@ -76,6 +80,10 @@
      -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
 }
 
+.eventButton .text {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
+}
+
 .eventDesc {
     -fx-font-size:15;
     -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, darkgrey);
@@ -88,6 +96,10 @@
 .eventTitle {
     -fx-font: bold 18pt "Droid Serif";
     -fx-text-fill: #e1edec;
+}
+
+.eventTitle .text {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
 }
 
 .indicatorButton {
@@ -123,7 +135,17 @@
 }
 
 #expensesButton {
-        -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);
-        -fx-border-radius:10;
-        -fx-border-width:4;
+    -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);
+    -fx-border-radius:10;
+    -fx-border-width:4;
+}
+
+.partyNameText {
+    -fx-fill: radial-gradient(center 50% 50%,radius 100%,#284bbf,#718256);
+    -fx-font: 16pt "Droid Serif";
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),2,0,0,1);
+}
+
+.leftBarField {
+    -fx-background-color: linear-gradient(from 20% 20% to 80% 80%, #bacfd9, #b2d9eb);
 }
