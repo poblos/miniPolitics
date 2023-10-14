@@ -1,6 +1,7 @@
 package com.infernal_crew.mini_politics;
 
 import com.infernal_crew.mini_politics.game.Game;
+import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.utils.DraggableMaker;
 import com.infernal_crew.mini_politics.jobs.Job;
 import javafx.event.ActionEvent;
@@ -69,6 +70,15 @@ public class MainController {
 
         if (barController != null) {
             barController.update();
+        }
+
+        // Game is lost
+        for(Indicator ind : Indicator.values()) {
+            if (game.getIndicatorValue(ind) < 0) {
+                eventBox.getChildren().clear();
+                eventBox.getChildren().add(new EventDisplay(game.getLoseEvent(ind), this));
+                return;
+            }
         }
 
         if (game.displayNext()) {

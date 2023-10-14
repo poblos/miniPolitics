@@ -316,6 +316,10 @@ public class Game {
         values.put(indicator, change + values.get(indicator));
     }
 
+    public Event getLoseEvent(Indicator indicator) {
+        List<Option> list = new ArrayList<>();
+        return new Event("You lost!","Your " + indicator + " was too low.", list,"darkside");
+    }
     public Event getCurrentEvent() {
         return currentEvent;
     }
