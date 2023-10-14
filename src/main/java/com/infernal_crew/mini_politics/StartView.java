@@ -26,6 +26,7 @@ import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyChange;
 import com.infernal_crew.mini_politics.policy.PolicyCondition;
 import com.infernal_crew.mini_politics.jobs.*;
+import com.infernal_crew.mini_politics.story.StoryNote;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory;
 import javafx.fxml.FXML;
@@ -69,8 +70,10 @@ public class StartView {
 
         ArrayList<Budget> budgets = loadFiles(Budget.class, "json/" + nationTag + "/budget/", moshi);
 
+        ArrayList<StoryNote> notes = loadFiles(StoryNote.class, "json/" + nationTag + "/story/", moshi);
+
         printNumberOfEvents(events.size());
-        return new Game(events, people, activePeople, policies, modifiers, medias, budgets.get(0));
+        return new Game(events, people, activePeople, policies, modifiers, medias, budgets.get(0), notes);
     }
 
     private void startGame(Game game) throws IOException {

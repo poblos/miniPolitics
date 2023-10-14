@@ -175,6 +175,10 @@ public class MainController {
     }
 
     public void onStoryButtonClick(ActionEvent actionEvent) {
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
+        setInfoBox("story-view.fxml");
     }
 
     private void setPeopleBox(String fxmlPath, Job job) {

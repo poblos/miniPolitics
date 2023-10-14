@@ -14,6 +14,7 @@ module com.infernal_crew.mini_politics {
     opens com.infernal_crew.mini_politics.game to moshi;
     opens com.infernal_crew.mini_politics to javafx.fxml, moshi;
     opens com.infernal_crew.mini_politics.modelFx to javafx.base;
+    opens com.infernal_crew.mini_politics.story to moshi;
     exports com.infernal_crew.mini_politics.game;
     exports com.infernal_crew.mini_politics.jobs;
     exports com.infernal_crew.mini_politics.policy;
@@ -23,6 +24,7 @@ module com.infernal_crew.mini_politics {
     exports com.infernal_crew.mini_politics.budget;
     exports com.infernal_crew.mini_politics.indicators;
     exports com.infernal_crew.mini_politics.modifiers;
+    exports com.infernal_crew.mini_politics.story;
     exports com.infernal_crew.mini_politics to javafx.graphics;
     opens com.infernal_crew.mini_politics.utils to javafx.fxml, moshi;
 }

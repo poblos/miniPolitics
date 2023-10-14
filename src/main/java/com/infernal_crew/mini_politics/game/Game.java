@@ -17,6 +17,7 @@ import com.infernal_crew.mini_politics.event.Event;
 import com.infernal_crew.mini_politics.event.Option;
 import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.media.*;
+import com.infernal_crew.mini_politics.story.StoryNote;
 
 import java.util.*;
 
@@ -40,11 +41,12 @@ public class Game {
     private final Map<Integer, Integer> cooldown;
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
+    private final List<StoryNote> storyNotes;
     private Party party;
     private final Budget budget;
     private final transient Random random;
 
-    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Person> activePeople, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Budget budget) {
+    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Person> activePeople, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes) {
         this.budget = budget;
         values = new HashMap<>();
         values.put(Indicator.PartyCohesion, 40F);
@@ -74,6 +76,7 @@ public class Game {
         }
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
+        this.storyNotes = storyNotes;
 
     }
 
@@ -291,6 +294,11 @@ public class Game {
     }
 
     public void handleEvent(int click) {
+        for(StoryNote note : storyNotes) {
+            if (activeModifiers.containsKey(note.getModifier())) {
+                note.setDone(true);
+            }
+        }
         displayNext = chooseOption(currentEvent, click);
         round++;
         for (Integer id : cooldown.keySet()) {
@@ -386,5 +394,7 @@ public class Game {
         currentPerson = person;
     }
 
-
+    public List<StoryNote> getStoryNotes() {
+        return storyNotes;
+    }
 }
