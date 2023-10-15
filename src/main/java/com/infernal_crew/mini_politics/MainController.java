@@ -74,7 +74,7 @@ public class MainController {
 
         // Game is lost
         for(Indicator ind : Indicator.values()) {
-            if (game.getIndicatorValue(ind) < 0) {
+            if (game.getIndicatorValue(ind) < 0 && ind != Indicator.InfrastructureCorruption) {
                 eventBox.getChildren().clear();
                 eventBox.getChildren().add(new EventDisplay(game.getLoseEvent(ind), this));
                 return;
