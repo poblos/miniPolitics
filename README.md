@@ -1,5 +1,5 @@
 # miniPolitics
-simple version of a politic manager game
+a prototype version of a politic manager game
 
 
 Project utilises Maven. Due to the conflict between two moshi libraries, a workaround fix requires to manually add a library.
