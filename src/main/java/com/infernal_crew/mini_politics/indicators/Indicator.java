@@ -4,5 +4,6 @@ public enum Indicator {
     PartyCohesion,
     StateStability,
     PartySupport,
-    InfrastructureCorruption
+    InfrastructureCorruption,
+    NarongWarBalance // 100 - Foreberg, 0 - Karlen
 }

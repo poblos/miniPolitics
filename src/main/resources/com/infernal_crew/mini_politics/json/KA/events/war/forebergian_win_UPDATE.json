@@ -1,0 +1,62 @@
+{
+  "isCertain": true,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      },
+      {
+        "type": "indicator_condition",
+        "indicator": "NarongWarBalance",
+        "value": "99",
+        "relation": "Higher"
+      }
+    ]
+  },
+  "probability": 200,
+  "description": "A Forebergian flag waves over the parliament building in Narong, a very visual sign of the new order. Last Karlenese soldiers were evacuated from the island and although their government won't declare it publicly and official ceasefire has not been signed, Forebergians gave them a guarantee of a safe return to home. The matter of Narong is resolved and now there it's a time for diplomats to confirm the reality.",
+  "options": [
+    {
+      "description": ".",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    },
+    {
+      "description": "I don't think we should be giving up our strategic resources that easily.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -5,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    },
+    {
+      "description": "Help them, but negotiate something in return before!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    }
+  ],
+  "title": "Military aid for Foreberg"
+}

@@ -39,6 +39,11 @@
         {
           "type": "modifier_invocation",
           "name": "The Narong War - Karlenese side"
+        },
+        {
+          "type": "indicator_change",
+          "change": -10,
+          "indicator": "NarongWarBalance"
         }
       ]
     },
@@ -66,6 +71,11 @@
           "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
         }
       ]
     },
@@ -88,6 +98,11 @@
           "type": "indicator_change",
           "change": -2,
           "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
         }
       ]
     }

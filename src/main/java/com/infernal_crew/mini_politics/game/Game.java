@@ -53,6 +53,7 @@ public class Game {
         values.put(Indicator.StateStability, 35F);
         values.put(Indicator.PartySupport, 44F);
         values.put(Indicator.InfrastructureCorruption, 0F);
+        values.put(Indicator.NarongWarBalance, 50F);
         this.round = 0;
         this.random = new Random();
         this.employed = new HashMap<>();

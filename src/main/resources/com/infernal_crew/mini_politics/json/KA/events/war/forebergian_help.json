@@ -1,0 +1,59 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War - Forebergian side"
+      }
+    ]
+  },
+  "probability": 200,
+  "description": "As the Narong War continues, Forebergians are using up their ammunition stockpiles pretty quickly. Although their factories are working day and night, they may soon run out of hugely important directed ArrowX12 missiles, used by their planes to conduct tactical bombing. Luckily, we possess enough of those to share a few with our friends.",
+  "options": [
+    {
+      "description": "It's better to put them to some good use than letting them get rusty in our stockpiles.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    },
+    {
+      "description": "I don't think we should be giving up our strategic resources that easily.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -5,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    },
+    {
+      "description": "Help them, but negotiate something in return before!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    }
+  ],
+  "title": "Military aid for Foreberg"
+}
