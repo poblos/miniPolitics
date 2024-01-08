@@ -10,5 +10,17 @@ public enum Trait {
     AcademicOrigin,
     Admiral,
     OldFart,
-    InfluentialInTheParty
+    InfluentialInTheParty,
+    ArchPatriarch,
+    ANRArchPatriarch,
+    GPPRFArchPatriarch,
+    SDPArchPatriarch,
+    SRPArchPatriarch,
+    ASArchPatriarch,
+    ChadArchPatriarch,
+    Preacher,
+    FuelMagnate,
+    HeadofDiplomacy,
+    PatriarchatiiCommander,
+    HeraldoftheGreyOne
 }
