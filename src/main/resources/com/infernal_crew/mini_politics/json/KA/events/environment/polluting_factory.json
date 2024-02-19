@@ -1,28 +1,8 @@
 {
-  "description": "A renown journalist has probed into the conduct of one of our party's MPs, questioning his credibility. What has emerged is an unsettling portrait of a representative whose actions starkly contradict their electoral promises, causing a media whirlwind.",
+  "description": "A prominent factory in Kachakonya, owned by a well-respected party member, has been found seriously polluting a local river. This has caused health issues among the local population. Environmental activists and health organizations are demanding immediate action against the factory.",
   "options": [
     {
-      "description": "Mind your own business!",
-      "effects": [
-        {
-          "type": "indicator_change",
-          "change": 3,
-          "indicator": "PartyCohesion"
-        },
-        {
-          "type": "indicator_change",
-          "change": -2,
-          "indicator": "PartySupport"
-        },
-        {
-          "type": "indicator_change",
-          "change": -2,
-          "indicator": "StateStability"
-        }
-      ]
-    },
-    {
-      "description": "Try to cover it up!",
+      "description": "They're just out to smear our name, ignore them!",
       "effects": [
         {
           "type": "indicator_change",
@@ -31,7 +11,7 @@
         },
         {
           "type": "indicator_change",
-          "change": -1,
+          "change": -2,
           "indicator": "PartySupport"
         },
         {
@@ -42,12 +22,37 @@
       ]
     },
     {
-      "description": "That's outrageous!",
+      "description": "That's it, no more dirty business - shut it down!",
       "effects": [
         {
           "type": "indicator_change",
           "change": -2,
           "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Impose a fine and demand the factory to implement proper waste processing. I hope our college will understand us...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
         },
         {
           "type": "indicator_change",
@@ -57,5 +62,5 @@
       ]
     }
   ],
-  "title": "Prominent MP Accused of False Promises"
+  "title": "Factory Polluting Local River"
 }

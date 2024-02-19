@@ -1,0 +1,51 @@
+{
+  "description": "A proposed highway project is causing outcry in the historic town of Bitomond. Due to its planned route, several ancient landmarks will be destroyed. The locals demand us to rethink the route, although this might significantly increase the cost and, potentially, undermine the whole project.",
+  "options": [
+    {
+      "description": "Built it already! Progress can't wait for some old stones!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Can't we just go around? Save Bitomond!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description":  "Scrap the plan! Who needs another highway?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Highway Through History"
+}

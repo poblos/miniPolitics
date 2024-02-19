@@ -1,8 +1,28 @@
 {
-  "description": "A renown journalist has probed into the conduct of one of our party's MPs, questioning his credibility. What has emerged is an unsettling portrait of a representative whose actions starkly contradict their electoral promises, causing a media whirlwind.",
+  "description": "Recently, our decision to appoint a young and popular newcomer to a key government position has sparked off dissent within the party. Old party members feel sidelined as they believe their years of loyalty and service have been overlooked.",
   "options": [
     {
-      "description": "Mind your own business!",
+      "description": "Tough luck, guys. We need fresh faces!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Well, we've stirred the pot. Let's make amends and promise to involve seniors in key decisions!",
       "effects": [
         {
           "type": "indicator_change",
@@ -11,18 +31,18 @@
         },
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -1,
           "indicator": "PartySupport"
         },
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -1,
           "indicator": "StateStability"
         }
       ]
     },
     {
-      "description": "Try to cover it up!",
+      "description": "On reflection, this has caused more harm than good. Let's back out of the decision.",
       "effects": [
         {
           "type": "indicator_change",
@@ -31,31 +51,11 @@
         },
         {
           "type": "indicator_change",
-          "change": -1,
+          "change": -3,
           "indicator": "PartySupport"
-        },
-        {
-          "type": "indicator_change",
-          "change": -1,
-          "indicator": "StateStability"
-        }
-      ]
-    },
-    {
-      "description": "That's outrageous!",
-      "effects": [
-        {
-          "type": "indicator_change",
-          "change": -2,
-          "indicator": "PartyCohesion"
-        },
-        {
-          "type": "indicator_change",
-          "change": 1,
-          "indicator": "StateStability"
         }
       ]
     }
   ],
-  "title": "Prominent MP Accused of False Promises"
+  "title": "Newcomer?!"
 }

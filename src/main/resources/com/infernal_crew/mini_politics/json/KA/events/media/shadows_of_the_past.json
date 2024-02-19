@@ -1,0 +1,61 @@
+{
+  "description": "'Shadows of the Past', a controversial newly released film, has ignited a nationwide debate. The film makes serious accusations, suggesting that the leaders of the republican forces during the pivotal Kachak Civil War knowingly allowed and may have even orchestrated war crimes. These allegations, provided without concrete evidence, have polarized the nation into factions defending the integrity of our historical heroes and those advocating for freedom of expression.",
+  "options": [
+    {
+      "description": "We can't allow them to tarnish the reputation of our heroes! Ban the film.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Of course we are supporting the free speech. Allow the film's distribution.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Allow it, but initiate a historical investigation to establish the veracity of the film's claims.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Shadows of the Past"
+}

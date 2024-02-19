@@ -1,28 +1,8 @@
 {
-  "description": "A renown journalist has probed into the conduct of one of our party's MPs, questioning his credibility. What has emerged is an unsettling portrait of a representative whose actions starkly contradict their electoral promises, causing a media whirlwind.",
+  "description": "Tech-giant, KronTech, from Havane has come under fire due to their mishandling of user data. Citizens are demanding stricter regulatory laws on data privacy while critics warn that these laws may impede the growth of our burgeoning tech industry.",
   "options": [
     {
-      "description": "Mind your own business!",
-      "effects": [
-        {
-          "type": "indicator_change",
-          "change": 3,
-          "indicator": "PartyCohesion"
-        },
-        {
-          "type": "indicator_change",
-          "change": -2,
-          "indicator": "PartySupport"
-        },
-        {
-          "type": "indicator_change",
-          "change": -2,
-          "indicator": "StateStability"
-        }
-      ]
-    },
-    {
-      "description": "Try to cover it up!",
+      "description": "Ignore the issue.",
       "effects": [
         {
           "type": "indicator_change",
@@ -31,23 +11,43 @@
         },
         {
           "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Introduce strict regulatory laws!",
+      "effects": [
+        {
+          "type": "indicator_change",
           "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
           "indicator": "PartySupport"
         },
         {
           "type": "indicator_change",
-          "change": -1,
+          "change": -2,
           "indicator": "StateStability"
         }
       ]
     },
     {
-      "description": "That's outrageous!",
+      "description": "Have a quiet word with KronTech management…",
       "effects": [
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -1,
           "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
         },
         {
           "type": "indicator_change",
@@ -57,5 +57,5 @@
       ]
     }
   ],
-  "title": "Prominent MP Accused of False Promises"
+  "title": "KronTech's Data Scandal"
 }
