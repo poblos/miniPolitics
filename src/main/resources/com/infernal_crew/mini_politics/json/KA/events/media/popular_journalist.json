@@ -12,7 +12,7 @@
   "description": "One of our affiliated media's brightest stars is willing to continue his career in big politics as his current position isn't satisfying enough for him. We may consider appointing him as our chief propagandist.",
   "options": [
     {
-      "description": "We don't have place for him.",
+      "description": "We don't have a place for him.",
       "effects": [
         {
           "type": "indicator_change",
