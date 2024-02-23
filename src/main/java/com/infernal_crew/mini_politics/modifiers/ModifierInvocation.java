@@ -12,7 +12,7 @@ public class ModifierInvocation implements Effect {
 
     @Override
     public String toString() {
-        return name + " will be added to active com.example.demo.resources.com.example.demo.modifiers";
+        return name + " will be added to modifiers";
     }
 
     @Override

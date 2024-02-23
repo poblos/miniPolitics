@@ -130,7 +130,7 @@ public class Game {
     }
 
     // Returns true if the next Event should be displayed
-    // Returns false if additional menu should be displayed
+    // Returns false if an additional menu should be displayed
     private boolean chooseOption(Event currentEvent, int option) {
         List<Effect> effects = currentEvent.getOptions().get(option).getEffects();
         boolean displayNext = true;

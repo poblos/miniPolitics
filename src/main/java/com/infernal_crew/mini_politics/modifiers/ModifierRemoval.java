@@ -12,7 +12,7 @@ public class ModifierRemoval implements Effect {
 
     @Override
     public String toString() {
-        return name + " will be removed from active com.example.demo.resources.com.example.demo.modifiers";
+        return name + " will be removed from active modifiers";
     }
 
     @Override

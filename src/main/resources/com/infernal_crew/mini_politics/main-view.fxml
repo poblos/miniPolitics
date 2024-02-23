@@ -89,6 +89,16 @@
                     <fx:reference source="leftBar" />
                 </toggleGroup>
             </ToggleButton>
+            <ToggleButton onAction="#onWarButtonClick">
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@menu_icons/sword.png" />
+                    </ImageView>
+                </graphic>
+                <toggleGroup>
+                    <fx:reference source="leftBar" />
+                </toggleGroup>
+            </ToggleButton>
         </VBox>
         </VBox>
     </left>

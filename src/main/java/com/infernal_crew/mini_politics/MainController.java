@@ -160,7 +160,14 @@ public class MainController {
             return;
         }
         setInfoBox("policy-view.fxml");
+    }
 
+    @FXML
+    public void onWarButtonClick(ActionEvent actionEvent) {
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
+        setInfoBox("war-view.fxml");
     }
 
     private boolean ifRequiresCleaning(ActionEvent actionEvent) {
