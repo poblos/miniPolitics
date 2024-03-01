@@ -1,5 +1,6 @@
 package com.infernal_crew.mini_politics;
 
+import com.infernal_crew.mini_politics.game.Game;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -8,7 +9,7 @@ public class PartyController extends BarController {
     @FXML
     private TextFlow textBox;
 
-    public void update() {
+    public void update(Game game) {
         textBox.getChildren().clear();
 
         Text text = new Text(mainController.getGame().getParty().name() + "\n");

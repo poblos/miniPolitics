@@ -13,7 +13,6 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import com.infernal_crew.mini_politics.jobs.*;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -69,7 +68,7 @@ public class MainController {
         eventBox.requestFocus();
 
         if (barController != null) {
-            barController.update();
+            barController.update(game);
         }
 
         // Game is lost
@@ -127,7 +126,7 @@ public class MainController {
         infoBox.getChildren().add(node);
         barController = loader.getController();
         barController.setMainController(this);
-        barController.update();
+        barController.update(game);
     }
 
     @FXML

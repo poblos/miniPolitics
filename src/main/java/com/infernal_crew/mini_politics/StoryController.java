@@ -1,5 +1,6 @@
 package com.infernal_crew.mini_politics;
 
+import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.story.StoryNote;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -13,7 +14,7 @@ public class StoryController extends BarController {
     private VBox storyBox;
 
     @Override
-    public void update() {
+    public void update(Game game) {
         storyBox.getChildren().clear();
         for(StoryNote note : mainController.getGame().getStoryNotes()) {
             CheckBox checkBox = new CheckBox();

@@ -1,5 +1,6 @@
 package com.infernal_crew.mini_politics;
 
+import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyOption;
 import javafx.collections.FXCollections;
@@ -82,7 +83,7 @@ public class PolicyController extends BarController {
     private ListView<Policy> policyList;
     private Policy displayedPolicy;
 
-    public void update() {
+    public void update(Game game) {
         policyNames.clear();
         policyNames.addAll(mainController.getGame().getPolicies().values());
         policyList.setItems(policyNames);

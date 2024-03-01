@@ -9,14 +9,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="557.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/18" >
+<AnchorPane prefHeight="557.0" prefWidth="330.0"
+            xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.infernal_crew.mini_politics.WarController">
     <TextField alignment="CENTER" editable="false " prefHeight="58.0" prefWidth="502.0" style="-fx-font-size: 28;" text="THE NARONG WAR" />
     <VBox layoutY="58.0" prefHeight="501.0" prefWidth="502.0">
       <HBox prefHeight="100.0" prefWidth="502.0">
          <children>
-            <Label prefHeight="83.0" prefWidth="119.0" text="Karlenese Federation" />
-            <ProgressBar prefHeight="110.0" prefWidth="269.0" progress="0.0" />
-            <Label prefHeight="87.0" prefWidth="117.0" text="Republic of Foreberg" />
+            <Label prefHeight="83.0" prefWidth="119.0" text="Republic of Foreberg" />
+            <ProgressBar fx:id="bar" prefHeight="110.0" prefWidth="269.0" progress="0.0" />
+            <Label prefHeight="87.0" prefWidth="117.0" text="Karlenese Federation" />
          </children>
       </HBox>
         <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0" style="-fx-font-size: 28;" text="Events:" />

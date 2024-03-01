@@ -1,5 +1,6 @@
 package com.infernal_crew.mini_politics;
 
+import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.media.Affiliation;
 import com.infernal_crew.mini_politics.media.MediaGroup;
 import javafx.fxml.FXML;
@@ -20,7 +21,7 @@ public class MediaController extends BarController {
     @FXML
     private TilePane mediaBox;
 
-    public void update() {
+    public void update(Game game) {
         mediaBox.getChildren().clear();
         for (MediaGroup group : mainController.getGame().getMediaGroups()) {
             Label newLabel = new Label();

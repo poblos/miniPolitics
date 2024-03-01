@@ -2,6 +2,7 @@ package com.infernal_crew.mini_politics;
 
 import com.infernal_crew.mini_politics.budget.ExpenseCategory;
 import com.infernal_crew.mini_politics.budget.IncomeCategory;
+import com.infernal_crew.mini_politics.game.Game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,7 +18,7 @@ public class BudgetController extends BarController{
     @FXML
     private PieChart chart;
 
-    public void update() {
+    public void update(Game game) {
         if (incomeOrExpenses.getSelectedToggle() == expensesButton) {
             onExpenseButtonClick();
         } else {
