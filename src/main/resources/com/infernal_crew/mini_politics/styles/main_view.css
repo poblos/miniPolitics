@@ -206,3 +206,38 @@
 .progress-bar-high .bar{
     -fx-background-color: linear-gradient(to right, #6a82fb, #00f2fe);
 }
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent; /* Makes the scrollbar background transparent */
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #a6dbff; /* Soft blue to match the eventDesc styling */
+    -fx-background-insets: 2, 0, 2;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #f0f9ff; /* Lighter blue for the track */
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: #cbebff; /* Matching blue for consistency */
+    -fx-background-radius: 5px; /* Rounded corners for the buttons */
+}
+
+.scroll-bar:vertical .increment-button:hover,
+.scroll-bar:vertical .decrement-button:hover {
+    -fx-background-color: #b0d4f1; /* Slightly darker blue for hover effect */
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: #666; /* Dark grey for the arrow icons */
+}
+
+.text-area:focused .scroll-bar:vertical .thumb {
+    -fx-background-color: #349dc9; /* Slightly darker blue for the thumb when focused */
+}

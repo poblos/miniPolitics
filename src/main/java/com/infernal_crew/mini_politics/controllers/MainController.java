@@ -192,7 +192,7 @@ public class MainController {
     }
 
     private void setPeopleBox(String fxmlPath, Job job) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxmlPath));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/infernal_crew/mini_politics/templates/"+fxmlPath));
         Node node;
         try {
             node = loader.load();
