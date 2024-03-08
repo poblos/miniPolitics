@@ -8,8 +8,8 @@
       }
     ]
   },
-  "probability": 200,
-  "description": "After a week, it seems certain that the war won't end decisively as quickly as both sides would have hoped to. Although initial Forebergian landing on the Narong island was successful, their siege of the island's capital isn't going so smoothly as Karlen still controls sea supply route that leads to the island. It seems probable that international aid will be the decisive factor in determining outcome of the war. Which side shall we support?",
+  "probability": 300,
+  "description": "After a week, it seems certain that the war won't end decisively as quickly as both sides would have hoped for. Although initial Forebergian landing on the Narong island was successful, their siege of the island's capital isn't going so smoothly as Karlen still controls sea supply route that leads to the island. It seems probable that international aid will be the decisive factor in determining outcome of the war. Which side shall we support?",
   "options": [
     {
       "description": "Let us not interfere in their affairs",

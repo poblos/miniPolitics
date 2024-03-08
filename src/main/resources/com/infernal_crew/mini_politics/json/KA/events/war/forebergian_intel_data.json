@@ -1,0 +1,54 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War - Forebergian side"
+      }
+    ]
+  },
+  "probability": 300,
+  "description": "As the Narong War wages on, some of our military advisors suggest that aiding the Forebergians by reallocating some of our spy satellites could provide valuable intelligence on Karlenese military bases. However, this repurposing would mean diverting them from their current missions, potentially compromising our nation's security temporarily.",
+  "options": [
+    {
+      "description": "Ending this war swiftly is what could really enhance our safety. Let's proceed with the reallocation.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    },
+    {
+      "description": "It doesn't seem necessary; they appear to manage well without our intelligence.",
+      "effects": [
+      ]
+    },
+    {
+      "description": "What do we stand to gain in return? Nothing? Fine, reallocating one satellite should suffice.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 5,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    }
+  ],
+  "title": "Sharing Intelligence Data?"
+}

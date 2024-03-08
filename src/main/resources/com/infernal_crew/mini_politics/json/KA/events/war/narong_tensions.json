@@ -3,7 +3,7 @@
     "yes": [
       {
         "type": "round_condition",
-        "round": 50
+        "round": 30
       }
     ]
   },
