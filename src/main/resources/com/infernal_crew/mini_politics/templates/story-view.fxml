@@ -5,7 +5,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.infernal_crew.mini_politics.StoryController"
+            fx:controller="com.infernal_crew.mini_politics.controllers.StoryController"
             prefHeight="400.0" prefWidth="600.0">
     <VBox>
         <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" text="STORY"/>

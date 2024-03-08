@@ -27,4 +27,8 @@ module com.infernal_crew.mini_politics {
     exports com.infernal_crew.mini_politics.story;
     exports com.infernal_crew.mini_politics to javafx.graphics;
     opens com.infernal_crew.mini_politics.utils to javafx.fxml, moshi;
+    exports com.infernal_crew.mini_politics.controllers to javafx.graphics;
+    opens com.infernal_crew.mini_politics.controllers to javafx.fxml, moshi;
+    exports com.infernal_crew.mini_politics.components to javafx.graphics;
+    opens com.infernal_crew.mini_politics.components to javafx.fxml, moshi;
 }

@@ -13,8 +13,8 @@
 <AnchorPane prefHeight="557.0" prefWidth="330.0"
             xmlns="http://javafx.com/javafx/18"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.infernal_crew.mini_politics.WarController"
-            stylesheets="@war_view.css">
+            fx:controller="com.infernal_crew.mini_politics.controllers.WarController"
+            stylesheets="@../styles/war_view.css">
     <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="502.0" style="-fx-font-size: 28;" text="THE NARONG WAR" />
     <VBox layoutY="58.0" prefHeight="501.0" prefWidth="502.0">
         <VBox styleClass="main-vbox" prefHeight="150.0" prefWidth="502.0">

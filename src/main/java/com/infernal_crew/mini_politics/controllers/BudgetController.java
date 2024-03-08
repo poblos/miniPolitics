@@ -1,4 +1,4 @@
-package com.infernal_crew.mini_politics;
+package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.budget.ExpenseCategory;
 import com.infernal_crew.mini_politics.budget.IncomeCategory;

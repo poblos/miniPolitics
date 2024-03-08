@@ -1,5 +1,6 @@
-package com.infernal_crew.mini_politics;
+package com.infernal_crew.mini_politics.components;
 
+import com.infernal_crew.mini_politics.controllers.MainController;
 import com.infernal_crew.mini_politics.event.Event;
 import com.infernal_crew.mini_politics.event.Option;
 import javafx.scene.control.Label;

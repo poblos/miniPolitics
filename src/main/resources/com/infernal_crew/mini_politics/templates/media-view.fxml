@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <VBox prefHeight="200.0" prefWidth="256.0" alignment="TOP_CENTER" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.infernal_crew.mini_politics.MediaController">
+      fx:controller="com.infernal_crew.mini_politics.controllers.MediaController">
     <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="256.0" style="-fx-font-size: 28;"
                text="MEDIA"/>
     <TilePane fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="200.0" prefWidth="256.0"/>

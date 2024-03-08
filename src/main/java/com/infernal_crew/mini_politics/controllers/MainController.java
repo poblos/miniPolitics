@@ -1,5 +1,9 @@
-package com.infernal_crew.mini_politics;
+package com.infernal_crew.mini_politics.controllers;
 
+import com.infernal_crew.mini_politics.components.EventDisplay;
+import com.infernal_crew.mini_politics.components.IndicatorDisplay;
+import com.infernal_crew.mini_politics.components.JobChoiceDisplay;
+import com.infernal_crew.mini_politics.components.JobDisplay;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.utils.DraggableMaker;
@@ -115,7 +119,7 @@ public class MainController {
     }
 
     private void setInfoBox(String fxmlPath) {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(fxmlPath));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/infernaL_crew/mini_politics/templates/" + fxmlPath));
         Node node;
         try {
             node = loader.load();

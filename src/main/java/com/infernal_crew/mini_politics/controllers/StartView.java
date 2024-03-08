@@ -1,8 +1,9 @@
-package com.infernal_crew.mini_politics;
+package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.budget.Budget;
 import com.infernal_crew.mini_politics.budget.BudgetExpense;
 import com.infernal_crew.mini_politics.budget.BudgetIncome;
+import com.infernal_crew.mini_politics.controllers.MainController;
 import com.infernal_crew.mini_politics.event.Condition;
 import com.infernal_crew.mini_politics.event.Effect;
 import com.infernal_crew.mini_politics.event.Event;
@@ -77,9 +78,9 @@ public class StartView {
     }
 
     private void startGame(Game game) throws IOException {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("main-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/infernal_crew/mini_politics/templates/main-view.fxml"));
         Parent root = loader.load();
-        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("main_view.css")).toExternalForm());
+        root.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/styles/main_view.css")).toExternalForm());
         mainController = loader.getController();
         mainController.setGame(game);
         Stage window = (Stage) kaButton.getScene().getWindow();

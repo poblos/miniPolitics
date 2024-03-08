@@ -2,7 +2,7 @@
     -fx-background-color:
             linear-gradient(lightblue, antiquewhite),
             radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000033);
-    -fx-background-image: url("./menu_icons/backgroundv2.png");
+    -fx-background-image: url("../menu_icons/backgroundv2.png");
     -fx-background-position: center center;
     -fx-background-repeat: stretch;
 }

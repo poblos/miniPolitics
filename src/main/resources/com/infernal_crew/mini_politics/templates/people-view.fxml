@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.PeopleController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PeopleController">
     <Label prefHeight="34.0" prefWidth="248.0" styleClass="highlightedText" text="Active politicians" />
     <TableView fx:id="peopleTable" layoutY="33.0" prefHeight="367.0" prefWidth="248.0">
       <columns>

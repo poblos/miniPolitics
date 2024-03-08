@@ -1,4 +1,4 @@
-package com.infernal_crew.mini_politics;
+package com.infernal_crew.mini_politics.components;
 
 public class WarEvent {
     private final String name;

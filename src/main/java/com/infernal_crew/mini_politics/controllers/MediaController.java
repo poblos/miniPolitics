@@ -1,5 +1,6 @@
-package com.infernal_crew.mini_politics;
+package com.infernal_crew.mini_politics.controllers;
 
+import com.infernal_crew.mini_politics.Main;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.media.Affiliation;
 import com.infernal_crew.mini_politics.media.MediaGroup;

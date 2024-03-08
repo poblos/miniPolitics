@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.MainController">
     <top>
         <HBox prefHeight="250.0" prefWidth="1247.0">
             <VBox>
                 <Label styleClass="flagPane">
                 <graphic>
                 <ImageView>
-                    <Image url="@menu_icons/kachakonya.png" requestedHeight="150" requestedWidth="250"/>
+                    <Image url="@../menu_icons/kachakonya.png" requestedHeight="150" requestedWidth="250"/>
                 </ImageView>
                 </graphic>
                 </Label>
@@ -29,7 +29,7 @@
                 <Label alignment="BASELINE_CENTER">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" scaleX="1.5" scaleY="1.5">
-                            <Image url="@menu_icons/roundLabel.png" />
+                            <Image url="@../menu_icons/roundLabel.png" />
                         </ImageView>
                     </graphic>
                 </Label>
@@ -52,7 +52,7 @@
             <ToggleButton onAction="#onPartyButtonClick">
                 <graphic>
                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@menu_icons/PartyIcon.png" />
+                        <Image url="@../menu_icons/PartyIcon.png" />
                     </ImageView>
                 </graphic>
                 <toggleGroup>
@@ -62,7 +62,7 @@
             <ToggleButton onAction="#onBudgetButtonClick">
                 <graphic>
                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@menu_icons/BudgetIcon.png" />
+                        <Image url="@../menu_icons/BudgetIcon.png" />
                     </ImageView>
                 </graphic>
                 <toggleGroup>
@@ -72,7 +72,7 @@
             <ToggleButton onAction="#onMediaButtonClick">
                 <graphic>
                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@menu_icons/MediaIcon.png" />
+                        <Image url="@../menu_icons/MediaIcon.png" />
                     </ImageView>
                 </graphic>
                 <toggleGroup>
@@ -82,7 +82,7 @@
             <ToggleButton onAction="#onPolicyButtonClick">
                 <graphic>
                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@menu_icons/PolicyIcon.png" />
+                        <Image url="@../menu_icons/PolicyIcon.png" />
                     </ImageView>
                 </graphic>
                 <toggleGroup>
@@ -92,7 +92,7 @@
             <ToggleButton onAction="#onWarButtonClick">
                 <graphic>
                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@menu_icons/sword.png" />
+                        <Image url="@../menu_icons/sword.png" />
                     </ImageView>
                 </graphic>
                 <toggleGroup>
@@ -124,7 +124,7 @@
             <ToggleButton onAction="#onStoryButtonClick">
                 <graphic>
                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@menu_icons/StoryIcon.png" />
+                        <Image url="@../menu_icons/StoryIcon.png" />
                     </ImageView>
                 </graphic>
                 <toggleGroup>

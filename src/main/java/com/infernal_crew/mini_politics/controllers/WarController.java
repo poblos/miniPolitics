@@ -1,5 +1,6 @@
-package com.infernal_crew.mini_politics;
+package com.infernal_crew.mini_politics.controllers;
 
+import com.infernal_crew.mini_politics.components.WarEvent;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import javafx.collections.FXCollections;

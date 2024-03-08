@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane prefHeight="400.0" prefWidth="600.0"  xmlns="http://javafx.com/javafx/16"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.StartView">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.StartView">
     <center>
         <StackPane>
             <Label alignment="CENTER">
                 <graphic>
                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" scaleX="13"
                                scaleY="13">
-                        <Image url="@menu_icons/planet.png"/>
+                        <Image url="@../menu_icons/planet.png"/>
                     </ImageView>
                 </graphic>
             </Label>

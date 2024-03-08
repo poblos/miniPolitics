@@ -14,9 +14,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("start-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("templates/start-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("start-view.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styles/start-view.css")).toExternalForm());
         stage.setTitle("miniPolitics");
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
