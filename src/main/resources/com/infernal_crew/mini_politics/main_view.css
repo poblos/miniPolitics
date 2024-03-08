@@ -169,3 +169,37 @@
 .toggle-button:hover {
     -fx-background-color: linear-gradient(#fc5c7d,#6a82fb);
 }
+
+.progress-bar {
+    -fx-background-color: #e6f7ff; /* Light blueish background for harmony */
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-background-radius: 5px;
+}
+
+.progress-bar .track {
+    -fx-background-color: #d1e0e5; /* Slightly darker shade for contrast */
+    -fx-background-radius: 5px;
+}
+
+.progress-bar-high {
+    -fx-effect: dropshadow(gaussian, rgba(0,162,232,0.7), 20, 0.0, 0, 2);
+}
+.progress-bar-low .bar{
+    -fx-background-color: linear-gradient(to right, #ff512f, #dd2476);
+}
+
+.progress-bar-medium {
+    -fx-effect: dropshadow(gaussian, rgba(255,195,0,0.7), 20, 0.0, 0, 2);
+}
+
+.progress-bar-medium .bar{
+    -fx-background-color: linear-gradient(to right, #f12711, #f5af19);
+}
+
+.progress-bar-low {
+    -fx-effect: dropshadow(gaussian, rgba(255,80,80,0.7), 20, 0.0, 0, 2);
+}
+
+.progress-bar-high .bar{
+    -fx-background-color: linear-gradient(to right, #6a82fb, #00f2fe);
+}

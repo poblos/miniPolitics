@@ -42,13 +42,20 @@ public class IndicatorDisplay extends VBox {
     public void update(Game game) {
         double newValue = Math.floor(game.getIndicatorValue(Indicator.valueOf(name)) * 100) / 10000;
         this.bar.setProgress(newValue);
+        String progressBarClass = "progress-bar-high"; // default to high
+
         if (newValue < 0.15) {
-            bar.setStyle("-fx-accent: red");
+            progressBarClass = "progress-bar-low";
         } else if (newValue < 0.3) {
-            bar.setStyle("-fx-accent: yellow");
-        } else {
-            bar.setStyle("-fx-accent: #00A2E8");
+            progressBarClass = "progress-bar-medium";
         }
+
+        // Remove all possible classes to avoid style conflicts
+        this.bar.getStyleClass().removeAll("progress-bar-low", "progress-bar-medium", "progress-bar-high");
+        // Add the appropriate class based on the new value
+        this.bar.getStyleClass().add(progressBarClass);
     }
+
+
 
 }
