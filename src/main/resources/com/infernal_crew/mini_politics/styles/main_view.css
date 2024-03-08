@@ -79,12 +79,15 @@
 }
 
 .eventDesc {
-    -fx-font-size:15;
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, darkgrey);
+    -fx-font-size: 10pt;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.4), 5, 0.0, 2, 2);
 }
 
 .eventDesc .content {
-        -fx-background-color: linear-gradient(from 20% 20% to 80% 80%, #bacfd9, #b2d9eb);
+    -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff); /* Soft blue gradient */
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 5, 5); /* Soft drop shadow for a lifted effect */
 }
 
 .eventTitle {
