@@ -1,0 +1,117 @@
+.root {
+    -fx-base: #202020;
+}
+
+.anchor-pane {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10;
+    -fx-border-color: #34495e;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+}
+.text-field {
+    -fx-background-color: #3b4e60; /* Distinct shade for the header */
+    -fx-font-size: 18px;
+    -fx-text-fill: #ecf0f1;
+    -fx-alignment: center;
+    -fx-border-color: #95a5a6;
+    -fx-border-radius: 5px;
+}
+
+.list-view {
+    -fx-background-color: #34495e;
+    -fx-font-size: 18px;
+    -fx-text-fill: #ecf0f1;
+    -fx-alignment: center;
+    -fx-border-color: #95a5a6;
+    -fx-border-radius: 5px;
+}
+
+.country-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-background-color: #34495e;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #95a5a6;
+    -fx-alignment: center;
+}
+
+.label[style*="background-color: blue"], .label[style*="background-color: red"] {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #95a5a6;
+    -fx-min-height: 30px; /* Adjusted size for visibility */
+    -fx-min-width: 120px;
+    -fx-margin: 5px;
+}
+
+.progress-bar {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 20px;
+    -fx-accent: #16a085;
+    -fx-border-radius: 5px;
+    -fx-border-color: #ffffff;
+}
+.progress-bar .bar {
+    -fx-background-color: #16a085;
+}
+
+.progress-bar .track {
+    -fx-background-color: #34495e;
+}
+
+.main-vbox {
+    -fx-background-color: #34495e;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-padding: 5px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.upper-hbox{
+    -fx-spacing: 5;
+}
+
+.drop-shadow {
+    -fx-radius: 5.0;
+    -fx-offset-x: 3.0;
+    -fx-offset-y: 3.0;
+    -fx-color: rgba(0, 0, 0, 0.5);
+}
+
+/* General ListView styling */
+.list-view {
+    -fx-background-color: #34495e;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ecf0f1;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+
+.list-cell:filled:selected, .list-cell:filled:selected:hover {
+    -fx-background-color: #485a70;
+    -fx-text-fill: white;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #3b4e60;
+}
+
+.label {
+    -fx-font-size: 16px;
+}
+
+.label.positive-effect {
+    -fx-text-fill: #2ecc71;
+}
+
+.label.negative-effect {
+    -fx-text-fill: #e74c3c;
+}
