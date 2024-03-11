@@ -1,0 +1,48 @@
+{
+  "isCertain": true,
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      },
+      {
+        "type": "indicator_condition",
+        "indicator": "NarongWarBalance",
+        "value": "99",
+        "relation": "Higher"
+      }
+    ]
+  },
+  "probability": 200,
+  "description": "A Forebergian flag waves over the parliament building in Narong, a very visual sign of the new order. Last Karlenese soldiers were evacuated from the island and although their government won't declare it publicly and official ceasefire has not been signed, Forebergians gave them a guarantee of a safe return to home. The matter of Narong is resolved and now there is a time for diplomats to confirm the reality.",
+  "options": [
+    {
+      "description": "We bet on the right horse; as we always do...",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "The Narong War"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Narong War - Forebergian win"
+        }
+      ]
+    },
+    {
+      "description": "Finally this horror comes to an end...",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "The Narong War"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "The Narong War - Forebergian win"
+        }
+      ]
+    }
+  ],
+  "title": "Forebergian Victory"
+}

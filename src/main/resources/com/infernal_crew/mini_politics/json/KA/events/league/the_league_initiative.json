@@ -1,0 +1,68 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War - Forebergian win"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "Marelland relations secured"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War - Forebergian side"
+      }
+    ]
+  },
+  "probability": 500,
+  "description": "In recent years, we've successfully deepened ties with our neighboring countries. With our support, Foreberg gained control of Narong Island, marking a significant victory over their rival, Karlen. Meanwhile, Marelland has shifted closer to our political sphere following its general elections. These developments suggest it's the perfect time to cement our relationships through a formal alliance, to be known as The League. This alliance will focus on two main areas: encouraging free trade to boost our economies and enhancing military cooperation to share expertise and improve security. Obviously, this is not without cost. Abolition of customs between our countries will result in some of the groups being dissatisfied with the new situation, as cheaper, or better products from Marelland and Foreberg may win the competition with those of our own,",
+  "options": [
+    {
+      "description": "Let's proceed with the initiative. It will benefit us in the long term.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "There is no need for such treaty. We can strengthen our relations without such amends.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "We need to setup some protective period so the market shock will not be that impactful. Negotiate that with our partners.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "The League Initiative"
+}
