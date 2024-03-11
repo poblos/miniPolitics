@@ -1,0 +1,56 @@
+{
+  "description": "Massive youth protests have erupted across the country, with the students demanding free university education. Their argument revolves around education being a fundamental human right, not a privilege reserved for the affluent. The clamour is gaining support from the public, significantly pressuring our party to respond. How should we address this growing social issue?",
+  "options": [
+    {
+      "description": "Let's make university education free for all!.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "ScienceAndHigherEducation",
+          "change": 1000
+        }
+      ]
+    },
+    {
+      "description": "Our national budget simply can't sustain such an expense.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Offering more need-based scholarships might be a more realistic approach.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "ScienceAndHigherEducation",
+          "change": 100
+        }
+      ]
+    }
+  ],
+  "title": "Nationwide Demand for Free University Education"
+}

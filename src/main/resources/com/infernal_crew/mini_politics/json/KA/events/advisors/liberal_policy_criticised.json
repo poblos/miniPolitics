@@ -1,0 +1,81 @@
+{
+  "description": "A leader of our party's old guard has publicly criticised the government's recent liberal policies, claiming a strong deviation from the party's core values. How should we respond to this?",
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Old fart still in power"
+      },
+      {
+        "type": "trait_condition",
+        "job": "Whip",
+        "trait": "OldFart"
+      }
+    ]
+  },
+  "options": [
+    {
+      "description": "We need to respect the wisdom of our seniors! Or, rather their influence on party...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Times have changed, and we need to adapt!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Let's find a compromise to maintain unity.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 0,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Old guard criticises liberal policies"
+}

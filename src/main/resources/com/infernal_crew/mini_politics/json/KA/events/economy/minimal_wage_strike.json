@@ -1,0 +1,62 @@
+{
+  "trigger": {
+    "no": [
+      {
+        "type": "modifier_condition",
+        "name": "Minimal wage increased"
+      }
+    ],
+    "yes": [
+
+    ]
+  },
+  "description": "The largest labor union in the country has threatened to organize a nationwide strike unless we raise the minimum wage. We think it's a bluff, but refusal to meet their demands may still hamper our approval. The demands are quite significant and could strain our economy. How should we respond to this matter?",
+  "options": [
+    {
+      "description": "Raise the wages, workers deserve it.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "These demands are unreasonable and will harm our economic stability.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Let's propose a modest increase and negotiate with the union.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Labor Union's Demand for Higher Minimum Wage"
+}
