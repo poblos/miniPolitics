@@ -1,0 +1,66 @@
+{
+  "description": "Nationwide protests have erupted over recent amendments to our immigration policy. Some argue that our policies are too lenient, resulting in an unsustainable influx of immigrants. Others counter, claiming that the policy is inhumane, preventing refugees and immigrants in need from finding refuge in our nation. The situation is tense as the nation awaits our response.",
+  "options": [
+    {
+      "description": "Maintaining balanced immigration is crucial for our nation's security and economy!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Our humanity is what defines us. We can't let prejudice overshadow our principles!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "We must put our nation and its citizens first. Strict immigration control is vital!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Immigration Policy Protests"
+}
