@@ -4,11 +4,11 @@
       {
         "type": "policy_condition",
         "id": 2,
-        "option": 2
+        "option": 3
       }
     ]
   },
-  "description": "Some our MP's prepared a project that legalises same-sex marriages. Currently civic partnerships are legal for everyone, but changing marriage law may increase our support among people with leftist views.",
+  "description": "Although we allowed for same-sex marriages, some groups in our society still feel excluded and push for further adjustments in our policy. The most vocal group are polyamorous people, who argue that it's an absurd that only couples can legalise their relations. Not many countries have embraced such policy yet and we have an opportunity be in vanguard of progress!",
   "options": [
     {
       "trigger": {
@@ -19,11 +19,11 @@
           }
         ]
       },
-      "description": "Be gay do crime!",
+      "description": "We can't discriminate anyone!",
       "effects": [
         {
           "type": "indicator_change",
-          "change": 4,
+          "change": 1,
           "indicator": "PartySupport"
         },
         {
@@ -34,7 +34,7 @@
         {
           "type": "policy_change",
           "id": 2,
-          "option": 3
+          "option": 4
         }
       ]
     },
@@ -74,5 +74,5 @@
       ]
     }
   ],
-  "title": "Legalisation of same-sex marriages"
+  "title": "Polyamorous people feel excluded"
 }
