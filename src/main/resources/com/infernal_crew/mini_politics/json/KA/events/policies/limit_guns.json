@@ -4,11 +4,11 @@
       {
         "type": "policy_condition",
         "id": 4,
-        "option": 5
+        "option": 4
       }
     ]
   },
-  "description": "As the international tensions arise, some of our citizens demand to facilitate access to guns to be better prepared for potential defence.",
+  "description": "As a result of a series of armed robberies, the opposition started a public debate on limiting access to weapons. How should we respond?",
   "options": [
     {
       "trigger": {
@@ -21,22 +21,17 @@
           }
         ]
       },
-      "description": "That's a reasonable move.",
+      "description": "Criminals would have illegal weapons anyways.",
       "effects": [
         {
           "type": "indicator_change",
-          "change": 2,
+          "change": -1,
           "indicator": "PartySupport"
         },
         {
           "type": "indicator_change",
-          "change": 2,
+          "change": 1,
           "indicator": "StateStability"
-        },
-        {
-          "type": "policy_change",
-          "id": 4,
-          "option": 4
         }
       ]
     },
@@ -51,30 +46,32 @@
         "no": [
         ]
       },
-      "description": "That's a reasonable move.",
+      "description": "That's a reasonable suggestion.",
       "effects": [
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": 1,
           "indicator": "PartySupport"
         },
         {
           "type": "indicator_change",
-          "change": 2,
+          "change": -1,
           "indicator": "StateStability"
         },
         {
           "type": "policy_change",
           "id": 4,
-          "option": 4
+          "option": 5
         }
       ]
     },
     {
-      "description": "They want to kill us or what?",
+      "description": "Who cares?",
       "effects": [
+        {
+        }
       ]
     }
   ],
-  "title": "Facilitating access to guns"
+  "title": "Restricting access to guns"
 }
