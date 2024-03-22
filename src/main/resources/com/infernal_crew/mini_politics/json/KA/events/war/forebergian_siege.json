@@ -1,0 +1,42 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      },
+      {
+        "type": "indicator_condition",
+        "value": "70",
+        "relation": "Higher",
+        "indicator": "NarongWarBalance"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 400,
+  "description": "The empty streets are filled with the echoing sounds of cannons. What was once a colorful district, today is just a pile of burning ruins. For the last couple of weeks, this area has witnessed intense fights, but as tides of battle have shifted, the Karlenese had to surround the district. The capital city of Narong is now half-taken, but countless lives have been lost, not only soldiers, but also civilians who didn't manage to flee the siege. The final resolution looms closer.",
+  "options": [
+    {
+      "description": "Interesting.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    },
+    {
+      "description": "Horrendous!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    }
+  ],
+  "title": "The Siege"
+}
