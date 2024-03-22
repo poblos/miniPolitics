@@ -84,10 +84,10 @@
 }
 
 .eventDesc .content {
-    -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff); /* Soft blue gradient */
+    -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff);
     -fx-background-radius: 10px;
     -fx-padding: 10px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 5, 5); /* Soft drop shadow for a lifted effect */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 5, 5);
 }
 
 .eventTitle {
@@ -162,11 +162,12 @@
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
     -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 20, 0.0, 0, 2);
 }
 
 .toggle-button:selected {
     -fx-background-color: linear-gradient(#ff512f, #dd2476);
-    -fx-padding: 9px 15px 11px 15px; /* Slightly change padding for a pressed effect */
+    -fx-padding: 9px 15px 11px 15px;
 }
 
 .toggle-button:hover {
@@ -174,13 +175,13 @@
 }
 
 .progress-bar {
-    -fx-background-color: #e6f7ff; /* Light blueish background for harmony */
+    -fx-background-color: #e6f7ff;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-background-radius: 5px;
 }
 
 .progress-bar .track {
-    -fx-background-color: #d1e0e5; /* Slightly darker shade for contrast */
+    -fx-background-color: #d1e0e5;
     -fx-background-radius: 5px;
 }
 
@@ -208,36 +209,36 @@
 }
 
 .scroll-bar:vertical {
-    -fx-background-color: transparent; /* Makes the scrollbar background transparent */
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:vertical .thumb {
-    -fx-background-color: #a6dbff; /* Soft blue to match the eventDesc styling */
+    -fx-background-color: #a6dbff;
     -fx-background-insets: 2, 0, 2;
     -fx-background-radius: 5px;
 }
 
 .scroll-bar:vertical .track {
-    -fx-background-color: #f0f9ff; /* Lighter blue for the track */
+    -fx-background-color: #f0f9ff;
     -fx-background-radius: 5px;
 }
 
 .scroll-bar:vertical .increment-button,
 .scroll-bar:vertical .decrement-button {
-    -fx-background-color: #cbebff; /* Matching blue for consistency */
-    -fx-background-radius: 5px; /* Rounded corners for the buttons */
+    -fx-background-color: #cbebff;
+    -fx-background-radius: 5px;
 }
 
 .scroll-bar:vertical .increment-button:hover,
 .scroll-bar:vertical .decrement-button:hover {
-    -fx-background-color: #b0d4f1; /* Slightly darker blue for hover effect */
+    -fx-background-color: #b0d4f1;
 }
 
 .scroll-bar:vertical .increment-arrow,
 .scroll-bar:vertical .decrement-arrow {
-    -fx-background-color: #666; /* Dark grey for the arrow icons */
+    -fx-background-color: #666;
 }
 
 .text-area:focused .scroll-bar:vertical .thumb {
-    -fx-background-color: #349dc9; /* Slightly darker blue for the thumb when focused */
+    -fx-background-color: #349dc9;
 }
