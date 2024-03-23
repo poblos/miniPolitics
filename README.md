@@ -1,10 +1,7 @@
 # miniPolitics
-a prototype version of a politic manager game
+A prototype of a politic manager game. To run the game, run the Main class located in miniPolitics/src/main/java/com/infernal_crew/mini_politics directory.
 
-
-Project utilises Maven. Due to the conflict between two moshi libraries, a workaround fix requires to manually add a library.
-In Intellij IDEA this would be:
-File -> Project Structure -> Libraries -> moshi -> Add.
+Project developed with IntelliJ IDEA.
 
 ###Atributions
 <a href="https://www.flaticon.com/free-icons/vote" title="vote icons">Vote icons created by Freepik - Flaticon</a>  
