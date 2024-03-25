@@ -1,0 +1,30 @@
+{
+  "isUnique": true,
+  "isCertain": true,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 5
+      }
+    ]
+  },
+  "description": "The sun rises over the bustling docks, casting its golden hue on huge stacks of containers and busy workers. Tugboats guide massive vessels into a port. Cranes move crates to and from waiting cargo ships. Workers run along the docks, their shouts blending with the rhythmic clang of machinery. \n Suddenly, chaos erupts as an explosion rocks the harbor. Smoke billows into the air as flames engulf a massive cargo ship, causing panic everywhere. Half of the largest port in the world, Portmat, is now just a twisted labyrinth of ruins. \n Initial investigation suggests this was no accident. The Portmat Explosion was a deliberate act of terror, an act aimed directly at the Hegemon Empire of Matcheuchelles. Needless to say, repercussions might be disastrous...",
+  "options": [
+    {
+      "description": "O.M.G.",
+      "effects": [
+        {
+          "type": "modifier_invocation",
+          "name": "The Portmat Explosion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Just a regular day?"
+}
