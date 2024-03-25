@@ -1,0 +1,71 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War - Forebergian side"
+      },
+      {
+        "type": "indicator_condition",
+        "value": "60",
+        "relation": "Higher",
+        "indicator": "NarongWarBalance"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 400,
+  "description": "Initially, Forebergians struggled with cutting off Karlenese supply routes and the Federation forces managed to dislocate many air defence systems to help defend Narong. This however has now changed, as with the freshly deployed sea drones Forebergians started to systematically sink enemy cargo ships. This makes Karlenese operations on the Island unsustainable in the long term, unless they find some sort of solution.",
+  "options": [
+    {
+      "description": "I wouldn't like to be in their place! Our advisors did the right thing to suggest siding with Foreberg.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    },
+    {
+      "description": "We need those drones too, let's have a word with our friends so we could get some once the war concludes.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "All thanks to our help!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 10,
+          "indicator": "NarongWarBalance"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Karlenese supply routes disrupted"
+}
