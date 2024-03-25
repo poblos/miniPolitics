@@ -242,3 +242,7 @@
 .text-area:focused .scroll-bar:vertical .thumb {
     -fx-background-color: #349dc9;
 }
+
+.flagImage {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 10, 0, 0, 0);
+}

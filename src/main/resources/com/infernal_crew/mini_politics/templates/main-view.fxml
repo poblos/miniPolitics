@@ -13,7 +13,7 @@
             <VBox>
                 <Label styleClass="flagPane">
                 <graphic>
-                <ImageView>
+                <ImageView styleClass="flagImage">
                     <Image url="@../menu_icons/kachakonya.png" requestedHeight="150" requestedWidth="250"/>
                 </ImageView>
                 </graphic>
