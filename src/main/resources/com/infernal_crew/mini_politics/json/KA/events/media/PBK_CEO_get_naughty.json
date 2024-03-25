@@ -1,0 +1,79 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Powerful PBK CEO"
+      },
+      {
+        "type": "indicator_condition",
+        "value": "20",
+        "relation": "Lower",
+        "indicator": "PartyCohesion"
+      }
+    ]
+  },
+  "probability": 150,
+  "isUnique": true,
+  "description": "A program on PBK criticised one of your close allies in the party. It comes as a surprise, because the CEO of that TV was appointed by us. Rumours say that he is trying to overturn your rule over party and using recent resentment gathers more support for his faction. Technically, we can try to convince media committee to dismiss him, but who knows, maybe they are in his pocket as well?",
+  "options": [
+    {
+      "description": "Who do you think you are?! Let's have a talk with the committee",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Powerful PBK CEO - committee questioned"
+        }
+      ]
+    },
+    {
+      "description": "Negotiate with him personally.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Powerful PBK CEO - direct negotiations"
+        }
+      ]
+    },
+    {
+      "description": "We need to discredit him somehow so it's easier to get rid of this bloke in the future.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Powerful PBK CEO - discredit"
+        }
+      ]
+    }
+  ],
+  "title": "Betrayal of the PBK"
+}
