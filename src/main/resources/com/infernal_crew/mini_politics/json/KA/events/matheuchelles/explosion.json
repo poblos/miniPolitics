@@ -5,7 +5,7 @@
     "yes": [
       {
         "type": "round_condition",
-        "round": 5
+        "round": 150
       }
     ]
   },
