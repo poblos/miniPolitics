@@ -1,0 +1,52 @@
+{
+  "isUnique": true,
+  "description": "Our old National Stadium has served our sports fans well, but is showing its age. The Ministry of Sports has proposed to build a new stadium in its place, but it is a costly venture, and perhaps we could make better use of the allocated funds.",
+  "options": [
+    {
+      "description": "It's a matter of prestige! We have to build it.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Infrastructure",
+          "change": -500
+        }
+      ]
+    },
+    {
+      "description": "I'm not sure if now's the time for this. Maybe a small renovation should suffice.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "No way! We have more important things to spend money on.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "New National Stadium"
+}
