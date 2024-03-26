@@ -47,7 +47,7 @@
         </HBox>
     </top>
     <left>
-        <VBox>
+        <VBox minWidth="80">
         <VBox styleClass="leftBar">
             <ToggleButton onAction="#onPartyButtonClick">
                 <graphic>
@@ -99,6 +99,16 @@
                     <fx:reference source="leftBar" />
                 </toggleGroup>
             </ToggleButton>
+            <ToggleButton onAction="#onStoryButtonClick">
+                <graphic>
+                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../menu_icons/StoryIcon.png" />
+                    </ImageView>
+                </graphic>
+                <toggleGroup>
+                    <fx:reference source="leftBar" />
+                </toggleGroup>
+            </ToggleButton>
         </VBox>
         </VBox>
     </left>
@@ -118,22 +128,6 @@
             </VBox>
         </AnchorPane>
     </center>
-    <right>
-        <VBox>
-        <VBox styleClass="leftBar">
-            <ToggleButton onAction="#onStoryButtonClick">
-                <graphic>
-                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../menu_icons/StoryIcon.png" />
-                    </ImageView>
-                </graphic>
-                <toggleGroup>
-                    <ToggleGroup fx:id="rightBar" />
-                </toggleGroup>
-            </ToggleButton>
-        </VBox>
-        </VBox>
-    </right>
     <effect>
         <DropShadow />
     </effect>
