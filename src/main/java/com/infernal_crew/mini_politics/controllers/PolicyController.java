@@ -87,7 +87,7 @@ public class PolicyController extends BarController {
         policyNames.clear();
         policyNames.addAll(mainController.getGame().getPolicies().values());
         policyList.setItems(policyNames);
-        policyList.setItems(policyNames);
+
         if (displayedPolicy != null) {
             optionNames.clear();
             int i = 0;

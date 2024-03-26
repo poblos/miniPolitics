@@ -16,8 +16,9 @@ import javafx.util.Callback;
 
 public class WarController extends BarController {
     @FXML private ListView<WarEvent> listView;
+    private final ObservableList<WarEvent> events = FXCollections.observableArrayList();
     @FXML
-    ProgressBar bar;
+    private ProgressBar bar;
     @Override
     public void update(Game game) {
         double newValue = Math.floor(game.getIndicatorValue(Indicator.valueOf("NarongWarBalance")) * 100) / 10000;
@@ -29,17 +30,12 @@ public class WarController extends BarController {
         } else {
             bar.setStyle("-fx-accent: #00A2E8");
         }
-    }
-    public void initialize() {
-        //Placeholder
-        ObservableList<WarEvent> events = FXCollections.observableArrayList();
-
-        events.add(new WarEvent("Battle of Bunker Hill", "+3"));
-        events.add(new WarEvent("Siege of Yorktown", "+5"));
-        events.add(new WarEvent("Winter at Valley Forge", "-2"));
-
+        events.clear();
+        events.addAll(game.getWarEvents());
         listView.setItems(events);
 
+    }
+    public void initialize() {
         listView.setCellFactory(new Callback<>() {
             @Override
             public ListCell<WarEvent> call(ListView<WarEvent> param) {

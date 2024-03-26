@@ -1,6 +1,7 @@
 package com.infernal_crew.mini_politics.game;
 
 
+import com.infernal_crew.mini_politics.components.WarEvent;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.indicators.IndicatorCondition;
 import com.infernal_crew.mini_politics.indicators.IndicatorRelation;
@@ -18,6 +19,7 @@ import com.infernal_crew.mini_politics.event.Option;
 import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.media.*;
 import com.infernal_crew.mini_politics.story.StoryNote;
+import com.infernal_crew.mini_politics.components.WarEvent;
 
 import java.util.*;
 
@@ -42,6 +44,7 @@ public class Game {
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
     private final List<StoryNote> storyNotes;
+    private final List<WarEvent> warEvents = new ArrayList<>();
     private Party party;
     private final Budget budget;
     private final transient Random random;
@@ -312,6 +315,10 @@ public class Game {
         System.out.println("Events played: " + round);
     }
 
+    public List<WarEvent> getWarEvents() {
+        return warEvents;
+    }
+
     public boolean isEmployed(int id) {
         for (Job job : employed.keySet()) {
             if (employed.get(job).getId() == id) {
@@ -323,6 +330,9 @@ public class Game {
 
     public void updateIndicator(float change, Indicator indicator) {
         values.put(indicator, change + values.get(indicator));
+        if (indicator == Indicator.NarongWarBalance) {
+            warEvents.add(new WarEvent(currentEvent.getTitle(),change > 0 ? "+" + change : "-" + change));
+        }
     }
 
     public Event getLoseEvent(Indicator indicator) {
