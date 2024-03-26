@@ -24,51 +24,47 @@ import com.infernal_crew.mini_politics.components.WarEvent;
 import java.util.*;
 
 public class Game {
-    private final Map<Indicator, Float> values;
-    private final Map<Job, Person> employed;
+    private final Map<Indicator, Float> values = new HashMap<>();
+    private final Map<Job, Person> employed = new HashMap<>();
 
-    private final Map<String, Modifier> activeModifiers;
+    private final Map<String, Modifier> activeModifiers = new HashMap<>();;
 
-    int round;
+    int round = 0;
 
     public static final int ADVISOR_COOLDOWN = 20;
     private boolean displayNext;
     Event currentEvent;
 
     private Person currentPerson;
-    private final Map<Integer, Policy> policies;
+    private final Map<Integer, Policy> policies = new HashMap<>();
     private final List<Event> events;
-    private final Map<Integer, Person> people;
-    private final Map<Integer, Person> activePeople;
-    private final Map<Integer, Integer> cooldown;
+    private final Map<Integer, Person> people = new HashMap<>();
+    private final Map<Integer, Person> activePeople = new HashMap<>();
+    private final Map<Integer, Integer> cooldown = new HashMap<>();
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
     private final List<StoryNote> storyNotes;
     private final List<WarEvent> warEvents = new ArrayList<>();
     private Party party;
     private final Budget budget;
-    private final transient Random random;
+    private final transient Random random = new Random();
 
     public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Person> activePeople, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes) {
         this.budget = budget;
-        values = new HashMap<>();
+        this.events = events;
+        this.modifiers = modifiers;
+        this.mediaGroups = mediaGroups;
+        this.storyNotes = storyNotes;
+
         values.put(Indicator.PartyCohesion, 40F);
         values.put(Indicator.StateStability, 35F);
         values.put(Indicator.PartySupport, 44F);
         values.put(Indicator.InfrastructureCorruption, 0F);
         values.put(Indicator.NarongWarBalance, 50F);
-        this.round = 0;
-        this.random = new Random();
-        this.employed = new HashMap<>();
-        this.policies = new HashMap<>();
-        this.activeModifiers = new HashMap<>();
-        this.cooldown = new HashMap<>();
-        this.events = events;
-        this.people = new HashMap<>();
+
         for (Person p : people) {
             this.people.put(p.getId(), p);
         }
-        this.activePeople = new HashMap<>();
         for (Person p : activePeople) {
             this.activePeople.put(p.getId(), p);
             if (p.getStartingJob() != null) {
@@ -78,10 +74,6 @@ public class Game {
         for (Policy p : policies) {
             this.policies.put(p.getId(), p);
         }
-        this.modifiers = modifiers;
-        this.mediaGroups = mediaGroups;
-        this.storyNotes = storyNotes;
-
     }
 
     private int eventProbabilitySum() {
