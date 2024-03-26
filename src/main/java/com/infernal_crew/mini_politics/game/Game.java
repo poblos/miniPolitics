@@ -1,6 +1,5 @@
 package com.infernal_crew.mini_politics.game;
 
-
 import com.infernal_crew.mini_politics.components.WarEvent;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.indicators.IndicatorCondition;
@@ -19,7 +18,6 @@ import com.infernal_crew.mini_politics.event.Option;
 import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.media.*;
 import com.infernal_crew.mini_politics.story.StoryNote;
-import com.infernal_crew.mini_politics.components.WarEvent;
 
 import java.util.*;
 
@@ -27,7 +25,7 @@ public class Game {
     private final Map<Indicator, Float> values = new HashMap<>();
     private final Map<Job, Person> employed = new HashMap<>();
 
-    private final Map<String, Modifier> activeModifiers = new HashMap<>();;
+    private final Map<String, Modifier> activeModifiers = new HashMap<>();
 
     int round = 0;
 
@@ -304,7 +302,6 @@ public class Game {
                 cooldown.put(id, cooldown.get(id) - 1);
             }
         }
-        System.out.println("Events played: " + round);
     }
 
     public List<WarEvent> getWarEvents() {
