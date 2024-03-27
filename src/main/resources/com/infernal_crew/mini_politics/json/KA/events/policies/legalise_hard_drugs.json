@@ -4,12 +4,12 @@
       {
         "type": "policy_condition",
         "id": 1,
-        "option": 3
+        "option": 4
       }
     ]
   },
   "graphic": "weed",
-  "description": "Following legalisation of cannabis, we should consider legalisation of other soft drugs. Such a move could yield substantial benefits for our budget, and lead to safer consumption practices. However, opponents express concerns about the potential for increased usage rates.",
+  "description": "Following legalisation of soft drugs, some argue that we should just legalise them all. Such a move could yield even more benefits for our budget, no to mention safer consumption practices. However, opponents express concerns about the potential for increased usage rates.",
   "options": [
     {
       "trigger": {
@@ -20,7 +20,7 @@
           }
         ]
       },
-      "description": "What could possibly go wrong? Gdzie jest biały węgorz?",
+      "description": "Great idea. Let's get high!",
       "effects": [
         {
           "type": "indicator_change",
@@ -40,7 +40,7 @@
         {
           "type": "policy_change",
           "id": 1,
-          "option": 4
+          "option": 5
         }
       ]
     },
@@ -55,7 +55,7 @@
           }
         ]
       },
-      "description": "What could possibly go wrong? Gdzie jest biały węgorz?",
+      "description": "Great idea. Let's get high!",
       "effects": [
         {
           "type": "indicator_change",
@@ -75,15 +75,15 @@
         {
           "type": "policy_change",
           "id": 1,
-          "option": 4
+          "option": 5
         }
       ]
     },
     {
-      "description": "I've never heard so much b***t in one sentence. No way can we agree on that one!",
+      "description": "I'm worried that would be a step too far",
       "effects": [
       ]
     }
   ],
-  "title": "Legalisation of soft drugs"
+  "title": "Legalisation of hard drugs"
 }
