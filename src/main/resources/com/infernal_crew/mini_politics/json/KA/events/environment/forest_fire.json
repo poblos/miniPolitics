@@ -8,6 +8,10 @@
           "type": "indicator_change",
           "change": -2,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "International help with forest fire rejected"
         }
       ]
     },

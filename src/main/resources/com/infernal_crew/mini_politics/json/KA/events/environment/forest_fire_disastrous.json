@@ -1,0 +1,81 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "International help with forest fire rejected"
+      }
+    ]
+  },
+  "probability": 1000,
+  "description": "Our firefighters couldn't take control of the recent fire alone. Almost whole island has burned to ashes and people blame us because we rejected international help.",
+  "options": [
+    {
+      "description": "National pride is more important.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "International help with forest fire rejected"
+        }
+      ]
+    },
+    {
+      "description": "We won't make the same mistake again.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "International help with forest fire rejected"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Propagandist",
+            "trait": "MediaExpert"
+          }
+        ]
+      },
+      "description": "We rejected? I don't remember such thing, they just didn't want to help! Media expert, do your job!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "International help with forest fire rejected"
+        }
+      ]
+    }
+  ],
+  "title": "Forest fire disastrous"
+}
