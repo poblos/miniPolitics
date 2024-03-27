@@ -4,12 +4,12 @@
       {
         "type": "policy_condition",
         "id": 1,
-        "option": 2
+        "option": 3
       }
     ]
   },
   "graphic": "weed",
-  "description": "A civic project that legalises cannabis has been submitted to the parliament, as the support for this idea is increasing in the society. What shall we do?",
+  "description": "Following legalisation of cannabis, we should consider legalisation of other soft drugs. Such a move could yield substantial benefits for our budget, and lead to safer consumption practices. However, opponents express concerns about the potential for increased usage rates.",
   "options": [
     {
       "trigger": {
@@ -20,16 +20,16 @@
           }
         ]
       },
-      "description": "SMOKE WEED EVERYDAY",
+      "description": "What could possibly go wrong? Gdzie jest biały węgorz?",
       "effects": [
         {
           "type": "indicator_change",
-          "change": 4,
+          "change": 3,
           "indicator": "PartySupport"
         },
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -3,
           "indicator": "StateStability"
         },
         {
@@ -40,7 +40,7 @@
         {
           "type": "policy_change",
           "id": 1,
-          "option": 3
+          "option": 4
         }
       ]
     },
@@ -64,26 +64,26 @@
         },
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -3,
           "indicator": "StateStability"
-        },
-        {
-          "type": "policy_change",
-          "id": 1,
-          "option": 3
         },
         {
           "type": "budget_income",
           "category": "IncomeTax",
           "change": 200
+        },
+        {
+          "type": "policy_change",
+          "id": 1,
+          "option": 4
         }
       ]
     },
     {
-      "description": "What a nonsense!",
+      "description": "I've never heard so much b***t in one sentence. No way can we agree on that one!",
       "effects": [
       ]
     }
   ],
-  "title": "Legalisation of cannabis"
+  "title": "Legalisation of soft drugs"
 }
