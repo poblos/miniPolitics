@@ -3,17 +3,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.TextFlow?>
-
-<AnchorPane prefWidth="200.0" xmlns="http://javafx.com/javafx/16"
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<AnchorPane
+            stylesheets="@../styles/party_view.css"
+            xmlns="http://javafx.com/javafx/16"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.infernal_crew.mini_politics.controllers.PartyController"
-            stylesheets="@../styles/party_view.css">
-    <VBox alignment="TOP_RIGHT" prefWidth="330.0">
-        <TextField alignment="CENTER" styleClass="titleBar" editable="false" style="-fx-font-size: 28;" text="PARTY"/>
-        <TextFlow fx:id="textBox" styleClass="viewContent"/>
+            fx:controller="com.infernal_crew.mini_politics.controllers.PartyController">
+    <VBox alignment="TOP_RIGHT" prefWidth="400.0">
+        <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" styleClass="titleBar" text="PARTY    " />
+        <HBox>
+            <TextFlow fx:id="textBox" styleClass="viewContent" >
+                <padding>
+                    <Insets left="10" right="20" top="5" bottom="5"/>
+                </padding>
+            </TextFlow>
+            <padding>
+                <Insets right="80"/>
+            </padding>
+        </HBox>
+        <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" styleClass="bottomBar" />
     </VBox>
     <effect>
-        <DropShadow/>
+        <DropShadow />
     </effect>
 </AnchorPane>

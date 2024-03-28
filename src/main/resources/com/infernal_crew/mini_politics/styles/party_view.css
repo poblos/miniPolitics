@@ -1,4 +1,12 @@
 .titleBar {
+    -fx-shape: "M 100 250 L 700 250 L 100 250 L 100 350 L 600 350 L 700 250 ";
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
+    -fx-text-fill: #e1edec;
+    -fx-font: bold 15pt "Droid Serif";
+}
+
+.bottomBar {
+    -fx-shape: "M 100 250 L 600 250 L 100 250 L 100 350 L 700 350 L 600 250 ";
     -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
     -fx-text-fill: #e1edec;
     -fx-font: bold 15pt "Droid Serif";
