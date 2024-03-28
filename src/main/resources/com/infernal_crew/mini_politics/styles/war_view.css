@@ -62,13 +62,6 @@
     -fx-spacing: 5;
 }
 
-.drop-shadow {
-    -fx-radius: 5.0;
-    -fx-offset-x: 3.0;
-    -fx-offset-y: 3.0;
-    -fx-color: rgba(0, 0, 0, 0.5);
-}
-
 .list-cell {
     -fx-background-color: transparent;
     -fx-padding: 5px;

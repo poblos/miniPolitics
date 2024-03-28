@@ -143,10 +143,6 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),2,0,0,1);
 }
 
-.leftBarField {
-    -fx-background-color: linear-gradient(from 20% 20% to 80% 80%, #bacfd9, #b2d9eb);
-}
-
 .flagPane {
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),6,0,0,1);
     -fx-border-color:

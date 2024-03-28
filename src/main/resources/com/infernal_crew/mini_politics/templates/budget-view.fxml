@@ -5,10 +5,10 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="458.0" prefWidth="354.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
+<AnchorPane prefHeight="458.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
     <VBox alignment="TOP_RIGHT" prefHeight="458.0">
         <TextField alignment="CENTER" editable="false" prefHeight="55.0" style="-fx-font-size: 28;" text="BUDGET" />
-        <HBox prefHeight="50.0" prefWidth="354.0">
+        <HBox prefHeight="50.0" prefWidth="354.0" style="-fx-background-color: #EEEEEE;" >
             <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="49.0" prefWidth="313.0" text="Income">
                 <toggleGroup>
                     <ToggleGroup fx:id="incomeOrExpenses" />

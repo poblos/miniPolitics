@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="200.0" prefWidth="256.0" alignment="TOP_CENTER" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<VBox prefHeight="200.0" prefWidth="256.0" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.infernal_crew.mini_politics.controllers.MediaController">
     <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="256.0" style="-fx-font-size: 28;"
                text="MEDIA"/>
-    <TilePane fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="200.0" prefWidth="256.0"/>
-    <TextFlow fx:id="textBox" layoutY="1.0" prefHeight="200.0" prefWidth="256.0"/>
+    <TilePane fx:id="mediaBox" style="-fx-background-color: #EEEEEE;" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="200.0" prefWidth="256.0"/>
+    <TextFlow  fx:id="textBox" style="-fx-background-color: #EEEEEE;" layoutY="1.0" prefHeight="200.0" prefWidth="256.0"/>
     <effect>
         <DropShadow/>
     </effect>
