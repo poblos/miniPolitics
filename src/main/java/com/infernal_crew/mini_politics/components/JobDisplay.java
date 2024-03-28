@@ -23,9 +23,9 @@ public class JobDisplay extends VBox {
     public JobDisplay(Job job, MainController controller) {
         this.job = job;
         this.text = new Label();
-        this.setAlignment(Pos.CENTER);
+        this.setAlignment(Pos.TOP_CENTER);
         this.button = new Button();
-        button.getStyleClass().add("indicatorButton");
+        button.getStyleClass().add("pictureFrameButton");
         button.setOnAction(actionEvent -> controller.showPeopleList(job));
         this.text.setText(this.job + ": None");
         try {
@@ -54,7 +54,10 @@ public class JobDisplay extends VBox {
             try {
                 image = new Image(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/menu_icons/people/" +
                         p.getName() + ".png")).toExternalForm());
-                this.button.setGraphic(new ImageView(image));
+                ImageView view = new ImageView(image);
+                this.button.setGraphic(view);
+                view.setFitHeight(150);
+                view.setFitWidth(150);
             } catch (Exception e) {
                 System.out.println("problem with loading a person's image");
             }

@@ -94,8 +94,20 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
 }
 
-.indicatorButton {
-    -fx-background-radius: 10em
+.pictureFrameButton {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-color: linear-gradient(to right, #c0c0c0, #8a8a8a, #c0c0c0);
+    -fx-border-width: 6px;
+    -fx-padding: 0px;
+}
+
+.pictureFrameButton:hover {
+    -fx-border-color: linear-gradient(to right, #ff8800, #ffbb33);
+}
+
+.pictureFrameButton:pressed {
+    -fx-border-color: linear-gradient(to right, #ff5500, #ff7777);
 }
 
 #indicatorBox {
