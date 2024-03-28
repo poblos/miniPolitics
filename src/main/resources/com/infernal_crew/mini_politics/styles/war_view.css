@@ -2,14 +2,6 @@
     -fx-base: linear-gradient(lightblue, antiquewhite);
 }
 
-.anchor-pane {
-    -fx-background-color: linear-gradient(to bottom, #ADCBE3, #E2E2E2),
-                          radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000033);
-    -fx-padding: 10;
-    -fx-border-color: #CDD6D5; /* Softer border color */
-    -fx-border-width: 2;
-    -fx-border-radius: 5;
-}
 .text-field {
     -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
     -fx-font-size: 18px;
