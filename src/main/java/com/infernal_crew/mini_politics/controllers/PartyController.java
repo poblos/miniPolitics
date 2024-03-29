@@ -18,16 +18,13 @@ public class PartyController extends BarController {
         allVBox.setScaleX(0);
         allVBox.setTranslateX(-allVBox.getLayoutBounds().getWidth());
 
-        // Create scale transition
         ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), allVBox);
         scaleTransition.setToX(1);
 
-        // Create translation transition
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5), allVBox);
         translateTransition.setFromX(-200);
         translateTransition.setToX(0);
 
-        // Play both transitions in sequence
         scaleTransition.play();
         translateTransition.play();
 

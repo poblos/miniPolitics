@@ -41,7 +41,7 @@
             </StackPane>
             <HBox fx:id="jobBox" alignment="BASELINE_RIGHT" spacing="20.0">
                 <padding>
-                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    <Insets bottom="20.0" left="20.0" right="20.0" />
                 </padding>
             </HBox>
         </HBox>
