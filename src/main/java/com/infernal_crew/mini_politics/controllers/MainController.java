@@ -1,5 +1,6 @@
 package com.infernal_crew.mini_politics.controllers;
 
+import com.infernal_crew.mini_politics.Main;
 import com.infernal_crew.mini_politics.components.EventDisplay;
 import com.infernal_crew.mini_politics.components.IndicatorDisplay;
 import com.infernal_crew.mini_politics.components.JobChoiceDisplay;
@@ -18,10 +19,15 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class MainController {
+    MediaPlayer mediaPlayer;
     @FXML
     private VBox peopleBox;
     @FXML
@@ -63,6 +69,18 @@ public class MainController {
         DraggableMaker maker = new DraggableMaker();
         maker.makeDraggable(eventBox);
         eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
+
+        playMusic();
+    }
+
+    private void playMusic() {
+        String musicFile = "/com/infernal_crew/mini_politics/music/GR-Hymn_of_The_Pilgrims.mp3";
+
+        String path = Objects.requireNonNull(Main.class.getResource(musicFile)).toString();
+        Media sound = new Media(path);
+
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setAutoPlay(true);
     }
 
     public void handleEvent(int click) {

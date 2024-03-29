@@ -1,6 +1,7 @@
 module com.infernal_crew.mini_politics {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
     requires java.desktop;
     requires moshi;
     opens com.infernal_crew.mini_politics.event to moshi;
