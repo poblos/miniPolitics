@@ -36,7 +36,7 @@
           }
         ]
       },
-      "description": "Betrayal in Forebergian camp? We need to pass any informations we have to Forebergian authorities.",
+      "description": "Betrayal in Forebergian camp? We need to pass any information we have to Forebergian authorities.",
       "effects": [
         {
           "type": "indicator_change",
