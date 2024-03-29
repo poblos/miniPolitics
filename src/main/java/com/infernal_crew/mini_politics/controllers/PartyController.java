@@ -1,14 +1,37 @@
 package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.game.Game;
+import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.util.Duration;
 
 public class PartyController extends BarController {
     @FXML
     private TextFlow textBox;
+    @FXML
+    private VBox allVBox;
+    public void initialize() {
+        allVBox.setScaleX(0);
+        allVBox.setTranslateX(-allVBox.getLayoutBounds().getWidth());
 
+        // Create scale transition
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), allVBox);
+        scaleTransition.setToX(1);
+
+        // Create translation transition
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5), allVBox);
+        translateTransition.setFromX(-200);
+        translateTransition.setToX(0);
+
+        // Play both transitions in sequence
+        scaleTransition.play();
+        translateTransition.play();
+
+    }
     public void update(Game game) {
         textBox.getChildren().clear();
 
