@@ -1,0 +1,83 @@
+{
+  "graphic": "prosperity",
+  "trigger": {
+    "yes": [
+      {
+        "type": "trait_condition",
+        "job": "Strategist",
+        "trait": "SkillfulEconomist"
+      }
+    ],
+    "no": [
+
+    ]
+  },
+  "description": "An unemployment rate has hit all-time low. It's not necessarily good for economy, but would surely help us in the polls!",
+  "options": [
+    {
+      "description": "It's our credit!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Economic Growth Propaganda"
+        }
+      ],
+      "trigger": {
+        "yes": [
+
+        ],
+        "no": [
+          {
+            "type": "modifier_condition",
+            "name": "Economic Growth Propaganda"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Try to play down the expectations. We don't know whether this trend will last.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Economic Growth Propaganda"
+        }
+      ]
+    },
+    {
+      "description": "Let the propaganda continue.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ],
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "Economic Growth Propaganda"
+          }
+        ],
+        "no": [
+        ]
+      }
+    }
+  ],
+  "title": "Record-low unemployment"
+}

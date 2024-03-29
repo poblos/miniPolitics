@@ -1,0 +1,53 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Powerful PBK CEO - committee questioned"
+      }
+    ]
+  },
+  "probability": 350,
+  "isUnique": true,
+  "description": "We've had a talk with the media committee about the problematic CEO, and although they were reluctant to dismiss his, it might be a matter of who gives them more.",
+  "options": [
+    {
+      "description": "What?! We will find another way.",
+      "effects": [
+        {
+          "type": "modifier_removal",
+          "name": "Powerful PBK CEO - committee questioned"
+        }
+      ]
+    },
+    {
+      "description": "Give them what they want and end that matter swiftly.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Powerful PBK CEO - committee questioned"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Powerful PBK CEO"
+        }
+      ]
+    }
+  ],
+  "title": "Media committee questioned"
+}

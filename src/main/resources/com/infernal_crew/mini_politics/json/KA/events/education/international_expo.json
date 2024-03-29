@@ -1,0 +1,102 @@
+{
+  "description": "Fanatia, the eternal island, is often considered the world's capital of culture. Every couple of years, they organise international exposition, where each country can showcase its cultural heritage and technical advancements. However, the competition commission responsible for selecting the winning concept for our country's exhibition awarded it to a project that emphasizes the latter part, which has clearly upset the conservative segment of public opinion.",
+  "options": [    {
+    "trigger": {
+      "yes": [
+        {
+          "type": "ideology_condition",
+          "ideology": "Conservative"
+        }
+      ]
+    },
+    "description": "Commission is independent and we shouldn't interfere in their work.",
+    "effects": [
+      {
+        "type": "indicator_change",
+        "change": -2,
+        "indicator": "PartySupport"
+      },
+      {
+        "type": "indicator_change",
+        "change": 1,
+        "indicator": "StateStability"
+      }
+    ]
+  },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ]
+      },
+      "description": "Why should we care? Those are not our voters.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Let's make some minor adjustments so everyone is happy.",
+      "effects": [
+      ]
+    },
+    {
+      "trigger": {
+        "no": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ]
+      },
+      "description": "They are right! We can't forget about our traditions.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "ideology_condition",
+            "ideology": "Conservative"
+          }
+        ]
+      },
+      "description": "They are right! We can't forget about our traditions.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Fanatian International Expo"
+}

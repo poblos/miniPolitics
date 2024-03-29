@@ -1,0 +1,55 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      },
+      {
+        "type": "indicator_condition",
+        "value": "70",
+        "relation": "Higher",
+        "indicator": "NarongWarBalance"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 400,
+  "description": "Newest news from Narong Island are somewhat surprising. Out of the blue, Karlenese started counteroffensive and their initial attack was successful, breaking through Forebergian positions in multiple places. Our intelligence suggests there might have been a betrayal on Forebergian side.",
+  "options": [
+    {
+      "description": "Surprising indeed.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -15,
+          "indicator": "NarongWarBalance"
+        }
+      ]
+    },
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "modifier_condition",
+            "name": "The Narong War - Forebergian side"
+          }
+        ]
+      },
+      "description": "Betrayal in Forebergian camp? We need to pass any informations we have to Forebergian authorities.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -10,
+          "indicator": "NarongWarBalance"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Karlenese counteroffensive"
+}

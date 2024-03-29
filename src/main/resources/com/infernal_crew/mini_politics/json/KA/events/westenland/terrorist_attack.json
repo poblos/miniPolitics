@@ -1,0 +1,46 @@
+{
+  "isUnique": true,
+  "description": "Our intelligence agencies managed to acquire information about planned terrorist attack on Westenland's capital. The attack is planned by a group of radical separatists from their overseas colonies and thus could unleash hell, if is successful. However, Westenland is our historic enemy and helping them is not really in our DNA.",
+  "options": [
+    {
+      "trigger": {
+        "yes": [
+          {
+            "type": "trait_condition",
+            "job": "Propagandist",
+            "trait": "MediaExpert"
+          }
+        ]
+      },
+      "description": "We have to warn them! Also, let's pass that information to some journalists...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "Let them cook.",
+      "effects": [
+      ]
+    },
+    {
+      "description": "We have to warn them!.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Terrorist attack on Westenland"
+}
