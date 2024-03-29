@@ -4,7 +4,8 @@ import com.infernal_crew.mini_politics.game.Game;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
@@ -13,20 +14,25 @@ public class PartyController extends BarController {
     @FXML
     private TextFlow textBox;
     @FXML
-    private VBox allVBox;
+    private HBox allHBox;
+    @FXML
+    private TextField bottomBar;
     public void initialize() {
-        allVBox.setScaleX(0);
-        allVBox.setTranslateX(-allVBox.getLayoutBounds().getWidth());
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(1), allHBox);
+        scaleTransition.setFromY(0);
+        scaleTransition.setToY(1);
 
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), allVBox);
-        scaleTransition.setToX(1);
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1), allHBox);
+        translateTransition.setFromY(-130);
+        translateTransition.setToY(0);
 
-        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5), allVBox);
-        translateTransition.setFromX(-200);
-        translateTransition.setToX(0);
+        TranslateTransition secondTranslate = new TranslateTransition(Duration.seconds(1), bottomBar);
+        secondTranslate.setFromY(-250);
+        secondTranslate.setToY(0);
 
         scaleTransition.play();
         translateTransition.play();
+        secondTranslate.play();
 
     }
     public void update(Game game) {

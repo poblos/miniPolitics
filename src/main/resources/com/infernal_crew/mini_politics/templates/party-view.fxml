@@ -10,9 +10,9 @@
             xmlns="http://javafx.com/javafx/16"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.infernal_crew.mini_politics.controllers.PartyController">
-    <VBox fx:id="allVBox" alignment="TOP_RIGHT" prefWidth="400.0">
+    <VBox alignment="TOP_RIGHT" prefWidth="400.0">
         <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" styleClass="titleBar" text="PARTY    " />
-        <HBox alignment="CENTER">
+        <HBox fx:id="allHBox" alignment="CENTER">
             <TextFlow fx:id="textBox" styleClass="viewContent" >
                 <padding>
                     <Insets left="10" right="20" top="5" bottom="5"/>
@@ -22,7 +22,7 @@
                 <Insets right="70"/>
             </padding>
         </HBox>
-        <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" styleClass="bottomBar" />
+        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" style="-fx-font-size: 28;" styleClass="bottomBar" />
     </VBox>
     <effect>
         <DropShadow />
