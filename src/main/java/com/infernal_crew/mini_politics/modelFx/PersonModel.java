@@ -8,13 +8,13 @@ import javafx.scene.image.ImageView;
 import java.util.Objects;
 
 public class PersonModel {
-    private ImageView photo;
+    private final ImageView photo;
     private final SimpleStringProperty name;
     private final SimpleIntegerProperty id;
 
     public PersonModel(String name, int id) {
         Image image = new Image(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/menu_icons/people/" +
-                name + ".png")).toExternalForm(), 40, 40,false,false);
+                name + ".jpg")).toExternalForm(), 40, 40,false,false);
         this.photo = new ImageView(image);
         this.name = new SimpleStringProperty(name);
         this.id = new SimpleIntegerProperty(id);

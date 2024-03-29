@@ -5,6 +5,7 @@ import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.jobs.Job;
 import com.infernal_crew.mini_politics.jobs.Person;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
@@ -28,12 +29,8 @@ public class JobDisplay extends VBox {
         button.getStyleClass().add("pictureFrameButton");
         button.setOnAction(actionEvent -> controller.showPeopleList(job));
         this.text.setText(this.job + ": None");
-        try {
-            image = new Image(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/menu_icons/people/ModelNotFound.png")).toExternalForm());
-            button.setGraphic(new ImageView(image));
-        } catch (Exception e) {
-            System.out.println("problem");
-        }
+        loadImage("/com/infernal_crew/mini_politics/menu_icons/people/ModelNotFound.jpg");
+
         this.getChildren().add(button);
         this.getChildren().add(text);
         this.setEffect(new DropShadow());
@@ -47,20 +44,23 @@ public class JobDisplay extends VBox {
         Person p = game.getEmployed(this.job);
         if (p == null) {
             this.text.setText(this.job + ": None");
-            image = new Image(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/menu_icons/people/ModelNotFound.png")).toExternalForm());
-            this.button.setGraphic(new ImageView(image));
+            loadImage("/com/infernal_crew/mini_politics/menu_icons/people/ModelNotFound.jpg");
         } else {
             this.text.setText(this.job + ": " + p.getName());
-            try {
-                image = new Image(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/menu_icons/people/" +
-                        p.getName() + ".png")).toExternalForm());
-                ImageView view = new ImageView(image);
-                this.button.setGraphic(view);
-                view.setFitHeight(150);
-                view.setFitWidth(150);
-            } catch (Exception e) {
-                System.out.println("problem with loading a person's image");
-            }
+            loadImage("/com/infernal_crew/mini_politics/menu_icons/people/" + p.getName() + ".jpg");
+        }
+    }
+
+    private void loadImage(String path) {
+        try {
+            image = new Image(Objects.requireNonNull(getClass().getResource(path)).toExternalForm());
+            ImageView view = new ImageView(image);
+            view.setFitHeight(128);
+            view.setFitWidth(128);
+            view.setSmooth(false);
+            this.button.setGraphic(view);
+        } catch (Exception e) {
+            System.out.println("problem with loading a person's image");
         }
     }
 
