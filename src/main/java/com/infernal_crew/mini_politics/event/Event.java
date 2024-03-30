@@ -109,7 +109,7 @@ public class Event {
             return true;
         }
         for (Condition condition : trigger.getYes()) {
-            if (condition.met(game)) {
+            if (!condition.met(game)) {
                 return false;
             }
         }
