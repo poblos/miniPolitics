@@ -65,7 +65,7 @@ public class Event {
             for(ProbabilityChanger changer : probabilityChanges) {
                 boolean breaker = true;
                 for(Condition condition : changer.conditions()) {
-                    if (!game.meetsCondition(condition)) {
+                    if (condition.met(game)) {
                         breaker = false;
                         break;
                     }
@@ -109,12 +109,12 @@ public class Event {
             return true;
         }
         for (Condition condition : trigger.getYes()) {
-            if (!game.meetsCondition(condition)) {
+            if (condition.met(game)) {
                 return false;
             }
         }
         for (Condition condition : trigger.getNo()) {
-            if (game.meetsCondition(condition)) {
+            if (condition.met(game)) {
                 return false;
             }
         }

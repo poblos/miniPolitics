@@ -227,58 +227,19 @@ public class Game {
             return true;
         }
         for (Condition condition : option.getTrigger().getYes()) {
-            if (!meetsCondition(condition)) {
+            if (condition.met(this)) {
                 return false;
             }
         }
         for (Condition condition : option.getTrigger().getNo()) {
-            if (meetsCondition(condition)) {
+            if (condition.met(this)) {
                 return false;
             }
         }
         return true;
     }
 
-    public boolean meetsCondition(Condition condition) {
-        if (condition.getClass() == ModifierCondition.class) {
-            return activeModifiers.containsKey(((ModifierCondition) condition).getName());
-        } else if (condition.getClass() == AdvisorCondition.class) {
-            return employed.containsKey(((AdvisorCondition) condition).getJob());
-        } else if (condition.getClass() == SomeAdvisorCondition.class) {
-            return !employed.isEmpty();
-        } else if (condition.getClass() == MediaCondition.class) {
-            return hasAffiliated(((MediaCondition) condition).getAffiliation());
-        } else if (condition.getClass() == MediaIdCondition.class) {
-            for (MediaGroup group : mediaGroups) {
-                if (group.getId() == ((MediaIdCondition) condition).getId()) {
-                    return group.getAffiliation() == ((MediaIdCondition) condition).getAffiliation();
-                }
-            }
-            return hasAffiliated(((MediaIdCondition) condition).getAffiliation());
-        } else if (condition.getClass() == AdvisorSkillCondition.class) {
-            Job job = ((AdvisorSkillCondition) condition).job();
-            Trait trait = ((AdvisorSkillCondition) condition).trait();
-            return employed.containsKey(job) && employed.get(job).getTraits().contains(trait);
-        } else if (condition.getClass() == IndicatorCondition.class) {
-            Indicator indicator = ((IndicatorCondition) condition).getIndicator();
-            IndicatorRelation relation = ((IndicatorCondition) condition).getRelation();
-            int value = ((IndicatorCondition) condition).getValue();
-            if (relation == IndicatorRelation.Higher) {
-                return this.getIndicatorValue(indicator) > value;
-            } else {
-                return this.getIndicatorValue(indicator) < value;
-            }
-        } else if (condition.getClass() == IdeologyCondition.class) {
-            return party.ideologies().contains(((IdeologyCondition) condition).getIdeology());
-        } else if (condition.getClass() == PolicyCondition.class) {
-            return policies.get(((PolicyCondition) condition).id()).getCurrentOption() == ((PolicyCondition) condition).option();
-        } else if (condition.getClass() == RoundCondition.class) {
-            return round >= ((RoundCondition) condition).round();
-        }
-        return false;
-    }
-
-    private boolean hasAffiliated(Affiliation affiliation) {
+    public boolean hasAffiliated(Affiliation affiliation) {
         for (MediaGroup mg : mediaGroups) {
             if (mg.getAffiliation() == affiliation) {
                 return true;
@@ -382,6 +343,10 @@ public class Game {
         return employed.get(job);
     }
 
+    public Map<Job, Person> getEmployed() {
+        return employed;
+    }
+
     public void setParty(Party party) {
         this.party = party;
     }
@@ -396,5 +361,9 @@ public class Game {
 
     public List<StoryNote> getStoryNotes() {
         return storyNotes;
+    }
+
+    public Map<String, Modifier> getActiveModifiers() {
+        return activeModifiers;
     }
 }
