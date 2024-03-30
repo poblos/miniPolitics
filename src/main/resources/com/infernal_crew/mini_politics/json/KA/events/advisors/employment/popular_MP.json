@@ -1,6 +1,14 @@
 {
+  "trigger": {
+    "no": [
+      {
+        "type": "person_condition",
+        "id": 2
+      }
+    ]
+  },
   "probability": 80,
-  "description": "Our party's young MP has started to become quite popular recently. It might be beneficial to promote him in our party's structure.",
+  "description": "Our party's young MP has started to become quite popular recently. It might be beneficial to promote him in our party's structure. Due to his local-government background, the best choice might be to offer him a spot of a strategist, but we can consider other occupations as well.",
   "options": [
     {
       "description": "Make him one of our faces!",
@@ -11,7 +19,8 @@
           "indicator": "PartySupport"
         },
         {
-          "type": "random_advisor_employment"
+          "type": "advisor_employment",
+          "id": 2
         }
       ]
     },
@@ -31,7 +40,7 @@
       ]
     },
     {
-      "description": "That's so dangerous man! Calm him down a bit.",
+      "description": "That's dangerous man! Calm him down a bit.",
       "effects": [
       ]
     }

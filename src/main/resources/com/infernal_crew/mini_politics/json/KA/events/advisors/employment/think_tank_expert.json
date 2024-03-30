@@ -1,0 +1,39 @@
+{
+  "trigger": {
+    "no": [
+      {
+        "type": "person_condition",
+        "id": 11
+      }
+    ]
+  },
+  "description": "With upcoming elections on the horizon, we should consider appointing a new propagandist. One of the strongest candidates for that spot is an expert from our think tank who is renowned for his deep understanding of political dynamics, his takes on campaign strategies often being reflected later in the polls.",
+  "options": [
+    {
+      "description": "Bring him in immediately.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_position_employment",
+          "id": 11,
+          "position": "Propagandist"
+        }
+      ]
+    },
+    {
+      "description": "Our current strategic team is sufficient.",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "Hiring a think tank expert"
+}

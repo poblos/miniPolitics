@@ -68,11 +68,6 @@
           "type": "indicator_change",
           "change": -1,
           "indicator": "PartySupport"
-        },
-        {
-          "type": "indicator_change",
-          "change": 0,
-          "indicator": "StateStability"
         }
       ]
     }

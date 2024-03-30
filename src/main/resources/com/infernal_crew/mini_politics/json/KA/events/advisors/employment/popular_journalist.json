@@ -6,7 +6,12 @@
         "affiliation": "Government"
       }
     ],
-    "no": []
+    "no": [
+      {
+        "type": "person_condition",
+        "id": 12
+      }
+    ]
   },
   "probability": 30,
   "description": "One of our affiliated media's brightest stars is willing to continue his career in big politics as his current position isn't satisfying enough for him. We may consider appointing him as our chief propagandist.",
@@ -35,8 +40,9 @@
           "indicator": "PartyCohesion"
         },
         {
-          "type": "advisor_employment",
-          "id": 12
+          "type": "advisor_position_employment",
+          "id": 12,
+          "position": "Propagandist"
         }
       ]
 
