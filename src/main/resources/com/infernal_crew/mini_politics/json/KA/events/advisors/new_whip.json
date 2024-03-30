@@ -1,0 +1,71 @@
+{
+  "probability": 600,
+  "trigger": {
+    "no": [
+      {
+        "type": "trait_condition",
+        "job": "Whip",
+        "trait": "OldFart"
+      },
+      {
+        "type": "person_condition",
+        "id": 21
+      },
+      {
+        "type": "person_condition",
+        "id": 22
+      }
+    ],
+    "yes": [
+    ]
+  },
+  "description": "Following the long-awaited departure of Mr Oldwood, we need to decide who would take on a position of a whip in our party. Two main candidates are eligible for that office. A very experienced and loyal Mr Ironwood with strong connections inside our party could help us reconcile with the old faction, while younger mr Hill could appeal to the progressive wing and his influence may even steer some of the opposition's MPs towards our camp.",
+  "options": [
+    {
+      "description": "Reconciliation with the party core is a priority. Appoint Mr Ironwood.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_position_employment",
+          "id": 21,
+          "position": "Whip"
+        }
+      ]
+    },
+    {
+      "description": "We have to look to the future. Mr Hill is the right choice.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_position_employment",
+          "id": 22,
+          "position": "Whip"
+        }
+      ]
+    },
+    {
+      "description": "Neither option is satisfying. We can live without a whip for the time being.",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "A new whip"
+}
