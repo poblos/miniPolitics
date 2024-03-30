@@ -133,14 +133,6 @@ public class Game {
         return displayNext;
     }
 
-    public void takeOverMedia(Effect effect) {
-        for (MediaGroup group : mediaGroups) {
-            if (group.getId() == ((MediaTakeover) effect).getId()) {
-                group.setAffiliation(((MediaTakeover) effect).getAffiliation());
-            }
-        }
-    }
-
     public float includeBonus(float change, Indicator indicator) {
         if (indicator == Indicator.PartySupport) {
             float bonus = 1;
@@ -220,23 +212,6 @@ public class Game {
                 activeModifiers.remove(name);
             }
         }
-    }
-
-    public boolean meetsConditions(Option option) {
-        if (option.getTrigger() == null) {
-            return true;
-        }
-        for (Condition condition : option.getTrigger().getYes()) {
-            if (condition.met(this)) {
-                return false;
-            }
-        }
-        for (Condition condition : option.getTrigger().getNo()) {
-            if (condition.met(this)) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public boolean hasAffiliated(Affiliation affiliation) {

@@ -18,7 +18,11 @@ public class MediaTakeover implements Effect {
 
     @Override
     public boolean handle(Game game) {
-        game.takeOverMedia(this);
+        for (MediaGroup group : game.getMediaGroups()) {
+            if (group.getId() == id) {
+                group.setAffiliation(affiliation);
+            }
+        }
         return true;
     }
 }

@@ -65,7 +65,7 @@ public class Event {
             for(ProbabilityChanger changer : probabilityChanges) {
                 boolean breaker = true;
                 for(Condition condition : changer.conditions()) {
-                    if (condition.met(game)) {
+                    if (!condition.met(game)) {
                         breaker = false;
                         break;
                     }
@@ -97,7 +97,7 @@ public class Event {
     public Event adjust(Game game) {
         ArrayList<Option> newOptions = new ArrayList<>();
         for (Option option : options) {
-            if (game.meetsConditions(option)) {
+            if (option.getTrigger() == null || option.getTrigger().isMet(game)) {
                 newOptions.add(option);
             }
         }
@@ -105,20 +105,7 @@ public class Event {
     }
 
     public boolean isEligible(Game game) {
-        if (trigger == null) {
-            return true;
-        }
-        for (Condition condition : trigger.getYes()) {
-            if (!condition.met(game)) {
-                return false;
-            }
-        }
-        for (Condition condition : trigger.getNo()) {
-            if (condition.met(game)) {
-                return false;
-            }
-        }
-        return true;
+        return trigger == null || trigger.isMet(game);
     }
 
     @Override
