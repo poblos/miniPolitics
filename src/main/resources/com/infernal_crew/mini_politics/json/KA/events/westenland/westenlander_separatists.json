@@ -1,0 +1,40 @@
+{
+  "isUnique": true,
+  "description": "Our intelligence has established contact with groups of separatists from Westenlander Hazelbor. Of course, it's in our interest to weaken Westenland, but helping those individuals could be interpreted as interference in internal matters and may provoke Westenlander retaliation.",
+  "options": [
+    {
+      "description": "We don't need more problems!",
+      "effects": [
+      ]
+    },
+    {
+      "description": "Provide them with some funding.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Hazelbor - financial aid"
+        }
+      ]
+    },
+    {
+      "description": "I think those guys should try a coup... What about those guns that just went missing from our stockpiles?",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Hazelbor - military aid"
+        }
+      ]
+    }
+  ],
+  "title": "Hazelbor separatists"
+}

@@ -1,0 +1,37 @@
+{
+  "probability": 25,
+  "description": "There's a proposal to ban the sale of energy drinks to individuals under the age of 18. Advocates argue that such drinks have detrimental effects on the developing bodies and minds of young people, such as increased risk of heart problems. However, energy drinks companies are making huge profits and may be unwilling to endorse our future electoral campaigns if we pass such a bill.",
+  "options": [
+    {
+      "description": "The well-being of our youth than profit of some greedy capitalists.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "But what about personal freedom? Kids should learn to make responsible choices.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Banning energy drinks for teenagers"
+}

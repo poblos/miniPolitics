@@ -1,0 +1,51 @@
+{
+  "description": "Parents and teachers have voiced concerns about the excessive amount of homework given to elementary school children. They argue that it's placing undue stress on young students, scraping them of important free time and prevents them from taking up other interests.",
+  "options": [
+    {
+      "description": "Our education system has been fine for years. Kids need discipline, not coddling.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "If they can't handle a bit of homework, how will they succeed in life? Give them more so they don't have time to complain.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Good point. Let's limit amount of homework.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Right to free time"
+}

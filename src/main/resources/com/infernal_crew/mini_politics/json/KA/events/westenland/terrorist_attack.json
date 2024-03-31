@@ -32,7 +32,7 @@
       ]
     },
     {
-      "description": "We have to warn them!.",
+      "description": "We have to warn them!",
       "effects": [
         {
           "type": "indicator_change",
