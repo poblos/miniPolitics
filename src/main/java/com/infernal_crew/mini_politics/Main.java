@@ -18,7 +18,7 @@ public class Main extends Application {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styles/start-view.css")).toExternalForm());
         stage.setTitle("miniPolitics");
         stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setFullScreen(true);
         stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/com/infernal_crew/mini_politics/menu_icons/planet.png"))));
         stage.show();
