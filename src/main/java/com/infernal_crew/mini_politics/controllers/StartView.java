@@ -29,12 +29,15 @@ import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.story.StoryNote;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -48,7 +51,28 @@ public class StartView {
     private Button kaButton, grButton;
 
     @FXML
+    private VBox leftFilmRoll;
+
+    @FXML
+    private VBox rightFilmRoll;
+
+    @FXML
     private MainController mainController;
+
+    private void startFilmRoll(VBox roll, int from, int to) {
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(2), roll);
+        transition.setFromY(from);
+        transition.setToY(to);
+        transition.setAutoReverse(true);
+        transition.setCycleCount(TranslateTransition.INDEFINITE);
+        transition.setByY(-100);
+        transition.play();
+    }
+
+    public void initialize() {
+        startFilmRoll(leftFilmRoll, -100, 0);
+        startFilmRoll(rightFilmRoll, 0, -100);
+    }
 
     private Game constructGame(String nationTag) throws URISyntaxException, IOException {
         Moshi moshi = new Moshi.Builder()
