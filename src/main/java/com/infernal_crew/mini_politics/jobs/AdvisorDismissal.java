@@ -20,7 +20,7 @@ public class AdvisorDismissal implements Effect {
     @Override
     public boolean handle(Game game) {
         game.getCooldown().put(game.getAllEmployed().get(job).getId(), ADVISOR_COOLDOWN);
-        if (game.getAllEmployed().get(job).hasTrait(Trait.InfluentialInTheParty)) {
+        if (game.getAllEmployed().get(job).hasTrait("InfluentialInTheParty")) {
             game.updateIndicator(- 20, Indicator.PartyCohesion);
         }
         game.getAllEmployed().remove(job);

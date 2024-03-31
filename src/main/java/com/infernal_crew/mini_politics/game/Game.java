@@ -136,7 +136,7 @@ public class Game {
     public float includeBonus(float change, Indicator indicator) {
         if (indicator == Indicator.PartySupport) {
             float bonus = 1;
-            if (employed.get(Job.Propagandist) != null && employed.get(Job.Propagandist).hasTrait(Trait.PropagandaMaster)) {
+            if (employed.get(Job.Propagandist) != null && employed.get(Job.Propagandist).hasTrait("PropagandaMaster")) {
                 bonus += 0.2;
             }
             if (change > 0) {
@@ -146,9 +146,9 @@ public class Game {
             }
         } else if (indicator == Indicator.PartyCohesion) {
             float bonus = 1;
-            if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait(Trait.IronFist)) {
+            if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait("IronFist")) {
                 bonus += 0.2;
-            } else if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait(Trait.OldFart)) {
+            } else if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait("OldFart")) {
                 bonus -= 0.2;
             }
             if (change > 0) {
@@ -158,7 +158,7 @@ public class Game {
             }
         } else if (indicator == Indicator.StateStability) {
             float bonus = 1;
-            if (employed.get(Job.Strategist) != null && employed.get(Job.Strategist).hasTrait(Trait.Statesman)) {
+            if (employed.get(Job.Strategist) != null && employed.get(Job.Strategist).hasTrait("Statesman")) {
                 bonus += 0.2;
             }
             if (change > 0) {
@@ -174,7 +174,7 @@ public class Game {
         try {
             if (getEmployed(job) != null) {
                 getCooldown().put(getEmployed(job).getId(), ADVISOR_COOLDOWN);
-                if (getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
+                if (getEmployed(job).hasTrait("InfluentialInTheParty")) {
                     values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
                 }
             }
@@ -188,7 +188,7 @@ public class Game {
         try {
             if (getEmployed(job) != null) {
                 getCooldown().put(getEmployed(job).getId(), ADVISOR_COOLDOWN);
-                if (getEmployed(job).hasTrait(Trait.InfluentialInTheParty)) {
+                if (getEmployed(job).hasTrait("InfluentialInTheParty")) {
                     values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
                 }
             }

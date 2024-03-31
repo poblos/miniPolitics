@@ -7,17 +7,17 @@ public class Person {
     private final Job startingJob;
     private final int id;
     final String name;
-    final List<Trait> traits;
+    final List<String> traits;
 
     public String getName() {
         return name;
     }
 
-    public List<Trait> getTraits() {
+    public List<String> getTraits() {
         return traits;
     }
 
-    public Person(String name, List<Trait> traits, int id, Job startingJob) {
+    public Person(String name, List<String> traits, int id, Job startingJob) {
         this.name = name;
         this.traits = traits;
         this.id = id;
@@ -32,9 +32,9 @@ public class Person {
         return startingJob;
     }
 
-    public boolean hasTrait(Trait trait) {
-        for (Trait trait2 : traits) {
-            if (Objects.equals(trait, trait2)) {
+    public boolean hasTrait(String name) {
+        for (String trait : traits) {
+            if (Objects.equals(trait, name)) {
                 return true;
             }
         }
