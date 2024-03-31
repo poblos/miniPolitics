@@ -13,7 +13,7 @@
                 <Label styleClass="filmWindow"  alignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/people/Andreas Argentos.jpg"/>
+                            <Image url="@../menu_icons/people/Mark Stouton.jpg"/>
                         </ImageView>
                     </graphic>
                 </Label>
@@ -69,7 +69,7 @@
                 <Label styleClass="filmWindow"  alignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/people/Andreas Argentos.jpg"/>
+                            <Image url="@../menu_icons/people/Mark Stouton.jpg"/>
                         </ImageView>
                     </graphic>
                 </Label>
@@ -105,7 +105,7 @@
                 <Label styleClass="filmWindow"  alignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/people/Winston Oldwood.jpg"/>
+                            <Image url="@../menu_icons/people/Andreas Argentosarch Patriarch.jpg"/>
                         </ImageView>
                     </graphic>
                 </Label>
@@ -140,28 +140,28 @@
                 <Label styleClass="filmWindow"  alignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/people/James Mouton.jpg"/>
+                            <Image url="@../menu_icons/people/Olaf Simonssen.jpg"/>
                         </ImageView>
                     </graphic>
                 </Label>
                 <Label styleClass="filmWindow"  alignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/people/Graham Fallows.jpg"/>
+                            <Image url="@../menu_icons/people/Ryan Gosig.jpg"/>
                         </ImageView>
                     </graphic>
                 </Label>
                 <Label styleClass="filmWindow"  alignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/people/Kashyk Smith.jpg"/>
+                            <Image url="@../menu_icons/people/Savas Papadrilos.jpg"/>
                         </ImageView>
                     </graphic>
                 </Label>
                 <Label styleClass="filmWindow"  alignment="CENTER">
                     <graphic>
                         <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/people/Winston Oldwood.jpg"/>
+                            <Image url="@../menu_icons/people/Andreas Argentosarch Patriarch.jpg"/>
                         </ImageView>
                     </graphic>
                 </Label>
