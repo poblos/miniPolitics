@@ -8,6 +8,7 @@ public enum Trait {
     Recruiter,
     MediaExpert,
     AcademicOrigin,
+    RetiredGeneral,
     Admiral,
     OldFart,
     InfluentialInTheParty,

@@ -1,0 +1,50 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 100
+      }
+    ],
+    "no": [
+      {
+        "type": "person_condition",
+        "id": 3
+      }
+    ]
+  },
+  "description": "Amid rising international tensions and growing possibility of large war in our region, we should make some changes to our strategic department. We managed to make contact with retired general, Sarge Stone, and his is willing to take the spot of our chief strategist if you guarantee him large autonomy.",
+  "options": [
+    {
+      "description": "We need to be prepared for the worst. He's got this job.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "advisor_position_employment",
+          "id": 3,
+          "position": "Strategist"
+        }
+      ]
+    },
+    {
+      "description": "You're exaggerating. No need for a change yet.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartyCohesion"
+        }
+      ]
+    }
+  ],
+  "title": "Retired general"
+}
