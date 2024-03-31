@@ -1,0 +1,12 @@
+{
+  "name": "Statesman",
+  "description": "",
+  "effects": [
+    {
+      "job": "Strategist",
+      "type": "indicator_effect",
+      "indicator": "StateStability",
+      "percent": 20
+    }
+  ]
+}

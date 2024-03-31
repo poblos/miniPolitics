@@ -10,6 +10,7 @@ import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.game.RoundCondition;
 import com.infernal_crew.mini_politics.indicators.IndicatorChange;
 import com.infernal_crew.mini_politics.indicators.IndicatorCondition;
+import com.infernal_crew.mini_politics.indicators.TraitIndicatorEffect;
 import com.infernal_crew.mini_politics.media.MediaCondition;
 import com.infernal_crew.mini_politics.media.MediaGroup;
 import com.infernal_crew.mini_politics.media.MediaIdCondition;
@@ -101,7 +102,9 @@ public class StartView {
                         .withSubtype(IdeologyCondition.class, "ideology_condition")
                         .withSubtype(PolicyCondition.class, "policy_condition")
                         .withSubtype(RoundCondition.class, "round_condition")
-                        .withSubtype(PersonCondition.class, "person_condition")).build();
+                        .withSubtype(PersonCondition.class, "person_condition"))
+                .add(PolymorphicJsonAdapterFactory.of(TraitEffect.class, "type")
+                        .withSubtype(TraitIndicatorEffect.class, "indicator_effect")).build();
 
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
@@ -122,8 +125,10 @@ public class StartView {
 
         ArrayList<StoryNote> notes = loadFiles(StoryNote.class, "json/" + nationTag + "/story/", moshi);
 
+        ArrayList<Trait> traits = loadFiles(Trait.class, "json/" + nationTag + "/traits/", moshi);
+
         printNumberOfEvents(events.size());
-        return new Game(events, people, activePeople, policies, modifiers, medias, budgets.get(0), notes);
+        return new Game(events, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits);
     }
 
     private void startGame(Game game) throws IOException {

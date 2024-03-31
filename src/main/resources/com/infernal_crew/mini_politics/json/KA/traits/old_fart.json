@@ -1,0 +1,12 @@
+{
+  "name": "OldFart",
+  "description": "",
+  "effects": [
+    {
+      "type": "indicator_effect",
+      "indicator": "PartyCohesion",
+      "job": "Whip",
+      "percent": -20
+    }
+  ]
+}

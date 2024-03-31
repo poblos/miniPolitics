@@ -1,0 +1,12 @@
+{
+  "name": "IronFist",
+  "description": "",
+  "effects": [
+    {
+      "job": "Strategist",
+      "type": "indicator_effect",
+      "indicator": "PartyCohesion",
+      "percent": 20
+    }
+  ]
+}

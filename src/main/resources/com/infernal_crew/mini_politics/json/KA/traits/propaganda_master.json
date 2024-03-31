@@ -1,0 +1,12 @@
+{
+  "name": "PropagandaMaster",
+  "description": "",
+  "effects": [
+    {
+      "type": "indicator_effect",
+      "job": "Propagandist",
+      "indicator": "PartySupport",
+      "percent": 20
+    }
+  ]
+}

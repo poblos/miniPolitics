@@ -24,7 +24,6 @@ import java.util.*;
 public class Game {
     private final Map<Indicator, Float> values = new HashMap<>();
     private final Map<Job, Person> employed = new HashMap<>();
-
     private final Map<String, Modifier> activeModifiers = new HashMap<>();
 
     int round = 0;
@@ -37,6 +36,7 @@ public class Game {
     private final Map<Integer, Policy> policies = new HashMap<>();
     private final List<Event> events;
     private final Map<Integer, Person> people = new HashMap<>();
+    private final Map<String,Trait> traits = new HashMap<>();
     private final Map<Integer, Person> activePeople = new HashMap<>();
     private final Map<Integer, Integer> cooldown = new HashMap<>();
     private final List<Modifier> modifiers;
@@ -47,7 +47,8 @@ public class Game {
     private final Budget budget;
     private final transient Random random = new Random();
 
-    public Game(ArrayList<Event> events, ArrayList<Person> people, ArrayList<Person> activePeople, ArrayList<Policy> policies, ArrayList<Modifier> modifiers, ArrayList<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes) {
+    public Game(List<Event> events, List<Person> people, List<Person> activePeople, List<Policy> policies,
+                List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits) {
         this.budget = budget;
         this.events = events;
         this.modifiers = modifiers;
@@ -71,6 +72,9 @@ public class Game {
         }
         for (Policy p : policies) {
             this.policies.put(p.getId(), p);
+        }
+        for (Trait t : traits) {
+            this.traits.put(t.getName(), t);
         }
     }
 
@@ -134,39 +138,21 @@ public class Game {
     }
 
     public float includeBonus(float change, Indicator indicator) {
-        if (indicator == Indicator.PartySupport) {
-            float bonus = 1;
-            if (employed.get(Job.Propagandist) != null && employed.get(Job.Propagandist).hasTrait("PropagandaMaster")) {
-                bonus += 0.2;
-            }
-            if (change > 0) {
-                change *= bonus;
-            } else {
-                change /= bonus;
-            }
-        } else if (indicator == Indicator.PartyCohesion) {
-            float bonus = 1;
-            if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait("IronFist")) {
-                bonus += 0.2;
-            } else if (employed.get(Job.Whip) != null && employed.get(Job.Whip).hasTrait("OldFart")) {
-                bonus -= 0.2;
-            }
-            if (change > 0) {
-                change *= bonus;
-            } else {
-                change /= bonus;
-            }
-        } else if (indicator == Indicator.StateStability) {
-            float bonus = 1;
-            if (employed.get(Job.Strategist) != null && employed.get(Job.Strategist).hasTrait("Statesman")) {
-                bonus += 0.2;
-            }
-            if (change > 0) {
-                change *= bonus;
-            } else {
-                change /= bonus;
+        float bonus = 1;
+        for (Job job : employed.keySet()) {
+            for(String trait : employed.get(job).getTraits()) {
+                if (traits.get(trait) != null) {
+                    for (TraitEffect effect : traits.get(trait).getEffects())
+                        bonus += effect.calculateBonus(job, indicator) / 100.0f;
+                }
             }
         }
+        if (change > 0) {
+            change *= bonus;
+        } else {
+            change /= bonus;
+        }
+        System.out.println(indicator + " " + bonus);
         return change;
     }
 
