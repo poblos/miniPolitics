@@ -14,10 +14,10 @@
     ]
   },
   "graphic": "partycenter",
-  "description": "One of the popular journalists, who is known for hard interviews both with government's and opposition's politicians has organised a birthday party. He invited prominent members of parties from around the political spectrum. Photos from the event became viral in the internet and some of our voters consider partying with the opposition as a betrayal.",
+  "description": "A popular journalist, known for his tough interviews with politicians regardless of their political affiliation, has organised a birthday party. He invited prominent members from parties across the political spectrum. Photos from the event have gone viral on the internet and unfortunately, it turns out that some of our voters consider partying with the opposition as a betrayal.",
   "options": [
     {
-      "description": "Publicly condemn their behaviour",
+      "description": "This is unacceptable! Condemn them publicly.",
       "effects": [
         {
           "type": "indicator_change",
