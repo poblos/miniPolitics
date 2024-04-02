@@ -1,0 +1,31 @@
+{
+  "name": "Income Tax",
+  "id": 8,
+  "currentOption": 2,
+  "options": [
+    {
+      "name": "Progressive tax with 100% taxation above the set margin"
+    },
+    {
+      "name": "Very steep progressive tax"
+    },
+    {
+      "name": "Progressive tax"
+    },
+    {
+      "name": "Flat tax"
+    },
+    {
+      "name": "Regressive tax"
+    },
+    {
+      "name": "Very steep regressive tax"
+    },
+    {
+      "name": "Regressive tax with 0% taxation above a certain margin"
+    },
+    {
+      "name": "No income tax"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Welfare",
+  "id": 7,
+  "currentOption": 2,
+  "options": [
+    {
+      "name": "Universal basic income"
+    },
+    {
+      "name": "Expanded social welfare"
+    },
+    {
+      "name": "Limited social welfare"
+    },
+    {
+      "name": "Social welfare only for those who work"
+    },
+    {
+      "name": "No welfare"
+    }
+  ]
+}

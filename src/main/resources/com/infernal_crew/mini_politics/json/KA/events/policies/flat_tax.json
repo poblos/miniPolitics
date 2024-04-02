@@ -1,0 +1,79 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 8,
+        "option": 2
+      },
+      {
+        "type": "ideology_condition",
+        "ideology": "Capitalist"
+      }
+    ]
+  },
+  "description": "One of our main electoral promises was introduction of flat income tax. However, costs of such a change are enormous and considering our current budget condition, it may be wiser to postpone any changes.",
+  "options": [
+    {
+      "description": "We need to fulfill our electoral promises regardless of cost.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_income",
+          "category": "IncomeTax",
+          "change": -50000
+        },
+        {
+          "type": "policy_change",
+          "id": 8,
+          "option": 3
+        }
+      ]
+    },
+    {
+      "description": "Fine, we can do this, but combine it with some other changes which will bring us some of the lost money.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_income",
+          "category": "IncomeTax",
+          "change": -50000
+        },
+        {
+          "type": "budget_income",
+          "category": "ConsumptionTax",
+          "change": 25000
+        },
+        {
+          "type": "policy_change",
+          "id": 8,
+          "option": 3
+        }
+      ]
+    },
+    {
+      "description": "In current condition of our budget, it's simply not possible.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -4,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Flat income tax"
+}
