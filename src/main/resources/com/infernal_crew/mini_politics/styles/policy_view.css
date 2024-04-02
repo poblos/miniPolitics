@@ -17,14 +17,3 @@
     -fx-border-style: dashed;
     -fx-effect: innershadow(gaussian, #2c6ec5, 10, 0, 0, 0);
 }
-
-.partyNameText {
-    -fx-fill: radial-gradient(center 50% 50%,radius 100%,#284bbf,#718256);
-    -fx-font: 16pt "Droid Serif";
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),2,0,0,1);
-}
-
-.normalText {
-    -fx-fill: black;
-    -fx-font: 13pt "Droid Serif";
-}
