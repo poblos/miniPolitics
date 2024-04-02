@@ -3,7 +3,7 @@
   "description": "There's a proposal to ban the sale of energy drinks to individuals under the age of 18. Advocates argue that such drinks have detrimental effects on the developing bodies and minds of young people, such as increased risk of heart problems. However, energy drinks companies are making huge profits and may be unwilling to endorse our future electoral campaigns if we pass such a bill.",
   "options": [
     {
-      "description": "The well-being of our youth than profit of some greedy capitalists.",
+      "description": "The well-being of our youth is more important than profit of some greedy capitalists.",
       "effects": [
         {
           "type": "indicator_change",

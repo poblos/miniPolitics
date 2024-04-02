@@ -1,0 +1,54 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 5,
+        "option": 1
+      },
+      {
+        "type": "ideology_condition",
+        "ideology": "Capitalist"
+      }
+    ]
+  },
+  "description": "Quality of public education in Kachakonya was always a huge question mark. Most of our voters seem to believe that the real source of problems lies in the foundations of the system itself, namely its public nature. Shall we change our stance towards private schools and allow for more competition?",
+  "options": [
+    {
+      "description": "Voice of our citizens is the voice of party!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Education",
+          "change": -400
+        },
+        {
+          "type": "policy_change",
+          "id": 5,
+          "option": 2
+        }
+      ]
+    },
+    {
+      "description": "Control over education system is more important than its quality.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Quality of public education"
+}
