@@ -1,0 +1,22 @@
+{
+  "name": "Criminal Justice",
+  "id": 7,
+  "currentOption": 1,
+  "options": [
+    {
+      "name": "No criminal justice system"
+    },
+    {
+      "name": "Low sentences, emphasis on rehabilitation"
+    },
+    {
+      "name": "Medium sentences, balance between rehabilitation an punishment"
+    },
+    {
+      "name": "Harsh sentences, emphasis on punishment"
+    },
+    {
+      "name": "Harsh sentences, with common death sentence"
+    }
+  ]
+}

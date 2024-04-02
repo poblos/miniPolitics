@@ -1,0 +1,55 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 6,
+        "option": 1
+      },
+      {
+        "type": "ideology_condition",
+        "ideology": "Capitalist"
+      }
+    ]
+  },
+  "probability": 5000,
+  "description": "Our public healthcare system has become very inefficient over the years, with waiting times for treatments lasting up to several years and on-site care being very underwhelming, to say the least. Capitalist wing of our party suggests that we should introduce universal healthcare voucher, which you could choose to use also in private hospitals, thus alleviating competition.",
+  "options": [
+    {
+      "description": "Something needs to be done, and this voucher seems to be a reasonable solution.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Health",
+          "change": 1000
+        },
+        {
+          "type": "policy_change",
+          "id": 6,
+          "option": 2
+        }
+      ]
+    },
+    {
+      "description": "Privateers would only care about profit, not the well-being of the patients!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    }
+  ],
+  "title": "Universal healthcare voucher"
+}
