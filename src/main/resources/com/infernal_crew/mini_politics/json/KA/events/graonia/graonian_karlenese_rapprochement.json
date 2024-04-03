@@ -1,0 +1,44 @@
+{
+  "isUnique": true,
+  "probability": 1200,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 100
+      },
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War - Forebergian win"
+      },
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War - Forebergian side"
+      }
+    ]
+  },
+  "description": "After recent changes in the patriarchy, Graonia became an active player on international stage once again. Despite years of mutual distrust, there has been unprecedented rapprochement between Karlenese Federation and Graonia, culminating with the Reconstruction Treaty, that will see the companies from the Grey One country have preferential treatment in reconsntruction of Karlenese infrastructure, heavily damaged by the Narong War.",
+  "options": [
+    {
+      "description": "It doesn't matter, it's a coalition of losers!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "Not good for us.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    }
+  ],
+  "title": "Graonian-Karlenese Rapprochement"
+}
