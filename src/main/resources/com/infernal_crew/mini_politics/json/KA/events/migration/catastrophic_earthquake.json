@@ -1,0 +1,81 @@
+{
+  "isUnique": true,
+  "probability": 1200,
+  "trigger": {
+    "no": [
+      {
+        "type": "round_condition",
+        "round": 125
+      }
+    ]
+  },
+  "description": "A catastrophic tsunami has swept through the Bezcu Archipelago, leaving countless people without homes and money to make ends meet. As a result, we are expecting a huge migration wave and we've got to decide how to handle that problem.",
+  "options": [
+    {
+      "description": "We have to help them! Let them in.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Bezcu immigrants let in"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "No Bezcu immigration control"
+        }
+      ]
+    },
+    {
+      "description": "We need to be cautious. Everyone has to be checked before granting them a right to stay.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -3,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Bezcu immigrants let in"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Controlled Bezcu immigration"
+        }
+      ]
+    },
+    {
+      "description": "I smell problems here. Our people first.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": -5,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Bezcu immigration forbidden"
+        }
+      ]
+    }
+  ],
+  "title": "Great Tsunami"
+}
