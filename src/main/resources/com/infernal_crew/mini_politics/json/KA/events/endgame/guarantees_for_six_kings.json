@@ -1,0 +1,22 @@
+{
+  "isUnique": true,
+  "probability": 1200,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 125
+      }
+    ]
+  },
+  "description": "A patriarch of the Six Kings Island is here to talk with you incognito. ",
+  "options": [
+    {
+      "description": "What's up?",
+      "effects": [
+      ]
+    }
+
+  ],
+  "title": "Guarantees?"
+}

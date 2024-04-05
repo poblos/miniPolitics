@@ -1,0 +1,27 @@
+{
+  "isUnique": true,
+  "probability": 1200,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 125
+      }
+    ]
+  },
+  "description": "Graonians have reached the point of no return. At this point, everyone knows what's coming as all international airlines have stopped flies over the Island of Six Kings and nearby Graonian territories. The last forces have been moved into striking positions as the world awaits inevitable.",
+  "options": [
+    {
+      "description": "I still can't believe it...",
+      "effects": [
+      ]
+    },
+    {
+      "description": "One wrong step... and we are all doomed. Huh!",
+      "effects": [
+
+      ]
+    }
+  ],
+  "title": "The last preparations"
+}

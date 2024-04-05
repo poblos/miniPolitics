@@ -1,0 +1,23 @@
+{
+  "isUnique": true,
+  "probability": 1200,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 250
+      }
+    ]
+  },
+  "description": "According to our intelligence, situation on the Near-night Rotor is extremely worrying. Graonia is preparing its army for decisive military action against the Island of Sixth Kings, and our contacts suggest it isn't just a bluff, but real preparations if international mediation fails.",
+  "options": [
+    {
+      "description": "Well...",
+      "effects": [
+        {
+        }
+      ]
+    }
+  ],
+  "title": "Bad News"
+}

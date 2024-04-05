@@ -2,7 +2,7 @@
   "isUnique": true,
   "probability": 1200,
   "trigger": {
-    "no": [
+    "yes": [
       {
         "type": "round_condition",
         "round": 125
