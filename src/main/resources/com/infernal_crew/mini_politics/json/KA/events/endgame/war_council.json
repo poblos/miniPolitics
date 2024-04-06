@@ -1,0 +1,21 @@
+{
+  "isUnique": true,
+  "probability": 1200,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 125
+      }
+    ]
+  },
+  "description": "In what might be one of the most protected rooms in the world right now, everything suddenly went quiet. The last expected person has finally arrived, and everyone's eyes were on you. President Mahegaard, with his long beard and greyish, typical Forebergian complexion, looked even sterner than usual. Your dear friend, John Cassidy of Marelland, clutched the back of the chair nervously. If it weren't for the seriousness of the situation, you would smile to yourself because you've seen a similar gesture of John so many times before exams at Marell University...",
+  "options": [
+    {
+      "description": "...",
+      "effects": [
+      ]
+    }
+  ],
+  "title": "War council"
+}
