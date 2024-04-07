@@ -242,7 +242,7 @@ public class Game {
     public void updateIndicator(float change, Indicator indicator) {
         values.put(indicator, change + values.get(indicator));
         if (indicator == Indicator.NarongWarBalance) {
-            warEvents.add(new WarEvent(currentEvent.getTitle(),change > 0 ? "+" + change : "-" + change));
+            warEvents.add(new WarEvent(currentEvent.getTitle(),change > 0 ? "+" + change : Float.toString(change)));
         }
     }
 
