@@ -7,40 +7,24 @@ import java.util.List;
 
 import static java.lang.Math.max;
 
-public class Event {
-    private final String title;
+public class Event extends AbstractEvent{
     private final String description;
     private final List<Option> options;
     private final String graphic;
-    private final Trigger trigger;
-    private final boolean isUnique;
-    private final boolean isCertain;
-    private int probability;
-
-    private final List<ProbabilityChanger> probabilityChanges;
 
     public Event(String title, String description, List<Option> options, String graphic) {
-        this.title = title;
+        super(title);
         this.description = description;
         this.options = options;
         this.trigger = new Trigger();
-        this.isUnique = false;
-        this.isCertain = false;
-        this.probability = 50;
-        this.probabilityChanges = new ArrayList<>();
         this.graphic = graphic;
     }
 
-    public Event(String title, String description, List<Option> options, String graphic, Trigger trigger, boolean onlyOnce, boolean isCertain, int probability, List<ProbabilityChanger> probabilityChangers) {
-        this.title = title;
+    public Event(String title, String description, List<Option> options, String graphic, Trigger trigger, boolean isUnique, boolean isCertain, int probability, List<ProbabilityChanger> probabilityChangers) {
+        super(title,trigger,isUnique,isCertain,probability,probabilityChangers);
         this.description = description;
         this.options = options;
         this.graphic = graphic;
-        this.trigger = trigger;
-        this.isUnique = onlyOnce;
-        this.isCertain = isCertain;
-        this.probability = probability;
-        this.probabilityChanges = probabilityChangers;
     }
 
     public String getTitle() {
