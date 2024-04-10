@@ -1,3 +1,18 @@
 {
-  "id": "MAT01"
+  "id": "MAT01",
+  "parts": [
+    {
+      "id": "Starter",
+      "type": "description",
+      "text": "You brought a phone to your ear and heard the surprisingly soft voice of the most important man in the world. You've never spoken to the Hegemon before, as the last official visit took place before you were appointed head of the office for the Prime Minister Campbell.",
+      "followUp": true,
+      "nextId": "Ender"
+    },
+    {
+      "id": "Ender",
+      "type": "description",
+      "text": "Blabla",
+      "followUp": false
+    }
+  ]
 }
