@@ -17,12 +17,11 @@ public class MediaTakeover implements Effect {
     }
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         for (MediaGroup group : game.getMediaGroups()) {
             if (group.getId() == id) {
                 group.setAffiliation(affiliation);
             }
         }
-        return true;
     }
 }

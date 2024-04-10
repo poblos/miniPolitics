@@ -6,11 +6,10 @@ import com.infernal_crew.mini_politics.game.Game;
 public class RandomAdvisorEmployment implements Effect {
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         game.setCurrentPerson(game.getPeople().values().stream().skip(game.getRandom().nextInt(game.getPeople().size())).findFirst().orElse(null));
         assert game.getCurrentPerson() != null;
         game.getActivePeople().put(game.getCurrentPerson().getId(), game.getCurrentPerson());
-        return false;
     }
 
     @Override

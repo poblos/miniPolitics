@@ -5,8 +5,7 @@ import com.infernal_crew.mini_politics.game.Game;
 public class DialogueInvocation implements Effect{
     String id;
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         game.setDialogueId(id);
-        return true;
     }
 }

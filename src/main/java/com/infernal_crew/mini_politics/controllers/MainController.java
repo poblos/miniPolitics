@@ -98,19 +98,16 @@ public class MainController {
             }
         }
 
-        if (game.displayNext()) {
-            if(game.getDialogueId() != null) {
-                eventBox.getChildren().clear();
-                eventBox.getChildren().add(new DialogueDisplay(game.getDialogue(game.getDialogueId()), this));
-            } else {
-                eventBox.getChildren().clear();
-                game.chooseEvent();
-                eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
-            }
-
-        } else {
+        if(game.getDialogueId() != null) {
+            eventBox.getChildren().clear();
+            eventBox.getChildren().add(new DialogueDisplay(game.getDialogue(game.getDialogueId()), this));
+        } else if (game.getCurrentPerson() != null) {
             eventBox.getChildren().clear();
             eventBox.getChildren().add(new JobChoiceDisplay(game.getCurrentPerson(), this));
+        } else {
+            eventBox.getChildren().clear();
+            game.chooseEvent();
+            eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
         }
         roundLabel.setText(String.valueOf(game.getRound()));
     }
@@ -139,6 +136,7 @@ public class MainController {
             }
         }
         updateUpperBar();
+        game.setCurrentPerson(null);
         eventBox.getChildren().clear();
         game.chooseEvent();
         eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));

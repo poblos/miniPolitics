@@ -16,9 +16,8 @@ public class AdvisorEmployment implements Effect {
     }
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         game.setCurrentPerson(game.getPeople().get(id));
         game.getActivePeople().put(game.getCurrentPerson().getId(), game.getCurrentPerson());
-        return false;
     }
 }

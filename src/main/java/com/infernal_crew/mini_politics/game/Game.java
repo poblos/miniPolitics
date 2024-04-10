@@ -26,7 +26,6 @@ public class Game {
     int round = 0;
 
     public static final int ADVISOR_COOLDOWN = 20;
-    private boolean displayNext;
 
     private String dialogueId = null;
     Event currentEvent;
@@ -130,15 +129,11 @@ public class Game {
         currentEvent = currentEvent.adjust(this);
     }
 
-    // Returns true if the next Event should be displayed
-    // Returns false if an additional menu should be displayed
-    private boolean chooseOption(Event currentEvent, int option) {
+    private void chooseOption(Event currentEvent, int option) {
         List<Effect> effects = currentEvent.getOptions().get(option).getEffects();
-        boolean displayNext = true;
         for (Effect effect : effects) {
-             displayNext = displayNext && effect.handle(this);
+             effect.handle(this);
         }
-        return displayNext;
     }
 
     public float includeBonus(float change, Indicator indicator) {
@@ -219,7 +214,7 @@ public class Game {
                 note.setDone(true);
             }
         }
-        displayNext = chooseOption(currentEvent, click);
+        chooseOption(currentEvent, click);
         round++;
         for (Integer id : cooldown.keySet()) {
             if (cooldown.get(id) == 1) {
@@ -256,10 +251,6 @@ public class Game {
     }
     public Event getCurrentEvent() {
         return currentEvent;
-    }
-
-    public boolean displayNext() {
-        return displayNext;
     }
 
     public Person getCurrentPerson() {

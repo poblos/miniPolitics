@@ -6,8 +6,7 @@ import com.infernal_crew.mini_politics.game.Game;
 public record BudgetExpense(ExpenseCategory category, int change) implements Effect {
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         game.getBudget().getExpenses().put(category, game.getBudget().getExpenses().get(category) + change);
-        return true;
     }
 }

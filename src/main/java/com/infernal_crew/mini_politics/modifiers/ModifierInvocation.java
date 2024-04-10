@@ -16,8 +16,7 @@ public class ModifierInvocation implements Effect {
     }
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         game.addModifier(name);
-        return true;
     }
 }

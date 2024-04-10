@@ -16,9 +16,8 @@ public class IdeologyChange implements Effect {
     }
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         game.getParty().ideologies().remove(removed);
         game.getParty().ideologies().add(added);
-        return true;
     }
 }

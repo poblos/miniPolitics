@@ -10,10 +10,9 @@ public class RandomAdvisorDismissal implements Effect {
     }
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         Job job = game.getAllEmployed().keySet().stream().skip(game.getRandom().nextInt(game.getAllEmployed().size())).findFirst().orElse(null);
         game.getActivePeople().remove(game.getAllEmployed().get(job).getId());
         game.getAllEmployed().remove(job);
-        return true;
     }
 }

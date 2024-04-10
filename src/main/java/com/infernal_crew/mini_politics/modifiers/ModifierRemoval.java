@@ -16,8 +16,7 @@ public class ModifierRemoval implements Effect {
     }
 
     @Override
-    public boolean handle(Game game) {
+    public void handle(Game game) {
         game.removeModifier(name);
-        return true;
     }
 }
