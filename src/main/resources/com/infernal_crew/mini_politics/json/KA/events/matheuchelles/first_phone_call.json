@@ -15,8 +15,8 @@
       "description": "Should I be worried?",
       "effects": [
         {
-          "type": "modifier_invocation",
-          "name": "Phone call with the Hegemon"
+          "type": "dialogue_invocation",
+          "id": "MAT01"
         }
       ]
     },
@@ -24,8 +24,8 @@
       "description": "It would be an interesting experience, I guess...",
       "effects": [
         {
-          "type": "modifier_invocation",
-          "name": "Phone call with the Hegemon"
+          "type": "dialogue_invocation",
+          "id": "MAT01"
         }
       ]
     },
@@ -33,8 +33,8 @@
       "description": "I hope he isn't too talkative.",
       "effects": [
         {
-          "type": "modifier_invocation",
-          "name": "Phone call with the Hegemon"
+          "type": "dialogue_invocation",
+          "id": "MAT01"
         }
       ]
     }

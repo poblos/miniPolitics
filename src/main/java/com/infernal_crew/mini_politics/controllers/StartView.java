@@ -3,9 +3,7 @@ package com.infernal_crew.mini_politics.controllers;
 import com.infernal_crew.mini_politics.budget.Budget;
 import com.infernal_crew.mini_politics.budget.BudgetExpense;
 import com.infernal_crew.mini_politics.budget.BudgetIncome;
-import com.infernal_crew.mini_politics.event.Condition;
-import com.infernal_crew.mini_politics.event.Effect;
-import com.infernal_crew.mini_politics.event.Event;
+import com.infernal_crew.mini_politics.event.*;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.game.RoundCondition;
 import com.infernal_crew.mini_politics.indicators.IndicatorChange;
@@ -90,7 +88,8 @@ public class StartView {
                         .withSubtype(PolicyChange.class, "policy_change")
                         .withSubtype(BudgetExpense.class, "budget_expense")
                         .withSubtype(BudgetIncome.class, "budget_income")
-                        .withSubtype(AdvisorPositionEmployment.class, "advisor_position_employment"))
+                        .withSubtype(AdvisorPositionEmployment.class, "advisor_position_employment")
+                        .withSubtype(DialogueInvocation.class, "dialogue_invocation"))
                 .add(PolymorphicJsonAdapterFactory.of(Condition.class, "type")
                         .withSubtype(ModifierCondition.class, "modifier_condition")
                         .withSubtype(AdvisorCondition.class, "advisor_condition")
@@ -108,6 +107,8 @@ public class StartView {
 
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));
+
+        ArrayList<Dialogue> dialogues = loadFiles(Dialogue.class, "json/" + nationTag + "/dialogues/", moshi);
 
         ArrayList<Person> people = loadFiles(Person.class, "json/" + nationTag + "/people/inactive", moshi);
 
@@ -127,8 +128,9 @@ public class StartView {
 
         ArrayList<Trait> traits = loadFiles(Trait.class, "json/" + nationTag + "/traits/", moshi);
 
-        printNumberOfEvents(events.size());
-        return new Game(events, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits);
+        printNumberOf("events", events.size());
+        printNumberOf("dialogues", dialogues.size());
+        return new Game(events, dialogues, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits);
     }
 
     private void startGame(Game game) throws IOException {
@@ -172,8 +174,8 @@ public class StartView {
         startGame(game);
     }
 
-    private void printNumberOfEvents(int number) {
-        System.out.println("Number of loaded events: " + number);
+    private void printNumberOf(String what, int number) {
+        System.out.println("Number of loaded " + what + ": " + number);
     }
 
 }

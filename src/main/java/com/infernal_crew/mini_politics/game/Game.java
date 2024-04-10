@@ -1,6 +1,7 @@
 package com.infernal_crew.mini_politics.game;
 
 import com.infernal_crew.mini_politics.components.WarEvent;
+import com.infernal_crew.mini_politics.event.*;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.indicators.IndicatorCondition;
 import com.infernal_crew.mini_politics.indicators.IndicatorRelation;
@@ -11,10 +12,6 @@ import com.infernal_crew.mini_politics.party.Party;
 import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyCondition;
 import com.infernal_crew.mini_politics.budget.*;
-import com.infernal_crew.mini_politics.event.Condition;
-import com.infernal_crew.mini_politics.event.Effect;
-import com.infernal_crew.mini_politics.event.Event;
-import com.infernal_crew.mini_politics.event.Option;
 import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.media.*;
 import com.infernal_crew.mini_politics.story.StoryNote;
@@ -30,11 +27,14 @@ public class Game {
 
     public static final int ADVISOR_COOLDOWN = 20;
     private boolean displayNext;
+
+    private String dialogueId = null;
     Event currentEvent;
 
     private Person currentPerson;
     private final Map<Integer, Policy> policies = new HashMap<>();
     private final List<Event> events;
+    private final Map<String,Dialogue> dialogues = new HashMap<>();
     private final Map<Integer, Person> people = new HashMap<>();
     private final Map<String,Trait> traits = new HashMap<>();
     private final Map<Integer, Person> activePeople = new HashMap<>();
@@ -47,7 +47,7 @@ public class Game {
     private final Budget budget;
     private final transient Random random = new Random();
 
-    public Game(List<Event> events, List<Person> people, List<Person> activePeople, List<Policy> policies,
+    public Game(List<Event> events, List<Dialogue> dialogues, List<Person> people, List<Person> activePeople, List<Policy> policies,
                 List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits) {
         this.budget = budget;
         this.events = events;
@@ -60,6 +60,10 @@ public class Game {
         values.put(Indicator.PartySupport, 44F);
         values.put(Indicator.InfrastructureCorruption, 0F);
         values.put(Indicator.NarongWarBalance, 50F);
+
+        for (Dialogue d : dialogues) {
+            this.dialogues.put(d.getId(), d);
+        }
 
         for (Person p : people) {
             this.people.put(p.getId(), p);
@@ -326,5 +330,17 @@ public class Game {
 
     public Map<String, Modifier> getActiveModifiers() {
         return activeModifiers;
+    }
+
+    public void setDialogueId(String dialogueId) {
+        this.dialogueId = dialogueId;
+    }
+
+    public String getDialogueId() {
+        return dialogueId;
+    }
+
+    public Dialogue getDialogue(String id) {
+        return dialogues.get(id);
     }
 }

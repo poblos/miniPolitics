@@ -1,10 +1,7 @@
 package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.Main;
-import com.infernal_crew.mini_politics.components.EventDisplay;
-import com.infernal_crew.mini_politics.components.IndicatorDisplay;
-import com.infernal_crew.mini_politics.components.JobChoiceDisplay;
-import com.infernal_crew.mini_politics.components.JobDisplay;
+import com.infernal_crew.mini_politics.components.*;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.utils.DraggableMaker;
@@ -48,7 +45,6 @@ public class MainController {
     private VBox eventBox;
     private Game game;
     private boolean peopleListShowed = false;
-
 
     public Game getGame() {
         return game;
@@ -103,14 +99,27 @@ public class MainController {
         }
 
         if (game.displayNext()) {
-            eventBox.getChildren().clear();
-            game.chooseEvent();
-            eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
+            if(game.getDialogueId() != null) {
+                eventBox.getChildren().clear();
+                eventBox.getChildren().add(new DialogueDisplay(game.getDialogue(game.getDialogueId()), this));
+            } else {
+                eventBox.getChildren().clear();
+                game.chooseEvent();
+                eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
+            }
+
         } else {
             eventBox.getChildren().clear();
             eventBox.getChildren().add(new JobChoiceDisplay(game.getCurrentPerson(), this));
         }
         roundLabel.setText(String.valueOf(game.getRound()));
+    }
+
+    public void handleDialogue(int click) {
+        game.setDialogueId(null);
+        eventBox.getChildren().clear();
+        game.chooseEvent();
+        eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
     }
 
     public void updateUpperBar() {
@@ -233,6 +242,5 @@ public class MainController {
             setPeopleBox("people-view.fxml", job);
             peopleListShowed = true;
         }
-
     }
 }
