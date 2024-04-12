@@ -29,7 +29,7 @@ public class DialogueDisplay extends VBox {
         this.getStyleClass().add("event");
 
         for (Part p : dialogue.getParts()) {
-            this.parts.put(p.id(), p);
+            this.parts.put(p.getId(), p);
         }
         Part start = getPart("Starter");
         TextArea desc = new TextArea();
@@ -37,7 +37,7 @@ public class DialogueDisplay extends VBox {
             change.setAnchor(change.getCaretPosition());
             return change;
         }));
-        desc.setText(start.text());
+        desc.setText(start.getText());
         desc.setWrapText(true);
         desc.setEditable(false);
         desc.setPrefRowCount(7);
@@ -45,9 +45,9 @@ public class DialogueDisplay extends VBox {
         desc.getStyleClass().add("eventDesc");
         this.getChildren().add(desc);
 
-        EventButton button = new EventButton(0);
+        Button button = new Button();
         button.getStyleClass().add("eventButton");
-        button.setOnAction(actionEvent -> controller.handleDialogue(button.getClick()));
+        button.setOnAction(actionEvent -> controller.handleDialogue(0));
         button.setText("Skip this dialogue placeholder");
 
 

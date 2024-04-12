@@ -2,6 +2,7 @@ package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.Main;
 import com.infernal_crew.mini_politics.components.*;
+import com.infernal_crew.mini_politics.event.Event;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.utils.DraggableMaker;
@@ -36,6 +37,9 @@ public class MainController {
     private BarController barController;
 
     @FXML
+    private EventController eventController;
+
+    @FXML
     private VBox infoBox;
     @FXML
     private HBox jobBox;
@@ -64,7 +68,7 @@ public class MainController {
         game.chooseEvent();
         DraggableMaker maker = new DraggableMaker();
         maker.makeDraggable(eventBox);
-        eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
+        setEventBox("event-view.fxml", game.getCurrentEvent());
 
         playMusic();
     }
@@ -93,7 +97,8 @@ public class MainController {
         for(Indicator ind : Indicator.values()) {
             if (game.getIndicatorValue(ind) < 0 && ind != Indicator.InfrastructureCorruption && ind != Indicator.NarongWarBalance) {
                 eventBox.getChildren().clear();
-                eventBox.getChildren().add(new EventDisplay(game.getLoseEvent(ind), this));
+
+                setEventBox("event-view.fxml", game.getLoseEvent(ind));
                 return;
             }
         }
@@ -107,7 +112,7 @@ public class MainController {
         } else {
             eventBox.getChildren().clear();
             game.chooseEvent();
-            eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
+            setEventBox("event-view.fxml", game.getCurrentEvent());
         }
         roundLabel.setText(String.valueOf(game.getRound()));
     }
@@ -116,7 +121,7 @@ public class MainController {
         game.setDialogueId(null);
         eventBox.getChildren().clear();
         game.chooseEvent();
-        eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
+        setEventBox("event-view.fxml", game.getCurrentEvent());
     }
 
     public void updateUpperBar() {
@@ -139,8 +144,23 @@ public class MainController {
         game.setCurrentPerson(null);
         eventBox.getChildren().clear();
         game.chooseEvent();
-        eventBox.getChildren().add(new EventDisplay(game.getCurrentEvent(), this));
+        setEventBox("event-view.fxml", game.getCurrentEvent());
 
+    }
+
+    private void setEventBox(String fxmlPath, Event event) {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/infernaL_crew/mini_politics/templates/" + fxmlPath));
+        Node node;
+        try {
+            node = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        eventBox.getChildren().clear();
+        eventBox.getChildren().add(node);
+        eventController = loader.getController();
+        eventController.setMainController(this);
+        eventController.setEvent(event);
     }
 
     private void setInfoBox(String fxmlPath) {

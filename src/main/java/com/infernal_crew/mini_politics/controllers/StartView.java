@@ -103,7 +103,9 @@ public class StartView {
                         .withSubtype(RoundCondition.class, "round_condition")
                         .withSubtype(PersonCondition.class, "person_condition"))
                 .add(PolymorphicJsonAdapterFactory.of(TraitEffect.class, "type")
-                        .withSubtype(TraitIndicatorEffect.class, "indicator_effect")).build();
+                        .withSubtype(TraitIndicatorEffect.class, "indicator_effect"))
+                .add(PolymorphicJsonAdapterFactory.of(Part.class, "type")
+                        .withSubtype(DescriptionPart.class, "description")).build();
 
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));

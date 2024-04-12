@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="600.0" styleClass="event" stylesheets="@../styles/event_view.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.EventController">
+    <Label fx:id="title" styleClass="eventTitle" />
+    <ImageView fx:id="image" />
+    <TextArea fx:id="description" styleClass="eventDesc" />
+    <VBox fx:id="options" />
+</VBox>

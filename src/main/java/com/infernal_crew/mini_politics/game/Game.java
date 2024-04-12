@@ -151,7 +151,7 @@ public class Game {
         } else {
             change /= bonus;
         }
-        System.out.println(indicator + " " + bonus);
+
         return change;
     }
 
