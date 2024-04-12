@@ -2,6 +2,7 @@ package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.Main;
 import com.infernal_crew.mini_politics.components.*;
+import com.infernal_crew.mini_politics.event.AbstractEvent;
 import com.infernal_crew.mini_politics.event.Event;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.indicators.Indicator;
@@ -37,7 +38,7 @@ public class MainController {
     private BarController barController;
 
     @FXML
-    private EventController eventController;
+    private AbstractEventController eventController;
 
     @FXML
     private VBox infoBox;
@@ -97,7 +98,6 @@ public class MainController {
         for(Indicator ind : Indicator.values()) {
             if (game.getIndicatorValue(ind) < 0 && ind != Indicator.InfrastructureCorruption && ind != Indicator.NarongWarBalance) {
                 eventBox.getChildren().clear();
-
                 setEventBox("event-view.fxml", game.getLoseEvent(ind));
                 return;
             }
@@ -105,7 +105,7 @@ public class MainController {
 
         if(game.getDialogueId() != null) {
             eventBox.getChildren().clear();
-            eventBox.getChildren().add(new DialogueDisplay(game.getDialogue(game.getDialogueId()), this));
+            setEventBox("dialogue-view.fxml", game.getDialogue(game.getDialogueId()));
         } else if (game.getCurrentPerson() != null) {
             eventBox.getChildren().clear();
             eventBox.getChildren().add(new JobChoiceDisplay(game.getCurrentPerson(), this));
@@ -148,7 +148,7 @@ public class MainController {
 
     }
 
-    private void setEventBox(String fxmlPath, Event event) {
+    private void setEventBox(String fxmlPath, AbstractEvent event) {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/infernaL_crew/mini_politics/templates/" + fxmlPath));
         Node node;
         try {

@@ -5,24 +5,26 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="535.0" stylesheets="@../styles/policy_view.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PolicyController">
+<AnchorPane prefHeight="535.0" stylesheets="@../styles/policy_view.css" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.infernal_crew.mini_politics.controllers.PolicyController">
     <VBox prefWidth="476.0">
-        <TextField alignment="CENTER" editable="false " prefHeight="42.0" styleClass="titleBar" text="POLICIES" />
+        <TextField alignment="CENTER" editable="false " prefHeight="42.0" styleClass="titleBar" text="POLICIES"/>
         <HBox prefWidth="400.0">
             <VBox prefHeight="502.0" prefWidth="422.0" styleClass="viewContent">
-                <ListView fx:id="policyList" prefHeight="208.0" />
-                <TextField alignment="CENTER" editable="false " prefHeight="58.0" text="Options:" />
-                <ListView fx:id="optionList" prefHeight="212.0" />
+                <ListView fx:id="policyList" prefHeight="208.0"/>
+                <TextField alignment="CENTER" editable="false " prefHeight="58.0" text="Options:"/>
+                <ListView fx:id="optionList" prefHeight="212.0"/>
                 <padding>
-                    <Insets bottom="10" left="10" right="10" top="10" />
+                    <Insets bottom="10" left="10" right="10" top="10"/>
                 </padding>
             </VBox>
 
         </HBox>
-        <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0" styleClass="bottomBar" />
+        <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0" styleClass="bottomBar"/>
     </VBox>
 
-   <effect>
-      <DropShadow />
-   </effect>
+    <effect>
+        <DropShadow/>
+    </effect>
 </AnchorPane>

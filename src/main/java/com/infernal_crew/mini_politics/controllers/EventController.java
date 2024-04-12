@@ -1,5 +1,6 @@
 package com.infernal_crew.mini_politics.controllers;
 
+import com.infernal_crew.mini_politics.event.AbstractEvent;
 import com.infernal_crew.mini_politics.event.Event;
 import com.infernal_crew.mini_politics.event.Option;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import java.util.Objects;
 
 import static javafx.scene.layout.VBox.setVgrow;
 
-public class EventController extends AbstractEventController{
+public class EventController extends AbstractEventController {
     @FXML
     private Label title;
     @FXML
@@ -26,7 +27,9 @@ public class EventController extends AbstractEventController{
     @FXML
     private VBox options;
 
-    public void setEvent(Event event) {
+    @Override
+    public void setEvent(AbstractEvent aEvent) {
+        Event event = (Event) aEvent;
         title.setText(event.getTitle());
         if (!Objects.equals(event.getGraphic(), null)) {
             Image im = new Image(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/menu_icons/event_background/" + event.getGraphic() + ".png")).toExternalForm());
