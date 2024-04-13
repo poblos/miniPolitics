@@ -12,6 +12,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 import java.util.Objects;
 
@@ -23,7 +25,7 @@ public class EventController extends AbstractEventController {
     @FXML
     private ImageView image;
     @FXML
-    private TextArea description;
+    private TextFlow description;
     @FXML
     private VBox options;
 
@@ -35,15 +37,10 @@ public class EventController extends AbstractEventController {
             Image im = new Image(Objects.requireNonNull(getClass().getResource("/com/infernal_crew/mini_politics/menu_icons/event_background/" + event.getGraphic() + ".png")).toExternalForm());
             image.setImage(im);
         }
-        description.setTextFormatter(new TextFormatter<String>(change -> {
-            change.setAnchor(change.getCaretPosition());
-            return change;
-        }));
-        description.setText(event.getDescription());
-        description.setWrapText(true);
-        description.setEditable(false);
-        description.setPrefRowCount(7);
-        description.setPrefWidth(600);
+        Text text = new Text(event.getDescription());
+        text.getStyleClass().add("eventDesc");
+        description.getChildren().add(text);
+
         int i = 0;
         for (Option option : event.getOptions()) {
             Button button = new Button();
