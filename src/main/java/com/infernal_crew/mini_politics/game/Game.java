@@ -136,6 +136,13 @@ public class Game {
         }
     }
 
+    public void handleOption(Option option) {
+        List<Effect> effects = option.getEffects();
+        for (Effect effect : effects) {
+            effect.handle(this);
+        }
+    }
+
     public float includeBonus(float change, Indicator indicator) {
         float bonus = 1;
         for (Job job : employed.keySet()) {

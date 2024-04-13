@@ -6,7 +6,26 @@
       "type": "description",
       "text": "You brought a phone to your ear and heard the surprisingly soft voice of the most important man in the world. You've never spoken to the Hegemon before, as the last official visit took place before you were appointed head of the office for the Prime Minister Campbell.",
       "followUp": true,
-      "nextId": "Ender"
+      "nextId": "S01"
+    },
+    {
+      "id": "S01",
+      "type": "choice",
+      "text": "You brought a phone to your ear and heard the surprisingly soft voice of the most important man in the world. You've never spoken to the Hegemon before, as the last official visit took place before you were appointed head of the office for the Prime Minister Campbell.",
+      "followUp": true,
+      "nextId": "Ender",
+      "options": [
+        {
+          "description": "Thank you.",
+          "effects": [
+            {
+              "type": "indicator_change",
+              "change": -2,
+              "indicator": "PartySupport"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "Ender",

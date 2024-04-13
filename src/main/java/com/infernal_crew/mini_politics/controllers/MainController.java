@@ -36,7 +36,6 @@ public class MainController {
     private Label roundLabel;
     @FXML
     private BarController barController;
-
     @FXML
     private AbstractEventController eventController;
 
@@ -117,7 +116,7 @@ public class MainController {
         roundLabel.setText(String.valueOf(game.getRound()));
     }
 
-    public void handleDialogue(int click) {
+    public void endDialogue() {
         game.setDialogueId(null);
         eventBox.getChildren().clear();
         game.chooseEvent();
