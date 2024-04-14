@@ -10,6 +10,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +24,7 @@ public class DialogueController extends AbstractEventController {
     @FXML
     private Label title;
     @FXML
-    private VBox dialogueText;
+    private TextFlow dialogueText;
 
     @FXML
     private VBox choicesBox;
@@ -46,36 +48,25 @@ public class DialogueController extends AbstractEventController {
 
     private void addPart() {
         choicesBox.getChildren().clear();
+        dialogueText.getChildren().add(currentPart.getStyledText());
 
-            TextArea desc = new TextArea();
-            desc.setTextFormatter(new TextFormatter<String>(change -> {
-                change.setAnchor(change.getCaretPosition());
-                return change;
-            }));
-            desc.setText(currentPart.getText());
-            desc.setWrapText(true);
-            desc.setEditable(false);
+        currentPart = getPart(currentPart.getNextId());
 
-            desc.setPrefWidth(600);
-            desc.getStyleClass().add("eventDesc");
-            dialogueText.getChildren().add(desc);
-            currentPart = getPart(currentPart.getNextId());
-
-            if (!(currentPart instanceof ChoicePart choicePart)) {
-                if (currentPart != null) {
-                    cont();
-                } else {
-                    end();
-                }
+        if (!(currentPart instanceof ChoicePart choicePart)) {
+            if (currentPart != null) {
+                cont();
             } else {
-                choicePart = choicePart.adjust(mainController.getGame());
-                for (Option option : choicePart.getOptions()) {
-                    addButton(option.getDescription(), actionEvent -> {
-                        mainController.getGame().handleOption(option);
-                        addPart();
-                    });
-                }
+                end();
             }
+        } else {
+            choicePart = choicePart.adjust(mainController.getGame());
+            for (Option option : choicePart.getOptions()) {
+                addButton(option.getDescription(), actionEvent -> {
+                    mainController.getGame().handleOption(option);
+                    addPart();
+                });
+            }
+        }
     }
 
     private void end() {

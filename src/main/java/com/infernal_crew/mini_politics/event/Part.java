@@ -1,5 +1,7 @@
 package com.infernal_crew.mini_politics.event;
 
+import javafx.scene.text.Text;
+
 public abstract class Part{
     protected String id;
     protected String text;
@@ -28,4 +30,6 @@ public abstract class Part{
     public String getNextId() {
         return nextId;
     }
+
+    public abstract Text getStyledText();
 }

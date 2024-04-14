@@ -1,6 +1,7 @@
 package com.infernal_crew.mini_politics.event;
 
 import com.infernal_crew.mini_politics.game.Game;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +25,12 @@ public class ChoicePart extends Part{
 
     public List<Option> getOptions() {
         return options;
+    }
+
+    @Override
+    public Text getStyledText() {
+        Text desc = new Text(this.getText());
+        desc.getStyleClass().add("choicePart");
+        return desc;
     }
 }

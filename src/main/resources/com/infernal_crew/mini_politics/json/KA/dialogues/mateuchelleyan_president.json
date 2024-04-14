@@ -10,6 +10,14 @@
     },
     {
       "id": "S01",
+      "type": "person",
+      "name": "POTMC",
+      "text": "Prime Minister, congratulations on assuming the most important office in Kachakonya. I hope that the strategic partnership between our countries will continue to contribute to stability in the region.",
+      "followUp": true,
+      "nextId": "S02"
+    },
+    {
+      "id": "S02",
       "type": "choice",
       "text": "You brought a phone to your ear and heard the surprisingly soft voice of the most important man in the world. You've never spoken to the Hegemon before, as the last official visit took place before you were appointed head of the office for the Prime Minister Campbell.",
       "followUp": true,

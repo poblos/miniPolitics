@@ -106,7 +106,8 @@ public class StartView {
                         .withSubtype(TraitIndicatorEffect.class, "indicator_effect"))
                 .add(PolymorphicJsonAdapterFactory.of(Part.class, "type")
                         .withSubtype(DescriptionPart.class, "description")
-                        .withSubtype(ChoicePart.class, "choice")).build();
+                        .withSubtype(ChoicePart.class, "choice")
+                        .withSubtype(PersonPart.class, "person")).build();
 
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
 
 <VBox prefWidth="600.0" styleClass="event" stylesheets="@../styles/dialogue_view.css" xmlns="http://javafx.com/javafx/16"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.DialogueController">
     <Label fx:id="title" styleClass="eventTitle"/>
-    <VBox fx:id="dialogueText" styleClass="eventDesc">
-
-    </VBox>
+    <TextFlow fx:id="dialogueText" styleClass="eventDesc"/>
     <VBox fx:id="choicesBox"/>
 </VBox>
