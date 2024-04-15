@@ -49,19 +49,20 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
 }
 
-.choicePart {
-    -fx-font-size: 10pt;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
-}
-
 .personPart {
     -fx-font-size: 10pt;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
 }
 
 .personName {
-    -fx-font-size: 15pt;
-    -fx-font-color: yellow;
+    -fx-font-size: 13pt;
+    -fx-fill: #B87333;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
+}
+
+.yourName {
+    -fx-font-size: 13pt;
+    -fx-fill: #006400;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
 }
 

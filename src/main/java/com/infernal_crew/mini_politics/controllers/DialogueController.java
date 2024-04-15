@@ -6,11 +6,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 import java.util.HashMap;
@@ -42,28 +39,29 @@ public class DialogueController extends AbstractEventController {
         }
 
         currentPart = getPart("Starter");
-        addPart();
+        addPart(currentPart.getNextId());
 
     }
 
-    private void addPart() {
+    private void addPart(String nextId) {
         choicesBox.getChildren().clear();
         currentPart.addStyledText(dialogueText);
 
-        currentPart = getPart(currentPart.getNextId());
+        currentPart = getPart(nextId);
 
         if (!(currentPart instanceof ChoicePart choicePart)) {
             if (currentPart != null) {
-                cont();
+                cont(currentPart.getNextId());
             } else {
                 end();
             }
         } else {
             choicePart = choicePart.adjust(mainController.getGame());
-            for (Option option : choicePart.getOptions()) {
+            for (DialogueOption option : choicePart.getOptions()) {
                 addButton(option.getDescription(), actionEvent -> {
                     mainController.getGame().handleOption(option);
-                    addPart();
+                    option.addStyledText(dialogueText);
+                    addPart(option.getNextId());
                 });
             }
         }
@@ -73,8 +71,8 @@ public class DialogueController extends AbstractEventController {
         addButton("End", actionEvent -> mainController.endDialogue());
     }
 
-    private void cont() {
-        addButton("Continue", actionEvent -> addPart());
+    private void cont(String nextId) {
+        addButton("Continue", actionEvent -> addPart(nextId));
     }
 
     private void addButton(String buttonText, EventHandler<ActionEvent> eventHandler) {

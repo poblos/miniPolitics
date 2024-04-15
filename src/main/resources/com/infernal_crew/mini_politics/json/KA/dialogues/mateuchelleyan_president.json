@@ -20,9 +20,9 @@
       "id": "S02",
       "type": "choice",
       "followUp": true,
-      "nextId": "Ender",
       "options": [
         {
+          "nextId": "Ender",
           "description": "I can guarantee you that our relations will remain intact.",
           "effects": [
             {
@@ -33,6 +33,7 @@
           ]
         },
         {
+          "nextId": "Ender",
           "description": "If you hope that Kachakonya will continue to be your footstool, your are Grey damn wrong!",
           "effects": [
             {
