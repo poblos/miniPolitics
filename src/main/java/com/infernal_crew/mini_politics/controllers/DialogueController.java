@@ -48,7 +48,7 @@ public class DialogueController extends AbstractEventController {
 
     private void addPart() {
         choicesBox.getChildren().clear();
-        dialogueText.getChildren().add(currentPart.getStyledText());
+        currentPart.addStyledText(dialogueText);
 
         currentPart = getPart(currentPart.getNextId());
 

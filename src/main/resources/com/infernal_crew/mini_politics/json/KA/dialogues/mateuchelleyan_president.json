@@ -19,16 +19,25 @@
     {
       "id": "S02",
       "type": "choice",
-      "text": "You brought a phone to your ear and heard the surprisingly soft voice of the most important man in the world. You've never spoken to the Hegemon before, as the last official visit took place before you were appointed head of the office for the Prime Minister Campbell.",
       "followUp": true,
       "nextId": "Ender",
       "options": [
         {
-          "description": "Thank you.",
+          "description": "I can guarantee you that our relations will remain intact.",
           "effects": [
             {
               "type": "indicator_change",
-              "change": -2,
+              "change": 20,
+              "indicator": "StateStability"
+            }
+          ]
+        },
+        {
+          "description": "If you hope that Kachakonya will continue to be your footstool, your are Grey damn wrong!",
+          "effects": [
+            {
+              "type": "indicator_change",
+              "change": 20,
               "indicator": "PartySupport"
             }
           ]
@@ -38,7 +47,7 @@
     {
       "id": "Ender",
       "type": "description",
-      "text": "Blabla",
+      "text": "To be continued...",
       "followUp": false
     }
   ]

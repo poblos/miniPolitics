@@ -2,14 +2,15 @@ package com.infernal_crew.mini_politics.event;
 
 import com.infernal_crew.mini_politics.game.Game;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChoicePart extends Part{
     private final List<Option> options;
-    public ChoicePart(String id, String text, boolean followUp, String nextId, List<Option> options) {
-        super(id, text, followUp, nextId);
+    public ChoicePart(String id, boolean followUp, String nextId, List<Option> options) {
+        super(id, followUp, nextId);
         this.options = options;
     }
 
@@ -20,7 +21,7 @@ public class ChoicePart extends Part{
                 newOptions.add(option);
             }
         }
-        return new ChoicePart(id, text, followUp, nextId, newOptions);
+        return new ChoicePart(id, followUp, nextId, newOptions);
     }
 
     public List<Option> getOptions() {
@@ -28,9 +29,7 @@ public class ChoicePart extends Part{
     }
 
     @Override
-    public Text getStyledText() {
-        Text desc = new Text(this.getText());
-        desc.getStyleClass().add("choicePart");
-        return desc;
+    public void addStyledText(TextFlow dialogueText) {
+
     }
 }

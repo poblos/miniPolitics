@@ -36,27 +36,32 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
 }
 
-.descPart {
-    -fx-font-size: 10pt;
+.eventDesc {
     -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff);
     -fx-background-radius: 10px;
     -fx-padding: 10 20 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
+}
+
+.descPart {
+    -fx-font-size: 10pt;
+    -fx-font-style: italic;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
 }
 
 .choicePart {
     -fx-font-size: 10pt;
-    -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff);
-    -fx-background-radius: 10px;
-    -fx-padding: 10 20 10 20;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
 }
 
 .personPart {
     -fx-font-size: 10pt;
-    -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff);
-    -fx-background-radius: 10px;
-    -fx-padding: 10 20 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
+}
+
+.personName {
+    -fx-font-size: 15pt;
+    -fx-font-color: yellow;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
 }
 
