@@ -60,6 +60,7 @@ public class DialogueController extends AbstractEventController {
             for (DialogueOption option : choicePart.getOptions()) {
                 addButton(option.getDescription(), actionEvent -> {
                     mainController.getGame().handleOption(option);
+                    mainController.updateUpperBar();
                     option.addStyledText(dialogueText);
                     addPart(option.getNextId());
                 });

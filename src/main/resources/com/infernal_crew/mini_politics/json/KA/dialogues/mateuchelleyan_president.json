@@ -23,11 +23,11 @@
       "options": [
         {
           "nextId": "Ender",
-          "description": "I can guarantee you that our relations will remain intact.",
+          "description": "Thank you Mr. President. I can guarantee you that our relations will remain intact.",
           "effects": [
             {
               "type": "indicator_change",
-              "change": 20,
+              "change": 2,
               "indicator": "StateStability"
             }
           ]
@@ -38,8 +38,8 @@
           "effects": [
             {
               "type": "indicator_change",
-              "change": 20,
-              "indicator": "PartySupport"
+              "change": -2,
+              "indicator": "StateStability"
             }
           ]
         }
