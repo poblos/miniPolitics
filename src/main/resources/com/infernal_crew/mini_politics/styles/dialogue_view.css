@@ -36,11 +36,17 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
 }
 
-.eventDesc {
-    -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff);
+.dialogueScroll {
     -fx-background-radius: 10px;
-    -fx-padding: 10 20 10 20;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.1, 1, 1);
+}
+
+.dialogueScroll .viewport {
+    -fx-background-color: linear-gradient(to bottom, #f0f9ff, #cbebff, #a6dbff);
+}
+
+.eventDesc {
+    -fx-padding: 10 20 10 20;
 }
 
 .descPart {

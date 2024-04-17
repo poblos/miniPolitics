@@ -7,6 +7,8 @@
 <VBox prefWidth="600.0" styleClass="event" stylesheets="@../styles/dialogue_view.css" xmlns="http://javafx.com/javafx/16"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.DialogueController">
     <Label fx:id="title" styleClass="eventTitle"/>
-    <TextFlow fx:id="dialogueText" styleClass="eventDesc"/>
+    <ScrollPane minViewportHeight="300" fx:id="scroller" styleClass="dialogueScroll">
+        <TextFlow maxWidth="580" fx:id="dialogueText" styleClass="eventDesc"/>
+    </ScrollPane>
     <VBox fx:id="choicesBox"/>
 </VBox>

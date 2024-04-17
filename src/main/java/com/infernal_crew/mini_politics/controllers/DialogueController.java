@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
@@ -25,6 +26,8 @@ public class DialogueController extends AbstractEventController {
 
     @FXML
     private VBox choicesBox;
+    @FXML
+    private ScrollPane scroller;
 
     @Override
     public void setEvent(AbstractEvent aEvent) {
@@ -46,6 +49,7 @@ public class DialogueController extends AbstractEventController {
     private void addPart(String nextId) {
         choicesBox.getChildren().clear();
         currentPart.addStyledText(dialogueText);
+        scroller.setVvalue(1.0);
 
         currentPart = getPart(nextId);
 
@@ -62,6 +66,7 @@ public class DialogueController extends AbstractEventController {
                     mainController.getGame().handleOption(option);
                     mainController.updateUpperBar();
                     option.addStyledText(dialogueText);
+                    scroller.setVvalue(1.0);
                     addPart(option.getNextId());
                 });
             }
