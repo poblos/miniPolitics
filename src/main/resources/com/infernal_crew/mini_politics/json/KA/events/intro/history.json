@@ -5,7 +5,13 @@
   "options": [
     {
       "description": "Glory to the heroes!",
-      "effects": []
+      "effects": [
+        {
+          "type": "dialogue_invocation",
+          "id": "intro"
+        }
+
+      ]
     }
   ],
   "title": "The land of the rebellious"

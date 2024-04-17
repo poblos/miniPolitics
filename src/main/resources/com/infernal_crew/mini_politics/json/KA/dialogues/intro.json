@@ -1,0 +1,103 @@
+{
+  "id": "intro",
+  "parts": [
+    {
+      "id": "Starter",
+      "type": "description",
+      "text": "Kachakonyan neighbours weren't particularly friendly historically, to say the least. Endless wars with Westenland and Graonia were hampering our economy and meant that we never really spread our wings. Thankfully, we bet on a good horse during the last War of Hegemony and we still possess close relations with the current hegemon empire, Matheuchelles. Our main rivals have their problems: Graonia doesn't seem to be a serious threat anymore, as their socio-economic backwardness is the basis of jokes in the whole Western Archipelago and Westenland is engaged in the long fight to maintain their overseas territories. We can sleep easy... at least for now. ",
+      "followUp": true,
+      "nextId": "S01"
+    },
+    {
+      "id": "S01",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "geopolitics01",
+          "description": "Tell me more about Graonia",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "party01",
+          "description": "Peace at last!",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geopolitics01",
+      "type": "description",
+      "text": "As the loser in the last War of Hegemony, Graonia was forced into some really unfavorable treaties. Their economy is based on the export of raw materials, and any such agreement must be approved by Matheuchellyes. We are the beneficiary of contracts for the import of raw materials from Graonia, but some people believe that we should diversify supplies. \n Graonia is a theocracy thus is ruled by Archpatriarch, seated in their capital of Grauinbid. However, their system shakes to its foundations as there is no stable majority in their parliament, called Ecclesia.",
+      "followUp": true,
+      "nextId": "geopolitics02"
+    },
+    {
+      "id": "geopolitics02",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "geopolitics03",
+          "description": "Tell me more about Westenland",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "party01",
+          "description": "Theocracy? Joke of a system.",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geopolitics03",
+      "type": "description",
+      "text": "Although people would rather talk about differences between our countries, we have much in common with Westenland. Genetic and linguistic research proves that we have common ancestors, who arrived here thousands of years ago. Since then, both nations colonised most of the Rotorian Archipelago, with our part creating so called Kachakophone sphere, but more about it later. \n In the last War of Hegemony between Leukia and Matcheuchellyes, Westenland chose to not support either of the sides, a decision they were able to push through thanks to its location in the most nocturnal part of the archipelago. The last few decades have seen Westenland fighting to maintain its colonies, often by force, as in the Hazelbor War of Independence. However, they are still a force to recon with as their navy is often considered the strongest in the region.",
+      "followUp": true,
+      "nextId": "geopolitics04"
+    },
+    {
+      "id": "geopolitics04",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "party01",
+          "description": "Good thing they're busy!",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "party01",
+      "type": "description",
+      "text": "As the aftermath of Kachakonyan the civil war, the old institutions were abolished and a parliamentarian democratic system was established. Almost a hundred years on, political scene remains stable as a few large parties dominated elections. After years in power, the old leader of the Republican Party of Kachakonya has retired a month ago. Before he left this world, he had managed to anoint you as his successor. Not everyone in the party is happy with his decision and we may expect some internal turmoils in the coming months.",
+      "followUp": true,
+      "nextId": "party02"
+    },
+    {
+      "id": "party02",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "party03",
+          "description": "Tell me more about the political scene.",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "Ender",
+          "description": "I have every right to rule!",
+          "effects": [
+          ]
+        }
+      ]
+    }
+  ]
+}

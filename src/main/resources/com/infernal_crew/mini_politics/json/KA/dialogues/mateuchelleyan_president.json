@@ -4,7 +4,7 @@
     {
       "id": "Starter",
       "type": "description",
-      "text": "You brought a phone to your ear and heard the surprisingly soft voice of the most important man in the world. You've never spoken to the Hegemon before, as the last official visit took place before you were appointed head of the office for the Prime Minister Campbell.",
+      "text": "You brought a phone to your ear and heard the surprisingly soft voice of the most important man in the world. You've never spoken to the Hegemon before, as the last official visit took place before you were appointed head of the office for the Prime Minister Campbell. Your advisors noted you about the possible topics of the conversation, including some military deals and a more significant matter, our energy resources supply. ",
       "followUp": true,
       "nextId": "S01"
     },
@@ -12,7 +12,7 @@
       "id": "S01",
       "type": "person",
       "name": "POTMC",
-      "text": "Prime Minister, congratulations on assuming the most important office in Kachakonya. I hope that the strategic partnership between our countries will continue to contribute to stability in the region.",
+      "text": "Prime Minister, congratulations on assuming the most important office in Kachakonya. I hope that under your cabinet the strategic partnership between our countries will continue to contribute to stability in the region.",
       "followUp": true,
       "nextId": "S02"
     },
@@ -22,12 +22,12 @@
       "followUp": true,
       "options": [
         {
-          "nextId": "Ender",
-          "description": "Thank you Mr. President. I can guarantee you that our relations will remain intact.",
+          "nextId": "S03",
+          "description": "Thank you, Mr. President. I can guarantee you that our relations will remain intact.",
           "effects": [
             {
               "type": "indicator_change",
-              "change": 2,
+              "change": 1,
               "indicator": "StateStability"
             }
           ]
@@ -41,6 +41,117 @@
               "change": -2,
               "indicator": "StateStability"
             }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "type": "person",
+      "name": "POTMC",
+      "text": "That's a great thing to hear. Speaking of cooperation, there is a couple of agreements we have to talk about...",
+      "followUp": true,
+      "nextId": "S04"
+    },
+    {
+      "id": "S04",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "Military01",
+          "description": "Military contracts, I assume...",
+          "effects": [
+
+          ]
+        },
+        {
+          "nextId": "Graonia01",
+          "description": "Current contracts for energy resources with Graonia will expire soon, right?",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "General01",
+          "description": "That is?",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Military01",
+      "type": "person",
+      "name": "POTMC",
+      "text": "You guessed it right. Wigura Trania Corp is ready to provide the newest fifth generation fighters to Kachakonya under very favourable conditions. It seems that your old fighters will not be available for long, so I hope Kachakonya will seriously consider that proposition.",
+      "followUp": true,
+      "nextId": "Military02"
+    },
+    {
+      "id": "Military02",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "Military04",
+          "description": "Such generosity will be unnecessary. Kachakonya produces its own fighters thanks to our great engineers from Ehr Steel Plant, which are completely sufficient.",
+          "effects": [
+
+          ]
+        },
+        {
+          "nextId": "Graonia01",
+          "description": "In that case, they should participate in the upcoming tender. What about our soon-to-be-expired gas deals with Graonia?",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "Military05",
+          "description": "I assure you that we will carefully consider this proposal.",
+          "effects": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Graonia01",
+      "type": "person",
+      "name": "POTMC",
+      "text": "As you certainly know, under current political circumstances, striking the new deal with Graonians shouldn't be that much of a problem. They still have certain obligations towards us due to the lost war and they don't have too much of a bargaining power. However, we have heard that it is Kachakonya that is looking for alternative suppliers. These are unnecessary efforts, as there is nothing that suggests problems with the stability of supplies.",
+      "followUp": true,
+      "nextId": "Graonia02"
+    },
+    {
+      "id": "Graonia02",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "Graonia04",
+          "description": "I'm sure Matheuchellyes wouldn't allow themselves to be dependant on just one supplier, so it shouldn't be a surprise Kachakonya doesn't want to either.",
+          "effects": [
+
+          ]
+        },
+        {
+          "nextId": "Graonia03",
+          "description": "These are just rumours. We are happy to extend the current deal.",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "Graonia05",
+          "description": "It's never bad to consider other options until the contract is signed.",
+          "effects": [
+
+          ]
+        },
+        {
+          "nextId": "Graonia06",
+          "description": "That's right. We want to reduce supplies from Graonia.",
+          "effects": [
+
           ]
         }
       ]
