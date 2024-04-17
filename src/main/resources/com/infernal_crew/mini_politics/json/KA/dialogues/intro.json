@@ -98,6 +98,26 @@
           ]
         }
       ]
+    },
+    {
+      "id": "party03",
+      "type": "description",
+      "text": "Our party is currently at the crossroads. Our traditional ideological stance was pretty reserved one, but progressive wing grew stronger and stronger over time and they demand we implemented some changes now. If we support their projects, we can count on their support. On the other hand, the Old Guard doesn't like your nomination. Yes, we got their votes in the parliament, but they are ready to undermine your efforts any time soon if they see any signs of weakness. \n As to the opposition, we don't have to worry about them just yet as they were severely beaten in the elections. Our largest opponent is the Socialist Workers' Party of Kachakonya, an established party presenting social-conservative stance that has strong connections with labour unions. But the greatest surprise of the elections was Federalist Party. Once a marginal group, they somehow managed to attract many of the younger voters which allowed them to obtain the third largest club in parliament. Their main concern is what they call Pan-Kachakism. Ephesia, Chara, Marelland, even Capturia - they believe we are all the one nation, and the main force that prevents unification is Matheuchellyes. And all of this seasoned with right-wing populism... Needles to say, the old political forces do not want to cooperate with these madmen.",
+      "followUp": true,
+      "nextId": "party04"
+    },
+    {
+      "id": "party04",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "Ender",
+          "description": "I have every right to rule!",
+          "effects": [
+          ]
+        }
+      ]
     }
   ]
 }
