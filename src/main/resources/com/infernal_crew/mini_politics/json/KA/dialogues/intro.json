@@ -71,6 +71,32 @@
           "description": "Good thing they're busy!",
           "effects": [
           ]
+        },
+        {
+          "nextId": "geopolitics05",
+          "description": "What about Matheuchellyes?",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geopolitics05",
+      "type": "description",
+      "text": "Matcheuchellyes, officially known as The Most Glorious Commonwealth of Matcheuchellyes has an unrivaled status of a global superpower. Their reach extends far beyond mere diplomatic ties, being the most populous country, having the largest GDP, the largest army and, of course, the largest navy. But it wasn't always like this. In the previous century, a multipolar order existed for a time, until three global Wars of Hegemony left only the Commonwealth on the battlefield, as they waited until the very end to get involved. People needed stability, and that's what Pax Mathea gave them. \n But for many, it didn't come without a cost. Zelia had to come to terms with a significant reduction in territory, Graonia was stuck in unfavorable trade treaties, the Leukians, despite being the largest nation in the world, had to say goodbye to their united and independent state, and only geographical names remained of the Ertrogen Kingdom. However, in an era of unprecedented global prosperity, there are not many who would dare to challenge the established order.",
+      "followUp": true,
+      "nextId": "geopolitics06"
+    },
+    {
+      "id": "geopolitics06",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "party01",
+          "description": "Interesting...",
+          "effects": [
+          ]
         }
       ]
     },
