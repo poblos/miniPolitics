@@ -32,7 +32,7 @@ public class DialogueController extends AbstractEventController {
     @Override
     public void setEvent(AbstractEvent aEvent) {
         Dialogue dialogue = (Dialogue) aEvent;
-        title.setText(dialogue.getId());
+        title.setText(dialogue.getTitle());
 
         dialogueText.getChildren().clear();
         choicesBox.getChildren().clear();

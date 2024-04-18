@@ -12,15 +12,15 @@ public class Dialogue extends AbstractEvent{
         this.id = id;
     }
 
-    protected Dialogue(String title) {
-        super(title);
-    }
-
     public String getId() {
         return id;
     }
 
     public Part[] getParts() {
         return parts;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }
