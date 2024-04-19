@@ -1,6 +1,7 @@
 package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.event.*;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -49,6 +50,9 @@ public class DialogueController extends AbstractEventController {
     private void addPart(String nextId) {
         choicesBox.getChildren().clear();
         currentPart.addStyledText(dialogueText);
+
+        scroller.applyCss();
+        scroller.layout();
         scroller.setVvalue(1.0);
 
         currentPart = getPart(nextId);
