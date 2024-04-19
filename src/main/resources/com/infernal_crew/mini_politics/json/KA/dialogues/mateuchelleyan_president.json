@@ -116,6 +116,22 @@
       ]
     },
     {
+      "id": "Military04",
+      "type": "person",
+      "name": "POTMC",
+      "text": "Wouldn't be so sure about their capabilities in your place... If you encounter any problems, the offer will still be valid. But the same can't be said about deals with Graonia. We have heard that Kachakonya is looking for alternative gas and oil suppliers. These are unnecessary efforts, as Graonia has still certain obligations towards us due to the lost war and there is nothing that suggests problems with the stability of supplies.",
+      "followUp": true,
+      "nextId": "Graonia02"
+    },
+    {
+      "id": "Military05",
+      "type": "person",
+      "name": "POTMC",
+      "text": "That's great to hear. It seems that you are not so favorable towards renewing the gas contract with Graonia?",
+      "followUp": true,
+      "nextId": "Graonia02"
+    },
+    {
       "id": "Graonia01",
       "type": "person",
       "name": "POTMC",
@@ -142,7 +158,7 @@
           ]
         },
         {
-          "nextId": "Graonia05",
+          "nextId": "Graonia04",
           "description": "It's never bad to consider other options until the contract is signed.",
           "effects": [
 
@@ -156,6 +172,22 @@
           ]
         }
       ]
+    },
+    {
+      "id": "Graonia03",
+      "type": "person",
+      "name": "POTMC",
+      "text": "If so, Matheuchellyes will consent to the extension of the contract under the current conditions. I won't take up any more of your time, Prime Minister. Thank you for the fruitful conversation.",
+      "followUp": true,
+      "nextId": "Ender"
+    },
+    {
+      "id": "Graonia04",
+      "type": "person",
+      "name": "POTMC",
+      "text": "As you certainly know, under current political circumstances, striking the new deal with Graonians shouldn't be that much of a problem. They still have certain obligations towards us due to the lost war and they don't have too much of a bargaining power. However, we have heard that it is Kachakonya that is looking for alternative suppliers. These are unnecessary efforts, as there is nothing that suggests problems with the stability of supplies.",
+      "followUp": true,
+      "nextId": "Graonia02"
     },
     {
       "id": "Ender",
