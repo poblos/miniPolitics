@@ -177,7 +177,7 @@
       "id": "Graonia03",
       "type": "person",
       "name": "POTMC",
-      "text": "If so, Matheuchellyes will consent to the extension of the contract under the current conditions. I won't take up any more of your time, Prime Minister. Thank you for the fruitful conversation.",
+      "text": "If so, Matheuchelles will consent to the extension of the contract under the current conditions. I won't take up any more of your time, Prime Minister. Thank you for the fruitful conversation.",
       "followUp": true,
       "nextId": "Ender"
     },
@@ -185,9 +185,9 @@
       "id": "Graonia04",
       "type": "person",
       "name": "POTMC",
-      "text": "As you certainly know, under current political circumstances, striking the new deal with Graonians shouldn't be that much of a problem. They still have certain obligations towards us due to the lost war and they don't have too much of a bargaining power. However, we have heard that it is Kachakonya that is looking for alternative suppliers. These are unnecessary efforts, as there is nothing that suggests problems with the stability of supplies.",
+      "text": "Matheuchelles would always choose a very favourable deal with a close country over importing goods from other side of the globe. We recommend doing the same, but that's your choice.",
       "followUp": true,
-      "nextId": "Graonia02"
+      "nextId": "Ender"
     },
     {
       "id": "Ender",
