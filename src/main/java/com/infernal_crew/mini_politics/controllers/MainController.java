@@ -90,7 +90,7 @@ public class MainController {
         eventBox.requestFocus();
 
         if (barController != null) {
-            barController.update(game);
+            barController.update();
         }
 
         // Game is lost
@@ -174,7 +174,7 @@ public class MainController {
         infoBox.getChildren().add(node);
         barController = loader.getController();
         barController.setMainController(this);
-        barController.update(game);
+        barController.update();
     }
 
     @FXML

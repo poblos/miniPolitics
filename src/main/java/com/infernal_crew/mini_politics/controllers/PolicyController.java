@@ -83,7 +83,7 @@ public class PolicyController extends BarController {
     private ListView<Policy> policyList;
     private Policy displayedPolicy;
 
-    public void update(Game game) {
+    public void update() {
         policyNames.clear();
         policyNames.addAll(mainController.getGame().getPolicies().values());
         policyList.setItems(policyNames);

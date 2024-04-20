@@ -20,8 +20,8 @@ public class WarController extends BarController {
     @FXML
     private ProgressBar bar;
     @Override
-    public void update(Game game) {
-        double newValue = Math.floor(game.getIndicatorValue(Indicator.valueOf("NarongWarBalance")) * 100) / 10000;
+    public void update() {
+        double newValue = Math.floor(mainController.getGame().getIndicatorValue(Indicator.valueOf("NarongWarBalance")) * 100) / 10000;
         this.bar.setProgress(newValue);
         if (newValue < 0.15) {
             bar.setStyle("-fx-accent: red");
@@ -31,7 +31,7 @@ public class WarController extends BarController {
             bar.setStyle("-fx-accent: #00A2E8");
         }
         events.clear();
-        events.addAll(game.getWarEvents());
+        events.addAll(mainController.getGame().getWarEvents());
         listView.setItems(events);
 
     }

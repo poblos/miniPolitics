@@ -14,7 +14,7 @@ public class StoryController extends BarController {
     private VBox storyBox;
 
     @Override
-    public void update(Game game) {
+    public void update() {
         storyBox.getChildren().clear();
         for(StoryNote note : mainController.getGame().getStoryNotes()) {
             CheckBox checkBox = new CheckBox();

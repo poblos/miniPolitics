@@ -18,7 +18,7 @@ public class BudgetController extends BarController{
     @FXML
     private PieChart chart;
 
-    public void update(Game game) {
+    public void update() {
         if (incomeOrExpenses.getSelectedToggle() == expensesButton) {
             onExpenseButtonClick();
         } else {

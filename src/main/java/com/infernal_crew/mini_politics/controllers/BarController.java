@@ -7,5 +7,5 @@ public abstract class BarController {
     public void setMainController(MainController mainController) {
             this.mainController = mainController;
     }
-    public abstract void update(Game game);
+    public abstract void update();
 }

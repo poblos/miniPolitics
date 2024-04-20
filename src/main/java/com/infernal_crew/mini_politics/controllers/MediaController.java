@@ -22,7 +22,7 @@ public class MediaController extends BarController {
     @FXML
     private TilePane mediaBox;
 
-    public void update(Game game) {
+    public void update() {
         mediaBox.getChildren().clear();
         for (MediaGroup group : mainController.getGame().getMediaGroups()) {
             Label newLabel = new Label();

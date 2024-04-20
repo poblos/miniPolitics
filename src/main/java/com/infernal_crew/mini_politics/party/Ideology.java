@@ -7,5 +7,8 @@ public enum Ideology {
     Socialist,
     Progressive,
     Conservative,
-    Neutral
+    Pankachakist,
+    Neutral,
+    Antimatheuchellian,
+    Promatheuchellian
 }

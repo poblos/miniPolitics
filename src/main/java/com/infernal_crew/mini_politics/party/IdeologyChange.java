@@ -17,7 +17,7 @@ public class IdeologyChange implements Effect {
 
     @Override
     public void handle(Game game) {
-        game.getParty().ideologies().remove(removed);
-        game.getParty().ideologies().add(added);
+        game.getRulingParty().ideologies().remove(removed);
+        game.getRulingParty().ideologies().add(added);
     }
 }

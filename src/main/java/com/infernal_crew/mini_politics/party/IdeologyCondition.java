@@ -12,6 +12,6 @@ public class IdeologyCondition implements Condition {
 
     @Override
     public boolean met(Game game) {
-        return game.getParty().ideologies().contains(ideology);
+        return game.getRulingParty().ideologies().contains(ideology);
     }
 }

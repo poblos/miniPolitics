@@ -1,0 +1,11 @@
+{
+  "id": "01",
+  "name": "Republican Party of Kachakonia",
+  "description": "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. Currently is in power for the second term in a row, having won twice from the previously-ruling SWPK. \n    The party has strong internal factions, such as the old guard linked to Kachakonia's big business and the progressive wing composed of younger politicians. Thanks to this diversity, they are able to gain wide support, but it often leads to internal conflicts, like nowadays, where not everybody is happy with the new leadership. \n    Generally, in its official program the party emphasizes the role of the free market in shaping wealth, and leaves ideological matters aside. \n    In international politics, the party continues its traditional Pro-Matheuchellian attitude, and also strives to improve relations with Graonia and tighten ties with other countries of the Rotorian Archipelago.",
+  "ideologies": [
+    "BigTent",
+    "Capitalist",
+    "Centrist",
+    "Promatheuchellian"
+  ]
+}

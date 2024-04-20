@@ -3,14 +3,9 @@ package com.infernal_crew.mini_politics.game;
 import com.infernal_crew.mini_politics.components.WarEvent;
 import com.infernal_crew.mini_politics.event.*;
 import com.infernal_crew.mini_politics.indicators.Indicator;
-import com.infernal_crew.mini_politics.indicators.IndicatorCondition;
-import com.infernal_crew.mini_politics.indicators.IndicatorRelation;
 import com.infernal_crew.mini_politics.modifiers.Modifier;
-import com.infernal_crew.mini_politics.modifiers.ModifierCondition;
-import com.infernal_crew.mini_politics.party.IdeologyCondition;
 import com.infernal_crew.mini_politics.party.Party;
 import com.infernal_crew.mini_politics.policy.Policy;
-import com.infernal_crew.mini_politics.policy.PolicyCondition;
 import com.infernal_crew.mini_politics.budget.*;
 import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.media.*;
@@ -40,19 +35,21 @@ public class Game {
     private final Map<Integer, Integer> cooldown = new HashMap<>();
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
+    private final List<Party> parties;
     private final List<StoryNote> storyNotes;
     private final List<WarEvent> warEvents = new ArrayList<>();
-    private Party party;
+    private Party rulingParty;
     private final Budget budget;
     private final transient Random random = new Random();
 
     public Game(List<Event> events, List<Dialogue> dialogues, List<Person> people, List<Person> activePeople, List<Policy> policies,
-                List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits) {
+                List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits, List<Party> parties) {
         this.budget = budget;
         this.events = events;
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
         this.storyNotes = storyNotes;
+        this.parties = parties;
 
         values.put(Indicator.PartyCohesion, 40F);
         values.put(Indicator.StateStability, 35F);
@@ -78,6 +75,12 @@ public class Game {
         }
         for (Trait t : traits) {
             this.traits.put(t.getName(), t);
+        }
+
+        for(Party p : parties) {
+            if (Objects.equals(p.id(), "01")) {
+                rulingParty = p;
+            }
         }
     }
 
@@ -268,8 +271,12 @@ public class Game {
         return mediaGroups;
     }
 
-    public Party getParty() {
-        return party;
+    public List<Party> getParties() {
+        return parties;
+    }
+
+    public Party getRulingParty() {
+        return rulingParty;
     }
 
     public Budget getBudget() {
@@ -310,8 +317,8 @@ public class Game {
         return employed;
     }
 
-    public void setParty(Party party) {
-        this.party = party;
+    public void setRulingParty(Party rulingParty) {
+        this.rulingParty = rulingParty;
     }
 
     public Map<Integer, Integer> getCooldown() {

@@ -17,7 +17,6 @@ import com.infernal_crew.mini_politics.modifiers.Modifier;
 import com.infernal_crew.mini_politics.modifiers.ModifierCondition;
 import com.infernal_crew.mini_politics.modifiers.ModifierInvocation;
 import com.infernal_crew.mini_politics.modifiers.ModifierRemoval;
-import com.infernal_crew.mini_politics.party.Ideology;
 import com.infernal_crew.mini_politics.party.IdeologyChange;
 import com.infernal_crew.mini_politics.party.IdeologyCondition;
 import com.infernal_crew.mini_politics.party.Party;
@@ -132,9 +131,11 @@ public class StartView {
 
         ArrayList<Trait> traits = loadFiles(Trait.class, "json/" + nationTag + "/traits/", moshi);
 
+        ArrayList<Party> parties = loadFiles(Party.class, "json/" + nationTag + "/parties/", moshi);
+
         printNumberOf("events", events.size());
         printNumberOf("dialogues", dialogues.size());
-        return new Game(events, dialogues, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits);
+        return new Game(events, dialogues, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits, parties);
     }
 
     private void startGame(Game game) throws IOException {
@@ -153,28 +154,11 @@ public class StartView {
 
     public void onKachakonyaButtonClick() throws URISyntaxException, IOException {
         Game game = constructGame("KA");
-        //Party
-        ArrayList<Ideology> ideologies = new ArrayList<>();
-        ideologies.add(Ideology.BigTent);
-        ideologies.add(Ideology.Capitalist);
-        ideologies.add(Ideology.Centrist);
-        Party party = new Party("Republican Party of Kachakonya", "One of the oldest active political parties in Kachakonya, traditionally associated with the bourgeoisie. " + "In power for last 4 years, under new leadership suffers from internal turmoil.", ideologies);
-        game.setParty(party);
-
         startGame(game);
     }
 
     public void onGraoniaButtonClick() throws URISyntaxException, IOException {
         Game game = constructGame("GR");
-
-        //Party
-        ArrayList<Ideology> ideologies = new ArrayList<>();
-        ideologies.add(Ideology.BigTent);
-        ideologies.add(Ideology.Capitalist);
-        ideologies.add(Ideology.Centrist);
-        Party party = new Party("Democratic Party of Kachakonia", "One of the oldest active political parties in Kachakonia, traditionally associated with the bourgeoisie. " + "Currently in power for past 4 years, but under new leadership suffer from internal turmoil.", ideologies);
-        game.setParty(party);
-
         startGame(game);
     }
 

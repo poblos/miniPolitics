@@ -28,3 +28,18 @@
     -fx-fill: black;
     -fx-font: 13pt "Droid Serif";
 }
+
+.nextPartyButton {
+    -fx-background-color: #FF5733;
+    -fx-border-color: #FF5733;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-shape: "M 400 250 L 500 350 L 500 350 L 400 450 L 400 250";
+}
+
+.nextPartyButton:hover {
+    -fx-background-color: #E84118;
+}
