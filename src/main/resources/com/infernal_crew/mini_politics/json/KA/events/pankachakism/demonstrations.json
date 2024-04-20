@@ -1,6 +1,14 @@
 {
   "isUnique": true,
   "probability": 1200,
+  "trigger": {
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 15
+      }
+    ]
+  },
   "description": "The Federalist Party of Kachakonya is preparing large demonstrations on the anniversary of Battle of Ehr. Their slogan is to 'finish the job', which alludes to the fact that in that battle Matcheuchellian and Graonian invasion was repelled. Many believe that we should not allow nationalists to hijack our National Holiday, but maybe... we can actually benefit from that.",
   "options": [
     {
@@ -30,6 +38,10 @@
           "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nationalist demonstrations"
         }
       ]
     },
@@ -45,6 +57,10 @@
           "type": "indicator_change",
           "change": 1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Nationalist demonstrations"
         }
       ]
     }

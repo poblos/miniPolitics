@@ -1,0 +1,50 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Nationalist demonstrations"
+      }
+    ]
+  },
+  "isUnique": true,
+  "probability": 1200,
+  "description": "A turnout on recent demonstrations organised by the Federalist Party was even higher than anticipated. Tens of thousands of young people gathered to chant anti-Matheuchellyan slogans, claiming that the Commonwealth's hegemony limits their development opportunities. Of course, they're just a very noisy minority, but it's worth noting how federalists have recently been placing emphasis differently, putting aside ideological issues and emphasizing the ambitions of the younger generation and the economy.",
+  "options": [
+    {
+      "description": "They just try to pretend to be normal!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "That's becoming too dangerous! We need sort them out.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        }
+      ]
+    },
+    {
+      "description": "I want to have a quiet word with their leader...",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "dialogue_invocation",
+          "id": "fed01"
+        }
+      ]
+    }
+  ],
+  "title": "Nationalist wave"
+}

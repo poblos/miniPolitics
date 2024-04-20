@@ -1,0 +1,93 @@
+{
+  "id": "fed01",
+  "title": "The Federation?",
+  "parts": [
+    {
+      "id": "Starter",
+      "type": "description",
+      "text": "Leader of the Federalist Party, Mr [...] has agreed to have a private talk. Deep in your thoughts, you almost jumped when your secretary opened the door and said that Mr [...] was there.",
+      "followUp": true,
+      "nextId": "S01"
+    },
+    {
+      "id": "S01",
+      "type": "person",
+      "name": "FPL",
+      "text": "Good morning, Prime Minister, to what do I owe this sudden invitation? Did you like our recent action?",
+      "followUp": true,
+      "nextId": "S02"
+    },
+    {
+      "id": "S02",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "federalists_threatened",
+          "description": "I'm not sure 'like' is the appropriate word. You, and your colleagues are putting our international relations at risk for a marginal political gain! I won't tolerate it for much longer.",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "S04",
+          "description": "It depends on how do you define 'like'. Do I agree with what you wanted to tell? Yes. Are such demonstrations good for our common cause? Absolutely not.",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "S05",
+          "description": "I wanted to discuss joint action on the issue you underlined.",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "federalists_threatened",
+      "type": "person",
+      "name": "FPL",
+      "text": "Threats don't work on me! For many years your government ignored our voice and did everything the Hegemon asked for. Your propaganda says we have such a close relations blabla, but the truth is we are getting colonised economically and have nothing meaningful in return for that. Military protection? Who exactly threatens us aside from the Matheuchellian themselves, who still occupy Kachakonian island of Chara!",
+      "followUp": true,
+      "nextId": "federalists_threatened_continuation"
+    },
+    {
+      "id": "federalists_threatened_continuation",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "pro_graonia",
+          "description": "And what choice do we have? Do you really believe that pissing off the greatest empire in world's history is going to fix any problems?",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "S04",
+          "description": "It depends on how do you define 'like'. Do I agree with what you wanted to tell? Yes. Are such demonstrations good for our common cause? Absolutely not.",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "S05",
+          "description": "I wanted to discuss joint action on the issue you underlined.",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pro_graonia",
+      "type": "person",
+      "name": "FPL",
+      "text": "Not pissing off, but engaging in discussions. You are right that alone we aren't in a position to challenge Matheuchelles, but we aren't the only country in the similar spot. That's a hard pill to swallow, but we need an agreement with Graonians.",
+      "followUp": true,
+      "nextId": "Ender"
+    },
+    {
+      "id": "Ender",
+      "type": "description",
+      "text": "To be continued...",
+      "followUp": false
+    }
+  ]
+}
