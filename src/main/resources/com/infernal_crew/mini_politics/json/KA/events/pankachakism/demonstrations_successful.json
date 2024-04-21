@@ -22,7 +22,7 @@
       ]
     },
     {
-      "description": "That's becoming too dangerous! We need sort them out.",
+      "description": "That's becoming too dangerous! We need to sort them out.",
       "effects": [
         {
           "type": "indicator_change",

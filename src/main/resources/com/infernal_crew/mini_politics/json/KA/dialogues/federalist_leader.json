@@ -81,12 +81,33 @@
       "name": "FPL",
       "text": "Not pissing off, but engaging in discussions. You are right that alone we aren't in a position to challenge Matheuchelles, but we aren't the only country in the similar spot. That's a hard pill to swallow, but we need an agreement with Graonians.",
       "followUp": true,
-      "nextId": "Ender"
+      "nextId": "too_much"
     },
     {
-      "id": "Ender",
+      "id": "too_much",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "too_much2",
+          "description": "Agreement with Graonians against the Hegemon? So it's true what they say about you. You are mad! I'm sorry, but you give me no other choice! Either you stop spreading this dangerous propaganda or we will talk differently. Pardon! Internal security agency will talk with you differently.",
+          "effects": [
+          ]
+        }
+      ]
+    },
+    {
+      "id": "too_much2",
+      "type": "person",
+      "name": "FPL",
+      "text": "Can't wait to hear from them! I see that you are Matheuchelles' pawn like the rest of our elites and I promise you, history will remember you as such.",
+      "followUp": true,
+      "nextId": "anger_ending"
+    },
+    {
+      "id": "anger_ending",
       "type": "description",
-      "text": "To be continued...",
+      "text": "He grounded the last sentence out and left the room, slamming the door in the process.",
       "followUp": false
     }
   ]
