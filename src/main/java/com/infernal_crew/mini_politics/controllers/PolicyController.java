@@ -12,6 +12,9 @@ import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> {
 
@@ -84,8 +87,13 @@ public class PolicyController extends BarController {
     private Policy displayedPolicy;
 
     public void update() {
-        policyNames.clear();
-        policyNames.addAll(mainController.getGame().getPolicies().values());
+        Map<Integer, Policy> policies = mainController.getGame().getPolicies();
+
+        List<Policy> filteredPolicies = policies.values().stream()
+                .filter(policy -> policy.getName() != null)
+                .collect(Collectors.toList());
+
+        policyNames.setAll(filteredPolicies);
         policyList.setItems(policyNames);
 
         if (displayedPolicy != null) {

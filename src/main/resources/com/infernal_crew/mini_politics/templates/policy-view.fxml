@@ -9,7 +9,7 @@
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.infernal_crew.mini_politics.controllers.PolicyController">
     <VBox prefWidth="476.0">
-        <TextField alignment="CENTER" editable="false " prefHeight="42.0" styleClass="titleBar" text="POLICIES"/>
+        <TextField alignment="CENTER" editable="false" prefHeight="42.0" styleClass="titleBar" text="POLICIES"/>
         <HBox prefWidth="400.0">
             <VBox prefHeight="502.0" prefWidth="422.0" styleClass="viewContent">
                 <ListView fx:id="policyList" prefHeight="208.0"/>

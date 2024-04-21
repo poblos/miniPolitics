@@ -1,0 +1,18 @@
+{
+  "id": 101,
+  "currentOption": 0,
+  "options": [
+    {
+      "name": "Weak amphibious capabilities",
+      "desc": "The country lacks amphibious landing craft and trained marine forces."
+    },
+    {
+      "name": "Some amphibious capabilities",
+      "desc": "The country possesses a small amphibious landing craft fleet and a specialised marine division."
+    },
+    {
+      "name": "Good amphibious capabilities",
+      "desc": "The country possesses a substantial landing craft fleet, specialised marine divisions and support units."
+    }
+  ]
+}

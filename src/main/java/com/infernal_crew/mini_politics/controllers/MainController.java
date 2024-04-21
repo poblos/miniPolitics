@@ -210,6 +210,14 @@ public class MainController {
     }
 
     @FXML
+    public void onSituationButtonClick(ActionEvent actionEvent) {
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
+        setInfoBox("situation-view.fxml");
+    }
+
+    @FXML
     public void onWarButtonClick(ActionEvent actionEvent) {
         if (ifRequiresCleaning(actionEvent)) {
             return;
