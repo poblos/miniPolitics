@@ -12,3 +12,5 @@ Project developed with IntelliJ IDEA.
 <a href="https://www.flaticon.com/free-icons/budget" title="budget icons">Budget icons created by khulqi Rosyid - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/tv" title="tv icons">Tv icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/policy" title="policy icons">Policy icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/market-situation" title="market situation icons">Market situation icons created by Dewi Sari - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/books" title="books icons">Books icons created by Freepik - Flaticon</a>
