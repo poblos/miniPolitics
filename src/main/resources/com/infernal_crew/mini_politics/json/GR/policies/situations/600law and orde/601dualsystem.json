@@ -1,0 +1,18 @@
+{
+  "id": 601,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Dual judicial system",
+      "desc": "There exists a secular and a religious branch of the country's judiciary. The two branches often suffer from subject matter jurisdiction disputes, leading to lengthy proceedings."
+    },
+    {
+      "name": "Justice system reform",
+      "desc": "Due to clearly defined subject matter jurisdiction and a clause of lingering jurisdiction competence, the disputes between the branches of the judiciary have been greatly reduced."
+    },
+    {
+      "name": "Religious jurisdiction separation",
+      "desc": "The religious part of the country's judiciary has been separated from the state and now functions as an intra-church institution."
+    }
+  ]
+}

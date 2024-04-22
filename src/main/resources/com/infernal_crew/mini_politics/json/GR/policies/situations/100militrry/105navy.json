@@ -1,0 +1,18 @@
+{
+  "id": 105,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Limited naval capabilities",
+      "desc": "The national navy posesses too little active vessels to protect the country's territorial waters."
+    },
+    {
+      "name": "Average naval capabilities",
+      "desc": "The national navy can perform operations to effectively safeguard the country's territorial waters."
+    },
+    {
+      "name": "A grand navy",
+      "desc": "The size of the national navy allows it to exert control way beyond the country's territorial waters."
+    }
+  ]
+}

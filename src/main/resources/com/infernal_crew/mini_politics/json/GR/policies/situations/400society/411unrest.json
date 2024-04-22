@@ -1,0 +1,18 @@
+{
+  "id": 411,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Rebellious populace",
+      "desc": "The citizens fed up with government policies resort to riots and violence."
+    },
+    {
+      "name": "Some social unrest",
+      "desc": "Unpopular government decisions tend to cause peaceful protests and strikes across the country."
+    },
+    {
+      "name": "Compliant populace",
+      "desc": "The stoic attitude of the county's citizens makes them compliant to even some controversial government policies."
+    }
+  ]
+}

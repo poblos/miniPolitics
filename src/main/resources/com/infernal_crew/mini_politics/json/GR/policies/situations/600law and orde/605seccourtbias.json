@@ -1,0 +1,18 @@
+{
+  "id": 605,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Secular court bias",
+      "desc": "The secular branch of the country's judiciary tends to pass exaggerated judgement and their interpretation of law favours the anti-establishment."
+    },
+    {
+      "name": "Questionable secular court impartiality",
+      "desc": "There are instances of religious courts passing far-fetched judgement or interpretation in favour o the anti-establishment."
+    },
+    {
+      "name": "Impartial secular courts",
+      "desc": "There is no bias in secular courts. All their judgements comply standards of correct law interpretation"
+    }
+  ]
+}

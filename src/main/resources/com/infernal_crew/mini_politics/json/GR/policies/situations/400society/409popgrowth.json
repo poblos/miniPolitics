@@ -1,0 +1,18 @@
+{
+  "id": 409,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Population decline",
+      "desc": "The fertility rate in the country has dropped below the population replenishment threshold."
+    },
+    {
+      "name": "Stagnant population",
+      "desc": "The fertility rate in the country is just enough to sustain its current population."
+    },
+    {
+      "name": "Stable population growth",
+      "desc": "The country experiences a stable growth in population and a moderate-high fertility rate."
+    }
+  ]
+}

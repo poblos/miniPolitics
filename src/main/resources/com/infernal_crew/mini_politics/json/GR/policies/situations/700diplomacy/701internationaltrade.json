@@ -1,0 +1,18 @@
+{
+  "id": 701,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Unfair international trade conditions",
+      "desc": "Due to the influence of the Hegemon on the global market, the county needs to comply with unjust conditions in order to export and import goods."
+    },
+    {
+      "name": "Renegotiated international trade participation",
+      "desc": "The country has renegotiated the terms of participation in the global market, which guarantees its more equal position among other countries."
+    },
+    {
+      "name": "Dominant position in the international trade",
+      "desc": "The country possesses immense economic influence and can push its own agenda on the international market."
+    }
+  ]
+}

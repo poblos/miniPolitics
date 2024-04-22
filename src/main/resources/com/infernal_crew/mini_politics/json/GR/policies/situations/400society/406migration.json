@@ -1,0 +1,18 @@
+{
+  "id": 406,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Closed borders",
+      "desc": "The country does not welcome immigrants and deports refugees from its territory."
+    },
+    {
+      "name": "Migrant quotas imposed",
+      "desc": "The country issues restrictions on the accessibility of work and residence permits for foreigners."
+    },
+    {
+      "name": "Relaxed migration policy",
+      "desc": "The country's lenient migration policy allows foreigners to easily obtain necessary permits for temporary work or residence."
+    }
+  ]
+}

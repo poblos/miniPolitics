@@ -1,0 +1,18 @@
+{
+  "id": 604,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Religious court bias",
+      "desc": "The religious branch of the country's judiciary tends to pass exaggerated judgement and their interpretation of law favours the establishment and not the citizen."
+    },
+    {
+      "name": "Questionable religious court impartiality",
+      "desc": "There are instances of religious courts passing far-fetched judgement or interpretation in favour o the establishment."
+    },
+    {
+      "name": "Impartial religious courts",
+      "desc": "There is no bias in religious courts. All their judgements comply standards of correct law interpretation"
+    }
+  ]
+}

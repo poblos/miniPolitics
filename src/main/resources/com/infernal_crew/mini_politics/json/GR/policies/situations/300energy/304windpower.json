@@ -1,0 +1,18 @@
+{
+  "id": 304,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Redundant wind farms",
+      "desc": "There are little to no efficient wind farms in the country."
+    },
+    {
+      "name": "Small investment in wind power",
+      "desc": "The country possesses wind farms in the most efficient locations."
+    },
+    {
+      "name": "High wind power potential",
+      "desc": "Most of the country's coastlines and even some land areas have been appropriated for wind power production."
+    }
+  ]
+}

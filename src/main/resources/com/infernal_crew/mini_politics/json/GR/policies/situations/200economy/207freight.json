@@ -1,0 +1,18 @@
+{
+  "id": 207,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Compromised cargo fleet",
+      "desc": "The country's cargo fleet has limited capacity to freight goods even between home ports."
+    },
+    {
+      "name": "Average cargo fleet",
+      "desc": "The country bolsters a satisfactorily performing cargo fleet."
+    },
+    {
+      "name": "Global cargo fleet",
+      "desc": "The country's cargo fleet has a capacity to freight goods all across the world."
+    }
+  ]
+}

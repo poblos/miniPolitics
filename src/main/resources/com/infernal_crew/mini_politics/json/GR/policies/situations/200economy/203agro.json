@@ -1,0 +1,18 @@
+{
+  "id": 203,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Neglected rural areas",
+      "desc": "The countryside is an absolute backwater with little mechanization and poor crop yields."
+    },
+    {
+      "name": "Developing rural regions",
+      "desc": "Most rural areas posess some modern infrastructure. Motor vehicles are used assisting seeding and harvest."
+    },
+    {
+      "name": "High agricultural potential",
+      "desc": "Highly mechanized collection and processing methods and the use of fertilizers create an efficient agricultural sector."
+    }
+  ]
+}

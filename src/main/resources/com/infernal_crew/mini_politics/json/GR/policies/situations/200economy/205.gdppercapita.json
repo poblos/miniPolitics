@@ -1,0 +1,18 @@
+{
+  "id": 205,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Low GDP per capita",
+      "desc": "The citizens are poor."
+    },
+    {
+      "name": "Average GDP per capita",
+      "desc": "The citizens enjoy an acceptable standard of living."
+    },
+    {
+      "name": "High GDP per capita",
+      "desc": "The citizens enjoy a high standard of living and an increased productivity."
+    }
+  ]
+}

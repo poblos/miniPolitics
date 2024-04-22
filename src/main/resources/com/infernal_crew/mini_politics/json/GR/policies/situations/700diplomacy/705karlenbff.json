@@ -1,0 +1,18 @@
+{
+  "id": 705,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Ties cut with Karlen",
+      "desc": "The Karlenese federation has cut ties with our country. We expect no special treatment from them."
+    },
+    {
+      "name": "Small Karlen trade agreement",
+      "desc": "The country has signed a trade deal with Karlen, allowing for an easier transfer of goods, capital and workforce between the countries."
+    },
+    {
+      "name": "Karlen partnership",
+      "desc": "The country's partnership with Karlen has been extended to include a military alliance, a customs union and a migration pact."
+    }
+  ]
+}

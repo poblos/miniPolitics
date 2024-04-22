@@ -1,0 +1,18 @@
+{
+  "id": 501,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Religious influence on legislature",
+      "desc": "The legislative branch of the country's legislature is constrained by the Conclave, which can veto any legislature it deems not in compliance with the religious law."
+    },
+    {
+      "name": "Partial legislative secularisation",
+      "desc": "The power of religious institutions in legislation has been constrained to an advisory role, while retaining some influence on resolving constitutional disputes and legal interpretation."
+    },
+    {
+      "name": "Independent legislative branch",
+      "desc": "The legislative branch of the country's government is fully secular and free from outside obstruction."
+    }
+  ]
+}

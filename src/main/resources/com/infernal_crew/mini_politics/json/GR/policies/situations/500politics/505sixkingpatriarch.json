@@ -1,0 +1,18 @@
+{
+  "id": 505,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Suspension of the Ila Heksareksoi patriarch",
+      "desc": "Due to the secession of the Isle of Six Kings its patriarch's political rights in the Hexarchy have been suspended."
+    },
+    {
+      "name": "Ila Heksareksoi patriarch substituted",
+      "desc": "The seat in the Hexarchy once occupied by the patriarch of the Isle of Six Kings has been given to another regional patriarch."
+    },
+    {
+      "name": "Ila Heksareksoi patriarch in the Hexarchy",
+      "desc": "The Archpatriarch has removed the suspension of the patriarch of the Isle of Six Kings."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 302,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Disconnected energy grid",
+      "desc": "The country only supports local energy grids, necessitating a decentralised energy production."
+    },
+    {
+      "name": "Energy grid modernization",
+      "desc": "The country undergoes efforts to integrate local energy grids into a nationwide network."
+    },
+    {
+      "name": "Integrated energy grid",
+      "desc": "The country possesses underwater cables integrating the country's energy grid, allowing for a centralised energy production."
+    }
+  ]
+}

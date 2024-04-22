@@ -1,0 +1,18 @@
+{
+  "id": 202,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Low national business competitiveness",
+      "desc": "National businesses have trouble being competitive within the country's borders even with government subsidies."
+    },
+    {
+      "name": "Average national business competitiveness",
+      "desc": "National businesses can make it out on the national market but need subsidies to operate on the global market."
+    },
+    {
+      "name": "High national business competitiveness",
+      "desc": "National businesses can compete on the global market alongside the most powerful players."
+    }
+  ]
+}

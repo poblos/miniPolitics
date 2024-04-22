@@ -1,0 +1,18 @@
+{
+  "id": 206,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Low levels of foreign investment",
+      "desc": "Little to no foreign capital investments are made in the country."
+    },
+    {
+      "name": "Some foreign investment",
+      "desc": "There are some projects in the country funded by foreign capital."
+    },
+    {
+      "name": "High levels of foreign investment",
+      "desc": "The country has become a destination for major foreign capital investments."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 407,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Media censorship",
+      "desc": "All media are to be controlled before publishing anything in the country's space."
+    },
+    {
+      "name": "Some media freedom",
+      "desc": "Freedom of media is legally established, however there are instances of government intervention in the agenda-setting of public media and persistant opposition outlet persecution."
+    },
+    {
+      "name": "Free media",
+      "desc": "The country established legal and factual freedom of media."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 704,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Secession of Ila Heksareksoi",
+      "desc": "In the aftermath of the Second War of Hegemony, the Isle of Six Kings has seceeded and functions as an independent entity with little ties to Graonia."
+    },
+    {
+      "name": "Ila Heksareksoi partnership",
+      "desc": "The country has signed bilateral agreements with the Isle of Six Kings, including a free-trade zone and mutual diplomatic support clause."
+    },
+    {
+      "name": "Ila Heksareksoi re-integration",
+      "desc": "The Isle of Six Kings is a part of Graonia once more."
+    }
+  ]
+}

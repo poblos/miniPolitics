@@ -1,0 +1,18 @@
+{
+  "id": 507,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Minor nationalist influence",
+      "desc": "In the country there exists a graonian nationalist group called 'Plus Ultra', whose influence is negligible."
+    },
+    {
+      "name": "Growing nationalist influence",
+      "desc": "'Plus Ultra' started performing minor actions across the country on a regular basis."
+    },
+    {
+      "name": "High nationalist influence",
+      "desc": "'Plus Ultra' rallies thousands of nationalists and revanchists to their cause."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 108,
+  "current option": 2,
+  "options": [
+    {
+      "name": "No mountain division",
+      "desc": "There are no specialised mountaineer units in the country."
+    },
+    {
+      "name": "Some mountain units",
+      "desc": "The country hosts some mountaineer units."
+    },
+    {
+      "name": "Strong mountain division",
+      "desc": "There are many elite battle-ready mountaineer units in the country."
+    }
+  ]
+}

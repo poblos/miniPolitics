@@ -1,0 +1,18 @@
+{
+  "id": 502,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Religious census on active and passive electoral rights.",
+      "desc": "Only adult citizens who are part of the Graic Church are allowed to vote and hold government positions."
+    },
+    {
+      "name": "Religious census on passive electoral rights.",
+      "desc": "Every adult citizen has a voting right regardless of their religion, however there exists a religious census regarding government position candidates."
+    },
+    {
+      "name": "Secular elections",
+      "desc": "All adult citizens can elect and be elected to the government regardless of their religion."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 503,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Overused impeachment procedure",
+      "desc": "The impeachment procedure of the government can be easily abused due to a low ecclesial vote threshold and no constitutional requirement of a constitutive vote of no confidence."
+    },
+    {
+      "name": "Reformed impeachment procedure",
+      "desc": "The impeachment procedure of the government requires a qualified majority of ecclesial votes and a constitutive vote of no confidence."
+    },
+    {
+      "name": "Impeachment removed",
+      "desc": "The legislative can no longer impeach the government."
+    }
+  ]
+}

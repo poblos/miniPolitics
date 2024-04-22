@@ -1,0 +1,18 @@
+{
+  "id": 402,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Brain drain",
+      "desc": "Due to the low quality of the country's tertiary education many skilled workers decide to study and work abroad."
+    },
+    {
+      "name": "Capable tertiary education",
+      "desc": "The country's colleges provide sufficient specialist education for the citizens."
+    },
+    {
+      "name": "World scientific destination",
+      "desc": "The country's tertiary education facilities are attractive to worldwide students."
+    }
+  ]
+}

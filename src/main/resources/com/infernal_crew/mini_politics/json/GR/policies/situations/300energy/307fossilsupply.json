@@ -1,0 +1,18 @@
+{
+  "id": 307,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Low supply of fossil fuels",
+      "desc": "There is not enough fossil fuels to operate the county's infrastructure."
+    },
+    {
+      "name": "Average supply of fossil fuels",
+      "desc": "The supply of the county's fossil fuels is enough to sustain its infrastructure."
+    },
+    {
+      "name": "High supply of fossil fuels",
+      "desc": "The country extracts enough fossil fuels to operate its infrastructure and export a surplus."
+    }
+  ]
+}

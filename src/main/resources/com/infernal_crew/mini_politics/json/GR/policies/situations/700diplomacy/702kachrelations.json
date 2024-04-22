@@ -1,0 +1,18 @@
+{
+  "id": 702,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Kachakonyan hostility",
+      "desc": "The government of Kachakonya expresses outright hostility towards ours."
+    },
+    {
+      "name": "Tense Kachakonyan relations",
+      "desc": "Historical animosities between Kachakonya and Graonia makes it difficult for any party to pursue a bilateral agreement with each other."
+    },
+    {
+      "name": "Kachakonyan relations re-established",
+      "desc": "The country has re-established diplomatic and economic relations with Kachakonya."
+    }
+  ]
+}

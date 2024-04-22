@@ -1,0 +1,18 @@
+{
+  "id": 506,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Minor fundamentalist influence",
+      "desc": "In the country there exists a graic fundamentalist group called 'The Gray Robes', whose influence is negligable."
+    },
+    {
+      "name": "Growing fundamentalist influence",
+      "desc": "'The Gray Robes' started performing minor actions across the country on a regular basis."
+    },
+    {
+      "name": "High fundamentalist influence",
+      "desc": "'The Grey Robes' rally thousands of religious fanatics and sanacionists to their cause."
+    }
+  ]
+}

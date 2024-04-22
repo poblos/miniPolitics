@@ -1,0 +1,18 @@
+{
+  "id": 703,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Ties with ex-colonies cut",
+      "desc": "The country has cut ties with its ex-colonies. They are not expected to receive special treatment from us and vice versa."
+    },
+    {
+      "name": "Lingering influence in ex-colonies",
+      "desc": "The country still has strong economic and political ties with its ex-colonies, including Erdia, Passala and Elenia"
+    },
+    {
+      "name": "Ex-colony partnership",
+      "desc": "The country has increased cooperation with its former colonies, creating a defensive alliance and a customs union."
+    }
+  ]
+}

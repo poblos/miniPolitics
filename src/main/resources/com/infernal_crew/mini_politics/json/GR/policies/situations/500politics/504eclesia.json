@@ -1,0 +1,18 @@
+{
+  "id": 504,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Minority ecclesial government",
+      "desc": "The ruling party does not have enough eccletes to consistently pass legislation."
+    },
+    {
+      "name": "Coalition government",
+      "desc": "The ruling coalition includes enough eccletes to consistently pass legislation."
+    },
+    {
+      "name": "Independent ecclesial majority",
+      "desc": "The ruling party possesses an ecclesial majority."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 305,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Low capacity of pump-storage water plants",
+      "desc": "There is a low capacity of pump-storage power plants in the country."
+    },
+    {
+      "name": "Some pump-storage water plants",
+      "desc": "The country possesses some retention pools appropriated for energy storage."
+    },
+    {
+      "name": "High capacity of pump-storage power plants",
+      "desc": "The country's pump-storage power sector can contain large amounts of potential energy."
+    }
+  ]
+}

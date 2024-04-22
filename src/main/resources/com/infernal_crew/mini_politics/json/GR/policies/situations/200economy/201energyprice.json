@@ -1,0 +1,18 @@
+{
+  "id": 201,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Low energy prices",
+      "desc": "The price of energy resources, such as oil or natural gas is low."
+    },
+    {
+      "name": "Average energy prices",
+      "desc": "The price of energy resources, such as oil or natural gas is average."
+    },
+    {
+      "name": "High energy prices",
+      "desc": "The price of energy resources, such as oil or natural gas is high."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 104,
+  "current option": 1,
+  "options": [
+    {
+      "name": "No territorial defence forces",
+      "desc": "There are no territorial defence forces in combat readiness."
+    },
+    {
+      "name": "Small territorial defence forces",
+      "desc": "There are some combat-ready territorial defence forces deployed in the most strategic locations."
+    },
+    {
+      "name": "Expanded territorial defence forces",
+      "desc": "Nearly every major strategic location in the country has a combat-ready territorial defence unit protecting it."
+    }
+  ]
+}

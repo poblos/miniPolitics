@@ -1,0 +1,18 @@
+{
+  "id": 102,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Lacking air force",
+      "desc": "The national air force only posesses a handful of capable planes."
+    },
+    {
+      "name": "Average air force",
+      "desc": "The national air force comprises of enough planes to carry efficient interception missions in the country's airspace."
+    },
+    {
+      "name": "Strong air force",
+      "desc": "The country posesses a large air fleet capable of operating on both short- and long-range missions, including interception and bombing."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 509,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Religious administration",
+      "desc": "Only priests are allowed in the country's administrative bodies."
+    },
+    {
+      "name": "Mixed administrative bodies",
+      "desc": "The country introduced quotas for secular workers in administration."
+    },
+    {
+      "name": "Secular administration",
+      "desc": "Priests are forbidden from the country's administration."
+    }
+  ]
+}

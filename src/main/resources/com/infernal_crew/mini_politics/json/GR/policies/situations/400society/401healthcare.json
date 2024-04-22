@@ -1,0 +1,18 @@
+{
+  "id": 401,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Overburdened healthcare",
+      "desc": "There is insufficient staffing and funding of the country's healthcare sector for it to meet even the basic standards."
+    },
+    {
+      "name": "Capable healthcare",
+      "desc": "The quality of the country's health system is acceptable."
+    },
+    {
+      "name": "Strong health sector",
+      "desc": "Due to increased funding, staff and infrastructure improvements the country can provide good quality healthcare for its citizens."
+    }
+  ]
+}

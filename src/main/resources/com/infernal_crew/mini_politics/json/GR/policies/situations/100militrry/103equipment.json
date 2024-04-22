@@ -1,0 +1,17 @@
+{
+  "id": 103,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Outdated military equipment",
+      "desc": "National stockpiles of military equipment date back to the second war of hegemony and provide little combat value."
+    },
+    {
+      "name": "Military equipment modernization",
+      "desc": "Some elite units in the national army posess up-to-date military equipment, while the rest of the army have modernised their small arms."
+    {
+      "name": "Modern military equipment",
+      "desc": "Most of national army divisions are equipped with advanced contemporary weaponry, including small arms, artillery and armored vehicles."
+    }
+  ]
+}

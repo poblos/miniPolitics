@@ -1,0 +1,18 @@
+{
+  "id": 408,
+  "current option": 2,
+  "options": [
+    {
+      "name": "High unemployment",
+      "desc": "More than 15% of the country's working-age population is unemployed."
+    },
+    {
+      "name": "Average unemployment",
+      "desc": "About 10% of the country's working-age population is unemployed."
+    },
+    {
+      "name": "Low unemployment",
+      "desc": "Less than 5% of the country's working-age population is unemplyed."
+    }
+  ]
+}

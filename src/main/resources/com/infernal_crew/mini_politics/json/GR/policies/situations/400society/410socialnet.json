@@ -1,0 +1,18 @@
+{
+  "id": 410,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Lacking welfare funds",
+      "desc": "There is not enough funds to maintain a capable social security net for all citizens."
+    },
+    {
+      "name": "State-based social welfare",
+      "desc": "The country invests substantial funds to maintain a social security net."
+    },
+    {
+      "name": "Family-based social welfare",
+      "desc": "A strong family structure allows for the outsourcing of welfare and social security to the family unit."
+    }
+  ]
+}

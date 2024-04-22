@@ -1,0 +1,18 @@
+{
+  "id": 403,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Religious discrimination",
+      "desc": "Those who do not follow the state religion are frequently discriminated against."
+    },
+    {
+      "name": "Some anti-discrimination policies",
+      "desc": "The country has introduced a ban on discrimination in some areas of life, including workplace and education."
+    },
+    {
+      "name": "Discrimination ban",
+      "desc": "Anyone who discriminates against another will face a penalty."
+    }
+  ]
+}

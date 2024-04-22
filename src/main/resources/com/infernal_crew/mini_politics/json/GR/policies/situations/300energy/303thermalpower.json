@@ -1,0 +1,18 @@
+{
+  "id": 303,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Outdated thermal facilities",
+      "desc": "The country's thermal power plants operate beneath their maximum capacity."
+    },
+    {
+      "name": "Some modern thermal facilities",
+      "desc": "The country sees improvement in the efficiency of thermal energy extraction."
+    },
+    {
+      "name": "Cutting-edge thermal facilities",
+      "desc": "The country's thermal power plants operate with world-level efficiency."
+    }
+  ]
+}

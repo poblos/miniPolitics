@@ -1,0 +1,18 @@
+{
+  "id": 602,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Weak intelligence service",
+      "desc": "Agents and whistleblowers are small in numbers and lack funding to carry out intelligence operations."
+    },
+    {
+      "name": "Growing intelligence capabilities",
+      "desc": "The country's intelligence service received an increase in funds and is undergoing standard agent training procedure to expand its ranks."
+    },
+    {
+      "name": "Expanded intelligence service",
+      "desc": "Whe country possesses a trained intelligence service gathering intel on internal and external threats."
+    }
+  ]
+}

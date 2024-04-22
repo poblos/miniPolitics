@@ -1,0 +1,18 @@
+{
+  "id": 508,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Removed archpatriarch political influence",
+      "desc": "The Archpatriarch's ties with the government have been permanently cut-off. His domain is now strictly religious."
+    },
+    {
+      "name": "Contained Archpatriarch authority",
+      "desc": "The archpatriarch's government requires an ecclesial vote of confidence and the decrees cannot override existing legislation, unless the Eclesia issues an emergency state."
+    },
+    {
+      "name": "Broad Archpatriarch prerogatives",
+      "desc": "The archpatriarch is the head of the state, the government and the Graic Church. He possesses the authority to appoint and remove ministers, and the ability to issue decrees."
+    }
+  ]
+}

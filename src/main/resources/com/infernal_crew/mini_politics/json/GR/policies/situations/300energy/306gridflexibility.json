@@ -1,0 +1,18 @@
+{
+  "id": 306,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Grid power instability",
+      "desc": "The country's grid power fluctuates a lot, causing blackouts or overcharge."
+    },
+    {
+      "name": "Stable grid power",
+      "desc": "The country's grid power is stable and sufficient."
+    },
+    {
+      "name": "Flexible energy production",
+      "desc": "The country can adjust its energy grid power if needed."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 404,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Gender discrimination",
+      "desc": "Women in the country have less rights than men."
+    },
+    {
+      "name": "Some women's rights",
+      "desc": "Women have equal legal status in the country, but the social attitudes and cultural norms hamper their performance outside of traditional gender roles."
+    },
+    {
+      "name": "Full emancipation",
+      "desc": "Both legal and cultural backgrounds provide women with equal life opportunities to their male counterparts."
+    }
+  ]
+}

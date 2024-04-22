@@ -1,0 +1,18 @@
+{
+  "id": 405,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Human rights violation",
+      "desc": "The state violates even the most basic human rights including personal freedom and the right to live."
+    },
+    {
+      "name": "Some human rights",
+      "desc": "There are occasional violations of human rights in the country concerning socio-political freedoms as well as workplace and living conditions."
+    },
+    {
+      "name": "Human rights upheld",
+      "desc": "The country upholds high standard of human rights within its borders."
+    }
+  ]
+}

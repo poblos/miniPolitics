@@ -1,0 +1,18 @@
+{
+  "id": 107,
+  "current option": 2,
+  "options": [
+    {
+      "name": "Insufficient combat training",
+      "desc": "Most of the soldiers are sent into the fray without any training apart from the ability to operate small arms."
+    },
+    {
+      "name": "Basic combat training",
+      "desc": "Soldiers are taught most of the skills necessary on the battlefield. They are competent at best."
+    },
+    {
+      "name": "Comprehensive trainig programs",
+      "desc": "The country spends a lot of time and effort to train its soldiers and officers. Their tactical and strategic capabilities are uncanny"
+    }
+  ]
+}

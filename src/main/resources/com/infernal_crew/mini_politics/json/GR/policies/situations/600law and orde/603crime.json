@@ -1,0 +1,18 @@
+{
+  "id": 603,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Rampart crime",
+      "desc": "There exist many influential criminal groups in the country, who undergo drug and human trafficking among other serious crimes."
+    },
+    {
+      "name": "Average crime rate",
+      "desc": "There is some organised crime in the country with several cities being more affected than others."
+    },
+    {
+      "name": "Contained criminal groups",
+      "desc": "Most of the organised crime groups in the country were cracked down and their members trialed and imprisoned."
+    }
+  ]
+}

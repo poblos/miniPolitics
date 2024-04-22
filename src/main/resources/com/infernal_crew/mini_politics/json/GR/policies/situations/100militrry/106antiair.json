@@ -1,0 +1,18 @@
+{
+  "id": 106,
+  "current option": 1,
+  "options": [
+    {
+      "name": "Rudimentary AA batteries.",
+      "desc": "There are barely any anti-air installations in combat readiness."
+    },
+    {
+      "name": "AA and missile defences on military bases",
+      "desc": "Most military bases have a operating anti-air and anti-missile systems."
+    },
+    {
+      "name": "Full AA and missle defence coverage",
+      "desc": "The entire country's airspace is covered by anti-air and anti-missile defence systems."
+    }
+  ]
+}

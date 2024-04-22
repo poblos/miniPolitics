@@ -1,0 +1,18 @@
+{
+  "id": 209,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Church exempt from taxes",
+      "desc": "The Graic Church is exempt from taxation and its priests do not pay income tax."
+    },
+    {
+      "name": "Tax cuts for the Church",
+      "desc": "The Church pays a decreased rate of income and property tax, while the priests are charged with a lump sum tax."
+    },
+    {
+      "name": "Equal taxation of the Church",
+      "desc": "There are no tax exemptions for the Graic Church. The rates are equal to any other legal person or entrepreneur."
+    }
+  ]
+}

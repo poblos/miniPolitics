@@ -1,0 +1,18 @@
+{
+  "id": 204,
+  "current option": 0,
+  "options": [
+    {
+      "name": "Underdeveloped road and railway grid",
+      "desc": "Even major cities of the country's islands suffer from poorly maintained road and railway connections."
+    },
+    {
+      "name": "Road and railway connections between major cities",
+      "desc": "Most of the country's major cities have direct road and railway connections."
+    },
+    {
+      "name": "Dense road and railway network",
+      "desc": "The country posesses a dense grid of roads and railways, connecting even minor cities to the main ones."
+    }
+  ]
+}
