@@ -92,7 +92,7 @@
                 <ToggleButton onAction="#onSituationButtonClick">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../menu_icons/PolicyIcon.png" />
+                            <Image url="@../menu_icons/SituationIcon.png" />
                         </ImageView>
                     </graphic>
                     <toggleGroup>
