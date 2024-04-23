@@ -62,14 +62,14 @@
           ]
         },
         {
-          "nextId": "S04",
-          "description": "It depends on how do you define 'like'. Do I agree with what you wanted to tell? Yes. Are such demonstrations good for our common cause? Absolutely not.",
+          "nextId": "bargain",
+          "description": "You've got a point, but listen. We can't change the world immediately. There a couple of deals waiting to be sealed that require approval from Matheuchelles. That's a really bad timing on your side, with demonstrations. If you care about the country, stop your actions for a couple of months and then you are free to do whatever you like to.",
           "effects": [
           ]
         },
         {
           "nextId": "S05",
-          "description": "I wanted to discuss joint action on the issue you underlined.",
+          "description": "Kachakonyan island? Maybe you should go and ask people out there what they think about that first? Last time I checked 80% of Charans were happy with the current situation.",
           "effects": [
           ]
         }
@@ -92,6 +92,10 @@
           "nextId": "too_much2",
           "description": "Agreement with Graonians against the Hegemon? So it's true what they say about you. You are mad! I'm sorry, but you give me no other choice! Either you stop spreading this dangerous propaganda or we will talk differently. Pardon! Internal security agency will talk with you differently.",
           "effects": [
+            {
+              "type": "modifier_invocation",
+              "name": "Nationalists pissed off"
+            }
           ]
         }
       ]
@@ -109,6 +113,39 @@
       "type": "description",
       "text": "He grounded the last sentence out and left the room, slamming the door in the process.",
       "followUp": false
+    },
+    {
+      "id": "bargain",
+      "type": "person",
+      "name": "FPL",
+      "text": "And what exactly do I stand to gain return?",
+      "followUp": true,
+      "nextId": "bargain_continuation"
+    },
+    {
+      "id": "bargain_continuation",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "bargain_too_much",
+          "description": "You'd better be joking. I'm not negotiating with people like you!",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "bargain_too_much",
+          "description": "Isn't getting arrested enough?",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "bargain_sensible",
+          "description": "Kachakonyan island? Maybe you should go and ask people out there what they think about that first? Last time I checked 80% of Charans were happy with the current situation.",
+          "effects": [
+          ]
+        }
+      ]
     }
   ]
 }
