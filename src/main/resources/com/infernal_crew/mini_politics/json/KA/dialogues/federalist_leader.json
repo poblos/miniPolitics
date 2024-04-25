@@ -109,16 +109,10 @@
       "nextId": "anger_ending"
     },
     {
-      "id": "anger_ending",
-      "type": "description",
-      "text": "He grounded the last sentence out and left the room, slamming the door in the process.",
-      "followUp": false
-    },
-    {
       "id": "bargain",
       "type": "person",
       "name": "FPL",
-      "text": "And what exactly do I stand to gain return?",
+      "text": "And what exactly do I stand to gain in return?",
       "followUp": true,
       "nextId": "bargain_continuation"
     },
@@ -131,21 +125,97 @@
           "nextId": "bargain_too_much",
           "description": "You'd better be joking. I'm not negotiating with people like you!",
           "effects": [
+            {
+              "type": "modifier_invocation",
+              "name": "Nationalists pissed off"
+            }
           ]
         },
         {
-          "nextId": "bargain_too_much",
-          "description": "Isn't getting arrested enough?",
+          "nextId": "blackmail",
+          "description": "Isn't not getting arrested enough?",
           "effects": [
+            {
+              "type": "modifier_invocation",
+              "name": "Nationalists pissed off"
+            }
           ]
         },
         {
           "nextId": "bargain_sensible",
-          "description": "Kachakonyan island? Maybe you should go and ask people out there what they think about that first? Last time I checked 80% of Charans were happy with the current situation.",
+          "description": "And what do YOU want?",
           "effects": [
+
           ]
         }
       ]
+    },
+    {
+      "id": "bargain_too_much",
+      "type": "person",
+      "name": "FPL",
+      "text": "And I'm not wasting any more time talking with people like you! Thanks for the invitation, Prime Minister.",
+      "followUp": true,
+      "nextId": "anger_ending"
+    },
+    {
+      "id": "blackmail",
+      "type": "person",
+      "name": "FPL",
+      "text": "As I said, blackmailing doesn't work on me! Thanks for the invitation, but I don't see the point in continuing that conversation.",
+      "followUp": true,
+      "nextId": "anger_ending"
+    },
+    {
+      "id": "bargain_sensible",
+      "type": "person",
+      "name": "FPL",
+      "text": "To achieve our goals we need to awaken the Kachakonian spirit in our brothers abroad. And for that funding is needed. Pankachak Institute of Culture would be really grateful for some generous ministerial donations.",
+      "followUp": true,
+      "nextId": "bargain_choice"
+    },
+    {
+      "id": "bargain_choice",
+      "type": "choice",
+      "followUp": true,
+      "options": [
+        {
+          "nextId": "neutral_ending",
+          "description": "That's not possible. The media would explode with accusations of financially supporting extremists, not to mention relations with our partners in the region.",
+          "effects": [
+          ]
+        },
+        {
+          "nextId": "bargain_accepted",
+          "description": "Consider it a done deal, but remember - no more clownfiesta on the streets for the time being.",
+          "effects": [
+            {
+              "type": "modifier_invocation",
+              "name": "Nationalists supported"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bargain_accepted",
+      "type": "person",
+      "name": "FPL",
+      "text": "You have my word!",
+      "followUp": true,
+      "nextId": "deal_ending"
+    },
+    {
+      "id": "anger_ending",
+      "type": "description",
+      "text": "He ground the last sentence out and left the room, slamming the door in the process.",
+      "followUp": false
+    },
+    {
+      "id": "deal_ending",
+      "type": "description",
+      "text": "You weren't sure what to think of the guy, but at least there is one less problem to be solved...",
+      "followUp": false
     }
   ]
 }
