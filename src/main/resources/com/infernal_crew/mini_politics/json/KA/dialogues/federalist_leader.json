@@ -35,8 +35,8 @@
           ]
         },
         {
-          "nextId": "S05",
-          "description": "I wanted to discuss joint action on the issue you underlined.",
+          "nextId": "proposal",
+          "description": "That's something I wanted to discuss. I believe you are right.",
           "effects": [
           ]
         }
@@ -204,6 +204,14 @@
       "text": "You have my word!",
       "followUp": true,
       "nextId": "deal_ending"
+    },
+    {
+      "id": "proposal",
+      "type": "person",
+      "name": "You",
+      "text": "Due to the international circumstances, I can't officially say things you do. Also, people in Kachakonya aren't ready to accept that this so-called alliance with Matheuchelles isn't beneficial for us anymore. Here is the deal. You stop attacking us, and you are allowed to do what is needed to convince people we should be more independent.",
+      "followUp": true,
+      "nextId": "S02"
     },
     {
       "id": "anger_ending",
