@@ -13,7 +13,7 @@
       "id": "S01",
       "type": "person",
       "name": "FPL",
-      "text": "Good morning, Prime Minister, to what do I owe this sudden invitation? Did you like our recent action?",
+      "text": "Good morning, Prime Minister. To what do I owe this sudden invitation? Did you like our recent action?",
       "followUp": true,
       "nextId": "S02"
     },
@@ -30,7 +30,7 @@
         },
         {
           "nextId": "S04",
-          "description": "It depends on how do you define 'like'. Do I agree with what you wanted to tell? Yes. Are such demonstrations good for our common cause? Absolutely not.",
+          "description": "It depends on how you define 'like'. Do I agree with what you wanted to tell? Yes. Are such demonstrations good for our common cause? Absolutely not.",
           "effects": [
           ]
         },
@@ -46,7 +46,7 @@
       "id": "federalists_threatened",
       "type": "person",
       "name": "FPL",
-      "text": "Threats don't work on me! For many years your government ignored our voice and did everything the Hegemon asked for. Your propaganda says we have such a close relations blabla, but the truth is we are getting colonised economically and have nothing meaningful in return for that. Military protection? Who exactly threatens us aside from the Matheuchellian themselves, who still occupy Kachakonian island of Chara!",
+      "text": "Threats don't work on me! For many years your government ignored our voice and did everything the Hegemon asked for. Your propaganda says we have such a close relations blabla, but the truth is we are getting economically colonised and receiving nothing meaningful in return for that. Military protection? Who exactly threatens us aside from the Matheuchellian themselves, who still occupy the Kachakonian island of Chara!",
       "followUp": true,
       "nextId": "federalists_threatened_continuation"
     },
@@ -69,7 +69,7 @@
         },
         {
           "nextId": "S05",
-          "description": "Kachakonyan island? Maybe you should go and ask people out there what they think about that first? Last time I checked 80% of Charans were happy with the current situation.",
+          "description": "Kachakonyan island? Maybe you should go and ask people out there what they think about that first? Last time I checked, 80% of Charans were happy with the current situation.",
           "effects": [
           ]
         }
@@ -79,7 +79,7 @@
       "id": "pro_graonia",
       "type": "person",
       "name": "FPL",
-      "text": "Not pissing off, but engaging in discussions. You are right that alone we aren't in a position to challenge Matheuchelles, but we aren't the only country in the similar spot. That's a hard pill to swallow, but we need an agreement with Graonians.",
+      "text": "Not pissing off, but engaging in discussions. You are right that alone we aren't in a position to challenge Matheuchelles, but we aren't the only country in the similar spot. That's a hard pill to swallow, but we need an agreement with the Graonians.",
       "followUp": true,
       "nextId": "too_much"
     },
@@ -170,7 +170,7 @@
       "id": "bargain_sensible",
       "type": "person",
       "name": "FPL",
-      "text": "To achieve our goals we need to awaken the Kachakonian spirit in our brothers abroad. And for that funding is needed. Pankachak Institute of Culture would be really grateful for some generous ministerial donations.",
+      "text": "To achieve our goals, we need to awaken the Kachakonian spirit in our brothers abroad. And for that, funding is needed. The Pankachak Institute of Culture would be really grateful for some generous ministerial donations.",
       "followUp": true,
       "nextId": "bargain_choice"
     },
@@ -187,7 +187,7 @@
         },
         {
           "nextId": "bargain_accepted",
-          "description": "Consider it a done deal, but remember - no more clownfiesta on the streets for the time being.",
+          "description": "Consider it a done deal, but remember - no more clown fiesta on the streets for the time being.",
           "effects": [
             {
               "type": "modifier_invocation",
