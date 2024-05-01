@@ -5,24 +5,24 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="458.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
-    <VBox alignment="TOP_RIGHT" prefHeight="458.0" prefWidth="819.0">
-        <TextField alignment="CENTER" editable="false" prefHeight="55.0" style="-fx-font-size: 28;" text="BUDGET" />
+<AnchorPane prefHeight="458.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
+    <VBox alignment="TOP_RIGHT" prefHeight="458.0" prefWidth="747.0">
+        <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="765.0" style="-fx-font-size: 28;" text="BUDGET" />
         <HBox prefHeight="50.0" prefWidth="354.0" style="-fx-background-color: #EEEEEE;">
-            <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="49.0" prefWidth="313.0" text="Income">
+            <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="38.0" prefWidth="365.0" text="Income">
                 <toggleGroup>
                     <ToggleGroup fx:id="incomeOrExpenses" />
                 </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="49.0" prefWidth="273.0" selected="true" text="Expenses">
+            <RadioButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="38.0" prefWidth="383.0" selected="true" text="Expenses">
                 <toggleGroup>
                     <fx:reference source="incomeOrExpenses" />
                 </toggleGroup>
             </RadioButton>
         </HBox>
-        <ScrollPane prefHeight="400.0" prefWidth="200.0">
-            <PieChart fx:id="chart" legendSide="RIGHT" prefHeight="374.0" prefWidth="818.0" />
-        </ScrollPane>
+        <HBox styleClass="viewContent">
+            <PieChart fx:id="chart" animated="false" clockwise="false" labelsVisible="false" legendSide="RIGHT" prefHeight="354.0" prefWidth="786.0" />
+        </HBox>
     </VBox>
    <effect>
       <DropShadow />
