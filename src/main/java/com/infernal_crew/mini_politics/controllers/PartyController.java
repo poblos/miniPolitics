@@ -14,30 +14,8 @@ import javafx.util.Duration;
 public class PartyController extends BarController {
     @FXML
     private TextFlow textBox;
-    @FXML
-    private HBox allHBox;
     private int currentParty = 0;
 
-    @FXML
-    private TextField bottomBar;
-    public void initialize() {
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), allHBox);
-        scaleTransition.setFromY(0);
-        scaleTransition.setToY(1);
-
-        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5), allHBox);
-        translateTransition.setFromY(-130);
-        translateTransition.setToY(0);
-
-        TranslateTransition secondTranslate = new TranslateTransition(Duration.seconds(0.5), bottomBar);
-        secondTranslate.setFromY(-250);
-        secondTranslate.setToY(0);
-
-        scaleTransition.play();
-        translateTransition.play();
-        secondTranslate.play();
-
-    }
     public void update() {
         textBox.getChildren().clear();
 
