@@ -1,7 +1,6 @@
 {
   "graphic": "stadium",
   "isUnique": true,
-  "probability": 5000,
   "description": "Our old National Stadium has served our sports fans well, but it is showing its age. The Ministry of Sports has proposed building a new stadium in its place. However, this is a costly venture, and we may be able to make better use of the allocated funds.",
   "options": [
     {

@@ -1,0 +1,84 @@
+{
+  "trigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Narong War"
+      }
+    ]
+  },
+  "description": "Rising tensions in our region have led our military leadership to believe we should significantly increase our military spending. This proposal, however, has created a divide within our party, as the progressive wing claims there are more urgent problems that need addressing and that such an increase could only lead to an arms race, which in turn won't help our safety.",
+  "options": [
+    {
+      "description": "We need to have deterrence capabilities!",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 4,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "NationalDefence",
+          "change": 2000
+        }
+      ]
+    },
+    {
+      "description": "This is unnecessary and will only escalate tensions. Oppose the increase.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "StateStability"
+        }
+      ]
+    },
+    {
+      "description": "We could agree on a modest increase.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartyCohesion"
+        },
+        {
+          "type": "indicator_change",
+          "change": -2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "budget_expense",
+          "category": "NationalDefence",
+          "change": 500
+        }
+      ]
+    }
+  ],
+  "title": "Increased military spending"
+}
