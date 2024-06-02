@@ -3,6 +3,11 @@
     -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
     -fx-text-fill: #e1edec;
     -fx-font: bold 20pt "Droid Serif";
+    -fx-border-color: #2c6ec5, #1f4f92, #1f4f92, #2c6ec5;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
 }
 
 .bottomBar {

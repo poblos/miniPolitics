@@ -47,8 +47,8 @@
         </HBox>
     </top>
     <left>
-        <VBox minWidth="80">
-            <VBox styleClass="leftBar">
+        <VBox minWidth="85">
+            <VBox prefWidth="75.0" styleClass="leftBar">
                 <ToggleButton onAction="#onPartyButtonClick">
                     <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -124,7 +124,7 @@
     </left>
     <center>
         <AnchorPane>
-            <VBox fx:id="eventBox" >
+            <VBox fx:id="eventBox">
                 <padding>
                     <Insets left="50.0" />
                 </padding>

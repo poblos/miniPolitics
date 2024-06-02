@@ -11,7 +11,14 @@
     -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
     -fx-text-fill: #e1edec;
     -fx-font: bold 15pt "Droid Serif";
+    -fx-border-color: #2c6ec5, #1f4f92, #1f4f92, #2c6ec5;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 8px;
 }
+
 
 .text-field .text {
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
@@ -76,19 +83,29 @@
     -fx-background-color: linear-gradient(#4facfe, #00f2fe);
     -fx-text-fill: white;
     -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-border-color: #3E71A4;
+    -fx-border-width: 2px;
     -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
+    -fx-background-radius: 7px;
     -fx-padding: 10px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 20, 0.0, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 20, 0.0, 0, 3);
 }
 
 .toggle-button:selected {
     -fx-background-color: linear-gradient(#ff512f, #dd2476);
-    -fx-padding: 9px 15px 11px 15px;
+    -fx-padding: 11px 15px 11px 15px;
+    -fx-border-color: #a00c30;
+    -fx-border-width: 2px;
+    -fx-font-size: 16px;
 }
 
 .toggle-button:hover {
-    -fx-background-color: linear-gradient(#fc5c7d,#6a82fb);
+    -fx-background-color: linear-gradient(#fc5c7d, #DC4563);
+     -fx-padding: 11px 15px 11px 15px;
+    -fx-font-size: 16px;
+    -fx-border-color: #b04060;
+    -fx-border-width: 2px;
 }
 
 .progress-bar {
