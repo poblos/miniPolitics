@@ -9,17 +9,17 @@
     <VBox alignment="TOP_RIGHT" prefHeight="458.0" prefWidth="747.0">
         <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="765.0" style="-fx-font-size: 28;" text="BUDGET" />
         <HBox prefHeight="50.0" prefWidth="354.0" style="-fx-background-color: #EEEEEE;">
-            <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="48.0" prefWidth="160.0" text="Income">
+            <ToggleButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="48.0" prefWidth="160.0" text="Income">
                 <toggleGroup>
                     <ToggleGroup fx:id="incomeOrExpenses" />
                 </toggleGroup>
-            </RadioButton>
+            </ToggleButton>
             <Label fx:id="incomeLabel" prefHeight="48.0" prefWidth="220.0" />
-            <RadioButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="48.0" prefWidth="160.0" selected="true" text="Expenses">
+            <ToggleButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="48.0" prefWidth="160.0" selected="true" text="Expenses">
                 <toggleGroup>
                     <fx:reference source="incomeOrExpenses" />
                 </toggleGroup>
-            </RadioButton>
+            </ToggleButton>
             <Label fx:id="expenseLabel" prefHeight="48.0" prefWidth="220.0" />
         </HBox>
         <HBox styleClass="viewContent">

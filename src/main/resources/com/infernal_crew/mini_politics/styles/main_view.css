@@ -64,24 +64,6 @@
     -fx-font-size:20;
 }
 
-#chart {
-    -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);
-    -fx-border-radius:10;
-    -fx-border-width:4;
-}
-
-#incomeButton {
-    -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);
-    -fx-border-radius:10;
-    -fx-border-width:4;
-}
-
-#expensesButton {
-    -fx-border-color:linear-gradient(from 25px 1px to 100px 100px, reflect, #00A2E8, #F9F9F9);
-    -fx-border-radius:10;
-    -fx-border-width:4;
-}
-
 .flagPane {
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),6,0,0,1);
     -fx-border-color:

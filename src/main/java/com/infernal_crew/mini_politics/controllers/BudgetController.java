@@ -2,20 +2,19 @@ package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.budget.ExpenseCategory;
 import com.infernal_crew.mini_politics.budget.IncomeCategory;
-import com.infernal_crew.mini_politics.game.Game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
 public class BudgetController extends BarController{
     @FXML
     private ToggleGroup incomeOrExpenses;
-    @FXML private RadioButton incomeButton;
-    @FXML private RadioButton expensesButton;
+    @FXML private ToggleButton incomeButton;
+    @FXML private ToggleButton expensesButton;
     @FXML private Label incomeLabel;
     @FXML private Label expenseLabel;
     @FXML
