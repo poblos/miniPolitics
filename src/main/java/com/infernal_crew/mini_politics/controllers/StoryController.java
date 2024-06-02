@@ -7,6 +7,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 public class StoryController extends BarController {
 
@@ -20,13 +22,12 @@ public class StoryController extends BarController {
             CheckBox checkBox = new CheckBox();
             checkBox.setDisable(true);
             checkBox.setStyle("-fx-opacity: 1");
-            if (note.isDone()) {
-                checkBox.setSelected(true);
-                storyBox.getChildren().add(new HBox(new TextField(note.getTitle()),checkBox));
-            } else {
-                checkBox.setSelected(false);
-                storyBox.getChildren().add(new HBox(new TextField(note.getTitle()),checkBox));
-            }
+            checkBox.setSelected(note.isDone());
+            Text text = new Text(note.getTitle());
+            text.getStyleClass().add("highlightedText");
+            TextFlow flow = new TextFlow();
+            flow.getChildren().add(text);
+            storyBox.getChildren().add(new HBox(text,checkBox));
         }
     }
 }

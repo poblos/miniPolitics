@@ -10,14 +10,18 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.layout.Pane?>
+<?import java.net.URL?>
 <AnchorPane prefHeight="557.0" prefWidth="330.0"
             xmlns="http://javafx.com/javafx/18"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.infernal_crew.mini_politics.controllers.WarController"
-            stylesheets="@../styles/war_view.css">
-    <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="502.0" style="-fx-font-size: 28;" text="THE NARONG WAR" />
-    <VBox layoutY="58.0" prefHeight="501.0" prefWidth="502.0">
-        <VBox styleClass="main-vbox" prefHeight="150.0" prefWidth="502.0">
+            fx:controller="com.infernal_crew.mini_politics.controllers.WarController">
+    <stylesheets>
+        <URL value="@../styles/war_view.css"/>
+        <URL value="@../styles/left_bar.css"/>
+    </stylesheets>
+    <VBox prefHeight="501.0" prefWidth="502.0">
+        <TextField styleClass="titleBar" alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="502.0" text="THE NARONG WAR" />
+        <VBox styleClass="viewContent" prefHeight="150.0" prefWidth="502.0">
             <HBox styleClass="upper-hbox" alignment="CENTER">
                 <Label style="-fx-background-color: green;" prefHeight="80" prefWidth="120"/>
                 <ProgressBar fx:id="bar" prefHeight="20.0" prefWidth="250.0" progress="0.5" />
@@ -25,16 +29,18 @@
 
             </HBox>
             <HBox>
-                <Label styleClass="country-label" text="Republic of Foreberg" />
+                <Label styleClass="normalText" text="Republic of Foreberg" />
                 <!-- Enlarged placeholder for flag -->
                 <Pane HBox.hgrow="ALWAYS"/> <!-- This Pane is used to push elements to sides -->
-                <Label styleClass="country-label"  text="Karlenese Federation" />
+                <Label styleClass="normalText"  text="Karlenese Federation" />
                  <!-- Enlarged placeholder for flag -->
             </HBox>
         </VBox>
-        <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="330.0" style="-fx-font-size: 28;" text="Events:" />
-        <ListView fx:id="listView" prefHeight="352.0" prefWidth="502.0" />
+        <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="330.0" styleClass="insideTitle" text="Events:" />
+        <ListView fx:id="listView" styleClass="viewContent" prefHeight="352.0" prefWidth="502.0" />
+        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
     </VBox>
+
     <effect>
         <DropShadow />
     </effect>

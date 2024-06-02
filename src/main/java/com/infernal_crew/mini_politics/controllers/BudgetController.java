@@ -2,6 +2,7 @@ package com.infernal_crew.mini_politics.controllers;
 
 import com.infernal_crew.mini_politics.budget.ExpenseCategory;
 import com.infernal_crew.mini_politics.budget.IncomeCategory;
+import com.infernal_crew.mini_politics.utils.UICommon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,18 +10,22 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 public class BudgetController extends BarController{
     @FXML
     private ToggleGroup incomeOrExpenses;
     @FXML private ToggleButton incomeButton;
     @FXML private ToggleButton expensesButton;
-    @FXML private Label incomeLabel;
-    @FXML private Label expenseLabel;
+    @FXML private TextFlow incomeFlow;
+    @FXML private TextFlow expenseFlow;
     @FXML
     private PieChart chart;
 
     public void update() {
+        expenseFlow.getChildren().clear();
+        incomeFlow.getChildren().clear();
         updateIncomeLabel();
         updateExpenseLabel();
         if (incomeOrExpenses.getSelectedToggle() == expensesButton) {
@@ -31,11 +36,11 @@ public class BudgetController extends BarController{
     }
 
     private void updateExpenseLabel() {
-        expenseLabel.setText(Integer.toString(mainController.getGame().getBudget().getExpensesSum()));
+        UICommon.addNamedData(expenseFlow,"Total expenses: ", Integer.toString(mainController.getGame().getBudget().getExpensesSum()));
     }
 
     private void updateIncomeLabel() {
-        incomeLabel.setText(Integer.toString(mainController.getGame().getBudget().getIncomeSum()));
+        UICommon.addNamedData(incomeFlow,"Total income: ", Integer.toString(mainController.getGame().getBudget().getIncomeSum()));
     }
 
     public void onExpenseButtonClick() {

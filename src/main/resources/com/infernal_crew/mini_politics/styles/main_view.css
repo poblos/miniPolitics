@@ -7,19 +7,6 @@
     -fx-background-repeat: stretch;
 }
 
-.text-field {
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
-    -fx-text-fill: #e1edec;
-    -fx-font: bold 15pt "Droid Serif";
-    -fx-border-color: #2c6ec5, #1f4f92, #1f4f92, #2c6ec5;
-    -fx-border-width: 2px;
-    -fx-border-style: solid;
-    -fx-border-radius: 10px;
-    -fx-background-radius: 10px;
-    -fx-padding: 8px;
-}
-
-
 .text-field .text {
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
 }
@@ -31,12 +18,6 @@
 .button {
     -fx-font-size:20;
     -fx-font: oblique 15pt "Droid Serif";
-}
-
-.highlightedText {
-    -fx-fill: deepskyblue;
-    -fx-font: bold 15pt "Droid Serif";
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, deepskyblue);
 }
 
 .pictureFrameButton {
@@ -80,6 +61,7 @@
 }
 
 .toggle-button {
+    -fx-font: 25pt "Courier New";
     -fx-background-color: linear-gradient(#4facfe, #00f2fe);
     -fx-text-fill: white;
     -fx-font-weight: bold;
@@ -142,34 +124,34 @@
     -fx-background-color: linear-gradient(to right, #6a82fb, #00f2fe);
 }
 
-.scroll-bar:vertical {
+.scroll-bar {
     -fx-background-color: transparent;
 }
 
-.scroll-bar:vertical .thumb {
+.scroll-bar .thumb {
     -fx-background-color: #a6dbff;
     -fx-background-insets: 2, 0, 2;
     -fx-background-radius: 5px;
 }
 
-.scroll-bar:vertical .track {
+.scroll-bar .track {
     -fx-background-color: #f0f9ff;
     -fx-background-radius: 5px;
 }
 
-.scroll-bar:vertical .increment-button,
-.scroll-bar:vertical .decrement-button {
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
     -fx-background-color: #cbebff;
     -fx-background-radius: 5px;
 }
 
-.scroll-bar:vertical .increment-button:hover,
-.scroll-bar:vertical .decrement-button:hover {
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover {
     -fx-background-color: #b0d4f1;
 }
 
-.scroll-bar:vertical .increment-arrow,
-.scroll-bar:vertical .decrement-arrow {
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
     -fx-background-color: #666;
 }
 
@@ -179,16 +161,4 @@
 
 .flagImage {
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 10, 0, 0, 0);
-}
-
-.chart-legend {
-    -fx-font-size: 15px;
-}
-
-.viewContent {
-    -fx-background-color: #b2d9eb;
-    -fx-border-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
-    -fx-border-width: 2px;
-    -fx-border-style: dashed;
-    -fx-effect: innershadow(gaussian, #2c6ec5, 10, 0, 0, 0);
 }

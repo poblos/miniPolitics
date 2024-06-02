@@ -1,6 +1,6 @@
 package com.infernal_crew.mini_politics.controllers;
 
-import com.infernal_crew.mini_politics.game.Game;
+
 import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyOption;
 import javafx.collections.FXCollections;
@@ -16,74 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> {
-
-    @Override
-    public ListCell<Policy> call(ListView<Policy> param) {
-        return new ListCell<>() {
-            @Override
-            public void updateItem(Policy policy, boolean empty) {
-                super.updateItem(policy, empty);
-                if (empty) {
-                    setText(null);
-                    setGraphic(null);
-                } else if (policy != null) {
-                    setText(null);
-                    setGraphic(new Label(policy.getName()));
-                } else {
-                    setText("null");
-                    setGraphic(null);
-                }
-            }
-        };
-    }
-
-}
-
-class OptionCellFactory implements Callback<ListView<PolicyOption>, ListCell<PolicyOption>> {
-    private static class SelectPolicyLabel extends Label {
-        public SelectPolicyLabel(String name) {
-            super(name);
-            this.setStyle("-fx-background-color: linear-gradient(from 25px 1px to 100px 100px,#00A230, #F9F9F9)");
-        }
-    }
-
-    @Override
-    public ListCell<PolicyOption> call(ListView<PolicyOption> param) {
-        return new ListCell<>() {
-            @Override
-            public void updateItem(PolicyOption option, boolean empty) {
-                super.updateItem(option, empty);
-                if (empty) {
-                    setText(null);
-                    setGraphic(null);
-                } else if (option != null) {
-                    setText(null);
-                    if (!option.isSelected()) {
-                        setGraphic(new Label(option.getName()));
-                    } else {
-                        setGraphic((new SelectPolicyLabel(option.getName())));
-                    }
-                } else {
-                    setText("null");
-                    setGraphic(null);
-                }
-            }
-        };
-    }
-
-}
-
 public class PolicyController extends BarController {
-    public final ObservableList<Policy> policyNames =
-            FXCollections.observableArrayList();
+    public final ObservableList<Policy> policyNames = FXCollections.observableArrayList();
+    public final ObservableList<PolicyOption> optionNames = FXCollections.observableArrayList();
 
-    public final ObservableList<PolicyOption> optionNames =
-            FXCollections.observableArrayList();
     @FXML
     private ListView<PolicyOption> optionList;
+
     @FXML
     private ListView<Policy> policyList;
+
     private Policy displayedPolicy;
 
     public void update() {
@@ -126,5 +68,65 @@ public class PolicyController extends BarController {
                 displayedPolicy = current;
             }
         });
+    }
+
+    private static class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> {
+        @Override
+        public ListCell<Policy> call(ListView<Policy> param) {
+            return new ListCell<>() {
+                @Override
+                public void updateItem(Policy policy, boolean empty) {
+                    super.updateItem(policy, empty);
+                    if (empty || policy == null) {
+                        setText(null);
+                        setGraphic(null);
+                    } else {
+                        setText(null);
+                        setGraphic(new OptionLabel(policy.getName()));
+                    }
+                }
+            };
+        }
+
+        private static class OptionLabel extends Label {
+            public OptionLabel(String option) {
+                super(option);
+                this.getStyleClass().clear();
+                this.getStyleClass().add("listCellLabel");
+            }
+        }
+    }
+
+    private static class OptionCellFactory implements Callback<ListView<PolicyOption>, ListCell<PolicyOption>> {
+        @Override
+        public ListCell<PolicyOption> call(ListView<PolicyOption> param) {
+            return new ListCell<>() {
+                @Override
+                public void updateItem(PolicyOption option, boolean empty) {
+                    super.updateItem(option, empty);
+                    if (empty || option == null) {
+                        setText(null);
+                        setGraphic(null);
+                    } else {
+                        setText(null);
+                        setGraphic(new OptionLabel(option));
+                    }
+                }
+            };
+        }
+
+        private static class OptionLabel extends Label {
+            public OptionLabel(PolicyOption option) {
+                super(option.getName());
+                if (option.isSelected()) {
+                    this.getStyleClass().clear();
+                    this.getStyleClass().add("listCellLabel");
+                    this.getStyleClass().add("currentOptionLabel");
+                } else {
+                    this.getStyleClass().clear();
+                    this.getStyleClass().add("listCellLabel");
+                }
+            }
+        }
     }
 }

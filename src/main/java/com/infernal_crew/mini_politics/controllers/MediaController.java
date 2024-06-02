@@ -4,10 +4,12 @@ import com.infernal_crew.mini_politics.Main;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.media.Affiliation;
 import com.infernal_crew.mini_politics.media.MediaGroup;
+import com.infernal_crew.mini_politics.utils.UICommon;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
@@ -36,30 +38,9 @@ public class MediaController extends BarController {
             }
             newLabel.hoverProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue) {
-                    Text text = new Text("Name: ");
-                    text.getStyleClass().add("highlightedText");
-                    textBox.getChildren().add(text);
-
-                    text = new Text(group.getName() + "\n");
-                    text.getStyleClass().add("normalText");
-                    textBox.getChildren().add(text);
-
-                    text = new Text("Type: ");
-                    text.getStyleClass().add("highlightedText");
-                    textBox.getChildren().add(text);
-
-                    text = new Text(group.getType() + "\n");
-                    text.getStyleClass().add("normalText");
-                    textBox.getChildren().add(text);
-
-                    text = new Text("Affiliation: ");
-                    text.getStyleClass().add("highlightedText");
-                    textBox.getChildren().add(text);
-
-                    text = new Text(group.getAffiliation().toString());
-                    text.getStyleClass().add("normalText");
-                    textBox.getChildren().add(text);
-
+                    UICommon.addNamedData(textBox,"Name: ", group.getName() + "\n");
+                    UICommon.addNamedData(textBox,"Type: ", group.getType() + "\n");
+                    UICommon.addNamedData(textBox,"Affiliation: ", group.getAffiliation().toString());
                 } else {
                     textBox.getChildren().clear();
                 }

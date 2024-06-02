@@ -5,15 +5,20 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="535.0" stylesheets="@../styles/policy_view.css" xmlns="http://javafx.com/javafx/16"
+<?import java.net.URL?>
+<AnchorPane prefHeight="535.0" xmlns="http://javafx.com/javafx/16"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.infernal_crew.mini_politics.controllers.SituationController">
+    <stylesheets>
+        <URL value="@../styles/policy_view.css"/>
+        <URL value="@../styles/left_bar.css"/>
+    </stylesheets>
     <VBox prefWidth="476.0">
         <TextField alignment="CENTER" editable="false" prefHeight="42.0" styleClass="titleBar" text="SITUATIONS"/>
         <HBox prefWidth="400.0">
             <VBox styleClass="viewContent" prefWidth="422.0">
                 <ListView fx:id="situationList" prefHeight="208.0"/>
-                <Label fx:id="descriptionLabel" wrapText="true"/>
+                <Label fx:id="descriptionLabel" styleClass="normalText" wrapText="true"/>
                 <padding>
                     <Insets bottom="10" left="10" right="10" top="10"/>
                 </padding>

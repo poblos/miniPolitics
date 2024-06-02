@@ -1,15 +1,8 @@
 package com.infernal_crew.mini_politics.controllers;
 
-import com.infernal_crew.mini_politics.game.Game;
-import javafx.animation.ScaleTransition;
-import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
+import com.infernal_crew.mini_politics.utils.UICommon;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.util.Duration;
 
 public class PartyController extends BarController {
     @FXML
@@ -18,23 +11,11 @@ public class PartyController extends BarController {
 
     public void update() {
         textBox.getChildren().clear();
-
-        Text text = new Text(mainController.getGame().getParties().get(currentParty).name() + "\n");
-        text.getStyleClass().add("partyNameText");
-        textBox.getChildren().add(text);
-
-        text = new Text(mainController.getGame().getParties().get(currentParty).description() + "\n");
-        text.getStyleClass().add("normalText");
-        textBox.getChildren().add(text);
-
-        text = new Text("Ideologies: \n");
-        text.getStyleClass().add("partyNameText");
-        textBox.getChildren().add(text);
+        UICommon.addNamedData(textBox, mainController.getGame().getParties().get(currentParty).name() + "\n",
+                mainController.getGame().getParties().get(currentParty).description() + "\n");
 
         String ideologies = mainController.getGame().getParties().get(currentParty).ideologies().toString();
-        text = new Text(ideologies.substring(1,ideologies.length() - 1));
-        text.getStyleClass().add("normalText");
-        textBox.getChildren().add(text);
+        UICommon.addNamedData(textBox,"Ideologies: \n", ideologies.substring(1, ideologies.length() - 1));
     }
 
     public void onNextPartyButtonClick() {

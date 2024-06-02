@@ -1,42 +1,6 @@
-.titleBar {
-    -fx-shape: "M 500 300 L 100 300 L 100 200 L 550 200 L 500 300 ";
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
-    -fx-text-fill: #e1edec;
-    -fx-font: bold 20pt "Droid Serif";
-    -fx-border-color: #2c6ec5, #1f4f92, #1f4f92, #2c6ec5;
-    -fx-border-width: 2px;
-    -fx-border-style: solid;
-    -fx-border-radius: 10px;
-    -fx-background-radius: 10px;
-}
-
-.bottomBar {
-    -fx-shape: "M 550 300 L 100 300 L 100 200 L 500 200 L 550 300 ";
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
-}
-
-.viewContent {
-    -fx-background-color: #b2d9eb;
-    -fx-border-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
-    -fx-border-width: 2px;
-    -fx-border-style: dashed;
-    -fx-effect: innershadow(gaussian, #2c6ec5, 10, 0, 0, 0);
-}
-
-.partyNameText {
-    -fx-fill: radial-gradient(center 50% 50%,radius 100%,#284bbf,#718256);
-    -fx-font: 16pt "Droid Serif";
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),2,0,0,1);
-}
-
-.normalText {
-    -fx-fill: black;
-    -fx-font: 13pt "Droid Serif";
-}
-
 .nextPartyButton {
-    -fx-background-color: #FF5733;
-    -fx-border-color: #FF5733;
+    -fx-background-color: linear-gradient(#ff512f, #dd2476);
+    -fx-border-color: #a00c30;
     -fx-border-width: 2px;
     -fx-text-fill: white;
     -fx-font-size: 14px;
@@ -46,5 +10,7 @@
 }
 
 .nextPartyButton:hover {
-    -fx-background-color: #E84118;
+    -fx-background-color: linear-gradient(#fc5c7d, #DC4563);
+    -fx-border-color: #b04060;
+    -fx-border-width: 2px;
 }

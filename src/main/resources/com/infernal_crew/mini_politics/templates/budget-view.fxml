@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="669.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
-    <VBox alignment="TOP_RIGHT" prefHeight="458.0" prefWidth="747.0">
-        <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="765.0" style="-fx-font-size: 28;" text="BUDGET" />
-        <HBox prefHeight="50.0" prefWidth="354.0" style="-fx-background-color: #EEEEEE;">
-            <ToggleButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="48.0" prefWidth="160.0" text="Income">
+<AnchorPane prefHeight="536.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
+    <stylesheets>
+        <URL value="@../styles/left_bar.css" />
+    </stylesheets>
+
+    <VBox alignment="TOP_RIGHT" prefHeight="600.0" prefWidth="747.0">
+        <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="765.0" styleClass="titleBar" text="BUDGET" />
+        <HBox prefHeight="50.0" prefWidth="354.0">
+            <ToggleButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="48.0" prefWidth="400.0" text="Income">
                 <toggleGroup>
                     <ToggleGroup fx:id="incomeOrExpenses" />
                 </toggleGroup>
             </ToggleButton>
-            <Label fx:id="incomeLabel" prefHeight="48.0" prefWidth="220.0" />
-            <ToggleButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="48.0" prefWidth="160.0" selected="true" text="Expenses">
+
+            <ToggleButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="48.0" prefWidth="400.0" selected="true" text="Expenses">
                 <toggleGroup>
                     <fx:reference source="incomeOrExpenses" />
                 </toggleGroup>
             </ToggleButton>
-            <Label fx:id="expenseLabel" prefHeight="48.0" prefWidth="220.0" />
         </HBox>
-        <HBox styleClass="viewContent">
-            <PieChart fx:id="chart" animated="false" clockwise="false" labelsVisible="false" legendSide="RIGHT" prefHeight="354.0" prefWidth="786.0" />
-        </HBox>
+        <VBox styleClass="viewContent">
+            <HBox prefHeight="15.0" prefWidth="703.0">
+                <TextFlow fx:id="incomeFlow" prefHeight="16.0" prefWidth="386.0" styleClass="numberLabel">
+                </TextFlow>
+                <TextFlow fx:id="expenseFlow" prefHeight="16.0" prefWidth="381.0" styleClass="numberLabel">
+                </TextFlow>
+            </HBox>
+            <PieChart fx:id="chart" animated="false" clockwise="false" labelsVisible="false" legendSide="RIGHT" prefHeight="500.0" prefWidth="747.0" />
+        </VBox>
+        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="137.0" prefWidth="747.0" styleClass="bottomBar" />
     </VBox>
-   <effect>
-      <DropShadow />
-   </effect>
+    <effect>
+        <DropShadow />
+    </effect>
 </AnchorPane>

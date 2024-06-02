@@ -2,32 +2,11 @@
     -fx-base: linear-gradient(lightblue, antiquewhite);
 }
 
-.text-field {
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
-    -fx-font-size: 18px;
-    -fx-text-fill: #e1edec;
-    -fx-alignment: center;
-    -fx-border-color: #95a5a6;
-    -fx-border-radius: 5px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
-}
-
-.country-label {
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 14px;
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #3aa9d9, #2c6ec5);
-    -fx-padding: 5px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-border-color: #95a5a6;
-    -fx-alignment: center;
-}
-
 .label[style*="background-color: blue"], .label[style*="background-color: red"] {
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
     -fx-border-color: #95a5a6;
-    -fx-min-height: 30px; /* Adjusted size for visibility */
+    -fx-min-height: 30px;
     -fx-min-width: 120px;
     -fx-margin: 5px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
@@ -39,23 +18,14 @@
     -fx-accent: #16a085;
     -fx-border-radius: 5px;
     -fx-border-color: #ffffff;
+    -fx-background-color: transparent;
 }
 .progress-bar .bar {
     -fx-background-color: #16a085;
 }
 
 .progress-bar .track {
-    -fx-background-color: linear-gradient(to bottom, #ADCBE3, #E2E2E2);
-}
-
-.main-vbox, .list-view {
-    -fx-background-color: #A7B8D3; /* Unified lighter blue for consistency */
-    -fx-alignment: center;
-    -fx-spacing: 10;
-    -fx-padding: 5px;
-    -fx-border-color: #ffffff; /* Keeping or adjust as needed */
-    -fx-border-width: 1;
-    -fx-border-radius: 5;
+    -fx-background-color: transparent;
 }
 
 .upper-hbox{

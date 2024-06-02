@@ -5,14 +5,20 @@
 
 <?import javafx.scene.effect.DropShadow?>
 
+<?import java.net.URL?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.infernal_crew.mini_politics.controllers.StoryController"
             prefHeight="400.0" prefWidth="600.0">
+    <stylesheets>
+        <URL value="@../styles/left_bar.css"/>
+    </stylesheets>
+
     <VBox>
-        <TextField alignment="CENTER" editable="false" style="-fx-font-size: 28;" text="STORY"/>
-        <VBox fx:id="storyBox">
+        <TextField styleClass="titleBar" alignment="CENTER" editable="false" style="-fx-font-size: 28;" text="STORY"/>
+        <VBox fx:id="storyBox" styleClass="viewContent">
         </VBox>
+        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
     </VBox>
     <effect>
         <DropShadow/>

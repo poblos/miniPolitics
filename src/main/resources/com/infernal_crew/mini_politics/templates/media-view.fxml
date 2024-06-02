@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="200.0" prefWidth="256.0" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/16"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.infernal_crew.mini_politics.controllers.MediaController">
-    <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="256.0" style="-fx-font-size: 28;"
-               text="MEDIA"/>
-    <TilePane fx:id="mediaBox" style="-fx-background-color: #EEEEEE;" alignment="TOP_RIGHT" layoutY="57.0"
-              prefHeight="200.0" prefWidth="256.0"/>
-    <TextFlow fx:id="textBox" style="-fx-background-color: #EEEEEE;" layoutY="1.0" prefHeight="200.0"
-              prefWidth="256.0"/>
+<VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.MediaController">
+    <stylesheets>
+        <URL value="@../styles/left_bar.css" />
+    </stylesheets>
+    <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="256.0" styleClass="titleBar" text="MEDIA" />
+    <VBox styleClass="viewContent">
+        <TilePane fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="200.0" prefWidth="256.0">
+         <padding>
+            <Insets bottom="20.0" />
+         </padding></TilePane>
+        <TextFlow fx:id="textBox" layoutY="1.0" prefHeight="200.0" prefWidth="256.0" />
+    </VBox>
+    <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
     <effect>
-        <DropShadow/>
+        <DropShadow />
     </effect>
 </VBox>

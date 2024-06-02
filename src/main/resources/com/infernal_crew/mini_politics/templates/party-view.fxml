@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane stylesheets="@../styles/party_view.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PartyController">
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PartyController">
+    <stylesheets>
+        <URL value="@../styles/party_view.css" />
+        <URL value="@../styles/left_bar.css" />
+    </stylesheets>
     <VBox alignment="TOP_RIGHT" prefHeight="107.0" prefWidth="569.0">
-        <TextField alignment="CENTER" editable="false" styleClass="titleBar" text="PARTIES    " />
+        <TextField alignment="CENTER" editable="false" prefHeight="53.0" prefWidth="410.0" styleClass="titleBar" text="PARTIES    " />
         <HBox fx:id="allHBox" alignment="CENTER" prefHeight="25.0" prefWidth="430.0">
             <TextFlow fx:id="textBox" styleClass="viewContent">
                 <padding>
                     <Insets bottom="5" left="10" right="20" top="5" />
                 </padding>
             </TextFlow>
-            <Button onAction="#onNextPartyButtonClick" styleClass="nextPartyButton" text=">" />
-            <padding>
-                <Insets right="70" />
-            </padding>
+            <Button onAction="#onNextPartyButtonClick" styleClass="nextPartyButton" text="&gt;" />
         </HBox>
-        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
+        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="410.0" styleClass="bottomBar" />
     </VBox>
     <effect>
         <DropShadow />

@@ -1,0 +1,165 @@
+.titleBar {
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #2c6ec5, #1f4f92),
+                          radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000022);
+    -fx-text-fill: #e1edec;
+    -fx-font: bold 20pt "Courier New";
+    -fx-border-color: #1f4f92;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 8px;
+}
+
+.bottomBar {
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #2c6ec5, #1f4f92),
+                          radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000022);
+    -fx-border-color: #1f4f92;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 8px;
+}
+
+.numberLabel {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-text-fill: white;
+    -fx-font: bold 13pt "Courier New";
+    -fx-background-radius: 5px;
+    -fx-padding: 8px;
+    -fx-alignment: center;
+}
+
+.insideTitle {
+    -fx-background-color: linear-gradient(to bottom, #1f4f92, #163d6e);
+    -fx-text-fill: #ffffff;
+    -fx-font: bold 16pt "Courier New";
+    -fx-border-color: #1f4f92;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+.viewContent {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, #26516E, #1E3543);
+    -fx-border-color: #3282b8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-padding: 20px;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 5);
+}
+
+.highlightedText {
+    -fx-fill: radial-gradient(center 50% 50%,radius 100%,orange,yellow);
+    -fx-font: 16pt "Courier New";
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),2,0,0,1);
+}
+
+.normalText {
+    -fx-text-fill: white;
+    -fx-fill: white;
+    -fx-font: 13pt "Courier New";
+}
+
+.chart-title {
+    -fx-text-fill: radial-gradient(center 50% 50%,radius 100%,orange,yellow);
+    -fx-font: 25pt "Courier New";
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),2,0,0,1);
+}
+
+.chart-legend {
+    -fx-background: transparent;
+    -fx-font: 14px "Courier New";
+}
+
+.check-box .box {
+    -fx-background-color: rgba(1, 1, 1, 0.2);
+
+}
+
+.toggle-button {
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #2c6ec5, #1f4f92),
+                          radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000022);
+    -fx-effect: none;
+    -fx-border-color: #1f4f92;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.list-view {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 50%, #26516E, #1E3543);
+    -fx-padding: 10px;
+    -fx-border-color: #3282b8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font: 14px "Courier New";
+    -fx-padding: 5px;
+}
+
+.listCellLabel {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font: 14px "Courier New";
+    -fx-padding: 5px;
+}
+
+.list-cell:selected {
+    -fx-background-color: #1f4f92;
+}
+
+.list-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.list-cell:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.list-cell:focused {
+    -fx-border-color: #ffcc00;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #4c87b0;
+    -fx-background-insets: 2, 0, 2;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #95b8d8;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #719dbd;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover {
+    -fx-background-color: #5e8ca8;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #333;
+}
+
+.list-view .corner {
+    -fx-background-color: transparent;
+}
