@@ -14,4 +14,11 @@ public class Budget {
         return income;
     }
 
+    public int getExpensesSum() {
+        return expenses.values().stream().reduce(0, Integer::sum);
+    }
+
+    public int getIncomeSum() {
+        return income.values().stream().reduce(0, Integer::sum);
+    }
 }

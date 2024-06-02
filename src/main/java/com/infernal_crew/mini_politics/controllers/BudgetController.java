@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
@@ -15,15 +16,27 @@ public class BudgetController extends BarController{
     private ToggleGroup incomeOrExpenses;
     @FXML private RadioButton incomeButton;
     @FXML private RadioButton expensesButton;
+    @FXML private Label incomeLabel;
+    @FXML private Label expenseLabel;
     @FXML
     private PieChart chart;
 
     public void update() {
+        updateIncomeLabel();
+        updateExpenseLabel();
         if (incomeOrExpenses.getSelectedToggle() == expensesButton) {
             onExpenseButtonClick();
         } else {
             onIncomeButtonClick();
         }
+    }
+
+    private void updateExpenseLabel() {
+        expenseLabel.setText(Integer.toString(mainController.getGame().getBudget().getExpensesSum()));
+    }
+
+    private void updateIncomeLabel() {
+        incomeLabel.setText(Integer.toString(mainController.getGame().getBudget().getIncomeSum()));
     }
 
     public void onExpenseButtonClick() {

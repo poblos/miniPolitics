@@ -5,20 +5,22 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="458.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
+<AnchorPane prefHeight="669.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.BudgetController">
     <VBox alignment="TOP_RIGHT" prefHeight="458.0" prefWidth="747.0">
         <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="765.0" style="-fx-font-size: 28;" text="BUDGET" />
         <HBox prefHeight="50.0" prefWidth="354.0" style="-fx-background-color: #EEEEEE;">
-            <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="38.0" prefWidth="365.0" text="Income">
+            <RadioButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="48.0" prefWidth="160.0" text="Income">
                 <toggleGroup>
                     <ToggleGroup fx:id="incomeOrExpenses" />
                 </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="38.0" prefWidth="383.0" selected="true" text="Expenses">
+            <Label fx:id="incomeLabel" prefHeight="48.0" prefWidth="220.0" />
+            <RadioButton fx:id="expensesButton" mnemonicParsing="false" onAction="#onExpenseButtonClick" prefHeight="48.0" prefWidth="160.0" selected="true" text="Expenses">
                 <toggleGroup>
                     <fx:reference source="incomeOrExpenses" />
                 </toggleGroup>
             </RadioButton>
+            <Label fx:id="expenseLabel" prefHeight="48.0" prefWidth="220.0" />
         </HBox>
         <HBox styleClass="viewContent">
             <PieChart fx:id="chart" animated="false" clockwise="false" labelsVisible="false" legendSide="RIGHT" prefHeight="354.0" prefWidth="786.0" />
