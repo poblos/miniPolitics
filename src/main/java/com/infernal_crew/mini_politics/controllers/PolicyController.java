@@ -120,8 +120,8 @@ public class PolicyController extends BarController {
                 super(option.getName());
                 if (option.isSelected()) {
                     this.getStyleClass().clear();
-                    this.getStyleClass().add("listCellLabel");
                     this.getStyleClass().add("currentOptionLabel");
+
                 } else {
                     this.getStyleClass().clear();
                     this.getStyleClass().add("listCellLabel");

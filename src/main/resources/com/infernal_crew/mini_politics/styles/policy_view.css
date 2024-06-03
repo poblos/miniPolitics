@@ -8,4 +8,7 @@
 
 .currentOptionLabel{
     -fx-background-color: linear-gradient(from 25px 1px to 100px 100px,#00A230, #F9F9F900);
+    -fx-text-fill: white;
+    -fx-font: 14px "Courier New";
+    -fx-padding: 5px;
 }
