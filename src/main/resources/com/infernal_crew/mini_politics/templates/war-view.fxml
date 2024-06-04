@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.layout.Pane?>
-<?import java.net.URL?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<AnchorPane prefHeight="557.0" prefWidth="330.0"
-            xmlns="http://javafx.com/javafx/18"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.infernal_crew.mini_politics.controllers.WarController">
+<AnchorPane prefHeight="557.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.WarController">
     <stylesheets>
-        <URL value="@../styles/war_view.css"/>
-        <URL value="@../styles/left_bar.css"/>
+        <URL value="@../styles/war_view.css" />
+        <URL value="@../styles/left_bar.css" />
     </stylesheets>
     <VBox prefHeight="501.0" prefWidth="502.0">
-        <TextField styleClass="titleBar" alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="502.0" text="THE NARONG WAR" />
-        <VBox styleClass="viewContent" prefHeight="150.0" prefWidth="502.0">
-            <HBox styleClass="upper-hbox" alignment="CENTER">
+        <Label alignment="CENTER" prefHeight="58.0" prefWidth="502.0" styleClass="titleBar" text="THE NARONG WAR" />
+        <VBox prefHeight="150.0" prefWidth="502.0" styleClass="viewContent">
+            <HBox alignment="CENTER" styleClass="upper-hbox">
                 <ImageView fitHeight="80.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@../menu_icons/flags/FOR_flag.jpg" />
                 </ImageView>
@@ -37,14 +27,14 @@
             <HBox>
                 <Label styleClass="normalText" text="Republic of Foreberg" />
                 <!-- Enlarged placeholder for flag -->
-                <Pane HBox.hgrow="ALWAYS"/> <!-- This Pane is used to push elements to sides -->
-                <Label styleClass="normalText"  text="Karlenese Federation" />
+                <Pane HBox.hgrow="ALWAYS" /> <!-- This Pane is used to push elements to sides -->
+                <Label styleClass="normalText" text="Karlenese Federation" />
                  <!-- Enlarged placeholder for flag -->
             </HBox>
         </VBox>
-        <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="330.0" styleClass="insideTitle" text="Events:" />
-        <ListView fx:id="listView" styleClass="viewContent" prefHeight="352.0" prefWidth="502.0" />
-        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
+        <Label alignment="CENTER" prefHeight="51.0" prefWidth="503.0" styleClass="insideTitle" text="Events:" />
+        <ListView fx:id="listView" prefHeight="352.0" prefWidth="502.0" styleClass="viewContent" />
+        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="37.0" prefWidth="503.0" styleClass="bottomBar" />
     </VBox>
 
     <effect>

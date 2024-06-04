@@ -13,7 +13,7 @@
         <URL value="@../styles/left_bar.css" />
     </stylesheets>
     <VBox alignment="TOP_RIGHT" prefHeight="107.0" prefWidth="569.0">
-        <TextField alignment="CENTER" editable="false" prefHeight="53.0" prefWidth="410.0" styleClass="titleBar" text="PARTIES    " />
+        <Label alignment="CENTER" prefHeight="53.0" prefWidth="607.0" styleClass="titleBar" text="PARTIES    " />
         <HBox fx:id="allHBox" alignment="CENTER" prefHeight="25.0" prefWidth="430.0">
             <TextFlow fx:id="textBox" styleClass="viewContent">
                 <padding>
@@ -22,7 +22,7 @@
             </TextFlow>
             <Button onAction="#onNextPartyButtonClick" styleClass="nextPartyButton" text="&gt;" />
         </HBox>
-        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="410.0" styleClass="bottomBar" />
+        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="37.0" prefWidth="672.0" styleClass="bottomBar" />
     </VBox>
     <effect>
         <DropShadow />

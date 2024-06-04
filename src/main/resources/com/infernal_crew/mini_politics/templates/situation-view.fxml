@@ -1,35 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<?import java.net.URL?>
-<AnchorPane prefHeight="535.0" xmlns="http://javafx.com/javafx/16"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.infernal_crew.mini_politics.controllers.SituationController">
+<AnchorPane prefHeight="535.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.SituationController">
     <stylesheets>
-        <URL value="@../styles/policy_view.css"/>
-        <URL value="@../styles/left_bar.css"/>
+        <URL value="@../styles/policy_view.css" />
+        <URL value="@../styles/left_bar.css" />
     </stylesheets>
     <VBox prefWidth="476.0">
-        <TextField alignment="CENTER" editable="false" prefHeight="42.0" styleClass="titleBar" text="SITUATIONS"/>
+        <Label alignment="CENTER" prefHeight="52.0" prefWidth="422.0" styleClass="titleBar" text="SITUATIONS" />
         <HBox prefWidth="400.0">
-            <VBox styleClass="viewContent" prefWidth="422.0">
-                <ListView fx:id="situationList" prefHeight="208.0"/>
-                <Label fx:id="descriptionLabel" styleClass="normalText" wrapText="true"/>
+            <VBox prefWidth="422.0" styleClass="viewContent">
+                <ListView fx:id="situationList" prefHeight="208.0" />
+                <Label fx:id="descriptionLabel" styleClass="normalText" wrapText="true" />
                 <padding>
-                    <Insets bottom="10" left="10" right="10" top="10"/>
+                    <Insets bottom="10" left="10" right="10" top="10" />
                 </padding>
 
             </VBox>
         </HBox>
-        <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="330.0" styleClass="bottomBar"/>
+        <Label alignment="CENTER" prefHeight="42.0" prefWidth="422.0" styleClass="bottomBar" />
     </VBox>
 
 
     <effect>
-        <DropShadow/>
+        <DropShadow />
     </effect>
 </AnchorPane>

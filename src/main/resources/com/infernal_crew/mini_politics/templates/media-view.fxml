@@ -11,7 +11,7 @@
     <stylesheets>
         <URL value="@../styles/left_bar.css" />
     </stylesheets>
-    <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="256.0" styleClass="titleBar" text="MEDIA" />
+    <Label alignment="CENTER" prefHeight="52.0" prefWidth="267.0" styleClass="titleBar" text="MEDIA" />
     <VBox styleClass="viewContent">
         <TilePane fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="200.0" prefWidth="256.0">
          <padding>
@@ -19,7 +19,7 @@
          </padding></TilePane>
         <TextFlow fx:id="textBox" layoutY="1.0" prefHeight="200.0" prefWidth="256.0" />
     </VBox>
-    <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
+    <Label fx:id="bottomBar" alignment="CENTER" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
     <effect>
         <DropShadow />
     </effect>

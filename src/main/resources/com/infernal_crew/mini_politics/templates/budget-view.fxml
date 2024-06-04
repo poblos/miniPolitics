@@ -13,7 +13,7 @@
     </stylesheets>
 
     <VBox alignment="TOP_RIGHT" prefHeight="600.0" prefWidth="747.0">
-        <TextField alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="765.0" styleClass="titleBar" text="BUDGET" />
+        <Label alignment="CENTER" prefHeight="58.0" prefWidth="765.0" styleClass="titleBar" text="BUDGET" />
         <HBox prefHeight="50.0" prefWidth="354.0">
             <ToggleButton fx:id="incomeButton" mnemonicParsing="false" onAction="#onIncomeButtonClick" prefHeight="48.0" prefWidth="400.0" text="Income">
                 <toggleGroup>
@@ -36,7 +36,7 @@
             </HBox>
             <PieChart fx:id="chart" animated="false" clockwise="false" labelsVisible="false" legendSide="RIGHT" prefHeight="500.0" prefWidth="747.0" />
         </VBox>
-        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="137.0" prefWidth="747.0" styleClass="bottomBar" />
+        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="137.0" prefWidth="747.0" styleClass="bottomBar" />
     </VBox>
     <effect>
         <DropShadow />

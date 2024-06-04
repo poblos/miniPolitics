@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.effect.DropShadow?>
-
-<?import java.net.URL?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.infernal_crew.mini_politics.controllers.StoryController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.StoryController">
     <stylesheets>
-        <URL value="@../styles/left_bar.css"/>
+        <URL value="@../styles/left_bar.css" />
     </stylesheets>
 
     <VBox>
-        <TextField styleClass="titleBar" alignment="CENTER" editable="false" style="-fx-font-size: 28;" text="STORY"/>
+        <Label alignment="CENTER" prefHeight="55.0" prefWidth="400.0" style="-fx-font-size: 28;" styleClass="titleBar" text="STORY" />
         <VBox fx:id="storyBox" styleClass="viewContent">
         </VBox>
-        <TextField fx:id="bottomBar" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
+        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
     </VBox>
     <effect>
-        <DropShadow/>
+        <DropShadow />
     </effect>
 </AnchorPane>

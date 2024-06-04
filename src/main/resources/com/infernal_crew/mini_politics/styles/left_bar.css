@@ -11,6 +11,10 @@
     -fx-padding: 8px;
 }
 
+.titleBar .text {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
+}
+
 .bottomBar {
     -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #2c6ec5, #1f4f92),
                           radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000022);
