@@ -2,16 +2,6 @@
     -fx-base: linear-gradient(lightblue, antiquewhite);
 }
 
-.label[style*="background-color: blue"], .label[style*="background-color: red"] {
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-    -fx-border-color: #95a5a6;
-    -fx-min-height: 30px;
-    -fx-min-width: 120px;
-    -fx-margin: 5px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
-}
-
 .progress-bar {
     -fx-pref-width: 250px;
     -fx-pref-height: 20px;

@@ -11,6 +11,8 @@
 
 <?import javafx.scene.layout.Pane?>
 <?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="557.0" prefWidth="330.0"
             xmlns="http://javafx.com/javafx/18"
             xmlns:fx="http://javafx.com/fxml"
@@ -23,9 +25,13 @@
         <TextField styleClass="titleBar" alignment="CENTER" editable="false" prefHeight="58.0" prefWidth="502.0" text="THE NARONG WAR" />
         <VBox styleClass="viewContent" prefHeight="150.0" prefWidth="502.0">
             <HBox styleClass="upper-hbox" alignment="CENTER">
-                <Label style="-fx-background-color: green;" prefHeight="80" prefWidth="120"/>
+                <ImageView fitHeight="80.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../menu_icons/flags/FOR_flag.jpg" />
+                </ImageView>
                 <ProgressBar fx:id="bar" prefHeight="20.0" prefWidth="250.0" progress="0.5" />
-                <Label style="-fx-background-color: red;" prefHeight="80" prefWidth="120"/>
+                <ImageView fitHeight="80.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../menu_icons/flags/KAR_flag.jpg" />
+                </ImageView>
 
             </HBox>
             <HBox>
