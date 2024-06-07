@@ -2,7 +2,8 @@
 A prototype of a politic manager game. Game is currently runnable with IntelliJ IDEA with Main class located in miniPolitics/src/main/java/com/infernal_crew/mini_politics directory.
 ![image](https://github.com/poblos/miniPolitics/assets/109177607/e9a690a2-9b47-476f-b740-24ee8048c151)
 
-
+## Quick tutorial
+As a leader of proud nation of Kachakonya, your primary goal is to bring prosperity and peace to your people. Or is it? Current political landscape is depicted by three main indicators: State Stability, Public Approval and Party Cohesion. Let one of those get too low and you can well see your rule come to an abrupt end.
 
 ###Atributions
 <a href="https://www.flaticon.com/free-icons/vote" title="vote icons">Vote icons created by Freepik - Flaticon</a>  
