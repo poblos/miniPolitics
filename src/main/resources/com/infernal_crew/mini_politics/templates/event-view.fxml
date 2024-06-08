@@ -5,9 +5,11 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.TextFlow?>
-<VBox prefWidth="600.0" styleClass="event" stylesheets="@../styles/event_view.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.EventController">
-    <Label fx:id="title" styleClass="eventTitle" />
-    <ImageView fx:id="image" />
-    <TextFlow fx:id="description" maxHeight="600.0" styleClass="eventDesc" />
-    <VBox fx:id="options" />
+<VBox prefWidth="600.0" styleClass="event" stylesheets="@../styles/event_view.css" xmlns="http://javafx.com/javafx/16"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.EventController"
+      alignment="CENTER">
+    <Label fx:id="title" styleClass="eventTitle"/>
+    <ImageView fx:id="image"/>
+    <TextFlow fx:id="description" maxHeight="600.0" styleClass="eventDesc"/>
+    <VBox fx:id="options"/>
 </VBox>
