@@ -87,7 +87,7 @@
                         </ImageView>
                     </graphic>
                 </Label>
-                <Label fx:id="title" text="THE MAPS">
+                <Label fx:id="title" text="miniPolitics">
                 </Label>
             </StackPane>
             <HBox alignment="CENTER" spacing="20.0">

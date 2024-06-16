@@ -1,13 +1,7 @@
 .root {
     -fx-background-color:
-            linear-gradient(#4568DC, #B06AB3),
-            radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000033);
-
-}
-
-.text-area {
-    -fx-font-size:20;
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, lightgrey, deepskyblue);
+            linear-gradient(to bottom right, #0f0c29, #302b63, #24243e),
+            radial-gradient(center 50% 50%, radius 50%, #ffffff33, #00000033);
 }
 
 .filmRoll {
@@ -16,10 +10,10 @@
     -fx-border-width: 0 15 0 15;
 }
 
-.filmRollOuter{
+.filmRollOuter {
     -fx-border-color: black;
     -fx-border-width: 0 10 0 10;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 30, 0.5, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 30, 0.5, 0, 0);
 }
 
 .filmWindow {
@@ -28,28 +22,38 @@
 }
 
 .button {
-    -fx-border-color: black;
-    -fx-border-width: 2;
+    -fx-border-color: #1f4f92;
+    -fx-border-width: 2px;
     -fx-font-size: 20;
-    -fx-text-fill: lemonchiffon;
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 100px, reflect, purple, black);
+    -fx-font-family: 'Courier New', monospace;
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #2c6ec5, #1f4f92),
+                          radial-gradient(center 50% 50%, radius 50%, #ffffff33, #00000022);
+    -fx-background-radius: 10px;
+    -fx-padding: 10px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 0);
+    -fx-cursor: hand;
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 100px, reflect, darkmagenta, black);
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #1f4f92, #2c6ec5),
+                          radial-gradient(center 50% 50%, radius 50%, #ffffff33, #00000022);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.7, 0, 0);
 }
 
 .button:pressed {
-    -fx-background-color: linear-gradient(from 50px 0px to 50px 100px, reflect, #5B0358, black);
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #163d6e, #1f4f92),
+                          radial-gradient(center 50% 50%, radius 50%, #ffffff33, #00000022);
 }
 
 #title {
-    -fx-font-size: 130;
-    -fx-font-family: Impact;
-    -fx-text-fill: linear-gradient(from 50px 0px to 50px 100px, reflect, purple, black);
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 30, 0.5, 0, 0);
+    -fx-font-size: 140;
+    -fx-font-family: 'Courier New', monospace;
+    -fx-text-fill: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 35, 0.7, 0, 0);
+    -fx-text-alignment: center;
 }
 
 #planet {
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 30, 0.5, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 30, 0.5, 0, 0);
 }
