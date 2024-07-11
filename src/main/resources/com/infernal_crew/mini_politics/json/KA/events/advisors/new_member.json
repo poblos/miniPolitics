@@ -23,13 +23,14 @@
         },
         {
           "type": "indicator_change",
-          "change": 2,
-          "indicator": "StateStability"
-        },
-        {
-          "type": "indicator_change",
           "change": -1,
           "indicator": "PartyCohesion"
+        },
+        {
+          "type": "mp_transfer",
+          "mpsTransfered": 1,
+          "fromID": "05",
+          "toID": "01"
         }
       ]
     },
