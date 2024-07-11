@@ -186,6 +186,14 @@ public class MainController {
     }
 
     @FXML
+    public void onFactionsButtonClick(ActionEvent actionEvent) {
+        if (ifRequiresCleaning(actionEvent)) {
+            return;
+        }
+        setInfoBox("factions-view.fxml");
+    }
+
+    @FXML
     public void onMediaButtonClick(ActionEvent actionEvent) {
         if (ifRequiresCleaning(actionEvent)) {
             return;

@@ -4,6 +4,7 @@ import com.infernal_crew.mini_politics.components.WarEvent;
 import com.infernal_crew.mini_politics.event.*;
 import com.infernal_crew.mini_politics.indicators.Indicator;
 import com.infernal_crew.mini_politics.modifiers.Modifier;
+import com.infernal_crew.mini_politics.party.Faction;
 import com.infernal_crew.mini_politics.party.Party;
 import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.budget.*;
@@ -28,14 +29,15 @@ public class Game {
     private Person currentPerson;
     private final Map<Integer, Policy> policies = new HashMap<>();
     private final List<Event> events;
-    private final Map<String,Dialogue> dialogues = new HashMap<>();
+    private final Map<String, Dialogue> dialogues = new HashMap<>();
     private final Map<Integer, Person> people = new HashMap<>();
-    private final Map<String,Trait> traits = new HashMap<>();
+    private final Map<String, Trait> traits = new HashMap<>();
     private final Map<Integer, Person> activePeople = new HashMap<>();
     private final Map<Integer, Integer> cooldown = new HashMap<>();
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
     private final Map<String, Party> parties = new HashMap<>();
+    private final Map<String, Faction> factions = new HashMap<>();
     private final List<StoryNote> storyNotes;
     private final List<WarEvent> warEvents = new ArrayList<>();
     private Party rulingParty;
@@ -43,7 +45,7 @@ public class Game {
     private final transient Random random = new Random();
 
     public Game(List<Event> events, List<Dialogue> dialogues, List<Person> people, List<Person> activePeople, List<Policy> policies,
-                List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits, List<Party> parties) {
+                List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits, List<Party> parties, List<Faction> factions) {
         this.budget = budget;
         this.events = events;
         this.modifiers = modifiers;
@@ -55,9 +57,15 @@ public class Game {
         values.put(Indicator.PartySupport, 44F);
         values.put(Indicator.InfrastructureCorruption, 0F);
         values.put(Indicator.NarongWarBalance, 50F);
+        values.put(Indicator.GeneralLoyalty, 70F);
+        values.put(Indicator.Authority, 30F);
 
-        for(Party p : parties) {
+        for (Party p : parties) {
             this.parties.put(p.id(), p);
+        }
+
+        for (Faction f : factions) {
+            this.factions.put(f.getId(), f);
         }
 
         for (Dialogue d : dialogues) {
@@ -80,7 +88,7 @@ public class Game {
             this.traits.put(t.getName(), t);
         }
 
-        for(Party p : parties) {
+        for (Party p : parties) {
             if (Objects.equals(p.id(), "01")) {
                 rulingParty = p;
             }
@@ -138,7 +146,7 @@ public class Game {
     private void chooseOption(Event currentEvent, int option) {
         List<Effect> effects = currentEvent.getOptions().get(option).getEffects();
         for (Effect effect : effects) {
-             effect.handle(this);
+            effect.handle(this);
         }
     }
 
@@ -152,7 +160,7 @@ public class Game {
     public float includeBonus(float change, Indicator indicator) {
         float bonus = 1;
         for (Job job : employed.keySet()) {
-            for(String trait : employed.get(job).getTraits()) {
+            for (String trait : employed.get(job).getTraits()) {
                 if (traits.get(trait) != null) {
                     for (TraitEffect effect : traits.get(trait).getEffects())
                         bonus += effect.calculateBonus(job, indicator) / 100.0f;
@@ -222,7 +230,7 @@ public class Game {
     }
 
     public void handleEvent(int click) {
-        for(StoryNote note : storyNotes) {
+        for (StoryNote note : storyNotes) {
             if (activeModifiers.containsKey(note.getModifier())) {
                 note.setDone(true);
             }
@@ -254,14 +262,15 @@ public class Game {
     public void updateIndicator(float change, Indicator indicator) {
         values.put(indicator, change + values.get(indicator));
         if (indicator == Indicator.NarongWarBalance) {
-            warEvents.add(new WarEvent(currentEvent.getTitle(),change > 0 ? "+" + change : Float.toString(change)));
+            warEvents.add(new WarEvent(currentEvent.getTitle(), change > 0 ? "+" + change : Float.toString(change)));
         }
     }
 
     public Event getLoseEvent(Indicator indicator) {
         List<Option> list = new ArrayList<>();
-        return new Event("You lost!","Your " + indicator + " was too low.", list,"darkside");
+        return new Event("You lost!", "Your " + indicator + " was too low.", list, "darkside");
     }
+
     public Event getCurrentEvent() {
         return currentEvent;
     }
@@ -290,7 +299,9 @@ public class Game {
         return round;
     }
 
-    public Random getRandom() { return random; }
+    public Random getRandom() {
+        return random;
+    }
 
     public Map<Integer, Policy> getPolicies() {
         return policies;
@@ -350,5 +361,9 @@ public class Game {
 
     public Dialogue getDialogue(String id) {
         return dialogues.get(id);
+    }
+
+    public Map<String, Faction> getFactions() {
+        return factions;
     }
 }

@@ -3,12 +3,12 @@ package com.infernal_crew.mini_politics.controllers;
 import com.infernal_crew.mini_politics.components.ParliamentDotPlot;
 import com.infernal_crew.mini_politics.party.Party;
 import com.infernal_crew.mini_politics.utils.UICommon;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 
 import java.util.Collection;
-import java.util.List;
 
 public class PartyController extends BarController {
     @FXML
@@ -35,5 +35,10 @@ public class PartyController extends BarController {
 
         String ideologies = party.ideologies().toString();
         UICommon.addNamedData(textBox, "Ideologies: \n", ideologies.substring(1, ideologies.length() - 1));
+    }
+
+    @FXML
+    private void onFactionsButtonClick(ActionEvent actionEvent) {
+        mainController.onFactionsButtonClick(actionEvent);
     }
 }

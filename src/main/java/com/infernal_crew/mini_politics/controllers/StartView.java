@@ -17,10 +17,7 @@ import com.infernal_crew.mini_politics.modifiers.Modifier;
 import com.infernal_crew.mini_politics.modifiers.ModifierCondition;
 import com.infernal_crew.mini_politics.modifiers.ModifierInvocation;
 import com.infernal_crew.mini_politics.modifiers.ModifierRemoval;
-import com.infernal_crew.mini_politics.party.IdeologyChange;
-import com.infernal_crew.mini_politics.party.IdeologyCondition;
-import com.infernal_crew.mini_politics.party.MPTransfer;
-import com.infernal_crew.mini_politics.party.Party;
+import com.infernal_crew.mini_politics.party.*;
 import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyChange;
 import com.infernal_crew.mini_politics.policy.PolicyCondition;
@@ -137,9 +134,11 @@ public class StartView {
 
         ArrayList<Party> parties = loadFiles(Party.class, "json/" + nationTag + "/parties/", moshi);
 
+        ArrayList<Faction> factions = loadFiles(Faction.class, "json/" + nationTag + "/factions/", moshi);
+
         printNumberOf("events", events.size());
         printNumberOf("dialogues", dialogues.size());
-        return new Game(events, dialogues, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits, parties);
+        return new Game(events, dialogues, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits, parties, factions);
     }
 
     private void startGame(Game game) throws IOException {

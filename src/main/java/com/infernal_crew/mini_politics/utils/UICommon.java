@@ -12,4 +12,8 @@ public class UICommon {
         text.getStyleClass().add("normalText");
         flow.getChildren().add(text);
     }
+
+    public static void breakLine(TextFlow flow) {
+        flow.getChildren().add(new Text("\n"));
+    }
 }
