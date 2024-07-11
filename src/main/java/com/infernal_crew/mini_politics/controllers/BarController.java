@@ -1,7 +1,5 @@
 package com.infernal_crew.mini_politics.controllers;
 
-import com.infernal_crew.mini_politics.game.Game;
-
 public abstract class BarController {
     protected MainController mainController;
     public void setMainController(MainController mainController) {

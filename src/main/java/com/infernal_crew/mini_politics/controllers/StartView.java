@@ -25,6 +25,7 @@ import com.infernal_crew.mini_politics.policy.PolicyChange;
 import com.infernal_crew.mini_politics.policy.PolicyCondition;
 import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.story.StoryNote;
+import com.infernal_crew.mini_politics.utils.ColorAdapter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory;
 import javafx.animation.TranslateTransition;
@@ -106,7 +107,8 @@ public class StartView {
                 .add(PolymorphicJsonAdapterFactory.of(Part.class, "type")
                         .withSubtype(DescriptionPart.class, "description")
                         .withSubtype(ChoicePart.class, "choice")
-                        .withSubtype(PersonPart.class, "person")).build();
+                        .withSubtype(PersonPart.class, "person"))
+                .add(new ColorAdapter()).build();
 
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));

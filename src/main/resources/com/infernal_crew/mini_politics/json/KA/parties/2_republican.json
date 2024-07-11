@@ -7,5 +7,7 @@
     "Capitalist",
     "Centrist",
     "Promatheuchellian"
-  ]
+  ],
+  "color": "0x0066cc",
+  "seats" : 185
 }

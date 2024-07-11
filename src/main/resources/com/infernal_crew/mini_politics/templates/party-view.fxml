@@ -7,22 +7,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PartyController">
+<AnchorPane prefHeight="534.0" prefWidth="1233.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PartyController">
     <stylesheets>
         <URL value="@../styles/party_view.css" />
         <URL value="@../styles/left_bar.css" />
     </stylesheets>
-    <VBox alignment="TOP_RIGHT" prefHeight="107.0" prefWidth="569.0">
-        <Label alignment="CENTER" prefHeight="53.0" prefWidth="607.0" styleClass="titleBar" text="PARTIES    " />
-        <HBox fx:id="allHBox" alignment="CENTER" prefHeight="25.0" prefWidth="430.0">
-            <TextFlow fx:id="textBox" styleClass="viewContent">
+    <VBox alignment="TOP_RIGHT" prefHeight="534.0" prefWidth="1233.0">
+        <Label alignment="CENTER" prefHeight="53.0" prefWidth="1254.0" styleClass="titleBar" text="PARLIAMENT" />
+        <HBox fx:id="allHBox" prefHeight="447.0" prefWidth="1233.0" styleClass="viewContent">
+            <VBox fx:id="parliamentContainer" prefHeight="400.0" prefWidth="711.0" />
+            <TextFlow fx:id="textBox" prefHeight="44.0" prefWidth="491.0">
                 <padding>
                     <Insets bottom="5" left="10" right="20" top="5" />
                 </padding>
             </TextFlow>
-            <Button onAction="#onNextPartyButtonClick" styleClass="nextPartyButton" text="&gt;" />
         </HBox>
-        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="37.0" prefWidth="672.0" styleClass="bottomBar" />
+
+        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="42.0" prefWidth="1233.0" styleClass="bottomBar" />
     </VBox>
     <effect>
         <DropShadow />

@@ -1,26 +1,38 @@
 package com.infernal_crew.mini_politics.controllers;
 
+import com.infernal_crew.mini_politics.components.ParliamentDotPlot;
+import com.infernal_crew.mini_politics.party.Party;
 import com.infernal_crew.mini_politics.utils.UICommon;
 import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
+
+import java.util.List;
 
 public class PartyController extends BarController {
     @FXML
     private TextFlow textBox;
-    private int currentParty = 0;
+    @FXML
+    private VBox parliamentContainer;
+    private ParliamentDotPlot parliamentDotPlot;
 
-    public void update() {
-        textBox.getChildren().clear();
-        UICommon.addNamedData(textBox, mainController.getGame().getParties().get(currentParty).name() + "\n",
-                mainController.getGame().getParties().get(currentParty).description() + "\n");
-
-        String ideologies = mainController.getGame().getParties().get(currentParty).ideologies().toString();
-        UICommon.addNamedData(textBox,"Ideologies: \n", ideologies.substring(1, ideologies.length() - 1));
+    @FXML
+    public void initialize() {
+        parliamentDotPlot = new ParliamentDotPlot(360, 15, 25, 350, 350, 50, 5);
+        parliamentDotPlot.setOnSeatHover(this::showPartyDescription);
+        parliamentContainer.getChildren().add(parliamentDotPlot);
     }
 
-    public void onNextPartyButtonClick() {
-        currentParty++;
-        currentParty %= mainController.getGame().getParties().size();
-        update();
+    public void update() {
+        List<Party> parties = mainController.getGame().getParties();
+        parliamentDotPlot.updatePlot(parties);
+    }
+
+    private void showPartyDescription(Party party) {
+        textBox.getChildren().clear();
+        UICommon.addNamedData(textBox, party.name() + "\n", party.description() + "\n");
+
+        String ideologies = party.ideologies().toString();
+        UICommon.addNamedData(textBox, "Ideologies: \n", ideologies.substring(1, ideologies.length() - 1));
     }
 }

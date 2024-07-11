@@ -6,5 +6,7 @@
     "Socialist",
     "Conservative",
     "Promatheuchellian"
-  ]
+  ],
+  "color": "0xcc0000",
+  "seats" : 100
 }
