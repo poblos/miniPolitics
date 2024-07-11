@@ -19,6 +19,7 @@ import com.infernal_crew.mini_politics.modifiers.ModifierInvocation;
 import com.infernal_crew.mini_politics.modifiers.ModifierRemoval;
 import com.infernal_crew.mini_politics.party.IdeologyChange;
 import com.infernal_crew.mini_politics.party.IdeologyCondition;
+import com.infernal_crew.mini_politics.party.MPTransfer;
 import com.infernal_crew.mini_politics.party.Party;
 import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyChange;
@@ -89,7 +90,8 @@ public class StartView {
                         .withSubtype(BudgetExpense.class, "budget_expense")
                         .withSubtype(BudgetIncome.class, "budget_income")
                         .withSubtype(AdvisorPositionEmployment.class, "advisor_position_employment")
-                        .withSubtype(DialogueInvocation.class, "dialogue_invocation"))
+                        .withSubtype(DialogueInvocation.class, "dialogue_invocation")
+                        .withSubtype(MPTransfer.class, "mp_transfer"))
                 .add(PolymorphicJsonAdapterFactory.of(Condition.class, "type")
                         .withSubtype(ModifierCondition.class, "modifier_condition")
                         .withSubtype(AdvisorCondition.class, "advisor_condition")

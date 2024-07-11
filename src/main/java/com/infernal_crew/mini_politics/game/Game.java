@@ -35,7 +35,7 @@ public class Game {
     private final Map<Integer, Integer> cooldown = new HashMap<>();
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
-    private final List<Party> parties;
+    private final Map<String, Party> parties = new HashMap<>();
     private final List<StoryNote> storyNotes;
     private final List<WarEvent> warEvents = new ArrayList<>();
     private Party rulingParty;
@@ -49,13 +49,16 @@ public class Game {
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
         this.storyNotes = storyNotes;
-        this.parties = parties;
 
         values.put(Indicator.PartyCohesion, 40F);
         values.put(Indicator.StateStability, 35F);
         values.put(Indicator.PartySupport, 44F);
         values.put(Indicator.InfrastructureCorruption, 0F);
         values.put(Indicator.NarongWarBalance, 50F);
+
+        for(Party p : parties) {
+            this.parties.put(p.id(), p);
+        }
 
         for (Dialogue d : dialogues) {
             this.dialogues.put(d.getId(), d);
@@ -271,7 +274,7 @@ public class Game {
         return mediaGroups;
     }
 
-    public List<Party> getParties() {
+    public Map<String, Party> getParties() {
         return parties;
     }
 

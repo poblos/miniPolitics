@@ -65,7 +65,7 @@
 .normalText {
     -fx-text-fill: white;
     -fx-fill: white;
-    -fx-font: 13pt "Courier New";
+    -fx-font: 11pt "Courier New";
 }
 
 .chart-title {

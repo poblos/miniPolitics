@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextFlow;
 
+import java.util.Collection;
 import java.util.List;
 
 public class PartyController extends BarController {
@@ -24,8 +25,8 @@ public class PartyController extends BarController {
     }
 
     public void update() {
-        List<Party> parties = mainController.getGame().getParties();
-        parliamentDotPlot.updatePlot(parties);
+        Collection<Party> parties = mainController.getGame().getParties().values();
+        parliamentDotPlot.updatePlot(parties.stream().sorted().toList());
     }
 
     private void showPartyDescription(Party party) {
