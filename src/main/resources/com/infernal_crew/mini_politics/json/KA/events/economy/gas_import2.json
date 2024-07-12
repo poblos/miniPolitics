@@ -1,0 +1,60 @@
+{
+  "probability": 500,
+  "isUnique": true,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Gas import negotiations with other countries"
+      },
+      {
+        "type": "round_condition",
+        "round": 7
+      }
+    ]
+  },
+  "description": "Our talks with other partners regarding gas import have been going well. We've got contract proposals from Nendenia and Fen-Xe sufficient to meet our demand that are awaiting your acceptance. They are much more costly than the ones we had with Graonia, but we believe being independent of our rival is more important.",
+  "options": [
+    {
+      "description": "It is too costly! Negotiate with Graonians instead.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Gas import negotiations with Graonia"
+        }
+      ]
+    },
+    {
+      "description": "Sign the deals.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "StateStability"
+        },
+        {
+          "type": "indicator_change",
+          "change": 2,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "budget_expense",
+          "category": "Economy",
+          "change": 2000
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Gas import deal signed"
+        }
+      ]
+    }
+  ],
+  "title": "Gas import negotiations"
+}

@@ -1,5 +1,16 @@
 {
   "isUnique": true,
+  "isCertain": true,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "round_condition",
+        "round": 5
+      }
+    ]
+  },
   "description": "Our current gas import deal with Graonia expires soon. It will be perhaps the cheapest option to negotiate a new deal with them, but knowing our rocky relationship with Graonia there is a strong support among our voters to sign a new contract with different suppliers.",
   "options": [
     {
@@ -7,28 +18,34 @@
       "effects": [
         {
           "type": "indicator_change",
-          "change": -2,
+          "change": -1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Gas import negotiations with Graonia"
+        },
+        {
+          "type": "show_note",
+          "id": "gas_import"
         }
       ]
     },
     {
-      "description": "We can't be dependant on Graonians anymore!",
+      "description": "We can't be dependant on Graonians anymore! Let's begin talks with other countries.",
       "effects": [
         {
           "type": "indicator_change",
-          "change": 2,
-          "indicator": "StateStability"
-        },
-        {
-          "type": "indicator_change",
-          "change": 2,
+          "change": 1,
           "indicator": "PartySupport"
         },
         {
-          "type": "budget_expense",
-          "category": "Economy",
-          "change": 1000
+          "type": "modifier_invocation",
+          "name": "Gas import negotiations with other countries"
+        },
+        {
+          "type": "show_note",
+          "id": "gas_import"
         }
       ]
     }

@@ -1,0 +1,8 @@
+{
+  "id" : "gas_import",
+  "title": "New gas import deal",
+  "description": "Our current gas import deal with Graonia is expiring soon. We should secure new supply either from Graonia or our other partners.",
+  "modifier": "Gas import deal signed",
+  "done": false,
+  "shown": false
+}
