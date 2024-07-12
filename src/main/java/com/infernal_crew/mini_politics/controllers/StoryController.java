@@ -16,11 +16,17 @@ public class StoryController extends BarController {
     @FXML
     private VBox storyBox;
     @FXML
-    private VBox detailsBox;
+    private TextFlow title;
+
+    @FXML
+    private TextFlow description;
 
     @Override
     public void update() {
         storyBox.getChildren().clear();
+        title.getChildren().clear();
+        description.getChildren().clear();
+
         for(StoryNote note : mainController.getGame().getStoryNotes().values()) {
             if(!note.isShown()) continue;
             CheckBox checkBox = new CheckBox();
@@ -28,15 +34,16 @@ public class StoryController extends BarController {
             checkBox.setStyle("-fx-opacity: 1");
             checkBox.setSelected(note.isDone());
 
-            TextFlow flow = new TextFlow();
-            addHighlightedText(flow, note.getTitle());
-            storyBox.getChildren().add(new HBox(flow,checkBox));
+            addHighlightedClickableText(storyBox, note.getTitle(), event-> showDetails(note));
+            storyBox.getChildren().add(checkBox);
 
-            TextFlow flow2 = new TextFlow();
-            addHighlightedText(flow2, note.getTitle());
-            breakLine(flow2);
-            addNormalText(flow2, note.getDescription());
-            detailsBox.getChildren().add(new HBox(flow2));
         }
+    }
+
+    private void showDetails(StoryNote note) {
+        title.getChildren().clear();
+        description.getChildren().clear();
+        addHighlightedText(title, note.getTitle());
+        addNormalText(description, note.getDescription());
     }
 }

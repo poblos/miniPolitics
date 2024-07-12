@@ -1,0 +1,8 @@
+{
+  "id" : "old_guard_disloyal",
+  "title": "Old guard disloyal",
+  "description": "Some of our party's experienced politicians question your leadership behind the scenes. We should either get rid of them or make them take our side, or we might find ourselves in trouble.",
+  "modifier": "Old guard loyal",
+  "done": false,
+  "shown": false
+}

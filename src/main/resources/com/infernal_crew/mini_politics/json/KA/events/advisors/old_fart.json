@@ -1,6 +1,6 @@
 {
   "isUnique": true,
-  "probability": 1000,
+  "isCertain": true,
   "trigger": {
     "no": [
     ],
@@ -9,6 +9,10 @@
         "type": "trait_condition",
         "job": "Whip",
         "trait": "OldFart"
+      },
+      {
+        "type": "round_condition",
+        "round": 3
       }
     ]
   },
@@ -20,6 +24,10 @@
         {
           "type": "advisor_dismissal",
           "job": "Whip"
+        },
+        {
+          "type": "show_note",
+          "id": "old_guard_disloyal"
         }
       ]
     },
@@ -29,6 +37,10 @@
         {
           "type": "modifier_invocation",
           "name": "Old fart still in power"
+        },
+        {
+          "type": "show_note",
+          "id": "old_guard_disloyal"
         }
       ]
     }
