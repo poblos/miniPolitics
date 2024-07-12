@@ -1,8 +1,10 @@
 package com.infernal_crew.mini_politics.event;
 
+import com.infernal_crew.mini_politics.utils.Identifiable;
+
 import java.util.List;
 
-public class Dialogue extends AbstractEvent{
+public class Dialogue extends AbstractEvent implements Identifiable {
     private String id;
 
     private Part[] parts;

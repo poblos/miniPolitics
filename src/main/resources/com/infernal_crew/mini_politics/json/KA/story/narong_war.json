@@ -1,6 +1,8 @@
 {
+  "id" : "narong_war",
   "title": "The Narong War",
   "description": "The regional conflict between Karlenese Federation and Foreberg escalated into a full-scale war. We should carefully plan our next moves.",
   "modifier": "The Narong War",
-  "done": false
+  "done": false,
+  "shown": false
 }

@@ -11,10 +11,13 @@
     </stylesheets>
 
     <VBox>
-        <Label alignment="CENTER" prefHeight="55.0" prefWidth="400.0" style="-fx-font-size: 28;" styleClass="titleBar" text="STORY" />
-        <VBox fx:id="storyBox" styleClass="viewContent">
-        </VBox>
-        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
+        <Label alignment="CENTER" prefHeight="55.0" prefWidth="600.0" style="-fx-font-size: 28;" styleClass="titleBar" text="STORY" />
+        <HBox>
+            <VBox fx:id="storyBox" styleClass="viewContent" />
+            <VBox fx:id="detailsBox" styleClass="viewContent" />
+        </HBox>
+
+        <Label alignment="CENTER" prefHeight="37.0" prefWidth="599.0" styleClass="bottomBar" />
     </VBox>
     <effect>
         <DropShadow />

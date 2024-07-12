@@ -23,9 +23,14 @@
       "description": "It was worth it to wait a bit. Dismiss him.",
       "effects": [
         {
-          "type": "indicator_change",
-          "change": 12,
-          "indicator": "PartyCohesion"
+          "type": "loyalty_change",
+          "id": "old",
+          "change": 12
+        },
+        {
+          "type": "loyalty_change",
+          "id": "others",
+          "change": 12
         },
         {
           "type": "advisor_dismissal",

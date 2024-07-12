@@ -1,9 +1,10 @@
 package com.infernal_crew.mini_politics.party;
 
+import com.infernal_crew.mini_politics.utils.Identifiable;
 import javafx.scene.paint.Color;
 import java.util.List;
 
-public class Party implements Comparable<Party> {
+public class Party implements Comparable<Party>, Identifiable {
     private final String id;
     private final String name;
     private final String description;
@@ -22,7 +23,7 @@ public class Party implements Comparable<Party> {
         this.seats = seats;
     }
 
-    public String id() {
+    public String getId() {
         return id;
     }
 

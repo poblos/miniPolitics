@@ -41,6 +41,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static com.infernal_crew.mini_politics.utils.JsonLoader.gameBuilder;
 import static com.infernal_crew.mini_politics.utils.JsonLoader.loadFiles;
 
 public class StartView {
@@ -72,44 +73,7 @@ public class StartView {
     }
 
     private Game constructGame(String nationTag) throws URISyntaxException, IOException {
-        Moshi moshi = new Moshi.Builder()
-                .add(PolymorphicJsonAdapterFactory.of(Effect.class, "type")
-                        .withSubtype(IndicatorChange.class, "indicator_change")
-                        .withSubtype(RandomAdvisorEmployment.class, "random_advisor_employment")
-                        .withSubtype(AdvisorEmployment.class, "advisor_employment")
-                        .withSubtype(RandomAdvisorDismissal.class, "random_advisor_dismissal")
-                        .withSubtype(AdvisorDismissal.class, "advisor_dismissal")
-                        .withSubtype(ModifierInvocation.class, "modifier_invocation")
-                        .withSubtype(ModifierRemoval.class, "modifier_removal")
-                        .withSubtype(MediaTakeover.class, "media_takeover")
-                        .withSubtype(IdeologyChange.class, "ideology_change")
-                        .withSubtype(PolicyChange.class, "policy_change")
-                        .withSubtype(BudgetExpense.class, "budget_expense")
-                        .withSubtype(BudgetIncome.class, "budget_income")
-                        .withSubtype(AdvisorPositionEmployment.class, "advisor_position_employment")
-                        .withSubtype(DialogueInvocation.class, "dialogue_invocation")
-                        .withSubtype(MPTransfer.class, "mp_transfer")
-                        .withSubtype(LoyaltyChange.class, "loyalty_change"))
-                .add(PolymorphicJsonAdapterFactory.of(Condition.class, "type")
-                        .withSubtype(ModifierCondition.class, "modifier_condition")
-                        .withSubtype(AdvisorCondition.class, "advisor_condition")
-                        .withSubtype(MediaCondition.class, "media_condition")
-                        .withSubtype(MediaIdCondition.class, "media_id_condition")
-                        .withSubtype(AdvisorSkillCondition.class, "trait_condition")
-                        .withSubtype(IndicatorCondition.class, "indicator_condition")
-                        .withSubtype(SomeAdvisorCondition.class, "some_advisor_condition")
-                        .withSubtype(IdeologyCondition.class, "ideology_condition")
-                        .withSubtype(PolicyCondition.class, "policy_condition")
-                        .withSubtype(RoundCondition.class, "round_condition")
-                        .withSubtype(PersonCondition.class, "person_condition"))
-                .add(PolymorphicJsonAdapterFactory.of(TraitEffect.class, "type")
-                        .withSubtype(TraitIndicatorEffect.class, "indicator_effect")
-                        .withSubtype(LoyaltyChange.class, "loyalty_change"))
-                .add(PolymorphicJsonAdapterFactory.of(Part.class, "type")
-                        .withSubtype(DescriptionPart.class, "description")
-                        .withSubtype(ChoicePart.class, "choice")
-                        .withSubtype(PersonPart.class, "person"))
-                .add(new ColorAdapter()).build();
+        Moshi moshi = gameBuilder();
 
         ArrayList<Event> events = loadFiles(Event.class, "json/" + nationTag + "/events/", moshi);
         events.addAll(loadFiles(Event.class, "json/DT/events/", moshi));

@@ -1,9 +1,11 @@
 package com.infernal_crew.mini_politics.jobs;
 
+import com.infernal_crew.mini_politics.utils.Identifiable;
+
 import java.util.List;
 import java.util.Objects;
 
-public class Trait {
+public class Trait implements Identifiable {
     private String name;
     private String description;
     private List<TraitEffect> effects;
@@ -18,6 +20,9 @@ public class Trait {
         return name;
     }
 
+    public String getId() {
+        return name;
+    }
     public String getDescription() {
         return description;
     }

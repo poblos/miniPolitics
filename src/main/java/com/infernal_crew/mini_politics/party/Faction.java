@@ -1,6 +1,8 @@
 package com.infernal_crew.mini_politics.party;
 
-public class Faction {
+import com.infernal_crew.mini_politics.utils.Identifiable;
+
+public class Faction implements Identifiable {
     private String id;
 
     private String name;

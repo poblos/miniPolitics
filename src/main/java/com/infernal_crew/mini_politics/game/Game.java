@@ -14,6 +14,8 @@ import com.infernal_crew.mini_politics.story.StoryNote;
 
 import java.util.*;
 
+import static com.infernal_crew.mini_politics.utils.DataManipulator.toIdMap;
+
 public class Game {
     private final Map<Indicator, Float> values = new HashMap<>();
     private final Map<Job, Person> employed = new HashMap<>();
@@ -29,16 +31,16 @@ public class Game {
     private Person currentPerson;
     private final Map<Integer, Policy> policies = new HashMap<>();
     private final List<Event> events;
-    private final Map<String, Dialogue> dialogues = new HashMap<>();
+    private final Map<String, Dialogue> dialogues;
     private final Map<Integer, Person> people = new HashMap<>();
-    private final Map<String, Trait> traits = new HashMap<>();
+    private final Map<String, Trait> traits;
     private final Map<Integer, Person> activePeople = new HashMap<>();
     private final Map<Integer, Integer> cooldown = new HashMap<>();
     private final List<Modifier> modifiers;
     private final List<MediaGroup> mediaGroups;
-    private final Map<String, Party> parties = new HashMap<>();
-    private final Map<String, Faction> factions = new HashMap<>();
-    private final List<StoryNote> storyNotes;
+    private final Map<String, Party> parties;
+    private final Map<String, Faction> factions;
+    private final Map<String, StoryNote> storyNotes;
     private final List<WarEvent> warEvents = new ArrayList<>();
     private Party rulingParty;
     private final Budget budget;
@@ -50,19 +52,12 @@ public class Game {
         this.events = events;
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
-        this.storyNotes = storyNotes;
 
-        for (Party p : parties) {
-            this.parties.put(p.id(), p);
-        }
+        this.storyNotes = toIdMap(storyNotes);
 
-        for (Faction f : factions) {
-            this.factions.put(f.getId(), f);
-        }
-
-        for (Dialogue d : dialogues) {
-            this.dialogues.put(d.getId(), d);
-        }
+        this.parties = toIdMap(parties);
+        this.factions = toIdMap(factions);
+        this.dialogues = toIdMap(dialogues);
 
         for (Person p : people) {
             this.people.put(p.getId(), p);
@@ -76,12 +71,11 @@ public class Game {
         for (Policy p : policies) {
             this.policies.put(p.getId(), p);
         }
-        for (Trait t : traits) {
-            this.traits.put(t.getName(), t);
-        }
+
+        this.traits = toIdMap(traits);
 
         for (Party p : parties) {
-            if (Objects.equals(p.id(), "01")) {
+            if (Objects.equals(p.getId(), "01")) {
                 rulingParty = p;
             }
         }
@@ -92,6 +86,7 @@ public class Game {
         values.put(Indicator.InfrastructureCorruption, 0F);
         values.put(Indicator.NarongWarBalance, 50F);
     }
+
 
     private int eventProbabilitySum() {
         int acc = 0;
@@ -232,7 +227,7 @@ public class Game {
     }
 
     public void handleEvent(int click) {
-        for (StoryNote note : storyNotes) {
+        for (StoryNote note : storyNotes.values()) {
             if (activeModifiers.containsKey(note.getModifier())) {
                 note.setDone(true);
             }
@@ -368,7 +363,7 @@ public class Game {
         currentPerson = person;
     }
 
-    public List<StoryNote> getStoryNotes() {
+    public Map<String,StoryNote> getStoryNotes() {
         return storyNotes;
     }
 
