@@ -52,14 +52,6 @@ public class Game {
         this.mediaGroups = mediaGroups;
         this.storyNotes = storyNotes;
 
-        values.put(Indicator.PartyCohesion, 40F);
-        values.put(Indicator.StateStability, 35F);
-        values.put(Indicator.PartySupport, 44F);
-        values.put(Indicator.InfrastructureCorruption, 0F);
-        values.put(Indicator.NarongWarBalance, 50F);
-        values.put(Indicator.GeneralLoyalty, 70F);
-        values.put(Indicator.Authority, 30F);
-
         for (Party p : parties) {
             this.parties.put(p.id(), p);
         }
@@ -93,6 +85,12 @@ public class Game {
                 rulingParty = p;
             }
         }
+
+        values.put(Indicator.PartyCohesion, calculatePartyCohesion());
+        values.put(Indicator.StateStability, 35F);
+        values.put(Indicator.PartySupport, 44F);
+        values.put(Indicator.InfrastructureCorruption, 0F);
+        values.put(Indicator.NarongWarBalance, 50F);
     }
 
     private int eventProbabilitySum() {
@@ -266,6 +264,16 @@ public class Game {
         }
     }
 
+    private float calculatePartyCohesion() {
+        double sum = 0.0;
+        double totalMembers = 0.0;
+        for(Faction f : factions.values()) {
+            sum += f.getLoyalty() * f.getMembers();
+            totalMembers += f.getMembers();
+        }
+        return (float) (sum/ totalMembers);
+    }
+
     public Event getLoseEvent(Indicator indicator) {
         List<Option> list = new ArrayList<>();
         return new Event("You lost!", "Your " + indicator + " was too low.", list, "darkside");
@@ -365,5 +373,11 @@ public class Game {
 
     public Map<String, Faction> getFactions() {
         return factions;
+    }
+
+    public void updateLoyalty(String id, float finalChange) {
+        Faction f = factions.get(id);
+        f.setLoyalty(f.getLoyalty() + finalChange);
+        values.put(Indicator.PartyCohesion, calculatePartyCohesion());
     }
 }

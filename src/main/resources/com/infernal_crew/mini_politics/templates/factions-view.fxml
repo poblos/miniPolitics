@@ -6,22 +6,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.FactionsController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.infernal_crew.mini_politics.controllers.FactionsController">
     <stylesheets>
-        <URL value="@../styles/party_view.css" />
-        <URL value="@../styles/left_bar.css" />
+        <URL value="@../styles/left_bar.css"/>
     </stylesheets>
     <VBox alignment="TOP_RIGHT" prefHeight="534.0" prefWidth="1233.0">
         <HBox>
-            <ToggleButton onAction="#onPartyButtonClick" text="Parties" />
-            <Label alignment="CENTER" prefHeight="52.0" prefWidth="1173.0" styleClass="titleBar" text="FACTIONS" />
+            <ToggleButton onAction="#onPartyButtonClick" prefHeight="52.0" prefWidth="140.0" text="Parties"/>
+            <Label alignment="CENTER" prefHeight="52.0" prefWidth="1103.0" styleClass="titleBar" text="FACTIONS"/>
         </HBox>
         <HBox fx:id="allHBox" prefHeight="447.0" prefWidth="1233.0" styleClass="viewContent">
-            <TextFlow fx:id="factionsFlow" prefHeight="400.0" prefWidth="1043.0" />
+            <VBox>
+                <TextFlow fx:id="nameFlow" prefHeight="400.0" prefWidth="1043.0"/>
+            </VBox>
+
+            <VBox>
+                <TextFlow fx:id="loyaltyFlow" prefHeight="400.0" prefWidth="1043.0"/>
+            </VBox>
+            <VBox>
+                <TextFlow fx:id="memberFlow" prefHeight="400.0" prefWidth="1043.0"/>
+            </VBox>
+
         </HBox>
-        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="42.0" prefWidth="1233.0" styleClass="bottomBar" />
+        <Label fx:id="bottomBar" alignment="CENTER" prefHeight="42.0" prefWidth="1233.0" styleClass="bottomBar"/>
     </VBox>
     <effect>
-        <DropShadow />
+        <DropShadow/>
     </effect>
 </AnchorPane>

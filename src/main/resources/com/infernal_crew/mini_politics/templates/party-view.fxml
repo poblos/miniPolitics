@@ -14,8 +14,8 @@
     </stylesheets>
     <VBox alignment="TOP_RIGHT" prefHeight="534.0" prefWidth="1233.0">
         <HBox>
-            <ToggleButton onAction="#onFactionsButtonClick"></ToggleButton>
-            <Label alignment="CENTER" prefHeight="52.0" prefWidth="1173.0" styleClass="titleBar" text="PARLIAMENT" />
+            <ToggleButton onAction="#onFactionsButtonClick" prefHeight="52.0" prefWidth="140.0" text="Factions" />
+            <Label alignment="CENTER" prefHeight="52.0" prefWidth="1103.0" styleClass="titleBar" text="PARTIES" />
         </HBox>
         <HBox fx:id="allHBox" prefHeight="447.0" prefWidth="1233.0" styleClass="viewContent">
             <VBox fx:id="parliamentContainer" prefHeight="400.0" prefWidth="711.0" />

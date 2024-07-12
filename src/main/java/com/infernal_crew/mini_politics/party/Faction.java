@@ -4,7 +4,7 @@ public class Faction {
     private String id;
 
     private String name;
-    private int loyalty;
+    private float loyalty;
     private int members;
 
     public String getId() {
@@ -15,11 +15,11 @@ public class Faction {
         this.id = id;
     }
 
-    public int getLoyalty() {
+    public float getLoyalty() {
         return loyalty;
     }
 
-    public void setLoyalty(int loyalty) {
+    public void setLoyalty(float loyalty) {
         this.loyalty = loyalty;
     }
 

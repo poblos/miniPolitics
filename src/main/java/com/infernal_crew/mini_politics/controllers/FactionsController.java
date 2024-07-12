@@ -17,21 +17,28 @@ public class FactionsController extends BarController {
     private HBox allHBox;
 
     @FXML
-    private TextFlow factionsFlow;
+    private TextFlow nameFlow;
+
+    @FXML
+    private TextFlow loyaltyFlow;
+
+    @FXML
+    private TextFlow memberFlow;
 
     @Override
     public void update() {
         Game game = mainController.getGame();
 
         for (Faction faction : game.getFactions().values()) {
-            UICommon.addNamedData(factionsFlow, "Name: ", faction.getName());
-            UICommon.addNamedData(factionsFlow, "Loyalty: ", Integer.toString(faction.getLoyalty()));
-            UICommon.addNamedData(factionsFlow, "Members: ", Integer.toString(faction.getMembers()));
-            UICommon.breakLine(factionsFlow);
+            UICommon.addNamedData(nameFlow, "Name: ", faction.getName());
+            UICommon.addNamedData(loyaltyFlow, "Loyalty: ", Float.toString(faction.getLoyalty()));
+            UICommon.addNamedData(memberFlow, "Members: ", Integer.toString(faction.getMembers()));
+            UICommon.breakLine(nameFlow);
+            UICommon.breakLine(loyaltyFlow);
+            UICommon.breakLine(memberFlow);
         }
 
-        UICommon.addNamedData(factionsFlow, "General loyalty: ", Float.toString(game.getIndicatorValue(Indicator.GeneralLoyalty)));
-        UICommon.addNamedData(factionsFlow, "Leader authority: ", Float.toString(game.getIndicatorValue(Indicator.Authority)));
+        UICommon.addNamedData(nameFlow, "Party cohesion: ", Float.toString(game.getIndicatorValue(Indicator.PartyCohesion)));
     }
 
     @FXML
