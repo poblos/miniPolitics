@@ -28,6 +28,9 @@ public class FactionsController extends BarController {
     @Override
     public void update() {
         Game game = mainController.getGame();
+        nameFlow.getChildren().clear();
+        loyaltyFlow.getChildren().clear();
+        memberFlow.getChildren().clear();
 
         for (Faction faction : game.getFactions().values()) {
             UICommon.addNamedData(nameFlow, "Name: ", faction.getName());

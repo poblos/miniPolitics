@@ -177,10 +177,7 @@ public class Game {
     public void employ(Job job) {
         try {
             if (getEmployed(job) != null) {
-                getCooldown().put(getEmployed(job).getId(), ADVISOR_COOLDOWN);
-                if (getEmployed(job).hasTrait("InfluentialInTheParty")) {
-                    values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
-                }
+                dismiss(job);
             }
             employed.put(job, currentPerson);
         } catch (Exception e) {
@@ -188,13 +185,20 @@ public class Game {
         }
     }
 
+    public void dismiss(Job job) {
+        getCooldown().put(getEmployed(job).getId(), ADVISOR_COOLDOWN);
+        for (String trait : employed.get(job).getTraits()) {
+            if (traits.get(trait) != null) {
+                for (TraitEffect effect : traits.get(trait).getEffects())
+                    effect.handle(this);
+            }
+        }
+    }
+
     public void employ(Job job, int id) {
         try {
             if (getEmployed(job) != null) {
-                getCooldown().put(getEmployed(job).getId(), ADVISOR_COOLDOWN);
-                if (getEmployed(job).hasTrait("InfluentialInTheParty")) {
-                    values.put(Indicator.PartyCohesion, values.get(Indicator.PartyCohesion) - 20);
-                }
+                dismiss(job);
             }
             employed.put(job, activePeople.get(id));
         } catch (Exception e) {
@@ -258,10 +262,17 @@ public class Game {
     }
 
     public void updateIndicator(float change, Indicator indicator) {
-        values.put(indicator, change + values.get(indicator));
-        if (indicator == Indicator.NarongWarBalance) {
-            warEvents.add(new WarEvent(currentEvent.getTitle(), change > 0 ? "+" + change : Float.toString(change)));
+        if (indicator == Indicator.PartyCohesion) {
+            for(String id : factions.keySet()) {
+                updateLoyalty(id, change);
+            }
+        } else {
+            values.put(indicator, change + values.get(indicator));
+            if (indicator == Indicator.NarongWarBalance) {
+                warEvents.add(new WarEvent(currentEvent.getTitle(), change > 0 ? "+" + change : Float.toString(change)));
+            }
         }
+
     }
 
     private float calculatePartyCohesion() {
@@ -277,6 +288,12 @@ public class Game {
     public Event getLoseEvent(Indicator indicator) {
         List<Option> list = new ArrayList<>();
         return new Event("You lost!", "Your " + indicator + " was too low.", list, "darkside");
+    }
+
+    public void updateLoyalty(String id, float finalChange) {
+        Faction f = factions.get(id);
+        f.setLoyalty(f.getLoyalty() + finalChange);
+        values.put(Indicator.PartyCohesion, calculatePartyCohesion());
     }
 
     public Event getCurrentEvent() {
@@ -373,11 +390,5 @@ public class Game {
 
     public Map<String, Faction> getFactions() {
         return factions;
-    }
-
-    public void updateLoyalty(String id, float finalChange) {
-        Faction f = factions.get(id);
-        f.setLoyalty(f.getLoyalty() + finalChange);
-        values.put(Indicator.PartyCohesion, calculatePartyCohesion());
     }
 }

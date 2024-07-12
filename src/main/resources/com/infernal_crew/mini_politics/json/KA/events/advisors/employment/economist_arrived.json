@@ -18,9 +18,19 @@
           "indicator": "PartySupport"
         },
         {
-          "type": "indicator_change",
-          "change": -2,
-          "indicator": "PartyCohesion"
+          "type": "loyalty_change",
+          "change": -10,
+          "id": "old"
+        },
+        {
+          "type": "loyalty_change",
+          "change": -10,
+          "id": "old"
+        },
+        {
+          "type": "loyalty_change",
+          "change": -5,
+          "id": "others"
         },
         {
           "type": "advisor_position_employment",

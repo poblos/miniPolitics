@@ -1,0 +1,16 @@
+{
+  "name": "InfluentialInTheParty",
+  "description": "",
+  "effects": [
+    {
+      "type": "loyalty_change",
+      "id": "old",
+      "change": -20
+    },
+    {
+      "type": "loyalty_change",
+      "id": "others",
+      "change": -20
+    }
+  ]
+}

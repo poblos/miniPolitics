@@ -1,5 +1,6 @@
 package com.infernal_crew.mini_politics.indicators;
 
+import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.jobs.Job;
 import com.infernal_crew.mini_politics.jobs.TraitEffect;
 
@@ -33,5 +34,9 @@ public class TraitIndicatorEffect implements TraitEffect {
         } else {
             return 0;
         }
+    }
+
+    @Override
+    public void handle(Game game) {
     }
 }
