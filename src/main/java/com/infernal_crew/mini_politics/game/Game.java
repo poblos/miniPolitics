@@ -228,7 +228,7 @@ public class Game {
 
     public void handleEvent(int click) {
         for (StoryNote note : storyNotes.values()) {
-            if (activeModifiers.containsKey(note.getModifier())) {
+            if (note.getDoneTrigger().isMet(this)) {
                 note.setDone(true);
             }
         }

@@ -2,7 +2,14 @@
   "id" : "graonian_resurgence",
   "title": "Graonian Resurgence",
   "description": "A new Graonian Arch-Patriarch has begun a great modernization of the hierarchy and state.",
-  "modifier": "Graonian Resurgence",
+  "doneTrigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Graonian Resurgence"
+      }
+    ]
+  },
   "done": false,
   "shown": false
 }

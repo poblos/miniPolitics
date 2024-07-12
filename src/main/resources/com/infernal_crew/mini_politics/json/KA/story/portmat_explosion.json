@@ -2,7 +2,14 @@
   "id": "portmat_explosion",
   "title": "The Portmat Explosion",
   "description": "A terrorist attack aimed and the largest harbour on Searth has shocked the world.",
-  "modifier": "The Portmat Explosion",
+  "doneTrigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "The Portmat Explosion"
+      }
+    ]
+  },
   "done": false,
   "shown": false
 }

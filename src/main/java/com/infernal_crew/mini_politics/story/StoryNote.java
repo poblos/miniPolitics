@@ -1,12 +1,13 @@
 package com.infernal_crew.mini_politics.story;
 
+import com.infernal_crew.mini_politics.event.Trigger;
 import com.infernal_crew.mini_politics.utils.Identifiable;
 
 public class StoryNote implements Identifiable {
     private String id;
     private String title;
     private String description;
-    private String modifier;
+    private Trigger doneTrigger;
     private boolean done;
     private boolean shown;
 
@@ -18,8 +19,8 @@ public class StoryNote implements Identifiable {
         return title;
     }
 
-    public String getModifier() {
-        return modifier;
+    public Trigger getDoneTrigger() {
+        return doneTrigger;
     }
 
     public String getDescription() {
