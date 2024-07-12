@@ -1,6 +1,5 @@
 {
   "probability": 500,
-  "isUnique": true,
   "trigger": {
     "no": [
     ],
@@ -24,6 +23,10 @@
           "type": "indicator_change",
           "change": -1,
           "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Gas import negotiations with other countries"
         },
         {
           "type": "modifier_invocation",
@@ -52,6 +55,10 @@
         {
           "type": "modifier_invocation",
           "name": "Gas import deal signed"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Gas import negotiations with other countries"
         }
       ]
     }

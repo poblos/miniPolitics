@@ -1,0 +1,57 @@
+{
+  "probability": 500,
+  "trigger": {
+    "no": [
+    ],
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Gas import negotiations with Graonia"
+      },
+      {
+        "type": "round_condition",
+        "round": 7
+      }
+    ]
+  },
+  "description": "Thanks to the leverage with have thanks to Matheuchelles, our talks with Graonians have been really straightforward. Our new contract, aside from the larger volume, is exactly the same as the old one. Should we take it?",
+  "options": [
+    {
+      "description": "There is no reason to bow out now. Sign the deal.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": -1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Gas import negotiations with Graonia"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Gas import deal signed"
+        }
+      ]
+    },
+    {
+      "description": "On the reflection, it might be a better idea to negotiate with other countries instead.",
+      "effects": [
+        {
+          "type": "indicator_change",
+          "change": 1,
+          "indicator": "PartySupport"
+        },
+        {
+          "type": "modifier_invocation",
+          "name": "Gas import negotiations with other countries"
+        },
+        {
+          "type": "modifier_removal",
+          "name": "Gas import negotiations with Graonia"
+        }
+      ]
+    }
+  ],
+  "title": "Gas import"
+}
