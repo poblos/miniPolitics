@@ -15,10 +15,7 @@ import com.infernal_crew.mini_politics.media.MediaTakeover;
 import com.infernal_crew.mini_politics.modifiers.ModifierCondition;
 import com.infernal_crew.mini_politics.modifiers.ModifierInvocation;
 import com.infernal_crew.mini_politics.modifiers.ModifierRemoval;
-import com.infernal_crew.mini_politics.party.IdeologyChange;
-import com.infernal_crew.mini_politics.party.IdeologyCondition;
-import com.infernal_crew.mini_politics.party.LoyaltyChange;
-import com.infernal_crew.mini_politics.party.MPTransfer;
+import com.infernal_crew.mini_politics.party.*;
 import com.infernal_crew.mini_politics.policy.PolicyChange;
 import com.infernal_crew.mini_politics.policy.PolicyCondition;
 import com.infernal_crew.mini_politics.story.ShowNote;
@@ -83,7 +80,9 @@ public class JsonLoader {
                         .withSubtype(IdeologyCondition.class, "ideology_condition")
                         .withSubtype(PolicyCondition.class, "policy_condition")
                         .withSubtype(RoundCondition.class, "round_condition")
-                        .withSubtype(PersonCondition.class, "person_condition"))
+                        .withSubtype(PersonCondition.class, "person_condition")
+                        .withSubtype(LoyaltyCondition.class, "loyalty_condition")
+                        .withSubtype(MembersCondition.class, "members_condition"))
                 .add(PolymorphicJsonAdapterFactory.of(TraitEffect.class, "type")
                         .withSubtype(TraitIndicatorEffect.class, "indicator_effect")
                         .withSubtype(LoyaltyChange.class, "loyalty_change"))
