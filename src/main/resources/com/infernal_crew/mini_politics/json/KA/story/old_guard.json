@@ -5,9 +5,23 @@
   "doneTrigger": {
     "yes": [
       {
-        "type": "modifier_condition",
-        "name": "Gas import deal signed"
+        "type": "OR",
+        "conditions": [
+          {
+            "type": "loyalty_condition",
+            "id": "old",
+            "relation": "Higher",
+            "value": "50"
+          },
+          {
+            "type": "members_condition",
+            "id": "old",
+            "relation": "Lower",
+            "count": "6"
+          }
+        ]
       }
+
     ]
   },
   "done": false,
