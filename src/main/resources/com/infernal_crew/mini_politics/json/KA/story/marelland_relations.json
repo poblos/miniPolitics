@@ -1,0 +1,16 @@
+{
+  "id" : "marelland_relations",
+  "title": "Secure relations with Marelland",
+  "description": "Relations with our former colony, Marelland, are utterly important as they control our southern trade routes. We should try to bring them closer to us.",
+  "doneTrigger": {
+    "yes": [
+      {
+        "type": "modifier_condition",
+        "name": "Marelland relations secured"
+      }
+
+    ]
+  },
+  "done": false,
+  "shown": false
+}

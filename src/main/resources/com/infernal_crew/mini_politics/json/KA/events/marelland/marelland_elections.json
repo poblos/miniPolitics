@@ -31,6 +31,10 @@
         {
           "type": "modifier_invocation",
           "name": "Marelland Elections"
+        },
+        {
+          "type": "show_note",
+          "id": "marelland_relations"
         }
       ]
     },
