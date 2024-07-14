@@ -1,4 +1,5 @@
 {
+  "graphic": "gas",
   "probability": 500,
   "trigger": {
     "no": [

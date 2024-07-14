@@ -1,6 +1,7 @@
 {
   "isUnique": true,
   "isCertain": true,
+  "graphic": "gas",
   "trigger": {
     "no": [
     ],
