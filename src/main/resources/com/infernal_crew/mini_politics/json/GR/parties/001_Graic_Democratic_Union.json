@@ -1,0 +1,13 @@
+{
+  "id": "001",
+  "name": "Graic Democratic Union",
+  "description": "The oldest party in the Ecclesia, established after the people's wing split from the Tribunal of the Faithful Party in the midst of the steam revolution. Their popularity among the working classes grew as the Graic Democrats woved to preserve traditional family and religious values while maintaining industrial output by establishing social security and pension systems, paid leave and family benefits. \n The  party's suport didn't entirely shatter after lost Wars of Hegemony, but a power vacuum allowed previously minor parties into the spotlight. That way, with the years passing, the GDU was gradually losing Ecclesial seats, despite strong suport from the Episcopate. This trend inevitably led to the party losing their absolute Ecclesial majority, despite still being the largest group in the parliament. \n Being dependent on the clergy to sustain its deteriorating structures, the party had no choice but to aggressively lobby the interest of their sponsors in the parliament, which antagonised their more moderate or progressive supporters. ",
+  "ideologies": [
+    "GraicDemocrat",
+    "ModeratelyReligious",
+    "Conservative"
+  ],
+  "color": "0x000066",
+  "seats" : 45,
+  "righteousness": 3
+}

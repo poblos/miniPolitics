@@ -1,0 +1,13 @@
+{
+  "id": "003",
+  "name": "Action Secular",
+  "description": "The youngest party in the parliament, with the youngest MPs and the youngest electorate. After its establishment, the party faced scrutiny from the supreme court after a lawsuit was filed by the representatives of the GDU, accusing the Secularists of anticonstitutional political program. The court didn't find the program anticonstitutional, which boosted the party's morale and polularity while highlighting the inefficiency of the Graic Democrats. \n The radically progressive and secular views of the Action earned it almost unanimous suport from the youth and social justice activists. The party dreams of a secular state - without any interference of the spiritual authority in governance. They also demand the enforcement of basic human rights, especially concerning gender and religious discrimination.",
+  "ideologies": [
+    "SocialDemocracy",
+    "RadicallySecular",
+    "RadicallyProgressive"
+  ],
+  "color": "0xFF8000",
+  "seats" : 20,
+  "righteousness": 5
+}

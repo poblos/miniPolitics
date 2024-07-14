@@ -1,0 +1,16 @@
+{
+  "id" : "tax_reform",
+  "title": "Introduce flat income tax",
+  "description": "One of our main electoral promises was to introduce flat income tax, but considering current budget situation, it might not be an easy one to fulfill.",
+  "doneTrigger": {
+    "yes": [
+      {
+        "type": "policy_condition",
+        "id": 8,
+        "option": 3
+      }
+    ]
+  },
+  "done": false,
+  "shown": true
+}

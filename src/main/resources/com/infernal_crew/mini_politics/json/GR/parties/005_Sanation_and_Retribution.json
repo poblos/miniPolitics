@@ -1,0 +1,13 @@
+{
+  "id": "005",
+  "name": "Sanation and Retribution",
+  "description": "The smallest Ecclesial party established by a sect of Graic fundamentalist called the 'Gray Hoods'. Their members desire a spiritual retribution of the elites and the population by following the way of Esoteric Graicism, which stands in opposition to the corrupt mainstream Patriarchic Graicism. \n The Esoterics want to implement reactionary policies aimed at tightening the religious grip on society, cementing traditional gender and family roles and even dissolving democratic institutions.",
+  "ideologies": [
+    "Isolationist",
+    "ReligiousFundamentalist",
+    "AntiDemocratic"
+  ],
+  "color": "0x808080",
+  "seats" : 7,
+  "righteousness": 2
+}

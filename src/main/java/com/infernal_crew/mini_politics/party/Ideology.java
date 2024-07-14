@@ -10,5 +10,19 @@ public enum Ideology {
     Pankachakist,
     Neutral,
     Antimatheuchellian,
-    Promatheuchellian
+    Promatheuchellian,
+    Protectionism,
+    ReligiousConcordate,
+    ModeratelyProgressive,
+    SocialDemocracy,
+    RadicallySecular,
+    RadicallyProgressive,
+    Autarkic,
+    Nationalist,
+    ReligiouslyAmbigous,
+    Isolationist,
+    ReligiousFundamentalist,
+    AntiDemocratic,
+    GraicDemocrat,
+    ModeratelyReligious
 }

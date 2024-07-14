@@ -1,0 +1,13 @@
+{
+  "id": "004",
+  "name": "Alliance for National Restoration",
+  "description": "The Alliance was established by disgruntled nationalists and ex-military personel in an aftermath of the lost Wars of Hegemony, decolonisation of Erdia, Passala and Elenia and most importantly - the secession of The Isle of the Six Kings. Their main goal is to reclaim lost lands and restore Graonia to its rightful place as a regional power via military and inner economic might. What's interesting is their lack of religious policy program. The most loyal supporters of the party are the military and 'ethnic' Graonians.",
+  "ideologies": [
+    "Autarkic",
+    "Nationalist",
+    "ReligiouslyAmbigous"
+  ],
+  "color": "0x006600",
+  "seats" : 15,
+  "righteousness": 1
+}

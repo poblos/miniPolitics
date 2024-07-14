@@ -1,0 +1,13 @@
+{
+  "id": "002",
+  "name": "People's Party - 'Patine Phoenix'",
+  "description": "The largest opposition party in the Ecclesia, established as the main herald of change in a conservative country. The 'Phoenixes' desire to reform the political and economic institutions of Graonia to transform it into a truly modern state, without giving up on its religious roots. They believe that in order to thrive on global markets, Graonia needs to develop strong domestic businesses and are therefore keen on supporting and protecting national entrepreneurs from unfair foreign competition. The 'Phoenixes' want to separate the spiritual authorities from the secular by establishing a binary concordate system in which the state and the church suport each other in governance, without interfering in each other's prerogatives. \n The party enjoys suport from most of the liberal upper and middle classes as well as entrepreneurs, however their centrist approach is not convincing enough for radical members of the society.",
+  "ideologies": [
+    "Protectionism",
+    "ReligiousConcordate",
+    "ModeratelyProgressive"
+  ],
+  "color": "0x0080ff",
+  "seats" : 42,
+  "righteousness": 4
+}
