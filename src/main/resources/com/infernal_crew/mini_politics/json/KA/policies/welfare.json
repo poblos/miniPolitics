@@ -1,5 +1,7 @@
 {
   "name": "Welfare",
+  "feature": "Economic",
+  "weight": 30,
   "id": 7,
   "currentOption": 2,
   "options": [

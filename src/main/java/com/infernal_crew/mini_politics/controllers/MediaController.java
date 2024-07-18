@@ -4,6 +4,7 @@ import com.infernal_crew.mini_politics.Main;
 import com.infernal_crew.mini_politics.game.Game;
 import com.infernal_crew.mini_politics.media.Affiliation;
 import com.infernal_crew.mini_politics.media.MediaGroup;
+import com.infernal_crew.mini_politics.population.Pop;
 import com.infernal_crew.mini_politics.utils.UICommon;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -23,6 +24,9 @@ public class MediaController extends BarController {
     private TextFlow textBox;
     @FXML
     private TilePane mediaBox;
+
+    @FXML
+    private TextFlow populationBox;
 
     public void update() {
         mediaBox.getChildren().clear();
@@ -46,6 +50,10 @@ public class MediaController extends BarController {
                 }
             });
             mediaBox.getChildren().add(newLabel);
+        }
+
+        for(Pop pop : mainController.getGame().getPops()) {
+            UICommon.addNormalText(populationBox,pop.toString());
         }
     }
 }

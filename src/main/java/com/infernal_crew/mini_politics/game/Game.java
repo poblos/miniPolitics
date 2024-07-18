@@ -10,11 +10,20 @@ import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.budget.*;
 import com.infernal_crew.mini_politics.jobs.*;
 import com.infernal_crew.mini_politics.media.*;
+import com.infernal_crew.mini_politics.policy.PolicyChange;
+import com.infernal_crew.mini_politics.policy.PolicyChangeInfo;
+import com.infernal_crew.mini_politics.population.Feature;
+import com.infernal_crew.mini_politics.population.Pop;
 import com.infernal_crew.mini_politics.story.StoryNote;
+import javafx.util.Pair;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static com.infernal_crew.mini_politics.utils.DataManipulator.toIdMap;
+import static java.lang.Math.abs;
+import static java.lang.Math.pow;
 
 public class Game {
     private final Map<Indicator, Float> values = new HashMap<>();
@@ -24,6 +33,10 @@ public class Game {
     int round = 0;
 
     public static final int ADVISOR_COOLDOWN = 20;
+
+    public static final int DECISION_RELEVANCE = 200;
+
+    public static final float DECAY_FACTOR = 0.99f;
 
     private String dialogueId = null;
     Event currentEvent;
@@ -37,21 +50,25 @@ public class Game {
     private final Map<Integer, Person> activePeople = new HashMap<>();
     private final Map<Integer, Integer> cooldown = new HashMap<>();
     private final List<Modifier> modifiers;
+    private List<Pair<PolicyChangeInfo,Integer>> policyChanges = new ArrayList<>();
     private final List<MediaGroup> mediaGroups;
     private final Map<String, Party> parties;
     private final Map<String, Faction> factions;
     private final Map<String, StoryNote> storyNotes;
     private final List<WarEvent> warEvents = new ArrayList<>();
+    private final List<Pop> pops;
     private Party rulingParty;
     private final Budget budget;
     private final transient Random random = new Random();
 
     public Game(List<Event> events, List<Dialogue> dialogues, List<Person> people, List<Person> activePeople, List<Policy> policies,
-                List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits, List<Party> parties, List<Faction> factions) {
+                List<Modifier> modifiers, List<MediaGroup> mediaGroups, Budget budget, List<StoryNote> storyNotes, List<Trait> traits,
+                List<Party> parties, List<Faction> factions, List<Pop> pops) {
         this.budget = budget;
         this.events = events;
         this.modifiers = modifiers;
         this.mediaGroups = mediaGroups;
+        this.pops = pops;
 
         this.storyNotes = toIdMap(storyNotes);
 
@@ -82,7 +99,7 @@ public class Game {
 
         values.put(Indicator.PartyCohesion, calculatePartyCohesion());
         values.put(Indicator.StateStability, 35F);
-        values.put(Indicator.PartySupport, 44F);
+        values.put(Indicator.PartySupport, calculatePartySupport());
         values.put(Indicator.InfrastructureCorruption, 0F);
         values.put(Indicator.NarongWarBalance, 50F);
     }
@@ -227,13 +244,14 @@ public class Game {
     }
 
     public void handleEvent(int click) {
-        for (StoryNote note : storyNotes.values()) {
-            if (note.getDoneTrigger().isMet(this)) {
-                note.setDone(true);
-            }
-        }
         chooseOption(currentEvent, click);
         round++;
+        handleStoryNotes();
+        handleCooldowns();
+        handleSupportChanges();
+    }
+
+    private void handleCooldowns() {
         for (Integer id : cooldown.keySet()) {
             if (cooldown.get(id) == 1) {
                 cooldown.remove(id);
@@ -242,6 +260,38 @@ public class Game {
             }
         }
     }
+
+    private void handleStoryNotes() {
+        for (StoryNote note : storyNotes.values()) {
+            if (note.getDoneTrigger().isMet(this)) {
+                note.setDone(true);
+            }
+        }
+    }
+
+    private void handleSupportChanges() {
+        policyChanges = policyChanges.stream()
+                .map(pair -> new Pair<>(pair.getKey(), pair.getValue()-1))
+                .filter(pair -> pair.getValue() > 0)
+                .collect(Collectors.toList());
+
+        for (Pair<PolicyChangeInfo, Integer> pair : policyChanges) {
+            for (Pop pop : pops) {
+                pop.setPartySupport(pop.getPartySupport() + calculateSupportDelta(pop, pair));
+            }
+        }
+        values.put(Indicator.PartySupport, calculatePartySupport());
+    }
+
+    private float calculateSupportDelta(Pop pop, Pair<PolicyChangeInfo, Integer> pair) {
+        float a = pair.getKey().start();
+        float b = pair.getKey().end();
+        float c = pop.getFeatures().get(pair.getKey().feature());
+        float time = Game.DECISION_RELEVANCE - pair.getValue();
+
+        return (float) ((abs(a - c) - abs(b - c)) * pow(Game.DECAY_FACTOR,time) * pair.getKey().weight() / 100);
+    }
+
 
     public List<WarEvent> getWarEvents() {
         return warEvents;
@@ -261,6 +311,10 @@ public class Game {
             for(String id : factions.keySet()) {
                 updateLoyalty(id, change);
             }
+        } else if (indicator == Indicator.PartySupport) {
+            for (Pop pop : pops) {
+                pop.setPartySupport(pop.getPartySupport() + change);
+            }
         } else {
             values.put(indicator, change + values.get(indicator));
             if (indicator == Indicator.NarongWarBalance) {
@@ -276,6 +330,16 @@ public class Game {
         for(Faction f : factions.values()) {
             sum += f.getLoyalty() * f.getMembers();
             totalMembers += f.getMembers();
+        }
+        return (float) (sum/ totalMembers);
+    }
+
+    private float calculatePartySupport() {
+        double sum = 0.0;
+        double totalMembers = 0.0;
+        for(Pop p : pops) {
+            sum += p.getCount() * p.getPartySupport();
+            totalMembers += p.getCount();
         }
         return (float) (sum/ totalMembers);
     }
@@ -385,5 +449,13 @@ public class Game {
 
     public Map<String, Faction> getFactions() {
         return factions;
+    }
+
+    public List<Pop> getPops() {
+        return pops;
+    }
+
+    public List<Pair<PolicyChangeInfo,Integer>> getPolicyChanges() {
+        return policyChanges;
     }
 }

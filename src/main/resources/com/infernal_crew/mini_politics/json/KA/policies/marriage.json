@@ -1,5 +1,7 @@
 {
   "name": "Marriage",
+  "feature": "Societal",
+  "weight": 20,
   "id": 2,
   "currentOption": 2,
   "options": [

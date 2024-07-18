@@ -1,5 +1,7 @@
 {
   "name": "Legality of drugs",
+  "feature": "Societal",
+  "weight": 20,
   "id": 1,
   "currentOption": 2,
   "options": [

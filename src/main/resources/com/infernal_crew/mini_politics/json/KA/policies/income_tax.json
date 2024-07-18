@@ -1,5 +1,7 @@
 {
-  "name": "Income Tax",
+  "name": "Income tax",
+  "feature": "Wealth",
+  "weight": 40,
   "id": 8,
   "currentOption": 2,
   "options": [

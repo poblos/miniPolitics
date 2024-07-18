@@ -16,7 +16,9 @@ module com.infernal_crew.mini_politics {
     opens com.infernal_crew.mini_politics to javafx.fxml, moshi;
     opens com.infernal_crew.mini_politics.modelFx to javafx.base;
     opens com.infernal_crew.mini_politics.story to moshi;
+    opens com.infernal_crew.mini_politics.population to moshi;
     exports com.infernal_crew.mini_politics.game;
+    exports com.infernal_crew.mini_politics.population;
     exports com.infernal_crew.mini_politics.jobs;
     exports com.infernal_crew.mini_politics.policy;
     exports com.infernal_crew.mini_politics.event;

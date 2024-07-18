@@ -7,20 +7,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.MediaController">
+<VBox prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.infernal_crew.mini_politics.controllers.MediaController">
     <stylesheets>
-        <URL value="@../styles/left_bar.css" />
+        <URL value="@../styles/left_bar.css"/>
     </stylesheets>
-    <Label alignment="CENTER" prefHeight="52.0" prefWidth="267.0" styleClass="titleBar" text="MEDIA" />
-    <VBox styleClass="viewContent">
-        <TilePane fx:id="mediaBox" alignment="TOP_RIGHT" layoutY="57.0" prefHeight="200.0" prefWidth="256.0">
-         <padding>
-            <Insets bottom="20.0" />
-         </padding></TilePane>
-        <TextFlow fx:id="textBox" layoutY="1.0" prefHeight="200.0" prefWidth="256.0" />
-    </VBox>
-    <Label fx:id="bottomBar" alignment="CENTER" prefHeight="31.0" prefWidth="400.0" styleClass="bottomBar" />
+    <Label styleClass="titleBar" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="52.0" text="MEDIA"/>
+    <HBox prefWidth="800.0" minWidth="600">
+        <VBox styleClass="viewContent" prefWidth="400.0">
+            <TextFlow fx:id="populationBox" prefWidth="300.0"/>
+        </VBox>
+        <VBox styleClass="viewContent" prefWidth="400.0">
+            <TilePane fx:id="mediaBox" prefWidth="300.0">
+                <padding>
+                    <Insets bottom="20.0"/>
+                </padding>
+            </TilePane>
+            <TextFlow fx:id="textBox" prefWidth="300.0"/>
+        </VBox>
+    </HBox>
+    <Label styleClass="bottomBar" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="37.0"/>
     <effect>
-        <DropShadow />
+        <DropShadow/>
     </effect>
 </VBox>

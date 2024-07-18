@@ -1,5 +1,7 @@
 {
   "name": "Gun-control laws",
+  "feature": "Societal",
+  "weight": 20,
   "id": 4,
   "currentOption": 5,
   "options": [

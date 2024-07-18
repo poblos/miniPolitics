@@ -1,5 +1,7 @@
 {
   "name": "Education",
+  "feature": "Economic",
+  "weight": 20,
   "id": 5,
   "currentOption": 1,
   "options": [

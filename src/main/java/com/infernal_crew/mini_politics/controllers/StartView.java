@@ -22,6 +22,7 @@ import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyChange;
 import com.infernal_crew.mini_politics.policy.PolicyCondition;
 import com.infernal_crew.mini_politics.jobs.*;
+import com.infernal_crew.mini_politics.population.Pop;
 import com.infernal_crew.mini_politics.story.StoryNote;
 import com.infernal_crew.mini_politics.utils.ColorAdapter;
 import com.squareup.moshi.Moshi;
@@ -102,9 +103,11 @@ public class StartView {
 
         ArrayList<Faction> factions = loadFiles(Faction.class, "json/" + nationTag + "/factions/", moshi);
 
+        ArrayList<Pop> pops = loadFiles(Pop.class, "json/" + nationTag + "/pops/", moshi);
+
         printNumberOf("events", events.size());
         printNumberOf("dialogues", dialogues.size());
-        return new Game(events, dialogues, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits, parties, factions);
+        return new Game(events, dialogues, people, activePeople, policies, modifiers, medias, budgets.get(0), notes, traits, parties, factions, pops);
     }
 
     private void startGame(Game game) throws IOException {

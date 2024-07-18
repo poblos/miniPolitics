@@ -1,5 +1,7 @@
 {
   "name": "Healthcare",
+  "feature": "Economic",
+  "weight": 40,
   "id": 6,
   "currentOption": 1,
   "options": [

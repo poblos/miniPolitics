@@ -1,6 +1,8 @@
 {
   "name": "Abortion law",
   "id": 3,
+  "feature": "Societal",
+  "weight": 30,
   "currentOption": 3,
   "options": [
     {
