@@ -167,3 +167,31 @@
 .list-view .corner {
     -fx-background-color: transparent;
 }
+
+.titled-pane .title {
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #1f4f92, #0c2a62),
+                          radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000022);
+    -fx-font: bold 14pt "Courier New";
+    -fx-border-color: #0c2a62;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 8px;
+}
+
+.titled-pane .title .text{
+    -fx-fill: radial-gradient(center 50% 50%, radius 100%, orange, yellow);
+}
+
+.titled-pane:hover .title {
+    -fx-background-color: linear-gradient(from 50px 0px to 50px 50px, #0c2a62, #1f4f92),
+                          radial-gradient(center 50% 50%, radius 50%, #FFFFFF33, #00000022);
+}
+
+.fillerBackgroundBox {
+  -fx-background-color: radial-gradient(center 50% 50%, radius 50%, #26516E, #1E3543);
+      -fx-border-color: #3282b8;
+      -fx-border-width: 2px;
+      -fx-border-radius: 20px;
+}

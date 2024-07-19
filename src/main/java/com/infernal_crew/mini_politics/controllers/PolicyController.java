@@ -1,73 +1,82 @@
 package com.infernal_crew.mini_politics.controllers;
 
-
 import com.infernal_crew.mini_politics.policy.Policy;
 import com.infernal_crew.mini_politics.policy.PolicyOption;
+import com.infernal_crew.mini_politics.population.Feature;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class PolicyController extends BarController {
-    public final ObservableList<Policy> policyNames = FXCollections.observableArrayList();
-    public final ObservableList<PolicyOption> optionNames = FXCollections.observableArrayList();
+    @FXML
+    private VBox featureBox;
+
+    @FXML
+    private VBox policyBox;
 
     @FXML
     private ListView<PolicyOption> optionList;
 
-    @FXML
-    private ListView<Policy> policyList;
-
-    private Policy displayedPolicy;
+    private int currentOptionIndex = -1;
 
     public void update() {
         Map<Integer, Policy> policies = mainController.getGame().getPolicies();
 
         List<Policy> filteredPolicies = policies.values().stream()
-                .filter(policy -> policy.getName() != null)
-                .collect(Collectors.toList());
+                .filter(policy -> policy.getName() != null).toList();
 
-        policyNames.setAll(filteredPolicies);
-        policyList.setItems(policyNames);
+        Map<Feature, List<Policy>> groupedPolicies = filteredPolicies.stream()
+                .collect(Collectors.groupingBy(Policy::getFeature));
 
-        if (displayedPolicy != null) {
-            optionNames.clear();
-            int i = 0;
-            for (PolicyOption option : displayedPolicy.getOptions()) {
-                option.setSelected(i == displayedPolicy.getCurrentOption());
-                i++;
-            }
+        policyBox.getChildren().clear();
 
-            optionNames.addAll(Arrays.asList(displayedPolicy.getOptions()));
-            optionList.setItems(optionNames);
+        for (Map.Entry<Feature, List<Policy>> entry : groupedPolicies.entrySet()) {
+            Feature feature = entry.getKey();
+            List<Policy> policyList = entry.getValue();
+
+            ListView<Policy> policyListView = new ListView<>(FXCollections.observableArrayList(policyList));
+            policyListView.setCellFactory(new PolicyCellFactory());
+
+            policyListView.getSelectionModel().selectedItemProperty().addListener((observable, oldPolicy, newPolicy) -> {
+                if (newPolicy != null) {
+                    displayPolicyOptions(newPolicy);
+                }
+            });
+
+            TitledPane titledPane = new TitledPane(feature.name(), policyListView);
+            titledPane.setExpanded(false);
+
+            policyBox.getChildren().add(titledPane);
         }
     }
 
-    public void initialize() {
-        policyList.setCellFactory(new PolicyCellFactory());
-        optionList.setCellFactory(new OptionCellFactory());
-        policyList.getSelectionModel().selectedItemProperty().addListener((observableValue, s, current) -> {
-            optionNames.clear();
+    private void displayPolicyOptions(Policy policy) {
+        List<PolicyOption> options = List.of(policy.getOptions());
+        currentOptionIndex = policy.getCurrentOption();
+        optionList.setItems(FXCollections.observableArrayList(options));
+        optionList.setCellFactory(param -> new OptionCell(currentOptionIndex));
+    }
 
-            if (current != null) {
-                int i = 0;
-                for (PolicyOption option : current.getOptions()) {
-                    option.setSelected(i == current.getCurrentOption());
-                    i++;
+    @FXML
+    public void initialize() {
+        if (optionList != null) {
+            optionList.setCellFactory(param -> new OptionCell(currentOptionIndex));
+            optionList.getSelectionModel().selectedItemProperty().addListener((observable, oldOption, newOption) -> {
+                if (newOption != null) {
+                    currentOptionIndex = List.of(optionList.getItems()).indexOf(newOption);
                 }
-                optionNames.addAll(Arrays.asList(current.getOptions()));
-                optionList.setItems(optionNames);
-                displayedPolicy = current;
-            }
-        });
+            });
+        } else {
+            System.err.println("optionList is null. Ensure that the FXML file is correctly loaded and the fx:id matches.");
+        }
     }
 
     private static class PolicyCellFactory implements Callback<ListView<Policy>, ListCell<Policy>> {
@@ -97,34 +106,26 @@ public class PolicyController extends BarController {
         }
     }
 
-    private static class OptionCellFactory implements Callback<ListView<PolicyOption>, ListCell<PolicyOption>> {
-        @Override
-        public ListCell<PolicyOption> call(ListView<PolicyOption> param) {
-            return new ListCell<>() {
-                @Override
-                public void updateItem(PolicyOption option, boolean empty) {
-                    super.updateItem(option, empty);
-                    if (empty || option == null) {
-                        setText(null);
-                        setGraphic(null);
-                    } else {
-                        setText(null);
-                        setGraphic(new OptionLabel(option));
-                    }
-                }
-            };
+    private static class OptionCell extends ListCell<PolicyOption> {
+        private final int currentOptionIndex;
+
+        public OptionCell(int currentOptionIndex) {
+            this.currentOptionIndex = currentOptionIndex;
         }
 
-        private static class OptionLabel extends Label {
-            public OptionLabel(PolicyOption option) {
-                super(option.getName());
-                if (option.isSelected()) {
-                    this.getStyleClass().clear();
-                    this.getStyleClass().add("currentOptionLabel");
-
+        @Override
+        protected void updateItem(PolicyOption option, boolean empty) {
+            super.updateItem(option, empty);
+            if (empty || option == null) {
+                setText(null);
+                setGraphic(null);
+            } else {
+                setText(option.getName());
+                int index = getIndex();
+                if (index == currentOptionIndex) {
+                    setStyle("-fx-background-color: #cce5ff; -fx-text-fill: #004085;");
                 } else {
-                    this.getStyleClass().clear();
-                    this.getStyleClass().add("listCellLabel");
+                    setStyle("");
                 }
             }
         }

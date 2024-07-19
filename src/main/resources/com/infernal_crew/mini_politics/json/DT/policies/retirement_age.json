@@ -2,6 +2,7 @@
   "name": "Retirement Age",
   "id": 105,
   "currentOption": 2,
+  "feature": "Age",
   "options": [
     {
       "name": "No retirement"

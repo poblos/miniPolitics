@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.*?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-    <AnchorPane prefHeight="596.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PolicyController">
-        <stylesheets>
+<AnchorPane prefHeight="362.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infernal_crew.mini_politics.controllers.PolicyController">
+    <stylesheets>
         <URL value="@../styles/policy_view.css" />
         <URL value="@../styles/left_bar.css" />
     </stylesheets>
-    <VBox prefHeight="596.0" prefWidth="628.0">
-        <Label alignment="CENTER" prefHeight="52.0" prefWidth="636.0" styleClass="titleBar" text="POLICIES" />
-        <HBox prefWidth="400.0">
-            <VBox prefHeight="502.0" prefWidth="628.0" styleClass="viewContent">
-                <ListView fx:id="policyList" prefHeight="202.0" prefWidth="621.0" />
+    <VBox fx:id="featureBox" prefHeight="512.0" prefWidth="1017.0" >
+        <Label alignment="CENTER" maxWidth="Infinity" prefHeight="52.0" styleClass="titleBar" text="POLICIES" />
+        <HBox>
+            <VBox>
+                <VBox fx:id="policyBox" maxWidth="413.0" prefWidth="413.0" >
+                </VBox>
+                <VBox maxHeight="Infinity" VBox.vgrow="ALWAYS" styleClass="fillerBackgroundBox"/>
+            </VBox>
+            <VBox >
                 <Label alignment="CENTER" prefHeight="51.0" prefWidth="607.0" styleClass="insideTitle" text="Options:" />
-                <ListView fx:id="optionList" prefHeight="212.0" />
-                <padding>
-                    <Insets bottom="10" left="10" right="10" top="10" />
-                </padding>
+                <ListView fx:id="optionList" prefHeight="362.0" prefWidth="507.0" />
             </VBox>
 
         </HBox>
-        <TextField alignment="CENTER" editable="false " prefHeight="42.0" prefWidth="330.0" styleClass="bottomBar" />
+        <TextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="1017.0" styleClass="bottomBar" />
     </VBox>
-
     <effect>
         <DropShadow />
     </effect>
