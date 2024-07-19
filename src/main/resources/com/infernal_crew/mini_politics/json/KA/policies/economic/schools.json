@@ -1,0 +1,24 @@
+{
+  "name": "Education",
+  "feature": "Economic",
+  "weight": 20,
+  "id": 5,
+  "currentOption": 3,
+  "options": [
+    {
+      "name": "Private education system"
+    },
+    {
+      "name": "Public education system"
+    },
+    {
+      "name": "Private education system with limited public options"
+    },
+    {
+      "name": "Both public and private education"
+    },
+    {
+      "name": "Public education system with limited private options"
+    }
+  ]
+}

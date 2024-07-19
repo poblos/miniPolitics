@@ -1,0 +1,24 @@
+{
+  "name": "Healthcare",
+  "feature": "Economic",
+  "weight": 40,
+  "id": 6,
+  "currentOption": 3,
+  "options": [
+    {
+      "name": "Private healthcare only"
+    },
+    {
+      "name": "Private healthcare with government subsidies"
+    },
+    {
+      "name": "Public and private systems coexisting with healthcare voucher"
+    },
+    {
+      "name": "Universal free healthcare alongside no-subsidized private alternatives"
+    },
+    {
+      "name": "Universal free healthcare"
+    }
+  ]
+}

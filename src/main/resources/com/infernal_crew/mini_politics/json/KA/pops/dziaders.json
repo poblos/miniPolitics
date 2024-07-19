@@ -2,8 +2,8 @@
   "count": 100,
   "partySupport": 40,
   "features": {
-    "Economic": 30,
-    "Societal": 80,
+    "Economic": 70,
+    "Societal": 20,
     "Age": 80,
     "Wealth": 40,
     "Diplomatic": 90

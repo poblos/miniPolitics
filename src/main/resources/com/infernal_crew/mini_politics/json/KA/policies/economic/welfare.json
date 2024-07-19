@@ -6,19 +6,19 @@
   "currentOption": 2,
   "options": [
     {
-      "name": "Universal basic income"
-    },
-    {
-      "name": "Expanded social welfare"
-    },
-    {
-      "name": "Limited social welfare"
+      "name": "No welfare"
     },
     {
       "name": "Social welfare only for those who work"
     },
     {
-      "name": "No welfare"
+      "name": "Limited social welfare"
+    },
+    {
+      "name": "Expanded social welfare"
+    },
+    {
+      "name": "Universal basic income"
     }
   ]
 }

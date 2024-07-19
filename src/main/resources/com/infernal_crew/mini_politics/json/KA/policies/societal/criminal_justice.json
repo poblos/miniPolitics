@@ -3,22 +3,23 @@
   "feature": "Societal",
   "weight": 10,
   "id": 7,
-  "currentOption": 1,
+  "currentOption": 3,
   "options": [
     {
-      "name": "No criminal justice system"
-    },
-    {
-      "name": "Low sentences, emphasis on rehabilitation"
-    },
-    {
-      "name": "Medium sentences, balance between rehabilitation an punishment"
+      "name": "Harsh sentences, with common death sentence"
     },
     {
       "name": "Harsh sentences, emphasis on punishment"
     },
     {
-      "name": "Harsh sentences, with common death sentence"
+      "name": "Medium sentences, balance between rehabilitation an punishment"
+    },
+    {
+      "name": "Low sentences, emphasis on rehabilitation"
+    },
+    {
+      "name": "No criminal justice system"
     }
+
   ]
 }
