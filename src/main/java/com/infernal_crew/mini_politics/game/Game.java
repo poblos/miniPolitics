@@ -33,10 +33,9 @@ public class Game {
     int round = 0;
 
     public static final int ADVISOR_COOLDOWN = 20;
-
     public static final int DECISION_RELEVANCE = 200;
-
     public static final float DECAY_FACTOR = 0.99f;
+    public static final float INSTANT_POLICY_FACTOR = 30.0f;
 
     private String dialogueId = null;
     Event currentEvent;
@@ -281,6 +280,14 @@ public class Game {
             }
         }
         values.put(Indicator.PartySupport, calculatePartySupport());
+    }
+
+    public float calculateInstantSupportDelta(Pop pop, PolicyChangeInfo policy) {
+        float a = policy.start();
+        float b = policy.end();
+        float c = pop.getFeatures().get(policy.feature());
+
+        return (float) (Game.INSTANT_POLICY_FACTOR * (abs(a - c) - abs(b - c)) * policy.weight() / 100);
     }
 
     private float calculateSupportDelta(Pop pop, Pair<PolicyChangeInfo, Integer> pair) {
